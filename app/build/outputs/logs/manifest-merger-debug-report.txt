@@ -1,0 +1,465 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:2:1-112:12
+INJECTED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:2:1-112:12
+INJECTED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:2:1-112:12
+INJECTED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:2:1-112:12
+MERGED from [androidx.databinding:viewbinding:7.3.0] /Users/aswin/.gradle/caches/transforms-3/cd8e2a3f36ba1561b1c742db6b7563c3/transformed/viewbinding-7.3.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.navigation:navigation-ui:2.5.3] /Users/aswin/.gradle/caches/transforms-3/124689b07c4708038c463a026d509968/transformed/navigation-ui-2.5.3/AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.denzcoskun:ImageSlideshow:0.1.0] /Users/aswin/.gradle/caches/transforms-3/21755ddbf8d567e8cbd4a14103e9f33a/transformed/ImageSlideshow-0.1.0/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.material:material:1.6.1] /Users/aswin/.gradle/caches/transforms-3/16864338184caa82c05d1f43da5d9fee/transformed/material-1.6.1/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/aswin/.gradle/caches/transforms-3/ddb14abb4386d3ae3df3b67f617ddff3/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
+MERGED from [com.airbnb.android:lottie:4.2.0] /Users/aswin/.gradle/caches/transforms-3/d09ab690f9e8e528ef3a18a0cbb90f7c/transformed/lottie-4.2.0/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat-resources:1.5.1] /Users/aswin/.gradle/caches/transforms-3/94b8ca5aa055c79e73080724c8918cf3/transformed/appcompat-resources-1.5.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.5.1] /Users/aswin/.gradle/caches/transforms-3/23adf2337af4c046638cc7ee157983a3/transformed/appcompat-1.5.1/AndroidManifest.xml:17:1-22:12
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /Users/aswin/.gradle/caches/transforms-3/022930963cfb34d7cc1c5161f492f76e/transformed/rxandroid-2.1.1/AndroidManifest.xml:15:1-20:12
+MERGED from [com.github.ybq:Android-SpinKit:1.4.0] /Users/aswin/.gradle/caches/transforms-3/97577b03d961c846663885e6c559932a/transformed/Android-SpinKit-1.4.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.github.bumptech.glide:glide:4.12.0] /Users/aswin/.gradle/caches/transforms-3/1d74cc3df50ef3092c51fd512524856c/transformed/glide-4.12.0/AndroidManifest.xml:2:1-12:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] /Users/aswin/.gradle/caches/transforms-3/6c836bad8c153886611dc0e84f4e4865/transformed/swiperefreshlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.facebook.shimmer:shimmer:0.5.0] /Users/aswin/.gradle/caches/transforms-3/c2ee1893c38bbcbce3b6fcf19936ac0b/transformed/shimmer-0.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-fragment:2.5.3] /Users/aswin/.gradle/caches/transforms-3/50187562e55134b2bd3bdcb67472205f/transformed/navigation-fragment-2.5.3/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.room:room-runtime:2.4.3] /Users/aswin/.gradle/caches/transforms-3/2e63dbfd64ae5816ec1fb5a592200ffc/transformed/room-runtime-2.4.3/AndroidManifest.xml:17:1-31:12
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] /Users/aswin/.gradle/caches/transforms-3/b616f360066a45dbcffd0b4e7a936feb/transformed/MPAndroidChart-v3.1.0/AndroidManifest.xml:2:1-20:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/aswin/.gradle/caches/transforms-3/09764020d7f7eeb11c7bc90a48072d67/transformed/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment-ktx:1.5.4] /Users/aswin/.gradle/caches/transforms-3/5751635a295112cef408dd0eafc0180d/transformed/fragment-ktx-1.5.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.5.4] /Users/aswin/.gradle/caches/transforms-3/2dd7ee40b030fdfb25a5b93e4cd65177/transformed/fragment-1.5.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-runtime:2.5.3] /Users/aswin/.gradle/caches/transforms-3/9d5853992d38130b7c184c625f15395d/transformed/navigation-runtime-2.5.3/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity-ktx:1.5.1] /Users/aswin/.gradle/caches/transforms-3/13fd147e44545b702f53f500cd6d9c3c/transformed/activity-ktx-1.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.5.1] /Users/aswin/.gradle/caches/transforms-3/0ba242e2f6a9ab8798b7c74f3648d14d/transformed/activity-1.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-common:2.5.3] /Users/aswin/.gradle/caches/transforms-3/536674a31fdea511342f20313aa2c423/transformed/navigation-common-2.5.3/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1] /Users/aswin/.gradle/caches/transforms-3/61f69bbb7fb8bf18c452ee870154a000/transformed/lifecycle-viewmodel-ktx-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/aswin/.gradle/caches/transforms-3/1851ebfbfd22294b9ae18ca0a8bb23dc/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/aswin/.gradle/caches/transforms-3/3cc78913a392a3680a28da135d899a3d/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/aswin/.gradle/caches/transforms-3/032833407e49bad076f75995618d70c0/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] /Users/aswin/.gradle/caches/transforms-3/d14ecc2398b7d485f4ffa523a9bfac31/transformed/lifecycle-viewmodel-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /Users/aswin/.gradle/caches/transforms-3/52461b8cc3837b182e723da84f364813/transformed/lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core-ktx:1.8.0] /Users/aswin/.gradle/caches/transforms-3/c61018f77c05ae7248987e651736de33/transformed/core-ktx-1.8.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/aswin/.gradle/caches/transforms-3/d13912869eb14f6543203770d88c895e/transformed/emoji2-views-helper-1.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/aswin/.gradle/caches/transforms-3/588b8c7b4ea336c44fac1bf3358693f9/transformed/emoji2-1.2.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/aswin/.gradle/caches/transforms-3/a3219f10cb5b01959274634875948784/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/aswin/.gradle/caches/transforms-3/63a02c9ae954195478d9efa12d519cde/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/aswin/.gradle/caches/transforms-3/c66c2718e7bd78b2c30bdf06c7aa4c50/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/aswin/.gradle/caches/transforms-3/14d83609f2f52a0607f944fbbf2791f6/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /Users/aswin/.gradle/caches/transforms-3/e0026981b235b8ef7c4b02076907311b/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/aswin/.gradle/caches/transforms-3/b4165d5efbf0f24b817561f0ecf9fb7d/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/aswin/.gradle/caches/transforms-3/990167086529552f49a9ecee8405d440/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.1.0] /Users/aswin/.gradle/caches/transforms-3/5a9cb1129f5ab8671dd68e454e566667/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.4.1] /Users/aswin/.gradle/caches/transforms-3/e8edc96fe165f0fd0b5bbc992eaafe2d/transformed/transition-1.4.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.window:window:1.0.0] /Users/aswin/.gradle/caches/transforms-3/4c16547a1e97fe938e3e4b0025875bb8/transformed/window-1.0.0/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.core:core:1.8.0] /Users/aswin/.gradle/caches/transforms-3/577ee95d2de04b4758c03245d25b9bbc/transformed/core-1.8.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/aswin/.gradle/caches/transforms-3/b513694a3b36edcda03fba88289350bd/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/aswin/.gradle/caches/transforms-3/86e7db7afee59af47e2b640b7bcd4e04/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.5.1] /Users/aswin/.gradle/caches/transforms-3/3e57eedccbf1b1b27a419bc5cccf06ec/transformed/lifecycle-runtime-ktx-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /Users/aswin/.gradle/caches/transforms-3/446f70a45d8c88e1fbacba1cf71d6e35/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.0] /Users/aswin/.gradle/caches/transforms-3/84d485184a7ad9c00623a618739d88a0/transformed/savedstate-ktx-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/aswin/.gradle/caches/transforms-3/7e85858eba238ad12d6ad7c7aaf96aeb/transformed/savedstate-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/aswin/.gradle/caches/transforms-3/9c60a0994e3baeed39e2b4a34ae4858d/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /Users/aswin/.gradle/caches/transforms-3/78f705684166cca906ca206e681430ee/transformed/gifdecoder-4.12.0/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] /Users/aswin/.gradle/caches/transforms-3/7cc27fb07218bf1b11e0ec4fc6524ba8/transformed/exifinterface-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/aswin/.gradle/caches/transforms-3/d8ed16ececfc58d0c911f83b41655920/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite-framework:2.2.0] /Users/aswin/.gradle/caches/transforms-3/a780d03ffd1cfb5f8132f971142f712c/transformed/sqlite-framework-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.sqlite:sqlite:2.2.0] /Users/aswin/.gradle/caches/transforms-3/2b9c455b3131541a7568fbfddece0e07/transformed/sqlite-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/aswin/.gradle/caches/transforms-3/075df16bee0ada4eafc389d85129b003/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/aswin/.gradle/caches/transforms-3/c5ff0deb6b3e9e03a3431b53babda136/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/aswin/.gradle/caches/transforms-3/cb49858375801c767f7361595b682e20/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.5.1] /Users/aswin/.gradle/caches/transforms-3/426288fed8f941471807dccf3e03b3af/transformed/lifecycle-livedata-core-ktx-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/aswin/.gradle/caches/transforms-3/91b8a0dd737e5865e1c066a99d72a6f8/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] /Users/aswin/.gradle/caches/transforms-3/0244f5b3a82769ca1dc496f27a20ad55/transformed/lifecycle-livedata-core-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/aswin/.gradle/caches/transforms-3/d72c02b6f72ec8b4652d81642ae4aff7/transformed/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/aswin/.gradle/caches/transforms-3/6c0b7655c7c86952a16fe600e6a3e9b7/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/aswin/.gradle/caches/transforms-3/f71e35c7d9255389a655b7bfecf531ab/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/aswin/.gradle/caches/transforms-3/a95b4d7ae02c8ac299b897621f41fc51/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.squareup.picasso:picasso:2.71828] /Users/aswin/.gradle/caches/transforms-3/7382e7f444b584172664e3f7e0ea6fda/transformed/picasso-2.71828/AndroidManifest.xml:2:1-14:12
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/aswin/.gradle/caches/transforms-3/8e94ddf4200431c5a0228caf9e1afa49/transformed/annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:exifinterface:27.1.0] /Users/aswin/.gradle/caches/transforms-3/1e4fed798473b00fb542ed3955293230/transformed/exifinterface-27.1.0/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:2:1-112:12
+INJECTED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:2:1-112:12
+INJECTED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:2:1-112:12
+	package
+		INJECTED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:2:1-112:12
+		INJECTED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:2:1-112:12
+		INJECTED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:2:1-112:12
+		INJECTED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:2:11-69
+uses-feature#android.hardware.camera
+ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:5:5-7:36
+	android:required
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:7:9-33
+	android:name
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:6:9-47
+uses-feature#android.hardware.camera.autofocus
+ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:8:5-10:36
+	android:required
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:10:9-33
+	android:name
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:9:9-57
+uses-feature#android.hardware.camera.flash
+ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:11:5-13:36
+	android:required
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:13:9-33
+	android:name
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:12:9-53
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:15:5-79
+	android:name
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:15:22-76
+uses-permission#android.permission.INTERNET
+ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:16:5-67
+	android:name
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:16:22-64
+uses-permission#android.permission.CAMERA
+ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:17:5-65
+	android:name
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:17:22-62
+uses-permission#ANDROID.PERMISSION.READ_EXTERNAL_STORAGE
+ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:18:5-80
+	android:name
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:18:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:19:5-81
+	android:name
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:19:22-78
+application
+ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:21:5-110:19
+MERGED from [com.google.android.material:material:1.6.1] /Users/aswin/.gradle/caches/transforms-3/16864338184caa82c05d1f43da5d9fee/transformed/material-1.6.1/AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.material:material:1.6.1] /Users/aswin/.gradle/caches/transforms-3/16864338184caa82c05d1f43da5d9fee/transformed/material-1.6.1/AndroidManifest.xml:24:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/aswin/.gradle/caches/transforms-3/ddb14abb4386d3ae3df3b67f617ddff3/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/aswin/.gradle/caches/transforms-3/ddb14abb4386d3ae3df3b67f617ddff3/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [com.airbnb.android:lottie:4.2.0] /Users/aswin/.gradle/caches/transforms-3/d09ab690f9e8e528ef3a18a0cbb90f7c/transformed/lottie-4.2.0/AndroidManifest.xml:9:5-20
+MERGED from [com.airbnb.android:lottie:4.2.0] /Users/aswin/.gradle/caches/transforms-3/d09ab690f9e8e528ef3a18a0cbb90f7c/transformed/lottie-4.2.0/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:glide:4.12.0] /Users/aswin/.gradle/caches/transforms-3/1d74cc3df50ef3092c51fd512524856c/transformed/glide-4.12.0/AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.12.0] /Users/aswin/.gradle/caches/transforms-3/1d74cc3df50ef3092c51fd512524856c/transformed/glide-4.12.0/AndroidManifest.xml:10:5-20
+MERGED from [androidx.room:room-runtime:2.4.3] /Users/aswin/.gradle/caches/transforms-3/2e63dbfd64ae5816ec1fb5a592200ffc/transformed/room-runtime-2.4.3/AndroidManifest.xml:24:5-29:19
+MERGED from [androidx.room:room-runtime:2.4.3] /Users/aswin/.gradle/caches/transforms-3/2e63dbfd64ae5816ec1fb5a592200ffc/transformed/room-runtime-2.4.3/AndroidManifest.xml:24:5-29:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/aswin/.gradle/caches/transforms-3/588b8c7b4ea336c44fac1bf3358693f9/transformed/emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/aswin/.gradle/caches/transforms-3/588b8c7b4ea336c44fac1bf3358693f9/transformed/emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.window:window:1.0.0] /Users/aswin/.gradle/caches/transforms-3/4c16547a1e97fe938e3e4b0025875bb8/transformed/window-1.0.0/AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.window:window:1.0.0] /Users/aswin/.gradle/caches/transforms-3/4c16547a1e97fe938e3e4b0025875bb8/transformed/window-1.0.0/AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.core:core:1.8.0] /Users/aswin/.gradle/caches/transforms-3/577ee95d2de04b4758c03245d25b9bbc/transformed/core-1.8.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.8.0] /Users/aswin/.gradle/caches/transforms-3/577ee95d2de04b4758c03245d25b9bbc/transformed/core-1.8.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/aswin/.gradle/caches/transforms-3/86e7db7afee59af47e2b640b7bcd4e04/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/aswin/.gradle/caches/transforms-3/86e7db7afee59af47e2b640b7bcd4e04/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:25:5-35:19
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /Users/aswin/.gradle/caches/transforms-3/78f705684166cca906ca206e681430ee/transformed/gifdecoder-4.12.0/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /Users/aswin/.gradle/caches/transforms-3/78f705684166cca906ca206e681430ee/transformed/gifdecoder-4.12.0/AndroidManifest.xml:9:5-20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/aswin/.gradle/caches/transforms-3/075df16bee0ada4eafc389d85129b003/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/aswin/.gradle/caches/transforms-3/075df16bee0ada4eafc389d85129b003/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/aswin/.gradle/caches/transforms-3/cb49858375801c767f7361595b682e20/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/aswin/.gradle/caches/transforms-3/cb49858375801c767f7361595b682e20/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [com.squareup.picasso:picasso:2.71828] /Users/aswin/.gradle/caches/transforms-3/7382e7f444b584172664e3f7e0ea6fda/transformed/picasso-2.71828/AndroidManifest.xml:7:5-12:19
+MERGED from [com.squareup.picasso:picasso:2.71828] /Users/aswin/.gradle/caches/transforms-3/7382e7f444b584172664e3f7e0ea6fda/transformed/picasso-2.71828/AndroidManifest.xml:7:5-12:19
+	android:requestLegacyExternalStorage
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:27:9-52
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.8.0] /Users/aswin/.gradle/caches/transforms-3/577ee95d2de04b4758c03245d25b9bbc/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:29:9-35
+	android:label
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:26:9-41
+	android:fullBackupContent
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:24:9-54
+	android:roundIcon
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:28:9-54
+	tools:targetApi
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:32:9-29
+	android:icon
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:25:9-43
+	android:allowBackup
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:22:9-35
+	android:theme
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:30:9-48
+	android:dataExtractionRules
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:23:9-65
+	android:usesCleartextTraffic
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:31:9-44
+activity#com.example.pos_android.view.admin.IncomeReportActivity
+ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:33:9-39:20
+	android:exported
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:34:13-60
+meta-data#android.app.lib_name
+ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:36:13-38:35
+	android:value
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:38:17-33
+	android:name
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:37:17-52
+activity#com.example.pos_android.view.admin.BestSellingReportActivity
+ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:40:9-46:20
+	android:exported
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:42:13-37
+	android:name
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:41:13-65
+activity#com.example.pos_android.view.admin.ReportActivity
+ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:47:9-53:20
+	android:exported
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:49:13-37
+	android:name
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:48:13-54
+activity#com.example.pos_android.view.admin.SalesReportActivity
+ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:54:9-60:20
+	android:exported
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:56:13-37
+	android:name
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:55:13-59
+activity#com.example.pos_android.view.admin.AddFoodActivity
+ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:61:9-67:20
+	android:exported
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:63:13-37
+	android:name
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:62:13-55
+activity#com.example.pos_android.view.admin.AdminHomeActivity
+ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:68:9-74:20
+	android:exported
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:70:13-37
+	android:name
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:69:13-57
+activity#com.example.pos_android.view.user.UserHomeActivity
+ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:75:9-81:20
+	android:exported
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:77:13-37
+	android:name
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:76:13-55
+activity#com.example.pos_android.view.register.RegisterActivity
+ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:82:9-88:20
+	android:exported
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:84:13-37
+	android:name
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:83:13-59
+activity#com.example.pos_android.view.login.LoginActivity
+ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:89:9-95:20
+	android:exported
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:91:13-37
+	android:name
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:90:13-53
+activity#com.example.pos_android.view.SplashActivity
+ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:96:9-109:20
+	android:exported
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:98:13-36
+	android:theme
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:99:13-47
+	android:name
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:97:13-48
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:100:13-104:29
+action#android.intent.action.MAIN
+ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:101:17-69
+	android:name
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:101:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:103:17-77
+	android:name
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml:103:27-74
+uses-sdk
+INJECTED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml
+MERGED from [androidx.databinding:viewbinding:7.3.0] /Users/aswin/.gradle/caches/transforms-3/cd8e2a3f36ba1561b1c742db6b7563c3/transformed/viewbinding-7.3.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.databinding:viewbinding:7.3.0] /Users/aswin/.gradle/caches/transforms-3/cd8e2a3f36ba1561b1c742db6b7563c3/transformed/viewbinding-7.3.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.navigation:navigation-ui:2.5.3] /Users/aswin/.gradle/caches/transforms-3/124689b07c4708038c463a026d509968/transformed/navigation-ui-2.5.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui:2.5.3] /Users/aswin/.gradle/caches/transforms-3/124689b07c4708038c463a026d509968/transformed/navigation-ui-2.5.3/AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.denzcoskun:ImageSlideshow:0.1.0] /Users/aswin/.gradle/caches/transforms-3/21755ddbf8d567e8cbd4a14103e9f33a/transformed/ImageSlideshow-0.1.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.denzcoskun:ImageSlideshow:0.1.0] /Users/aswin/.gradle/caches/transforms-3/21755ddbf8d567e8cbd4a14103e9f33a/transformed/ImageSlideshow-0.1.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.material:material:1.6.1] /Users/aswin/.gradle/caches/transforms-3/16864338184caa82c05d1f43da5d9fee/transformed/material-1.6.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.6.1] /Users/aswin/.gradle/caches/transforms-3/16864338184caa82c05d1f43da5d9fee/transformed/material-1.6.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/aswin/.gradle/caches/transforms-3/ddb14abb4386d3ae3df3b67f617ddff3/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/aswin/.gradle/caches/transforms-3/ddb14abb4386d3ae3df3b67f617ddff3/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [com.airbnb.android:lottie:4.2.0] /Users/aswin/.gradle/caches/transforms-3/d09ab690f9e8e528ef3a18a0cbb90f7c/transformed/lottie-4.2.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.airbnb.android:lottie:4.2.0] /Users/aswin/.gradle/caches/transforms-3/d09ab690f9e8e528ef3a18a0cbb90f7c/transformed/lottie-4.2.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat-resources:1.5.1] /Users/aswin/.gradle/caches/transforms-3/94b8ca5aa055c79e73080724c8918cf3/transformed/appcompat-resources-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.5.1] /Users/aswin/.gradle/caches/transforms-3/94b8ca5aa055c79e73080724c8918cf3/transformed/appcompat-resources-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.5.1] /Users/aswin/.gradle/caches/transforms-3/23adf2337af4c046638cc7ee157983a3/transformed/appcompat-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.5.1] /Users/aswin/.gradle/caches/transforms-3/23adf2337af4c046638cc7ee157983a3/transformed/appcompat-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /Users/aswin/.gradle/caches/transforms-3/022930963cfb34d7cc1c5161f492f76e/transformed/rxandroid-2.1.1/AndroidManifest.xml:18:5-43
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /Users/aswin/.gradle/caches/transforms-3/022930963cfb34d7cc1c5161f492f76e/transformed/rxandroid-2.1.1/AndroidManifest.xml:18:5-43
+MERGED from [com.github.ybq:Android-SpinKit:1.4.0] /Users/aswin/.gradle/caches/transforms-3/97577b03d961c846663885e6c559932a/transformed/Android-SpinKit-1.4.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.ybq:Android-SpinKit:1.4.0] /Users/aswin/.gradle/caches/transforms-3/97577b03d961c846663885e6c559932a/transformed/Android-SpinKit-1.4.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:glide:4.12.0] /Users/aswin/.gradle/caches/transforms-3/1d74cc3df50ef3092c51fd512524856c/transformed/glide-4.12.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.12.0] /Users/aswin/.gradle/caches/transforms-3/1d74cc3df50ef3092c51fd512524856c/transformed/glide-4.12.0/AndroidManifest.xml:6:5-8:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] /Users/aswin/.gradle/caches/transforms-3/6c836bad8c153886611dc0e84f4e4865/transformed/swiperefreshlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] /Users/aswin/.gradle/caches/transforms-3/6c836bad8c153886611dc0e84f4e4865/transformed/swiperefreshlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.facebook.shimmer:shimmer:0.5.0] /Users/aswin/.gradle/caches/transforms-3/c2ee1893c38bbcbce3b6fcf19936ac0b/transformed/shimmer-0.5.0/AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.shimmer:shimmer:0.5.0] /Users/aswin/.gradle/caches/transforms-3/c2ee1893c38bbcbce3b6fcf19936ac0b/transformed/shimmer-0.5.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-fragment:2.5.3] /Users/aswin/.gradle/caches/transforms-3/50187562e55134b2bd3bdcb67472205f/transformed/navigation-fragment-2.5.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment:2.5.3] /Users/aswin/.gradle/caches/transforms-3/50187562e55134b2bd3bdcb67472205f/transformed/navigation-fragment-2.5.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.4.3] /Users/aswin/.gradle/caches/transforms-3/2e63dbfd64ae5816ec1fb5a592200ffc/transformed/room-runtime-2.4.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.4.3] /Users/aswin/.gradle/caches/transforms-3/2e63dbfd64ae5816ec1fb5a592200ffc/transformed/room-runtime-2.4.3/AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] /Users/aswin/.gradle/caches/transforms-3/b616f360066a45dbcffd0b4e7a936feb/transformed/MPAndroidChart-v3.1.0/AndroidManifest.xml:16:5-18:41
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] /Users/aswin/.gradle/caches/transforms-3/b616f360066a45dbcffd0b4e7a936feb/transformed/MPAndroidChart-v3.1.0/AndroidManifest.xml:16:5-18:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/aswin/.gradle/caches/transforms-3/09764020d7f7eeb11c7bc90a48072d67/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/aswin/.gradle/caches/transforms-3/09764020d7f7eeb11c7bc90a48072d67/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.5.4] /Users/aswin/.gradle/caches/transforms-3/5751635a295112cef408dd0eafc0180d/transformed/fragment-ktx-1.5.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.5.4] /Users/aswin/.gradle/caches/transforms-3/5751635a295112cef408dd0eafc0180d/transformed/fragment-ktx-1.5.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.4] /Users/aswin/.gradle/caches/transforms-3/2dd7ee40b030fdfb25a5b93e4cd65177/transformed/fragment-1.5.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.4] /Users/aswin/.gradle/caches/transforms-3/2dd7ee40b030fdfb25a5b93e4cd65177/transformed/fragment-1.5.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.5.3] /Users/aswin/.gradle/caches/transforms-3/9d5853992d38130b7c184c625f15395d/transformed/navigation-runtime-2.5.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.5.3] /Users/aswin/.gradle/caches/transforms-3/9d5853992d38130b7c184c625f15395d/transformed/navigation-runtime-2.5.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.5.1] /Users/aswin/.gradle/caches/transforms-3/13fd147e44545b702f53f500cd6d9c3c/transformed/activity-ktx-1.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.5.1] /Users/aswin/.gradle/caches/transforms-3/13fd147e44545b702f53f500cd6d9c3c/transformed/activity-ktx-1.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.5.1] /Users/aswin/.gradle/caches/transforms-3/0ba242e2f6a9ab8798b7c74f3648d14d/transformed/activity-1.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.5.1] /Users/aswin/.gradle/caches/transforms-3/0ba242e2f6a9ab8798b7c74f3648d14d/transformed/activity-1.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.5.3] /Users/aswin/.gradle/caches/transforms-3/536674a31fdea511342f20313aa2c423/transformed/navigation-common-2.5.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.5.3] /Users/aswin/.gradle/caches/transforms-3/536674a31fdea511342f20313aa2c423/transformed/navigation-common-2.5.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1] /Users/aswin/.gradle/caches/transforms-3/61f69bbb7fb8bf18c452ee870154a000/transformed/lifecycle-viewmodel-ktx-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1] /Users/aswin/.gradle/caches/transforms-3/61f69bbb7fb8bf18c452ee870154a000/transformed/lifecycle-viewmodel-ktx-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/aswin/.gradle/caches/transforms-3/1851ebfbfd22294b9ae18ca0a8bb23dc/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/aswin/.gradle/caches/transforms-3/1851ebfbfd22294b9ae18ca0a8bb23dc/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/aswin/.gradle/caches/transforms-3/3cc78913a392a3680a28da135d899a3d/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/aswin/.gradle/caches/transforms-3/3cc78913a392a3680a28da135d899a3d/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/aswin/.gradle/caches/transforms-3/032833407e49bad076f75995618d70c0/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/aswin/.gradle/caches/transforms-3/032833407e49bad076f75995618d70c0/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] /Users/aswin/.gradle/caches/transforms-3/d14ecc2398b7d485f4ffa523a9bfac31/transformed/lifecycle-viewmodel-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] /Users/aswin/.gradle/caches/transforms-3/d14ecc2398b7d485f4ffa523a9bfac31/transformed/lifecycle-viewmodel-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /Users/aswin/.gradle/caches/transforms-3/52461b8cc3837b182e723da84f364813/transformed/lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /Users/aswin/.gradle/caches/transforms-3/52461b8cc3837b182e723da84f364813/transformed/lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-ktx:1.8.0] /Users/aswin/.gradle/caches/transforms-3/c61018f77c05ae7248987e651736de33/transformed/core-ktx-1.8.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.8.0] /Users/aswin/.gradle/caches/transforms-3/c61018f77c05ae7248987e651736de33/transformed/core-ktx-1.8.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/aswin/.gradle/caches/transforms-3/d13912869eb14f6543203770d88c895e/transformed/emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/aswin/.gradle/caches/transforms-3/d13912869eb14f6543203770d88c895e/transformed/emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/aswin/.gradle/caches/transforms-3/588b8c7b4ea336c44fac1bf3358693f9/transformed/emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/aswin/.gradle/caches/transforms-3/588b8c7b4ea336c44fac1bf3358693f9/transformed/emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/aswin/.gradle/caches/transforms-3/a3219f10cb5b01959274634875948784/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/aswin/.gradle/caches/transforms-3/a3219f10cb5b01959274634875948784/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/aswin/.gradle/caches/transforms-3/63a02c9ae954195478d9efa12d519cde/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/aswin/.gradle/caches/transforms-3/63a02c9ae954195478d9efa12d519cde/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/aswin/.gradle/caches/transforms-3/c66c2718e7bd78b2c30bdf06c7aa4c50/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/aswin/.gradle/caches/transforms-3/c66c2718e7bd78b2c30bdf06c7aa4c50/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/aswin/.gradle/caches/transforms-3/14d83609f2f52a0607f944fbbf2791f6/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/aswin/.gradle/caches/transforms-3/14d83609f2f52a0607f944fbbf2791f6/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /Users/aswin/.gradle/caches/transforms-3/e0026981b235b8ef7c4b02076907311b/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /Users/aswin/.gradle/caches/transforms-3/e0026981b235b8ef7c4b02076907311b/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/aswin/.gradle/caches/transforms-3/b4165d5efbf0f24b817561f0ecf9fb7d/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/aswin/.gradle/caches/transforms-3/b4165d5efbf0f24b817561f0ecf9fb7d/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/aswin/.gradle/caches/transforms-3/990167086529552f49a9ecee8405d440/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/aswin/.gradle/caches/transforms-3/990167086529552f49a9ecee8405d440/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.1.0] /Users/aswin/.gradle/caches/transforms-3/5a9cb1129f5ab8671dd68e454e566667/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /Users/aswin/.gradle/caches/transforms-3/5a9cb1129f5ab8671dd68e454e566667/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.4.1] /Users/aswin/.gradle/caches/transforms-3/e8edc96fe165f0fd0b5bbc992eaafe2d/transformed/transition-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.4.1] /Users/aswin/.gradle/caches/transforms-3/e8edc96fe165f0fd0b5bbc992eaafe2d/transformed/transition-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0] /Users/aswin/.gradle/caches/transforms-3/4c16547a1e97fe938e3e4b0025875bb8/transformed/window-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0] /Users/aswin/.gradle/caches/transforms-3/4c16547a1e97fe938e3e4b0025875bb8/transformed/window-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.8.0] /Users/aswin/.gradle/caches/transforms-3/577ee95d2de04b4758c03245d25b9bbc/transformed/core-1.8.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.8.0] /Users/aswin/.gradle/caches/transforms-3/577ee95d2de04b4758c03245d25b9bbc/transformed/core-1.8.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/aswin/.gradle/caches/transforms-3/b513694a3b36edcda03fba88289350bd/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/aswin/.gradle/caches/transforms-3/b513694a3b36edcda03fba88289350bd/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/aswin/.gradle/caches/transforms-3/86e7db7afee59af47e2b640b7bcd4e04/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/aswin/.gradle/caches/transforms-3/86e7db7afee59af47e2b640b7bcd4e04/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.5.1] /Users/aswin/.gradle/caches/transforms-3/3e57eedccbf1b1b27a419bc5cccf06ec/transformed/lifecycle-runtime-ktx-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.5.1] /Users/aswin/.gradle/caches/transforms-3/3e57eedccbf1b1b27a419bc5cccf06ec/transformed/lifecycle-runtime-ktx-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /Users/aswin/.gradle/caches/transforms-3/446f70a45d8c88e1fbacba1cf71d6e35/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /Users/aswin/.gradle/caches/transforms-3/446f70a45d8c88e1fbacba1cf71d6e35/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.0] /Users/aswin/.gradle/caches/transforms-3/84d485184a7ad9c00623a618739d88a0/transformed/savedstate-ktx-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.0] /Users/aswin/.gradle/caches/transforms-3/84d485184a7ad9c00623a618739d88a0/transformed/savedstate-ktx-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/aswin/.gradle/caches/transforms-3/7e85858eba238ad12d6ad7c7aaf96aeb/transformed/savedstate-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/aswin/.gradle/caches/transforms-3/7e85858eba238ad12d6ad7c7aaf96aeb/transformed/savedstate-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/aswin/.gradle/caches/transforms-3/9c60a0994e3baeed39e2b4a34ae4858d/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/aswin/.gradle/caches/transforms-3/9c60a0994e3baeed39e2b4a34ae4858d/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /Users/aswin/.gradle/caches/transforms-3/78f705684166cca906ca206e681430ee/transformed/gifdecoder-4.12.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /Users/aswin/.gradle/caches/transforms-3/78f705684166cca906ca206e681430ee/transformed/gifdecoder-4.12.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] /Users/aswin/.gradle/caches/transforms-3/7cc27fb07218bf1b11e0ec4fc6524ba8/transformed/exifinterface-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] /Users/aswin/.gradle/caches/transforms-3/7cc27fb07218bf1b11e0ec4fc6524ba8/transformed/exifinterface-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/aswin/.gradle/caches/transforms-3/d8ed16ececfc58d0c911f83b41655920/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/aswin/.gradle/caches/transforms-3/d8ed16ececfc58d0c911f83b41655920/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.2.0] /Users/aswin/.gradle/caches/transforms-3/a780d03ffd1cfb5f8132f971142f712c/transformed/sqlite-framework-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite-framework:2.2.0] /Users/aswin/.gradle/caches/transforms-3/a780d03ffd1cfb5f8132f971142f712c/transformed/sqlite-framework-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite:2.2.0] /Users/aswin/.gradle/caches/transforms-3/2b9c455b3131541a7568fbfddece0e07/transformed/sqlite-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite:2.2.0] /Users/aswin/.gradle/caches/transforms-3/2b9c455b3131541a7568fbfddece0e07/transformed/sqlite-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/aswin/.gradle/caches/transforms-3/075df16bee0ada4eafc389d85129b003/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/aswin/.gradle/caches/transforms-3/075df16bee0ada4eafc389d85129b003/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/aswin/.gradle/caches/transforms-3/c5ff0deb6b3e9e03a3431b53babda136/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/aswin/.gradle/caches/transforms-3/c5ff0deb6b3e9e03a3431b53babda136/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/aswin/.gradle/caches/transforms-3/cb49858375801c767f7361595b682e20/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/aswin/.gradle/caches/transforms-3/cb49858375801c767f7361595b682e20/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.5.1] /Users/aswin/.gradle/caches/transforms-3/426288fed8f941471807dccf3e03b3af/transformed/lifecycle-livedata-core-ktx-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.5.1] /Users/aswin/.gradle/caches/transforms-3/426288fed8f941471807dccf3e03b3af/transformed/lifecycle-livedata-core-ktx-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/aswin/.gradle/caches/transforms-3/91b8a0dd737e5865e1c066a99d72a6f8/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/aswin/.gradle/caches/transforms-3/91b8a0dd737e5865e1c066a99d72a6f8/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] /Users/aswin/.gradle/caches/transforms-3/0244f5b3a82769ca1dc496f27a20ad55/transformed/lifecycle-livedata-core-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] /Users/aswin/.gradle/caches/transforms-3/0244f5b3a82769ca1dc496f27a20ad55/transformed/lifecycle-livedata-core-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/aswin/.gradle/caches/transforms-3/d72c02b6f72ec8b4652d81642ae4aff7/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/aswin/.gradle/caches/transforms-3/d72c02b6f72ec8b4652d81642ae4aff7/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/aswin/.gradle/caches/transforms-3/6c0b7655c7c86952a16fe600e6a3e9b7/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/aswin/.gradle/caches/transforms-3/6c0b7655c7c86952a16fe600e6a3e9b7/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/aswin/.gradle/caches/transforms-3/f71e35c7d9255389a655b7bfecf531ab/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/aswin/.gradle/caches/transforms-3/f71e35c7d9255389a655b7bfecf531ab/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/aswin/.gradle/caches/transforms-3/a95b4d7ae02c8ac299b897621f41fc51/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/aswin/.gradle/caches/transforms-3/a95b4d7ae02c8ac299b897621f41fc51/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.squareup.picasso:picasso:2.71828] /Users/aswin/.gradle/caches/transforms-3/7382e7f444b584172664e3f7e0ea6fda/transformed/picasso-2.71828/AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.picasso:picasso:2.71828] /Users/aswin/.gradle/caches/transforms-3/7382e7f444b584172664e3f7e0ea6fda/transformed/picasso-2.71828/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/aswin/.gradle/caches/transforms-3/8e94ddf4200431c5a0228caf9e1afa49/transformed/annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/aswin/.gradle/caches/transforms-3/8e94ddf4200431c5a0228caf9e1afa49/transformed/annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support:exifinterface:27.1.0] /Users/aswin/.gradle/caches/transforms-3/1e4fed798473b00fb542ed3955293230/transformed/exifinterface-27.1.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:exifinterface:27.1.0] /Users/aswin/.gradle/caches/transforms-3/1e4fed798473b00fb542ed3955293230/transformed/exifinterface-27.1.0/AndroidManifest.xml:20:5-44
+INJECTED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/aswin/out/POS-Android/app/src/main/AndroidManifest.xml
+service#androidx.room.MultiInstanceInvalidationService
+ADDED from [androidx.room:room-runtime:2.4.3] /Users/aswin/.gradle/caches/transforms-3/2e63dbfd64ae5816ec1fb5a592200ffc/transformed/room-runtime-2.4.3/AndroidManifest.xml:25:9-28:40
+	android:exported
+		ADDED from [androidx.room:room-runtime:2.4.3] /Users/aswin/.gradle/caches/transforms-3/2e63dbfd64ae5816ec1fb5a592200ffc/transformed/room-runtime-2.4.3/AndroidManifest.xml:28:13-37
+	android:directBootAware
+		ADDED from [androidx.room:room-runtime:2.4.3] /Users/aswin/.gradle/caches/transforms-3/2e63dbfd64ae5816ec1fb5a592200ffc/transformed/room-runtime-2.4.3/AndroidManifest.xml:27:13-43
+	android:name
+		ADDED from [androidx.room:room-runtime:2.4.3] /Users/aswin/.gradle/caches/transforms-3/2e63dbfd64ae5816ec1fb5a592200ffc/transformed/room-runtime-2.4.3/AndroidManifest.xml:26:13-74
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/aswin/.gradle/caches/transforms-3/588b8c7b4ea336c44fac1bf3358693f9/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/aswin/.gradle/caches/transforms-3/86e7db7afee59af47e2b640b7bcd4e04/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/aswin/.gradle/caches/transforms-3/86e7db7afee59af47e2b640b7bcd4e04/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/aswin/.gradle/caches/transforms-3/075df16bee0ada4eafc389d85129b003/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/aswin/.gradle/caches/transforms-3/075df16bee0ada4eafc389d85129b003/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/aswin/.gradle/caches/transforms-3/588b8c7b4ea336c44fac1bf3358693f9/transformed/emoji2-1.2.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/aswin/.gradle/caches/transforms-3/588b8c7b4ea336c44fac1bf3358693f9/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/aswin/.gradle/caches/transforms-3/588b8c7b4ea336c44fac1bf3358693f9/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/aswin/.gradle/caches/transforms-3/588b8c7b4ea336c44fac1bf3358693f9/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/aswin/.gradle/caches/transforms-3/588b8c7b4ea336c44fac1bf3358693f9/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/aswin/.gradle/caches/transforms-3/588b8c7b4ea336c44fac1bf3358693f9/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/aswin/.gradle/caches/transforms-3/588b8c7b4ea336c44fac1bf3358693f9/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+uses-library#androidx.window.extensions
+ADDED from [androidx.window:window:1.0.0] /Users/aswin/.gradle/caches/transforms-3/4c16547a1e97fe938e3e4b0025875bb8/transformed/window-1.0.0/AndroidManifest.xml:25:9-27:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0] /Users/aswin/.gradle/caches/transforms-3/4c16547a1e97fe938e3e4b0025875bb8/transformed/window-1.0.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0] /Users/aswin/.gradle/caches/transforms-3/4c16547a1e97fe938e3e4b0025875bb8/transformed/window-1.0.0/AndroidManifest.xml:26:13-54
+uses-library#androidx.window.sidecar
+ADDED from [androidx.window:window:1.0.0] /Users/aswin/.gradle/caches/transforms-3/4c16547a1e97fe938e3e4b0025875bb8/transformed/window-1.0.0/AndroidManifest.xml:28:9-30:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0] /Users/aswin/.gradle/caches/transforms-3/4c16547a1e97fe938e3e4b0025875bb8/transformed/window-1.0.0/AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0] /Users/aswin/.gradle/caches/transforms-3/4c16547a1e97fe938e3e4b0025875bb8/transformed/window-1.0.0/AndroidManifest.xml:29:13-51
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/aswin/.gradle/caches/transforms-3/86e7db7afee59af47e2b640b7bcd4e04/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/aswin/.gradle/caches/transforms-3/86e7db7afee59af47e2b640b7bcd4e04/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/aswin/.gradle/caches/transforms-3/86e7db7afee59af47e2b640b7bcd4e04/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+provider#com.squareup.picasso.PicassoProvider
+ADDED from [com.squareup.picasso:picasso:2.71828] /Users/aswin/.gradle/caches/transforms-3/7382e7f444b584172664e3f7e0ea6fda/transformed/picasso-2.71828/AndroidManifest.xml:8:9-11:40
+	android:authorities
+		ADDED from [com.squareup.picasso:picasso:2.71828] /Users/aswin/.gradle/caches/transforms-3/7382e7f444b584172664e3f7e0ea6fda/transformed/picasso-2.71828/AndroidManifest.xml:10:13-72
+	android:exported
+		ADDED from [com.squareup.picasso:picasso:2.71828] /Users/aswin/.gradle/caches/transforms-3/7382e7f444b584172664e3f7e0ea6fda/transformed/picasso-2.71828/AndroidManifest.xml:11:13-37
+	android:name
+		ADDED from [com.squareup.picasso:picasso:2.71828] /Users/aswin/.gradle/caches/transforms-3/7382e7f444b584172664e3f7e0ea6fda/transformed/picasso-2.71828/AndroidManifest.xml:9:13-64

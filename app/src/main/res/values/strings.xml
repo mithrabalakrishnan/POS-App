@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">POS-Android</string>
+    <string name="no_network">No network connection. Please try again later.</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="terms_and_conditions">By tapping sign up you accept our terms and conditions</string>
+    <string name="unauthorized">HTTP 401 </string>
+    <string name="label_to_pay">Grand Total</string>
+    <string name="no_items">Sorry, No Foods available</string>
+    <string name="sales_report">SALES REPORT</string>
+    <string name="income_report">TOTAL INCOME REPORT</string>
+
+    <id name="viewBinding" />
+</resources>

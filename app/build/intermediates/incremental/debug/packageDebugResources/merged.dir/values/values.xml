@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="bluegray_800">#243b55</color>
+    <color name="gray_900">#141e30</color>
+    <color name="ic_launcher_background">#EAB600</color>
+    <color name="img_shade_color">#C1B8B8</color>
+    <color name="light_blue_900">#136a8a</color>
+    <color name="light_text">#86868e</color>
+    <color name="orange_500">#ffa726</color>
+    <color name="orange_700">#c77800</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="red_500">#AA2538</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFFFF</color>
+    <id name="viewBinding"/>
+    <string name="app_name">POS-Android</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="income_report">TOTAL INCOME REPORT</string>
+    <string name="label_to_pay">Grand Total</string>
+    <string name="no_items">Sorry, No Foods available</string>
+    <string name="no_network">No network connection. Please try again later.</string>
+    <string name="sales_report">SALES REPORT</string>
+    <string name="terms_and_conditions">By tapping sign up you accept our terms and conditions</string>
+    <string name="unauthorized">HTTP 401 </string>
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+    <style name="Theme.POSAndroid" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        
+        <item name="colorPrimary">@color/orange_500</item>
+        <item name="colorPrimaryVariant">@color/orange_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondaryVariant">@color/white</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="fontFamily">@font/source_sans_pro</item>
+        
+    </style>
+    <style name="normalMaterialTextInputTheme" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="hintTextColor">@color/black</item>
+        <item name="boxStrokeColor">@color/black</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">1dp</item>
+    </style>
+    <style name="roundedMaterialTextInputTheme" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="hintTextColor">@color/black</item>
+        <item name="boxStrokeColor">@color/black</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">1dp</item>
+        <item name="boxCornerRadiusBottomEnd">25dp</item>
+        <item name="boxCornerRadiusBottomStart">25dp</item>
+        <item name="boxCornerRadiusTopEnd">25dp</item>
+        <item name="boxCornerRadiusTopStart">25dp</item>
+    </style>
+</resources>

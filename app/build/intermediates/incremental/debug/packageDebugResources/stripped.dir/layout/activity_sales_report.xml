@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.admin.SalesReportActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/icon_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="4dp"
+            android:src="@drawable/ic_arrow_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/sales_report"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/bg_rounded_stroke"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingStart="15dp">
+
+        <ImageView
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+
+            android:src="@drawable/ic_baseline_filter_list_24" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="149dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp" />
+    </LinearLayout>
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/bar_chart"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="10dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/rectangle_gradient_s_gray_900_e_bluegray_800_radius_15"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp"
+
+        >
+
+        <TextView
+            android:id="@+id/txtTotalSale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="Total Sale : "
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="1000 €"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/rectangle_gradient_s_light_blue_900_e_teal_700_radius_15"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp"
+
+        >
+
+        <TextView
+            android:id="@+id/txtTotal_people"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:text="Number of Customers :"
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtPeople"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="10dp"
+            android:ellipsize="end"
+            android:gravity="end"
+            android:singleLine="true"
+            android:text="250 "
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

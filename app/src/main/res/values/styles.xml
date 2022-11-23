@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+
+    <style name="roundedMaterialTextInputTheme" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="hintTextColor">@color/black</item>
+        <item name="boxStrokeColor">@color/black</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">1dp</item>
+        <item name="boxCornerRadiusBottomEnd">25dp</item>
+        <item name="boxCornerRadiusBottomStart">25dp</item>
+        <item name="boxCornerRadiusTopEnd">25dp</item>
+        <item name="boxCornerRadiusTopStart">25dp</item>
+    </style>
+
+    <style name="normalMaterialTextInputTheme" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="hintTextColor">@color/black</item>
+        <item name="boxStrokeColor">@color/black</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">1dp</item>
+    </style>
+
+
+</resources>

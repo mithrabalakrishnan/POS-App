@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.admin.AdminHomeActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="30dp"
+                android:gravity="start|center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/app_main" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="Dashboard"
+                    android:textColor="@color/orange_700"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout12"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/add_food"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_best"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="48dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/item_bg"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0">
+
+                        <TextView
+                            android:id="@+id/txt_itemname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="10dp"
+                            android:gravity="center"
+                            android:text="Add Food"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/textView9"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="32dp"
+                            android:gravity="center"
+                            android:text="To Add Food Click here"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <ImageView
+                        android:id="@+id/ivProduct"
+                        android:layout_width="0dp"
+                        android:layout_height="130dp"
+                        android:layout_marginEnd="30dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/fast_food"
+                        app:layout_constraintDimensionRatio="w,1:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="contentDescription" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/add_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:visibility="gone">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="48dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/item_bg"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="20dp"
+                            android:gravity="center"
+                            android:text="Add Table"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/textView19"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textView19"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="32dp"
+                            android:gravity="center"
+                            android:text="To Add Table Click here"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="130dp"
+                        android:layout_marginStart="30dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/dinner"
+                        app:layout_constraintDimensionRatio="w,1:1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="contentDescription" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/btn_report"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="48dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/item_bg"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="10dp"
+                            android:gravity="center"
+                            android:text="Report"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/textView29"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textView29"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="32dp"
+                            android:gravity="center"
+                            android:text="To view reports"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="130dp"
+                        android:layout_marginEnd="30dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/report"
+                        app:layout_constraintDimensionRatio="w,1:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="contentDescription" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/add_item1"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="48dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/item_bg"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="20dp"
+                            android:gravity="center"
+                            android:text="Profile"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/txt_pro"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <TextView
+                            android:id="@+id/txt_pro"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="32dp"
+                            android:gravity="center"
+                            android:text="Click to View Your Profile"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="130dp"
+                        android:layout_marginStart="30dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/man"
+                        app:layout_constraintDimensionRatio="w,1:1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="contentDescription" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:elevation="3dp"
+                    android:text="Logout"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
