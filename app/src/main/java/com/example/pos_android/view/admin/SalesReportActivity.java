@@ -10,7 +10,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import com.example.pos_android.contracts.SalesReportContract;
+import com.example.pos_android.data.model.SalesReportResponse;
 import com.example.pos_android.databinding.ActivitySalesReportBinding;
+import com.example.pos_android.view.BaseActivity;
+import com.example.pos_android.view.login.LoginActivity;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
@@ -25,8 +29,8 @@ import com.github.mikephil.charting.utils.ViewPortHandler;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class SalesReportActivity extends AppCompatActivity implements
-        AdapterView.OnItemSelectedListener {
+public class SalesReportActivity extends BaseActivity implements
+        AdapterView.OnItemSelectedListener, SalesReportContract.View {
     private ActivitySalesReportBinding binding;
     String[] filterData = {"Weekly", "Monthly"};
 
@@ -171,5 +175,35 @@ public class SalesReportActivity extends AppCompatActivity implements
         binding.barChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
         binding.barChart.getXAxis().setGranularity(1f);
         binding.barChart.getXAxis().setGranularityEnabled(true);
+    }
+
+    @Override
+    public void showProgressBar() {
+        showLoadingDialog(this);
+    }
+
+    @Override
+    public void hideProgressBar() {
+        hideLoadingDialog();
+    }
+
+    @Override
+    public void showApiErrorWarning(String string) {
+        showSnackBar(binding.getRoot(), string);
+    }
+
+    @Override
+    public void showWarningMessage(String message) {
+        showToast(SalesReportActivity.this, message);
+    }
+
+    @Override
+    public void showSuccess(SalesReportResponse saveResponse) {
+
+    }
+
+    @Override
+    public void showInputWarning() {
+
     }
 }
