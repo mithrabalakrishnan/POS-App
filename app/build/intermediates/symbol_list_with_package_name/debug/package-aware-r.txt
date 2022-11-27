@@ -2820,13 +2820,13 @@ id btn_logout
 id btn_report
 id btn_sales_report
 id btn_sign_up
-id btn_submit_order
 id btn_summary
 id btn_view_order
 id buttonPanel
 id button_confirm_order
 id button_debit_pay
 id button_login
+id button_status
 id button_update
 id cache_measures
 id callMeasure
@@ -3162,6 +3162,7 @@ id row_index_key
 id rtl
 id rv_categories
 id rv_date
+id rv_order
 id rv_popular
 id rv_recommended
 id rv_table
@@ -3312,9 +3313,12 @@ id tv_guest
 id tv_guest_count
 id tv_month
 id tv_name
+id tv_order_id
+id tv_order_total
 id tv_phone
 id tv_qty
 id tv_signup
+id tv_status
 id tv_success
 id tv_table
 id tv_table_preference

@@ -98,7 +98,8 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
 
         Date date = new Date();
         String pattern = "MMM-dd";
-        String apiPattern = "dd-MM-yyyy";
+       // String apiPattern = "dd-MM-yyyy";
+        String apiPattern = "yyyy-MM-dd";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
         SimpleDateFormat apiDateFormat = new SimpleDateFormat(apiPattern);
         for (int i = 0; i <= 4; i++) {
@@ -288,7 +289,7 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
     public void showTableOrderSuccessResponse(TableReservationResponse response) {
         model = new TableInfoModel(String.valueOf(response.getData().getId()),
                 selectedTable, String.valueOf(totalCount),
-                selectedTime, dateList.get(selectedDatePosition).getDate()
+                selectedTime, apiDateList.get(selectedDatePosition).getDate()
         );
         TableReservationFragmentDirections.ActionTableReservationFragmentToFoodListFragment directions = TableReservationFragmentDirections.actionTableReservationFragmentToFoodListFragment(model);
         Navigation.findNavController(requireView()).navigate(directions);

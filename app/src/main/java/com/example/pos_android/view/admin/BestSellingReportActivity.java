@@ -44,7 +44,7 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
         } else {
 //            binding.fromLayout.setVisibility(View.VISIBLE);
 //            weeklyData();
-            presenter.getBestSellingReport("weekly");
+          //  presenter.getBestSellingReport("weekly");
         }
     }
 

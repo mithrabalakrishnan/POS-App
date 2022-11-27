@@ -7,14 +7,16 @@ public class OrderInfoModel implements Serializable {
     private List<Integer> foodId;
     private List<Integer> quantity;
     private List<Integer> totalPrice;
-    private String timeAndDate;
+    private String time;
+    private String date;
     private TableInfoModel tableInfoModel;
 
-    public OrderInfoModel(List<Integer> foodId, List<Integer> quantity, List<Integer> totalPrice, String timeAndDate, TableInfoModel tableInfoModel) {
+    public OrderInfoModel(List<Integer> foodId, List<Integer> quantity, List<Integer> totalPrice, String time,String date, TableInfoModel tableInfoModel) {
         this.foodId = foodId;
         this.quantity = quantity;
         this.totalPrice = totalPrice;
-        this.timeAndDate = timeAndDate;
+        this.time = time;
+        this.date = date;
         this.tableInfoModel = tableInfoModel;
     }
 
@@ -42,12 +44,20 @@ public class OrderInfoModel implements Serializable {
         this.totalPrice = totalPrice;
     }
 
-    public String getTimeAndDate() {
-        return timeAndDate;
+    public String getTime() {
+        return time;
     }
 
-    public void setTimeAndDate(String timeAndDate) {
-        this.timeAndDate = timeAndDate;
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public TableInfoModel getTableInfoModel() {

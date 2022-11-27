@@ -34,7 +34,7 @@ public class SalesReportPresenter implements SalesReportContract.Presenter {
         if (NetworkManager.isNetworkAvailable(mContext)) {
             mView.showProgressBar();
 
-            mApiDataManager.getSalesReport(sessionManager.getUserToken(), this, type);
+            mApiDataManager.getSalesReportMonthly(sessionManager.getUserToken(), this);
 
         } else
             mView.showWarningMessage(mContext.getString(R.string.no_network));
@@ -43,7 +43,7 @@ public class SalesReportPresenter implements SalesReportContract.Presenter {
     @Override
     public void onSalesReportApiResponse(SalesReportResponse saveResponse) {
         mView.hideProgressBar();
-        if (saveResponse.isSuccess()) {
+        if (saveResponse.isStatus()) {
             mView.showSuccess(saveResponse);
         } else
             mView.showWarningMessage(saveResponse.getMessage());

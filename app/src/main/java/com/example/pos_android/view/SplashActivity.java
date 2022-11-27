@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.pos_android.R;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.view.admin.AdminHomeActivity;
+import com.example.pos_android.view.admin.ReportActivity;
+import com.example.pos_android.view.kitchen.KitchenActivity;
 import com.example.pos_android.view.login.LoginActivity;
 import com.example.pos_android.view.user.UserHomeActivity;
 
@@ -26,7 +28,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(() -> {
 
             Intent i = new Intent(SplashActivity.this,
-                    AdminHomeActivity.class);
+                    ReportActivity.class);
             startActivity(i);
 
           /*  if (sessionManager.isLoggedIn()) {
