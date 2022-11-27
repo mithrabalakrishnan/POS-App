@@ -1,430 +1,446 @@
 [
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_iv_payment.webp.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/iv_payment.webp"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_ic_shopping_bag.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\ic_shopping_bag.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_activity_home.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_home.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_layout_add_cart_item.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\layout_add_cart_item.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_fragment_payment.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/fragment_payment.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_dm3.jpg.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\dm3.jpg"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.example.pos_android.app-debug-51:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_activity_income_report.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\activity_income_report.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_inc_dec_view.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/inc_dec_view.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_fragment_payment.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\fragment_payment.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/mipmap-mdpi_ic_launcher_foreground.png.flat",
-        "source": "com.example.pos_android.app-debug-51:/mipmap-mdpi/ic_launcher_foreground.png"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable-v24_fast_food.png.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable-v24\\fast_food.png"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable-v24_ic_info.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable-v24/ic_info.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_fragment_discount.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\fragment_discount.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_dialogue_loading_layout.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/dialogue_loading_layout.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "com.example.pos_android.app-debug-51:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_activity_home.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\activity_home.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_ic_home.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/ic_home.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable-v24_ic_info.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable-v24\\ic_info.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_activity_add_food.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_add_food.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable-v24_ic_add.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable-v24\\ic_add.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_activity_kitchen_order_detail.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_kitchen_order_detail.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_ic_person.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\ic_person.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_layout_popular_item.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/layout_popular_item.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_iv_payment.webp.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\iv_payment.webp"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.example.pos_android.app-debug-51:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_layout_select_time.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\layout_select_time.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_fragment_reservation.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/fragment_reservation.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_add_guest_layout.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\add_guest_layout.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.example.pos_android.app-debug-51:/mipmap-hdpi/ic_launcher.png"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_item_bg.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\item_bg.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/ic_launcher_background.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-debug-6:\\mipmap-mdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "com.example.pos_android.app-debug-51:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_kitchen_food_item.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\kitchen_food_item.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/anim_from_right.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/anim/from_right.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-debug-6:\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.pos_android.app-debug-51:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_activity_kitchen_order_detail.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\activity_kitchen_order_detail.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/font_source_sans_pro.ttf.flat",
-        "source": "com.example.pos_android.app-main-52:/font/source_sans_pro.ttf"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-debug-6:\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_t4.jpg.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/t4.jpg"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-debug-6:\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_btn_bg.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/btn_bg.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_ic_baseline_filter_list_24.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\ic_baseline_filter_list_24.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_activity_best_selling_report.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_best_selling_report.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable-v24_dashed_border.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable-v24\\dashed_border.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/mipmap-hdpi_ic_launcher_foreground.png.flat",
-        "source": "com.example.pos_android.app-debug-51:/mipmap-hdpi/ic_launcher_foreground.png"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\anim_to_left.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\anim\\to_left.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable-v24_ic_add.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable-v24/ic_add.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_rectangle_gradient_s_light_blue_900_e_teal_700_radius_15.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\rectangle_gradient_s_light_blue_900_e_teal_700_radius_15.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_fragment_order_success.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/fragment_order_success.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_btn_bg.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\btn_bg.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_ic_add_circle.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/ic_add_circle.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_dm1.jpg.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\dm1.jpg"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_tob_curve_bg_white.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/tob_curve_bg_white.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_ic_baseline_search_24.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\ic_baseline_search_24.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.example.pos_android.app-debug-51:/mipmap-mdpi/ic_launcher.png"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-debug-6:\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable-v24_bg_rounded_stroke.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable-v24/bg_rounded_stroke.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_wavy_bg.png.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\wavy_bg.png"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_ic_baseline_email_24.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/ic_baseline_email_24.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_activity_best_selling_report.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\activity_best_selling_report.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable-v24_add.png.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable-v24/add.png"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-debug-6:\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_kitchen_order_item.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/kitchen_order_item.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_add_guest_circle.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\add_guest_circle.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_wavy_bg.png.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/wavy_bg.png"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_edit_text_border.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\edit_text_border.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_table_layout.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/table_layout.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable-v24_ic_minus.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable-v24\\ic_minus.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "com.example.pos_android.app-pngs-45:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable-v24_add.png.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable-v24\\add.png"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.pos_android.app-debug-51:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_ic_discount.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\ic_discount.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_layout_select_time.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/layout_select_time.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_fragment_summary.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\fragment_summary.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_layout_add_cart_item.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/layout_add_cart_item.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-debug-6:\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/menu_bottom_nav_menu.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/menu/bottom_nav_menu.xml"
+        "merged": "com.example.pos_android.app-merged_res-5:/layout_activity_best_selling_report.xml.flat",
+        "source": "com.example.pos_android.app-main-7:/layout/activity_best_selling_report.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_dm1.jpg.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/dm1.jpg"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_ic_arrow_back.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\ic_arrow_back.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_add_cart_view.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/add_cart_view.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-debug-6:\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/anim_to_left.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/anim/to_left.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_ic_currency_pound.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\ic_currency_pound.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable-v24_fast_food.png.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable-v24/fast_food.png"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-debug-6:\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_ic_currency_pound.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/ic_currency_pound.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_activity_kitchen.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\activity_kitchen.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_fragment_summary.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/fragment_summary.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_fragment_order.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\fragment_order.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
-        "source": "com.example.pos_android.app-debug-51:/mipmap-xhdpi/ic_launcher_foreground.png"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable-v24_bg_rounded_stroke.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable-v24\\bg_rounded_stroke.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_layout_history.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/layout_history.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_activity_sales_report.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\activity_sales_report.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_dm4.jpeg.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/dm4.jpeg"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_table_layout.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\table_layout.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable-v24_dinner.png.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable-v24/dinner.png"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_ic_baseline_keyboard_arrow_left_24.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\ic_baseline_keyboard_arrow_left_24.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_checkout_layout.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/checkout_layout.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\anim_from_right.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\anim\\from_right.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.example.pos_android.app-debug-51:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_tob_curve_bg_white.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\tob_curve_bg_white.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_border.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/border.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_app_main.png.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\app_main.png"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_activity_kitchen.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_kitchen.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_rectangle_gradient_s_gray_900_e_bluegray_800_radius_15.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\rectangle_gradient_s_gray_900_e_bluegray_800_radius_15.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_ic_baseline_search_24.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/ic_baseline_search_24.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable-v24_ic_no_cart.png.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable-v24\\ic_no_cart.png"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "com.example.pos_android.app-debug-51:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_activity_report.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\activity_report.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/navigation_nav_graph.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/navigation/nav_graph.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_ic_home.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\ic_home.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_activity_sales_report.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_sales_report.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\activity_login.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable-v24_ic_delete.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable-v24/ic_delete.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_layout_select_date.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\layout_select_date.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_activity_report.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_report.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_t4.jpg.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\t4.jpg"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_fragment_food_list.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/fragment_food_list.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-debug-6:\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_poster.jpeg.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/poster.jpeg"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-debug-6:\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_dm2.jpeg.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/dm2.jpeg"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_activity_add_food.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\activity_add_food.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/xml_data_extraction_rules.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/xml/data_extraction_rules.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_dm2.jpeg.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\dm2.jpeg"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/anim_from_left.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/anim/from_left.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\fragment_home.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable-v24_report.png.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable-v24/report.png"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_ic_remove_circle.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\ic_remove_circle.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_ic_discount.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/ic_discount.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-debug-6:\\mipmap-xxhdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_ic_baseline_filter_list_24.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/ic_baseline_filter_list_24.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_dialogue_loading_layout.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\dialogue_loading_layout.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_app_main.png.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/app_main.png"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\anim_from_left.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\anim\\from_left.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_add_guest_circle.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/add_guest_circle.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-debug-6:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_fragment_order.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/fragment_order.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-pngs-0:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_item_bg.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/item_bg.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_kitchen_order_item.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\kitchen_order_item.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_activity_admin_home.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_admin_home.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-debug-6:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_ic_baseline_keyboard_arrow_left_24.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/ic_baseline_keyboard_arrow_left_24.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable-v24_ic_delete.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable-v24\\ic_delete.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_debit.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/debit.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\anim_to_right.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\anim\\to_right.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable-v24_dashed_border.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable-v24/dashed_border.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_layout_history.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\layout_history.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_ic_shopping_bag.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/ic_shopping_bag.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_debit.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\debit.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_activity_register.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_register.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\navigation_nav_graph.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\navigation\\nav_graph.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_book_table.jpg.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/book_table.jpg"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_ic_baseline_brightness_1_24.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\ic_baseline_brightness_1_24.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_fragment_profile.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/fragment_profile.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\menu\\bottom_nav_menu.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_activity_splash.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_splash.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_fragment_profile.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\fragment_profile.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_item_cart_product.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/item_cart_product.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable-v24_dinner.png.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable-v24\\dinner.png"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_ic_person.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/ic_person.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_checkout_layout.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\checkout_layout.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_ic_arrow_back.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/ic_arrow_back.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\activity_register.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_ic_remove_circle.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/ic_remove_circle.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_activity_admin_home.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\activity_admin_home.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/xml_backup_rules.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/xml/backup_rules.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\font_source_sans_pro.ttf.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\font\\source_sans_pro.ttf"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_fragment_discount.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/fragment_discount.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_ic_baseline_deck_24.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\ic_baseline_deck_24.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_activity_login.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_login.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_dm4.jpeg.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\dm4.jpeg"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_add_guest_layout.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/add_guest_layout.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_ic_baseline_email_24.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\ic_baseline_email_24.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_rectangle_gradient_s_light_blue_900_e_teal_700_radius_15.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/rectangle_gradient_s_light_blue_900_e_teal_700_radius_15.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_add_cart_view.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\add_cart_view.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_dm3.jpg.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/dm3.jpg"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
-        "source": "com.example.pos_android.app-debug-51:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_fragment_food_list.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\fragment_food_list.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable-v24_man.png.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable-v24/man.png"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_layout_popular_item.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\layout_popular_item.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable-v24_ic_minus.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable-v24/ic_minus.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_fragment_contact_details.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\fragment_contact_details.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_best_selling_layout.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/best_selling_layout.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_inc_dec_view.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\inc_dec_view.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "com.example.pos_android.app-debug-51:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\activity_splash.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_fragment_contact_details.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/fragment_contact_details.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "com.example.pos_android.app-debug-51:/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-debug-6:\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_layout_select_date.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/layout_select_date.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_border.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\border.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_activity_income_report.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_income_report.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_ic_add_circle.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\ic_add_circle.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_fragment_home.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/fragment_home.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable-v24_report.png.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable-v24\\report.png"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
-        "source": "com.example.pos_android.app-debug-51:/mipmap-xxhdpi/ic_launcher_foreground.png"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable-v24_man.png.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable-v24\\man.png"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable-v24_ic_no_cart.png.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable-v24/ic_no_cart.png"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-debug-6:\\mipmap-hdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_edit_text_border.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/edit_text_border.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_book_table.jpg.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\book_table.jpg"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/anim_to_right.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/anim/to_right.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_item_cart_product.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\item_cart_product.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/drawable_rectangle_gradient_s_gray_900_e_bluegray_800_radius_15.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/drawable/rectangle_gradient_s_gray_900_e_bluegray_800_radius_15.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-debug-6:\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_poster.jpeg.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\poster.jpeg"
+    },
+    {
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_fragment_reservation.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\fragment_reservation.xml"
+    },
+    {
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_best_selling_layout.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\best_selling_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_fragment_order_success.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\fragment_order_success.xml"
     }
 ]

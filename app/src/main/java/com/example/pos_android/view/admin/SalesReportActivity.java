@@ -1,38 +1,32 @@
 package com.example.pos_android.view.admin;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Toast;
+
+import androidx.core.util.Pair;
 
 import com.example.pos_android.contracts.SalesReportContract;
 import com.example.pos_android.data.model.SalesReportResponse;
 import com.example.pos_android.databinding.ActivitySalesReportBinding;
 import com.example.pos_android.view.BaseActivity;
-import com.example.pos_android.view.login.LoginActivity;
-import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.formatter.IValueFormatter;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
-import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
-import com.github.mikephil.charting.utils.ViewPortHandler;
+import com.google.android.material.datepicker.MaterialDatePicker;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class SalesReportActivity extends BaseActivity implements
         AdapterView.OnItemSelectedListener, SalesReportContract.View {
-    private ActivitySalesReportBinding binding;
     String[] filterData = {"Weekly", "Monthly"};
+    MaterialDatePicker materialDatePicker;
+    private ActivitySalesReportBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +34,25 @@ public class SalesReportActivity extends BaseActivity implements
         binding = ActivitySalesReportBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 //        reportGraphData();
+        MaterialDatePicker.Builder<Pair<Long, Long>> materialDateBuilder
+                = MaterialDatePicker.Builder.dateRangePicker();
+        materialDateBuilder.setTitleText("Select date range");
+        materialDatePicker = materialDateBuilder.build();
+
+        materialDatePicker.addOnPositiveButtonClickListener(selection -> {
+            binding.tvDateRange.setVisibility(View.VISIBLE);
+            binding.tvDateRange.setText("Selected Date Range : " + materialDatePicker.getHeaderText());
+        });
         filterSpinnerSet();
         binding.iconBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
             }
+        });
+
+        binding.btnFrom.setOnClickListener(v -> {
+            materialDatePicker.show(getSupportFragmentManager(), "MATERIAL_DATE_PICKER");
         });
     }
 
@@ -96,9 +103,13 @@ public class SalesReportActivity extends BaseActivity implements
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
         //Toast.makeText(getApplicationContext(), filterData[position], Toast.LENGTH_LONG).show();
+        binding.tvDateRange.setText("");
+        binding.tvDateRange.setVisibility(View.GONE);
         if (Objects.equals(filterData[position], "Monthly")) {
             monthlyData();
+            binding.fromLayout.setVisibility(View.GONE);
         } else {
+            binding.fromLayout.setVisibility(View.VISIBLE);
             weaklyData();
         }
     }
@@ -170,7 +181,7 @@ public class SalesReportActivity extends BaseActivity implements
         binding.barChart.setDrawGridBackground(false);
 
 
-        final String[] labels = new String[]{ "Jan", "Feb", "Mar", "Apr", "May",
+        final String[] labels = new String[]{"Jan", "Feb", "Mar", "Apr", "May",
                 "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
         binding.barChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
         binding.barChart.getXAxis().setGranularity(1f);

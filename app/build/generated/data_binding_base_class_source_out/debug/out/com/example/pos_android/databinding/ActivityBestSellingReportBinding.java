@@ -8,12 +8,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.pos_android.R;
 import com.github.mikephil.charting.charts.PieChart;
+import com.google.android.material.button.MaterialButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -21,6 +23,12 @@ import java.lang.String;
 public final class ActivityBestSellingReportBinding implements ViewBinding {
   @NonNull
   private final LinearLayout rootView;
+
+  @NonNull
+  public final MaterialButton btnFrom;
+
+  @NonNull
+  public final LinearLayout fromLayout;
 
   @NonNull
   public final ImageView ivBack;
@@ -34,14 +42,21 @@ public final class ActivityBestSellingReportBinding implements ViewBinding {
   @NonNull
   public final Spinner spinner;
 
+  @NonNull
+  public final TextView tvDateRange;
+
   private ActivityBestSellingReportBinding(@NonNull LinearLayout rootView,
-      @NonNull ImageView ivBack, @NonNull ListView list, @NonNull PieChart pieChart,
-      @NonNull Spinner spinner) {
+      @NonNull MaterialButton btnFrom, @NonNull LinearLayout fromLayout, @NonNull ImageView ivBack,
+      @NonNull ListView list, @NonNull PieChart pieChart, @NonNull Spinner spinner,
+      @NonNull TextView tvDateRange) {
     this.rootView = rootView;
+    this.btnFrom = btnFrom;
+    this.fromLayout = fromLayout;
     this.ivBack = ivBack;
     this.list = list;
     this.pieChart = pieChart;
     this.spinner = spinner;
+    this.tvDateRange = tvDateRange;
   }
 
   @Override
@@ -71,6 +86,18 @@ public final class ActivityBestSellingReportBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btn_from;
+      MaterialButton btnFrom = ViewBindings.findChildViewById(rootView, id);
+      if (btnFrom == null) {
+        break missingId;
+      }
+
+      id = R.id.from_layout;
+      LinearLayout fromLayout = ViewBindings.findChildViewById(rootView, id);
+      if (fromLayout == null) {
+        break missingId;
+      }
+
       id = R.id.iv_back;
       ImageView ivBack = ViewBindings.findChildViewById(rootView, id);
       if (ivBack == null) {
@@ -95,8 +122,14 @@ public final class ActivityBestSellingReportBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityBestSellingReportBinding((LinearLayout) rootView, ivBack, list, pieChart,
-          spinner);
+      id = R.id.tv_date_range;
+      TextView tvDateRange = ViewBindings.findChildViewById(rootView, id);
+      if (tvDateRange == null) {
+        break missingId;
+      }
+
+      return new ActivityBestSellingReportBinding((LinearLayout) rootView, btnFrom, fromLayout,
+          ivBack, list, pieChart, spinner, tvDateRange);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

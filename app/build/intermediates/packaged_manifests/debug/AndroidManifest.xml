@@ -35,17 +35,18 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/Theme.POSAndroid"
         android:usesCleartextTraffic="true" >
         <activity
-            android:name="com.example.pos_android.KitchenOrderDetailActivity"
+            android:name="com.example.pos_android.view.kitchen.KitchenOrderDetailActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.example.pos_android.KitchenActivity"
+            android:name="com.example.pos_android.view.kitchen.KitchenActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
