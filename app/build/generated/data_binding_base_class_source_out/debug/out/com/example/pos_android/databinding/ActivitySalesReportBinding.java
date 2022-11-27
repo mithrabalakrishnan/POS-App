@@ -14,6 +14,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.pos_android.R;
 import com.github.mikephil.charting.charts.BarChart;
+import com.google.android.material.button.MaterialButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -26,10 +27,19 @@ public final class ActivitySalesReportBinding implements ViewBinding {
   public final BarChart barChart;
 
   @NonNull
+  public final MaterialButton btnFrom;
+
+  @NonNull
+  public final LinearLayout fromLayout;
+
+  @NonNull
   public final ImageView iconBack;
 
   @NonNull
   public final Spinner spinner;
+
+  @NonNull
+  public final TextView tvDateRange;
 
   @NonNull
   public final TextView txtPeople;
@@ -44,13 +54,17 @@ public final class ActivitySalesReportBinding implements ViewBinding {
   public final TextView txtTotalSale;
 
   private ActivitySalesReportBinding(@NonNull LinearLayout rootView, @NonNull BarChart barChart,
-      @NonNull ImageView iconBack, @NonNull Spinner spinner, @NonNull TextView txtPeople,
-      @NonNull TextView txtPrice, @NonNull TextView txtTotalPeople,
+      @NonNull MaterialButton btnFrom, @NonNull LinearLayout fromLayout,
+      @NonNull ImageView iconBack, @NonNull Spinner spinner, @NonNull TextView tvDateRange,
+      @NonNull TextView txtPeople, @NonNull TextView txtPrice, @NonNull TextView txtTotalPeople,
       @NonNull TextView txtTotalSale) {
     this.rootView = rootView;
     this.barChart = barChart;
+    this.btnFrom = btnFrom;
+    this.fromLayout = fromLayout;
     this.iconBack = iconBack;
     this.spinner = spinner;
+    this.tvDateRange = tvDateRange;
     this.txtPeople = txtPeople;
     this.txtPrice = txtPrice;
     this.txtTotalPeople = txtTotalPeople;
@@ -90,6 +104,18 @@ public final class ActivitySalesReportBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btn_from;
+      MaterialButton btnFrom = ViewBindings.findChildViewById(rootView, id);
+      if (btnFrom == null) {
+        break missingId;
+      }
+
+      id = R.id.from_layout;
+      LinearLayout fromLayout = ViewBindings.findChildViewById(rootView, id);
+      if (fromLayout == null) {
+        break missingId;
+      }
+
       id = R.id.icon_back;
       ImageView iconBack = ViewBindings.findChildViewById(rootView, id);
       if (iconBack == null) {
@@ -99,6 +125,12 @@ public final class ActivitySalesReportBinding implements ViewBinding {
       id = R.id.spinner;
       Spinner spinner = ViewBindings.findChildViewById(rootView, id);
       if (spinner == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_date_range;
+      TextView tvDateRange = ViewBindings.findChildViewById(rootView, id);
+      if (tvDateRange == null) {
         break missingId;
       }
 
@@ -126,8 +158,8 @@ public final class ActivitySalesReportBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivitySalesReportBinding((LinearLayout) rootView, barChart, iconBack, spinner,
-          txtPeople, txtPrice, txtTotalPeople, txtTotalSale);
+      return new ActivitySalesReportBinding((LinearLayout) rootView, barChart, btnFrom, fromLayout,
+          iconBack, spinner, tvDateRange, txtPeople, txtPrice, txtTotalPeople, txtTotalSale);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

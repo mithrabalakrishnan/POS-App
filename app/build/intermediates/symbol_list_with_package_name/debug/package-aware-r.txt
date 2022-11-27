@@ -2566,6 +2566,7 @@ drawable avd_show_password
 drawable bg_rounded_stroke
 drawable book_table
 drawable border
+drawable btn_bg
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -2595,6 +2596,8 @@ drawable gradient
 drawable ic_add
 drawable ic_add_circle
 drawable ic_arrow_back
+drawable ic_baseline_brightness_1_24
+drawable ic_baseline_deck_24
 drawable ic_baseline_email_24
 drawable ic_baseline_filter_list_24
 drawable ic_baseline_keyboard_arrow_left_24
@@ -2673,6 +2676,7 @@ drawable report
 drawable t4
 drawable test_custom_background
 drawable test_level_drawable
+drawable tob_curve_bg_white
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable wavy_bg
@@ -2811,11 +2815,14 @@ id btn_cancel
 id btn_clear
 id btn_continue
 id btn_delete
+id btn_from
 id btn_logout
 id btn_report
 id btn_sales_report
 id btn_sign_up
+id btn_submit_order
 id btn_summary
+id btn_view_order
 id buttonPanel
 id button_confirm_order
 id button_debit_pay
@@ -2945,6 +2952,7 @@ id food_item
 id forever
 id fragmentContainerView
 id fragment_container_view_tag
+id from_layout
 id frost
 id fullscreen_header
 id ghost_view
@@ -3296,6 +3304,7 @@ id triangle
 id tv_amount
 id tv_card
 id tv_date
+id tv_date_range
 id tv_dialog
 id tv_email
 id tv_food
@@ -3318,7 +3327,9 @@ id txtPrice
 id txtTotalSale
 id txtTotal_people
 id txt_category
+id txt_count
 id txt_email
+id txt_item_name
 id txt_itemname
 id txt_layout_category
 id txt_layout_price
@@ -3450,6 +3461,8 @@ layout activity_admin_home
 layout activity_best_selling_report
 layout activity_home
 layout activity_income_report
+layout activity_kitchen
+layout activity_kitchen_order_detail
 layout activity_login
 layout activity_register
 layout activity_report
@@ -3489,6 +3502,8 @@ layout fragment_summary
 layout image_slider
 layout inc_dec_view
 layout item_cart_product
+layout kitchen_food_item
+layout kitchen_order_item
 layout layout_add_cart_item
 layout layout_history
 layout layout_popular_item

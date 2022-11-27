@@ -26,6 +26,7 @@ drawable app_main
 drawable bg_rounded_stroke
 drawable book_table
 drawable border
+drawable btn_bg
 drawable dashed_border
 drawable debit
 drawable dinner
@@ -38,6 +39,8 @@ drawable fast_food
 drawable ic_add
 drawable ic_add_circle
 drawable ic_arrow_back
+drawable ic_baseline_brightness_1_24
+drawable ic_baseline_deck_24
 drawable ic_baseline_email_24
 drawable ic_baseline_filter_list_24
 drawable ic_baseline_keyboard_arrow_left_24
@@ -62,6 +65,7 @@ drawable rectangle_gradient_s_gray_900_e_bluegray_800_radius_15
 drawable rectangle_gradient_s_light_blue_900_e_teal_700_radius_15
 drawable report
 drawable t4
+drawable tob_curve_bg_white
 drawable wavy_bg
 font source_sans_pro
 id action_foodListFragment_to_summaryFragment
@@ -82,11 +86,14 @@ id btn_cancel
 id btn_clear
 id btn_continue
 id btn_delete
+id btn_from
 id btn_logout
 id btn_report
 id btn_sales_report
 id btn_sign_up
+id btn_submit_order
 id btn_summary
+id btn_view_order
 id button_confirm_order
 id button_debit_pay
 id button_login
@@ -112,6 +119,7 @@ id first_name_layout
 id foodListFragment
 id food_item
 id fragmentContainerView
+id from_layout
 id homeFragment
 id icon_back
 id imageView3
@@ -182,6 +190,7 @@ id total_income_report
 id tv_amount
 id tv_card
 id tv_date
+id tv_date_range
 id tv_dialog
 id tv_email
 id tv_food
@@ -204,7 +213,9 @@ id txtPrice
 id txtTotalSale
 id txtTotal_people
 id txt_category
+id txt_count
 id txt_email
+id txt_item_name
 id txt_itemname
 id txt_layout_category
 id txt_layout_price
@@ -219,6 +230,8 @@ layout activity_admin_home
 layout activity_best_selling_report
 layout activity_home
 layout activity_income_report
+layout activity_kitchen
+layout activity_kitchen_order_detail
 layout activity_login
 layout activity_register
 layout activity_report
@@ -241,6 +254,8 @@ layout fragment_reservation
 layout fragment_summary
 layout inc_dec_view
 layout item_cart_product
+layout kitchen_food_item
+layout kitchen_order_item
 layout layout_add_cart_item
 layout layout_history
 layout layout_popular_item

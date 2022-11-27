@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.util.Pair;
 
 import com.example.pos_android.adapter.BestSellingAdapter;
 import com.example.pos_android.databinding.ActivityBestSellingReportBinding;
@@ -14,6 +15,7 @@ import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.android.material.datepicker.MaterialDatePicker;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -24,12 +26,17 @@ public class BestSellingReportActivity extends AppCompatActivity implements Adap
     Double[] salesList = {25.0, 15.0, 11.0, 5.0, 17.0};
     BestSellingAdapter adapter;
     private ActivityBestSellingReportBinding binding;
+    MaterialDatePicker materialDatePicker;
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        binding.tvDateRange.setText("");
+        binding.tvDateRange.setVisibility(View.GONE);
         if (Objects.equals(filterData[position], "Monthly")) {
             monthlyData();
+            binding.fromLayout.setVisibility(View.GONE);
         } else {
+            binding.fromLayout.setVisibility(View.VISIBLE);
             weeklyData();
         }
     }
@@ -97,6 +104,26 @@ public class BestSellingReportActivity extends AppCompatActivity implements Adap
         setContentView(binding.getRoot());
         adapter = new BestSellingAdapter(this, this, titleList, salesList);
         binding.list.setAdapter(adapter);
+        MaterialDatePicker.Builder<Pair<Long, Long>> materialDateBuilder
+                = MaterialDatePicker.Builder.dateRangePicker();
+        materialDateBuilder.setTitleText("Select date range");
+        materialDatePicker = materialDateBuilder.build();
+
+        materialDatePicker.addOnPositiveButtonClickListener(selection -> {
+            binding.tvDateRange.setVisibility(View.VISIBLE);
+            binding.tvDateRange.setText("Selected Date Range : " + materialDatePicker.getHeaderText());
+        });
+        filterSpinnerSet();
+        binding.ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
+        binding.btnFrom.setOnClickListener(v -> {
+            materialDatePicker.show(getSupportFragmentManager(), "MATERIAL_DATE_PICKER");
+        });
         filterSpinnerSet();
 
     }

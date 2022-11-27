@@ -25,7 +25,11 @@ public class SplashActivity extends AppCompatActivity {
         sessionManager = new SessionManager(this);
         new Handler().postDelayed(() -> {
 
-            if (sessionManager.isLoggedIn()) {
+            Intent i = new Intent(SplashActivity.this,
+                    AdminHomeActivity.class);
+            startActivity(i);
+
+          /*  if (sessionManager.isLoggedIn()) {
                 if (sessionManager.getUserType().equals(SessionManager.UserRoles.ADMIN.toString())) {
                     Intent i = new Intent(SplashActivity.this,
                             AdminHomeActivity.class);
@@ -41,7 +45,7 @@ public class SplashActivity extends AppCompatActivity {
                         LoginActivity.class);
                 startActivity(i);
                 finishAffinity();
-            }
+            }*/
 
         }, SPLASH_SCREEN_TIME_OUT);
     }
