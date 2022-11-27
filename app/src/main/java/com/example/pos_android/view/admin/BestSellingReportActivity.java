@@ -6,11 +6,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.util.Pair;
 
 import com.example.pos_android.adapter.BestSellingAdapter;
+import com.example.pos_android.contracts.BestSellingReportContract;
+import com.example.pos_android.data.model.sales_report.BestSellingReportResponse;
 import com.example.pos_android.databinding.ActivityBestSellingReportBinding;
+import com.example.pos_android.presenter.BestSellingReportPresenter;
+import com.example.pos_android.view.BaseActivity;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
@@ -20,34 +23,38 @@ import com.google.android.material.datepicker.MaterialDatePicker;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class BestSellingReportActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class BestSellingReportActivity extends BaseActivity implements AdapterView.OnItemSelectedListener,
+        BestSellingReportContract.View {
     String[] filterData = {"Weekly", "Monthly"};
     String[] titleList = {"Pizza", "Burger", "Bangers and Mash", "Sunday Roast", "Sandwich"};
     Double[] salesList = {25.0, 15.0, 11.0, 5.0, 17.0};
     BestSellingAdapter adapter;
     private ActivityBestSellingReportBinding binding;
     MaterialDatePicker materialDatePicker;
+    private BestSellingReportPresenter presenter;
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         binding.tvDateRange.setText("");
         binding.tvDateRange.setVisibility(View.GONE);
         if (Objects.equals(filterData[position], "Monthly")) {
-            monthlyData();
-            binding.fromLayout.setVisibility(View.GONE);
+//            monthlyData();
+//            binding.fromLayout.setVisibility(View.GONE);
+            presenter.getBestSellingReport("monthly");
         } else {
-            binding.fromLayout.setVisibility(View.VISIBLE);
-            weeklyData();
+//            binding.fromLayout.setVisibility(View.VISIBLE);
+//            weeklyData();
+            presenter.getBestSellingReport("weekly");
         }
     }
 
-    private void weeklyData() {
+    private void weeklyData(ArrayList<Double> chart_data) {
         ArrayList<PieEntry> pieEntries = new ArrayList<>();
-        pieEntries.add(new PieEntry(200.0F, "Pizza"));
-        pieEntries.add(new PieEntry(50.0F, "Burger"));
-        pieEntries.add(new PieEntry(200.0F, "Bangers and Mash"));
-        pieEntries.add(new PieEntry(25.0F, "Sunday Roast"));
-        pieEntries.add(new PieEntry(150.0F, "Sandwich"));
+        pieEntries.add(new PieEntry(chart_data.get(0).floatValue(), "Pizza"));
+        pieEntries.add(new PieEntry(chart_data.get(1).floatValue(), "Burger"));
+        pieEntries.add(new PieEntry(chart_data.get(2).floatValue(), "Bangers and Mash"));
+        pieEntries.add(new PieEntry(chart_data.get(3).floatValue(), "Sunday Roast"));
+        pieEntries.add(new PieEntry(chart_data.get(4).floatValue(), "Sandwich"));
         PieDataSet pieDataSet = new PieDataSet(pieEntries, "Weekly Report");
         pieDataSet.setValueTextSize(12);
         pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
@@ -66,13 +73,13 @@ public class BestSellingReportActivity extends AppCompatActivity implements Adap
 //        binding.pieChart.getXAxis().setGranularityEnabled(true);
     }
 
-    private void monthlyData() {
+    private void monthlyData(ArrayList<Double> chart_data) {
         ArrayList<PieEntry> pieEntries = new ArrayList<>();
-        pieEntries.add(new PieEntry(200.0F, "Pizza"));
-        pieEntries.add(new PieEntry(50.0F, "Burger"));
-        pieEntries.add(new PieEntry(200.0F, "Bangers and Mash"));
-        pieEntries.add(new PieEntry(300.0F, "Sunday Roast"));
-        pieEntries.add(new PieEntry(150.0F, "Sandwich"));
+        pieEntries.add(new PieEntry(chart_data.get(0).floatValue(), "Pizza"));
+        pieEntries.add(new PieEntry(chart_data.get(1).floatValue(), "Burger"));
+        pieEntries.add(new PieEntry(chart_data.get(2).floatValue(), "Bangers and Mash"));
+        pieEntries.add(new PieEntry(chart_data.get(3).floatValue(), "Sunday Roast"));
+        pieEntries.add(new PieEntry(chart_data.get(4).floatValue(), "Sandwich"));
         PieDataSet pieDataSet = new PieDataSet(pieEntries, "Monthly Report");
         binding.pieChart.setEntryLabelTextSize(8f);
 
@@ -102,8 +109,8 @@ public class BestSellingReportActivity extends AppCompatActivity implements Adap
         super.onCreate(savedInstanceState);
         binding = ActivityBestSellingReportBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        adapter = new BestSellingAdapter(this, this, titleList, salesList);
-        binding.list.setAdapter(adapter);
+        presenter = new BestSellingReportPresenter(this,this);
+
         MaterialDatePicker.Builder<Pair<Long, Long>> materialDateBuilder
                 = MaterialDatePicker.Builder.dateRangePicker();
         materialDateBuilder.setTitleText("Select date range");
@@ -143,4 +150,41 @@ public class BestSellingReportActivity extends AppCompatActivity implements Adap
         });
     }
 
+    @Override
+    public void showProgressBar() {
+        showLoadingDialog(this);
+    }
+
+    @Override
+    public void hideProgressBar() {
+        hideLoadingDialog();
+    }
+
+    @Override
+    public void showApiErrorWarning(String string) {
+        showSnackBar(binding.getRoot(), string);
+    }
+
+    @Override
+    public void showWarningMessage(String message) {
+        showToast(BestSellingReportActivity.this, message);
+    }
+
+
+    @Override
+    public void showBestSellingReportResponse(BestSellingReportResponse response) {
+        adapter = new BestSellingAdapter(this, this, response.data.food_details);
+        binding.list.setAdapter(adapter);
+        if(response.data.type.equals("weekly")){
+            weeklyData(response.data.chart_data);
+        }
+        else{
+            monthlyData(response.data.chart_data);
+        }
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
+    }
 }

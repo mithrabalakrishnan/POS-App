@@ -5,7 +5,7 @@ package com.example.pos_android.view.kitchen;
 import android.os.Bundle;
 
 import com.example.pos_android.contracts.KitchenOrderDetailContract;
-import com.example.pos_android.data.model.KitchenOrderDetailResponse;
+import com.example.pos_android.data.model.CommonResponse;
 import com.example.pos_android.databinding.ActivityKitchenOrderDetailBinding;
 import com.example.pos_android.view.BaseActivity;
 
@@ -39,7 +39,7 @@ public class KitchenOrderDetailActivity extends BaseActivity implements KitchenO
         showToast(KitchenOrderDetailActivity.this, message);
     }
     @Override
-    public void showKitchenOrderDetailApiSuccess(KitchenOrderDetailResponse saveResponse) {
+    public void showKitchenOrderDetailApiSuccess(CommonResponse saveResponse) {
 
     }
 

@@ -3,20 +3,19 @@ package com.example.pos_android.presenter;
 import android.content.Context;
 
 import com.example.pos_android.R;
-import com.example.pos_android.contracts.SalesReportContract;
-import com.example.pos_android.data.model.sales_report.SalesReportResponse;
+import com.example.pos_android.contracts.BestSellingReportContract;
+import com.example.pos_android.data.model.sales_report.BestSellingReportResponse;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.network.api_manager.ApiDataManager;
 import com.example.pos_android.utils.NetworkManager;
 
-public class SalesReportPresenter implements SalesReportContract.Presenter {
-
-    SalesReportContract.View mView;
+public class BestSellingReportPresenter implements BestSellingReportContract.Presenter {
+    BestSellingReportContract.View mView;
     ApiDataManager mApiDataManager;
     Context mContext;
     SessionManager sessionManager;
 
-    public SalesReportPresenter(SalesReportContract.View mView, Context context) {
+    public BestSellingReportPresenter(BestSellingReportContract.View mView, Context context) {
         mApiDataManager = new ApiDataManager();
         mContext = context;
         this.mView = mView;
@@ -30,23 +29,22 @@ public class SalesReportPresenter implements SalesReportContract.Presenter {
     }
 
     @Override
-    public void callSalesReport(String type) {
+    public void getBestSellingReport(String type) {
         if (NetworkManager.isNetworkAvailable(mContext)) {
             mView.showProgressBar();
 
-            mApiDataManager.getSalesReport(sessionManager.getUserToken(), this, type);
+            mApiDataManager.getBestSellingReport(sessionManager.getUserToken(), this, type);
 
         } else
             mView.showWarningMessage(mContext.getString(R.string.no_network));
     }
 
     @Override
-    public void onSalesReportApiResponse(SalesReportResponse saveResponse) {
+    public void onBestSellingReportCallback(BestSellingReportResponse response) {
         mView.hideProgressBar();
-        if (saveResponse.isSuccess()) {
-            mView.showSuccess(saveResponse);
+        if (response.isSuccess()) {
+            mView.showBestSellingReportResponse(response);
         } else
-            mView.showWarningMessage(saveResponse.getMessage());
+            mView.showWarningMessage(response.getMessage());
     }
 }
-

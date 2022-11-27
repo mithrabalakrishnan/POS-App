@@ -1,14 +1,14 @@
 package com.example.pos_android.contracts;
 
-import com.example.pos_android.data.model.KitchenOrderDetailResponse;
+import com.example.pos_android.data.model.CommonResponse;
 
 public interface KitchenOrderDetailContract {
         interface View extends BaseView {
-        void showKitchenOrderDetailApiSuccess(KitchenOrderDetailResponse saveResponse);
+        void showKitchenOrderDetailApiSuccess(CommonResponse saveResponse);
         void showInputWarning();
     }
     interface Presenter extends BasePresenter {
          void callKitchenOrderDetail();
-        void onKitchenOrderDetailApiResponse(KitchenOrderDetailResponse saveResponse);
+        void onKitchenOrderDetailApiResponse(CommonResponse saveResponse);
     }
 }

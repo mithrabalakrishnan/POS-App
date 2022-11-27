@@ -10,19 +10,20 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.pos_android.R;
+import com.example.pos_android.data.model.sales_report.FoodDetail;
 import com.example.pos_android.databinding.BestSellingLayoutBinding;
+
+import java.util.ArrayList;
 
 public class BestSellingAdapter extends ArrayAdapter<String> {
     private final Activity context;
-    private final String[] title;
-    private final Double[] sale;
+    private final ArrayList<FoodDetail> foodDetails;
 
 
-    public BestSellingAdapter(@NonNull Context context, Activity context1, String[] title, Double[] sale) {
-        super(context, com.example.pos_android.R.layout.best_selling_layout, title);
+    public BestSellingAdapter(@NonNull Context context, Activity context1, ArrayList<FoodDetail> foodDetails) {
+        super(context, com.example.pos_android.R.layout.best_selling_layout);
         this.context = context1;
-        this.title = title;
-        this.sale = sale;
+        this.foodDetails = foodDetails;
     }
 
     @NonNull
@@ -37,11 +38,11 @@ public class BestSellingAdapter extends ArrayAdapter<String> {
             binding = ((BestSellingLayoutBinding) convertView.getTag(R.id.viewBinding));
 
 
-        String myTitle = title[position];
-        String mySale = String.valueOf(sale[position]);
+        String myTitle = foodDetails.get(position).getFood();
+        String mySale = foodDetails.get(position).getSale_amount();
 
         binding.tvFood.setText(myTitle);
-        binding.tvAmount.setText("£ " + mySale);
+        binding.tvAmount.setText( mySale);
 
 
         return convertView;

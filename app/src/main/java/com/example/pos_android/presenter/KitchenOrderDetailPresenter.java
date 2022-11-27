@@ -1,7 +1,7 @@
 package com.example.pos_android.presenter;
 
 import com.example.pos_android.contracts.KitchenOrderDetailContract;
-import com.example.pos_android.data.model.KitchenOrderDetailResponse;
+import com.example.pos_android.data.model.CommonResponse;
 
 public class KitchenOrderDetailPresenter implements KitchenOrderDetailContract.Presenter{
     @Override
@@ -15,7 +15,7 @@ public class KitchenOrderDetailPresenter implements KitchenOrderDetailContract.P
     }
 
     @Override
-    public void onKitchenOrderDetailApiResponse(KitchenOrderDetailResponse saveResponse) {
+    public void onKitchenOrderDetailApiResponse(CommonResponse saveResponse) {
 
     }
 }

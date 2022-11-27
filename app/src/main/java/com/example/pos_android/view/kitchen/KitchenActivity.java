@@ -1,22 +1,22 @@
 package com.example.pos_android.view.kitchen;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
 import com.example.pos_android.contracts.KitchenListingContract;
-import com.example.pos_android.data.model.KitchenOrderResponse;
+import com.example.pos_android.data.model.kitchen.KitchenOrderResponse;
 import com.example.pos_android.databinding.ActivityKitchenBinding;
+import com.example.pos_android.presenter.KitchenPresenter;
 import com.example.pos_android.view.BaseActivity;
-import com.example.pos_android.view.admin.SalesReportActivity;
 
 public class KitchenActivity extends BaseActivity implements KitchenListingContract.View {
    ActivityKitchenBinding binding;
+   private KitchenPresenter presenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityKitchenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        presenter =new KitchenPresenter(this,this);
     }
 
     @Override
@@ -41,6 +41,7 @@ public class KitchenActivity extends BaseActivity implements KitchenListingContr
 
     @Override
     public void showKitchenOrderListApiSuccess(KitchenOrderResponse saveResponse) {
+
 
     }
 

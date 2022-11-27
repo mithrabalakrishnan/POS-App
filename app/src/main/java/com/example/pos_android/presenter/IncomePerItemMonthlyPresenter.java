@@ -3,20 +3,20 @@ package com.example.pos_android.presenter;
 import android.content.Context;
 
 import com.example.pos_android.R;
-import com.example.pos_android.contracts.SalesReportContract;
-import com.example.pos_android.data.model.sales_report.SalesReportResponse;
+import com.example.pos_android.contracts.IncomePerItemMonthlyContract;
+import com.example.pos_android.data.model.sales_report.IncomePerItemMonthlyResponse;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.network.api_manager.ApiDataManager;
 import com.example.pos_android.utils.NetworkManager;
 
-public class SalesReportPresenter implements SalesReportContract.Presenter {
+public class IncomePerItemMonthlyPresenter implements IncomePerItemMonthlyContract.Presenter {
 
-    SalesReportContract.View mView;
+       IncomePerItemMonthlyContract.View mView;
     ApiDataManager mApiDataManager;
     Context mContext;
     SessionManager sessionManager;
 
-    public SalesReportPresenter(SalesReportContract.View mView, Context context) {
+    public IncomePerItemMonthlyPresenter(IncomePerItemMonthlyContract.View mView, Context context) {
         mApiDataManager = new ApiDataManager();
         mContext = context;
         this.mView = mView;
@@ -30,23 +30,22 @@ public class SalesReportPresenter implements SalesReportContract.Presenter {
     }
 
     @Override
-    public void callSalesReport(String type) {
+    public void geIncomePerItemMonthly(String type) {
         if (NetworkManager.isNetworkAvailable(mContext)) {
             mView.showProgressBar();
 
-            mApiDataManager.getSalesReport(sessionManager.getUserToken(), this, type);
+            mApiDataManager.getIncomePerItemMonthly(sessionManager.getUserToken(), this, type);
 
         } else
             mView.showWarningMessage(mContext.getString(R.string.no_network));
     }
 
     @Override
-    public void onSalesReportApiResponse(SalesReportResponse saveResponse) {
+    public void onIncomePerItemMonthlyCallback(IncomePerItemMonthlyResponse response) {
         mView.hideProgressBar();
-        if (saveResponse.isSuccess()) {
-            mView.showSuccess(saveResponse);
+        if (response.isSuccess()) {
+            mView.showIncomePerItemMonthlyResponse(response);
         } else
-            mView.showWarningMessage(saveResponse.getMessage());
+            mView.showWarningMessage(response.getMessage());
     }
 }
-

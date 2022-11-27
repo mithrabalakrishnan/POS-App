@@ -1,6 +1,6 @@
 package com.example.pos_android.contracts;
 
-import com.example.pos_android.data.model.SalesReportResponse;
+import com.example.pos_android.data.model.sales_report.SalesReportResponse;
 
 public interface SalesReportContract {
     interface View extends BaseView {
@@ -8,7 +8,7 @@ public interface SalesReportContract {
         void showInputWarning();
     }
     interface Presenter extends BasePresenter {
-         void callSalesReport();
+         void callSalesReport(String type);
         void onSalesReportApiResponse(SalesReportResponse saveResponse);
     }
 }

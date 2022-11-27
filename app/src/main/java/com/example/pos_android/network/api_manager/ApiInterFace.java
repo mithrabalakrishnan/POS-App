@@ -7,11 +7,16 @@ import com.example.pos_android.data.model.LoginResponse;
 import com.example.pos_android.data.model.RegisterResponse;
 import com.example.pos_android.data.model.TableReservationResponse;
 import com.example.pos_android.data.model.UserHomeResponse;
+import com.example.pos_android.data.model.kitchen.KitchenOrderResponse;
+import com.example.pos_android.data.model.kitchen.KitchenUpdateOrderPayload;
 import com.example.pos_android.data.model.request.AddFoodRequestData;
 import com.example.pos_android.data.model.request.FoodOrderRequestData;
 import com.example.pos_android.data.model.request.LoginRequestData;
 import com.example.pos_android.data.model.request.RegisterRequestData;
 import com.example.pos_android.data.model.request.TableRequestData;
+import com.example.pos_android.data.model.sales_report.BestSellingReportResponse;
+import com.example.pos_android.data.model.sales_report.IncomePerItemMonthlyResponse;
+import com.example.pos_android.data.model.sales_report.SalesReportResponse;
 
 import io.reactivex.Observable;
 import okhttp3.MultipartBody;
@@ -21,6 +26,7 @@ import retrofit2.http.Header;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
+import retrofit2.http.Query;
 
 public interface ApiInterFace {
 
@@ -62,5 +68,33 @@ public interface ApiInterFace {
     Observable<HistoryResponse> userHistory(
             @Header("Authorization") String string
     );
+
+    @GET("sales-report")
+    Observable<SalesReportResponse> salesReport(
+            @Header("Authorization") String string,
+            @Query("type") String type
+    );
+
+    @GET("best-selling-report")
+    Observable<BestSellingReportResponse> bestSellingReport(
+            @Header("Authorization") String string,
+            @Query("type") String type
+    );
+
+    @GET("income-per-item-monthly")
+    Observable<IncomePerItemMonthlyResponse> incomePerItemMonthly(
+            @Header("Authorization") String string,
+            @Query("food") String food
+    );
+
+    @GET("kitchen-get-orders")
+    Observable<KitchenOrderResponse> kitchenGetOrders(
+            @Header("Authorization") String string
+    );
+
+    @POST("kitchen-update-order")
+    Observable<CommonResponse> kitchenUpdateOrder(
+            @Header("Authorization") String string,
+            @Body KitchenUpdateOrderPayload requestData);
 
 }
