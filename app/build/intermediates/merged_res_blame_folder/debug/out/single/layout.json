@@ -48,6 +48,10 @@
         "source": "com.example.pos_android.app-main-52:/layout/best_selling_layout.xml"
     },
     {
+        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/activity_kitchen_order_detail.xml",
+        "source": "com.example.pos_android.app-main-52:/layout/activity_kitchen_order_detail.xml"
+    },
+    {
         "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_order.xml",
         "source": "com.example.pos_android.app-main-52:/layout/fragment_order.xml"
     },
@@ -58,6 +62,10 @@
     {
         "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_home.xml",
         "source": "com.example.pos_android.app-main-52:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/activity_kitchen.xml",
+        "source": "com.example.pos_android.app-main-52:/layout/activity_kitchen.xml"
     },
     {
         "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/layout_popular_item.xml",
@@ -130,5 +138,9 @@
     {
         "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/activity_sales_report.xml",
         "source": "com.example.pos_android.app-main-52:/layout/activity_sales_report.xml"
+    },
+    {
+        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/kitchen_order_item.xml",
+        "source": "com.example.pos_android.app-main-52:/layout/kitchen_order_item.xml"
     }
 ]

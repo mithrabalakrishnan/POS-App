@@ -44,6 +44,10 @@
         "source": "com.example.pos_android.app-main-52:/layout/activity_add_food.xml"
     },
     {
+        "merged": "com.example.pos_android.app-merged_res-50:/layout_activity_kitchen_order_detail.xml.flat",
+        "source": "com.example.pos_android.app-main-52:/layout/activity_kitchen_order_detail.xml"
+    },
+    {
         "merged": "com.example.pos_android.app-merged_res-50:/layout_layout_popular_item.xml.flat",
         "source": "com.example.pos_android.app-main-52:/layout/layout_popular_item.xml"
     },
@@ -84,6 +88,10 @@
         "source": "com.example.pos_android.app-main-52:/drawable/t4.jpg"
     },
     {
+        "merged": "com.example.pos_android.app-merged_res-50:/drawable_btn_bg.xml.flat",
+        "source": "com.example.pos_android.app-main-52:/drawable/btn_bg.xml"
+    },
+    {
         "merged": "com.example.pos_android.app-merged_res-50:/layout_activity_best_selling_report.xml.flat",
         "source": "com.example.pos_android.app-main-52:/layout/activity_best_selling_report.xml"
     },
@@ -104,6 +112,10 @@
         "source": "com.example.pos_android.app-main-52:/drawable/ic_add_circle.xml"
     },
     {
+        "merged": "com.example.pos_android.app-merged_res-50:/drawable_tob_curve_bg_white.xml.flat",
+        "source": "com.example.pos_android.app-main-52:/drawable/tob_curve_bg_white.xml"
+    },
+    {
         "merged": "com.example.pos_android.app-merged_res-50:/mipmap-mdpi_ic_launcher.png.flat",
         "source": "com.example.pos_android.app-debug-51:/mipmap-mdpi/ic_launcher.png"
     },
@@ -118,6 +130,10 @@
     {
         "merged": "com.example.pos_android.app-merged_res-50:/drawable-v24_add.png.flat",
         "source": "com.example.pos_android.app-main-52:/drawable-v24/add.png"
+    },
+    {
+        "merged": "com.example.pos_android.app-merged_res-50:/layout_kitchen_order_item.xml.flat",
+        "source": "com.example.pos_android.app-main-52:/layout/kitchen_order_item.xml"
     },
     {
         "merged": "com.example.pos_android.app-merged_res-50:/drawable_wavy_bg.png.flat",
@@ -198,6 +214,10 @@
     {
         "merged": "com.example.pos_android.app-merged_res-50:/drawable_border.xml.flat",
         "source": "com.example.pos_android.app-main-52:/drawable/border.xml"
+    },
+    {
+        "merged": "com.example.pos_android.app-merged_res-50:/layout_activity_kitchen.xml.flat",
+        "source": "com.example.pos_android.app-main-52:/layout/activity_kitchen.xml"
     },
     {
         "merged": "com.example.pos_android.app-merged_res-50:/drawable_ic_baseline_search_24.xml.flat",
