@@ -3306,6 +3306,7 @@ id tv_amount
 id tv_card
 id tv_date
 id tv_date_range
+id tv_details
 id tv_dialog
 id tv_email
 id tv_food

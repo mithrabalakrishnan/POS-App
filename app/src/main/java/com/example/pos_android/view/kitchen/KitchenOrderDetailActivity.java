@@ -37,7 +37,15 @@ public class KitchenOrderDetailActivity extends BaseActivity implements KitchenO
         binding.spinner.setAdapter(spinnerAdapter);
 
         kitchenData = (KitchenResponse.KitchenData) getIntent().getSerializableExtra("data");
-        binding.tvStatus.setText(kitchenData.getStatus() != null ? "Current Status :" + kitchenData.getStatus() : "In-Progress");
+        binding.tvStatus.setText(kitchenData.getStatus() != null ? "Current Status :" + kitchenData.getStatus() : "Current Status : TO-DO");
+        binding.tvDetails.setText(
+                "Food Id :" + kitchenData.getFoodId()   + "\n" +
+                        "Quantity :" + String.valueOf(kitchenData.getQuanty())   + "\n" +
+                        "User Id :" + String.valueOf(kitchenData.getUserId())   + "\n" +
+                        "Time :" + kitchenData.getTime()   + "\n" +
+                        "Date :" + kitchenData.getDate()   + "\n" +
+                        "Table Id :" + String.valueOf(kitchenData.getTableId())
+        );
         presenter = new KitchenPresenter(this, this);
 
         binding.buttonStatus.setOnClickListener(v -> {

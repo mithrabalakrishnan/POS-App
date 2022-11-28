@@ -3305,6 +3305,7 @@ int id tv_amount 0x7f09026d
 int id tv_card 0x7f09026e
 int id tv_date 0x7f09026f
 int id tv_date_range 0x7f090270
+int id tv_details 0x7f0902ae
 int id tv_dialog 0x7f090271
 int id tv_email 0x7f090272
 int id tv_food 0x7f090273
