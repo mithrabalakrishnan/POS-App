@@ -14,13 +14,14 @@ import com.example.pos_android.data.model.sales_report.FoodDetail;
 import com.example.pos_android.databinding.BestSellingLayoutBinding;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class BestSellingAdapter extends ArrayAdapter<String> {
-    private final Activity context;
-    private final ArrayList<FoodDetail> foodDetails;
+public class BestSellingAdapter extends ArrayAdapter<FoodDetail> {
+    private Activity context;
+    private List<FoodDetail> foodDetails;
 
 
-    public BestSellingAdapter(@NonNull Context context, Activity context1, ArrayList<FoodDetail> foodDetails) {
+    public BestSellingAdapter(@NonNull Context context, Activity context1, List<FoodDetail> foodDetails) {
         super(context, com.example.pos_android.R.layout.best_selling_layout);
         this.context = context1;
         this.foodDetails = foodDetails;
@@ -39,7 +40,7 @@ public class BestSellingAdapter extends ArrayAdapter<String> {
 
 
         String myTitle = foodDetails.get(position).getFood();
-        String mySale = foodDetails.get(position).getSale_amount();
+        String mySale = String.valueOf(foodDetails.get(position).getSale_amount());
 
         binding.tvFood.setText(myTitle);
         binding.tvAmount.setText( mySale);
@@ -47,5 +48,10 @@ public class BestSellingAdapter extends ArrayAdapter<String> {
 
         return convertView;
 
+    }
+
+    @Override
+    public int getCount() {
+        return foodDetails.size();
     }
 }

@@ -46,7 +46,7 @@
 25-->C:\POS git\app\src\main\AndroidManifest.xml:19:22-78
 26
 27    <application
-27-->C:\POS git\app\src\main\AndroidManifest.xml:21:5-124:19
+27-->C:\POS git\app\src\main\AndroidManifest.xml:21:5-131:19
 28        android:allowBackup="true"
 28-->C:\POS git\app\src\main\AndroidManifest.xml:22:9-35
 29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -73,8 +73,8 @@
 40-->C:\POS git\app\src\main\AndroidManifest.xml:31:9-44
 41        <activity
 41-->C:\POS git\app\src\main\AndroidManifest.xml:33:9-39:20
-42            android:name="com.example.pos_android.view.kitchen.KitchenOrderDetailActivity"
-42-->C:\POS git\app\src\main\AndroidManifest.xml:34:13-68
+42            android:name="com.example.pos_android.view.admin.ListAllFoodActivity"
+42-->C:\POS git\app\src\main\AndroidManifest.xml:34:13-59
 43            android:exported="false" >
 43-->C:\POS git\app\src\main\AndroidManifest.xml:35:13-37
 44            <meta-data
@@ -86,8 +86,8 @@
 47        </activity>
 48        <activity
 48-->C:\POS git\app\src\main\AndroidManifest.xml:40:9-46:20
-49            android:name="com.example.pos_android.view.kitchen.KitchenActivity"
-49-->C:\POS git\app\src\main\AndroidManifest.xml:41:13-57
+49            android:name="com.example.pos_android.view.kitchen.KitchenOrderDetailActivity"
+49-->C:\POS git\app\src\main\AndroidManifest.xml:41:13-68
 50            android:exported="false" >
 50-->C:\POS git\app\src\main\AndroidManifest.xml:42:13-37
 51            <meta-data
@@ -99,8 +99,8 @@
 54        </activity>
 55        <activity
 55-->C:\POS git\app\src\main\AndroidManifest.xml:47:9-53:20
-56            android:name="com.example.pos_android.view.admin.IncomeReportActivity"
-56-->C:\POS git\app\src\main\AndroidManifest.xml:48:13-60
+56            android:name="com.example.pos_android.view.kitchen.KitchenActivity"
+56-->C:\POS git\app\src\main\AndroidManifest.xml:48:13-57
 57            android:exported="false" >
 57-->C:\POS git\app\src\main\AndroidManifest.xml:49:13-37
 58            <meta-data
@@ -112,8 +112,8 @@
 61        </activity>
 62        <activity
 62-->C:\POS git\app\src\main\AndroidManifest.xml:54:9-60:20
-63            android:name="com.example.pos_android.view.admin.BestSellingReportActivity"
-63-->C:\POS git\app\src\main\AndroidManifest.xml:55:13-65
+63            android:name="com.example.pos_android.view.admin.IncomeReportActivity"
+63-->C:\POS git\app\src\main\AndroidManifest.xml:55:13-60
 64            android:exported="false" >
 64-->C:\POS git\app\src\main\AndroidManifest.xml:56:13-37
 65            <meta-data
@@ -125,8 +125,8 @@
 68        </activity>
 69        <activity
 69-->C:\POS git\app\src\main\AndroidManifest.xml:61:9-67:20
-70            android:name="com.example.pos_android.view.admin.ReportActivity"
-70-->C:\POS git\app\src\main\AndroidManifest.xml:62:13-54
+70            android:name="com.example.pos_android.view.admin.BestSellingReportActivity"
+70-->C:\POS git\app\src\main\AndroidManifest.xml:62:13-65
 71            android:exported="false" >
 71-->C:\POS git\app\src\main\AndroidManifest.xml:63:13-37
 72            <meta-data
@@ -138,8 +138,8 @@
 75        </activity>
 76        <activity
 76-->C:\POS git\app\src\main\AndroidManifest.xml:68:9-74:20
-77            android:name="com.example.pos_android.view.admin.SalesReportActivity"
-77-->C:\POS git\app\src\main\AndroidManifest.xml:69:13-59
+77            android:name="com.example.pos_android.view.admin.ReportActivity"
+77-->C:\POS git\app\src\main\AndroidManifest.xml:69:13-54
 78            android:exported="false" >
 78-->C:\POS git\app\src\main\AndroidManifest.xml:70:13-37
 79            <meta-data
@@ -151,8 +151,8 @@
 82        </activity>
 83        <activity
 83-->C:\POS git\app\src\main\AndroidManifest.xml:75:9-81:20
-84            android:name="com.example.pos_android.view.admin.AddFoodActivity"
-84-->C:\POS git\app\src\main\AndroidManifest.xml:76:13-55
+84            android:name="com.example.pos_android.view.admin.SalesReportActivity"
+84-->C:\POS git\app\src\main\AndroidManifest.xml:76:13-59
 85            android:exported="false" >
 85-->C:\POS git\app\src\main\AndroidManifest.xml:77:13-37
 86            <meta-data
@@ -164,8 +164,8 @@
 89        </activity>
 90        <activity
 90-->C:\POS git\app\src\main\AndroidManifest.xml:82:9-88:20
-91            android:name="com.example.pos_android.view.admin.AdminHomeActivity"
-91-->C:\POS git\app\src\main\AndroidManifest.xml:83:13-57
+91            android:name="com.example.pos_android.view.admin.AddFoodActivity"
+91-->C:\POS git\app\src\main\AndroidManifest.xml:83:13-55
 92            android:exported="false" >
 92-->C:\POS git\app\src\main\AndroidManifest.xml:84:13-37
 93            <meta-data
@@ -177,8 +177,8 @@
 96        </activity>
 97        <activity
 97-->C:\POS git\app\src\main\AndroidManifest.xml:89:9-95:20
-98            android:name="com.example.pos_android.view.user.UserHomeActivity"
-98-->C:\POS git\app\src\main\AndroidManifest.xml:90:13-55
+98            android:name="com.example.pos_android.view.admin.AdminHomeActivity"
+98-->C:\POS git\app\src\main\AndroidManifest.xml:90:13-57
 99            android:exported="false" >
 99-->C:\POS git\app\src\main\AndroidManifest.xml:91:13-37
 100            <meta-data
@@ -190,8 +190,8 @@
 103        </activity>
 104        <activity
 104-->C:\POS git\app\src\main\AndroidManifest.xml:96:9-102:20
-105            android:name="com.example.pos_android.view.register.RegisterActivity"
-105-->C:\POS git\app\src\main\AndroidManifest.xml:97:13-59
+105            android:name="com.example.pos_android.view.user.UserHomeActivity"
+105-->C:\POS git\app\src\main\AndroidManifest.xml:97:13-55
 106            android:exported="false" >
 106-->C:\POS git\app\src\main\AndroidManifest.xml:98:13-37
 107            <meta-data
@@ -203,8 +203,8 @@
 110        </activity>
 111        <activity
 111-->C:\POS git\app\src\main\AndroidManifest.xml:103:9-109:20
-112            android:name="com.example.pos_android.view.login.LoginActivity"
-112-->C:\POS git\app\src\main\AndroidManifest.xml:104:13-53
+112            android:name="com.example.pos_android.view.register.RegisterActivity"
+112-->C:\POS git\app\src\main\AndroidManifest.xml:104:13-59
 113            android:exported="false" >
 113-->C:\POS git\app\src\main\AndroidManifest.xml:105:13-37
 114            <meta-data
@@ -215,84 +215,97 @@
 116-->C:\POS git\app\src\main\AndroidManifest.xml:38:17-33
 117        </activity>
 118        <activity
-118-->C:\POS git\app\src\main\AndroidManifest.xml:110:9-123:20
-119            android:name="com.example.pos_android.view.SplashActivity"
-119-->C:\POS git\app\src\main\AndroidManifest.xml:111:13-48
-120            android:exported="true"
-120-->C:\POS git\app\src\main\AndroidManifest.xml:112:13-36
-121            android:theme="@style/SplashTheme" >
-121-->C:\POS git\app\src\main\AndroidManifest.xml:113:13-47
-122            <intent-filter>
-122-->C:\POS git\app\src\main\AndroidManifest.xml:114:13-118:29
-123                <action android:name="android.intent.action.MAIN" />
-123-->C:\POS git\app\src\main\AndroidManifest.xml:115:17-69
-123-->C:\POS git\app\src\main\AndroidManifest.xml:115:25-66
-124
-125                <category android:name="android.intent.category.LAUNCHER" />
-125-->C:\POS git\app\src\main\AndroidManifest.xml:117:17-77
-125-->C:\POS git\app\src\main\AndroidManifest.xml:117:27-74
-126            </intent-filter>
-127
-128            <meta-data
-128-->C:\POS git\app\src\main\AndroidManifest.xml:36:13-38:36
-129                android:name="android.app.lib_name"
-129-->C:\POS git\app\src\main\AndroidManifest.xml:37:17-52
-130                android:value="" />
-130-->C:\POS git\app\src\main\AndroidManifest.xml:38:17-33
-131        </activity>
-132
-133        <service
-133-->[androidx.room:room-runtime:2.4.3] C:\Users\aswin\.gradle\caches\transforms-3\2e63dbfd64ae5816ec1fb5a592200ffc\transformed\room-runtime-2.4.3\AndroidManifest.xml:25:9-28:40
-134            android:name="androidx.room.MultiInstanceInvalidationService"
-134-->[androidx.room:room-runtime:2.4.3] C:\Users\aswin\.gradle\caches\transforms-3\2e63dbfd64ae5816ec1fb5a592200ffc\transformed\room-runtime-2.4.3\AndroidManifest.xml:26:13-74
-135            android:directBootAware="true"
-135-->[androidx.room:room-runtime:2.4.3] C:\Users\aswin\.gradle\caches\transforms-3\2e63dbfd64ae5816ec1fb5a592200ffc\transformed\room-runtime-2.4.3\AndroidManifest.xml:27:13-43
-136            android:exported="false" />
-136-->[androidx.room:room-runtime:2.4.3] C:\Users\aswin\.gradle\caches\transforms-3\2e63dbfd64ae5816ec1fb5a592200ffc\transformed\room-runtime-2.4.3\AndroidManifest.xml:28:13-37
-137
-138        <provider
-138-->[androidx.emoji2:emoji2:1.2.0] C:\Users\aswin\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-139            android:name="androidx.startup.InitializationProvider"
-139-->[androidx.emoji2:emoji2:1.2.0] C:\Users\aswin\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-140            android:authorities="com.example.pos_android.androidx-startup"
-140-->[androidx.emoji2:emoji2:1.2.0] C:\Users\aswin\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-141            android:exported="false" >
-141-->[androidx.emoji2:emoji2:1.2.0] C:\Users\aswin\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-142            <meta-data
-142-->[androidx.emoji2:emoji2:1.2.0] C:\Users\aswin\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-143                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-143-->[androidx.emoji2:emoji2:1.2.0] C:\Users\aswin\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-144                android:value="androidx.startup" />
-144-->[androidx.emoji2:emoji2:1.2.0] C:\Users\aswin\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
-145            <meta-data
-145-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\aswin\.gradle\caches\transforms-3\86e7db7afee59af47e2b640b7bcd4e04\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-146                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-146-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\aswin\.gradle\caches\transforms-3\86e7db7afee59af47e2b640b7bcd4e04\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
-147                android:value="androidx.startup" />
-147-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\aswin\.gradle\caches\transforms-3\86e7db7afee59af47e2b640b7bcd4e04\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-148        </provider>
-149
-150        <uses-library
-150-->[androidx.window:window:1.0.0] C:\Users\aswin\.gradle\caches\transforms-3\4c16547a1e97fe938e3e4b0025875bb8\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
-151            android:name="androidx.window.extensions"
-151-->[androidx.window:window:1.0.0] C:\Users\aswin\.gradle\caches\transforms-3\4c16547a1e97fe938e3e4b0025875bb8\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
-152            android:required="false" />
-152-->[androidx.window:window:1.0.0] C:\Users\aswin\.gradle\caches\transforms-3\4c16547a1e97fe938e3e4b0025875bb8\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
-153        <uses-library
-153-->[androidx.window:window:1.0.0] C:\Users\aswin\.gradle\caches\transforms-3\4c16547a1e97fe938e3e4b0025875bb8\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
-154            android:name="androidx.window.sidecar"
-154-->[androidx.window:window:1.0.0] C:\Users\aswin\.gradle\caches\transforms-3\4c16547a1e97fe938e3e4b0025875bb8\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
-155            android:required="false" />
-155-->[androidx.window:window:1.0.0] C:\Users\aswin\.gradle\caches\transforms-3\4c16547a1e97fe938e3e4b0025875bb8\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+118-->C:\POS git\app\src\main\AndroidManifest.xml:110:9-116:20
+119            android:name="com.example.pos_android.view.login.LoginActivity"
+119-->C:\POS git\app\src\main\AndroidManifest.xml:111:13-53
+120            android:exported="false" >
+120-->C:\POS git\app\src\main\AndroidManifest.xml:112:13-37
+121            <meta-data
+121-->C:\POS git\app\src\main\AndroidManifest.xml:36:13-38:36
+122                android:name="android.app.lib_name"
+122-->C:\POS git\app\src\main\AndroidManifest.xml:37:17-52
+123                android:value="" />
+123-->C:\POS git\app\src\main\AndroidManifest.xml:38:17-33
+124        </activity>
+125        <activity
+125-->C:\POS git\app\src\main\AndroidManifest.xml:117:9-130:20
+126            android:name="com.example.pos_android.view.SplashActivity"
+126-->C:\POS git\app\src\main\AndroidManifest.xml:118:13-48
+127            android:exported="true"
+127-->C:\POS git\app\src\main\AndroidManifest.xml:119:13-36
+128            android:theme="@style/SplashTheme" >
+128-->C:\POS git\app\src\main\AndroidManifest.xml:120:13-47
+129            <intent-filter>
+129-->C:\POS git\app\src\main\AndroidManifest.xml:121:13-125:29
+130                <action android:name="android.intent.action.MAIN" />
+130-->C:\POS git\app\src\main\AndroidManifest.xml:122:17-69
+130-->C:\POS git\app\src\main\AndroidManifest.xml:122:25-66
+131
+132                <category android:name="android.intent.category.LAUNCHER" />
+132-->C:\POS git\app\src\main\AndroidManifest.xml:124:17-77
+132-->C:\POS git\app\src\main\AndroidManifest.xml:124:27-74
+133            </intent-filter>
+134
+135            <meta-data
+135-->C:\POS git\app\src\main\AndroidManifest.xml:36:13-38:36
+136                android:name="android.app.lib_name"
+136-->C:\POS git\app\src\main\AndroidManifest.xml:37:17-52
+137                android:value="" />
+137-->C:\POS git\app\src\main\AndroidManifest.xml:38:17-33
+138        </activity>
+139
+140        <service
+140-->[androidx.room:room-runtime:2.4.3] C:\Users\aswin\.gradle\caches\transforms-3\2e63dbfd64ae5816ec1fb5a592200ffc\transformed\room-runtime-2.4.3\AndroidManifest.xml:25:9-28:40
+141            android:name="androidx.room.MultiInstanceInvalidationService"
+141-->[androidx.room:room-runtime:2.4.3] C:\Users\aswin\.gradle\caches\transforms-3\2e63dbfd64ae5816ec1fb5a592200ffc\transformed\room-runtime-2.4.3\AndroidManifest.xml:26:13-74
+142            android:directBootAware="true"
+142-->[androidx.room:room-runtime:2.4.3] C:\Users\aswin\.gradle\caches\transforms-3\2e63dbfd64ae5816ec1fb5a592200ffc\transformed\room-runtime-2.4.3\AndroidManifest.xml:27:13-43
+143            android:exported="false" />
+143-->[androidx.room:room-runtime:2.4.3] C:\Users\aswin\.gradle\caches\transforms-3\2e63dbfd64ae5816ec1fb5a592200ffc\transformed\room-runtime-2.4.3\AndroidManifest.xml:28:13-37
+144
+145        <provider
+145-->[androidx.emoji2:emoji2:1.2.0] C:\Users\aswin\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+146            android:name="androidx.startup.InitializationProvider"
+146-->[androidx.emoji2:emoji2:1.2.0] C:\Users\aswin\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+147            android:authorities="com.example.pos_android.androidx-startup"
+147-->[androidx.emoji2:emoji2:1.2.0] C:\Users\aswin\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+148            android:exported="false" >
+148-->[androidx.emoji2:emoji2:1.2.0] C:\Users\aswin\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+149            <meta-data
+149-->[androidx.emoji2:emoji2:1.2.0] C:\Users\aswin\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+150                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+150-->[androidx.emoji2:emoji2:1.2.0] C:\Users\aswin\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+151                android:value="androidx.startup" />
+151-->[androidx.emoji2:emoji2:1.2.0] C:\Users\aswin\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+152            <meta-data
+152-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\aswin\.gradle\caches\transforms-3\86e7db7afee59af47e2b640b7bcd4e04\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+153                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+153-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\aswin\.gradle\caches\transforms-3\86e7db7afee59af47e2b640b7bcd4e04\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+154                android:value="androidx.startup" />
+154-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\aswin\.gradle\caches\transforms-3\86e7db7afee59af47e2b640b7bcd4e04\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+155        </provider>
 156
-157        <provider
-157-->[com.squareup.picasso:picasso:2.71828] C:\Users\aswin\.gradle\caches\transforms-3\7382e7f444b584172664e3f7e0ea6fda\transformed\picasso-2.71828\AndroidManifest.xml:8:9-11:40
-158            android:name="com.squareup.picasso.PicassoProvider"
-158-->[com.squareup.picasso:picasso:2.71828] C:\Users\aswin\.gradle\caches\transforms-3\7382e7f444b584172664e3f7e0ea6fda\transformed\picasso-2.71828\AndroidManifest.xml:9:13-64
-159            android:authorities="com.example.pos_android.com.squareup.picasso"
-159-->[com.squareup.picasso:picasso:2.71828] C:\Users\aswin\.gradle\caches\transforms-3\7382e7f444b584172664e3f7e0ea6fda\transformed\picasso-2.71828\AndroidManifest.xml:10:13-72
-160            android:exported="false" />
-160-->[com.squareup.picasso:picasso:2.71828] C:\Users\aswin\.gradle\caches\transforms-3\7382e7f444b584172664e3f7e0ea6fda\transformed\picasso-2.71828\AndroidManifest.xml:11:13-37
-161    </application>
-162
-163</manifest>
+157        <uses-library
+157-->[androidx.window:window:1.0.0] C:\Users\aswin\.gradle\caches\transforms-3\4c16547a1e97fe938e3e4b0025875bb8\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+158            android:name="androidx.window.extensions"
+158-->[androidx.window:window:1.0.0] C:\Users\aswin\.gradle\caches\transforms-3\4c16547a1e97fe938e3e4b0025875bb8\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+159            android:required="false" />
+159-->[androidx.window:window:1.0.0] C:\Users\aswin\.gradle\caches\transforms-3\4c16547a1e97fe938e3e4b0025875bb8\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+160        <uses-library
+160-->[androidx.window:window:1.0.0] C:\Users\aswin\.gradle\caches\transforms-3\4c16547a1e97fe938e3e4b0025875bb8\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+161            android:name="androidx.window.sidecar"
+161-->[androidx.window:window:1.0.0] C:\Users\aswin\.gradle\caches\transforms-3\4c16547a1e97fe938e3e4b0025875bb8\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+162            android:required="false" />
+162-->[androidx.window:window:1.0.0] C:\Users\aswin\.gradle\caches\transforms-3\4c16547a1e97fe938e3e4b0025875bb8\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+163
+164        <provider
+164-->[com.squareup.picasso:picasso:2.71828] C:\Users\aswin\.gradle\caches\transforms-3\7382e7f444b584172664e3f7e0ea6fda\transformed\picasso-2.71828\AndroidManifest.xml:8:9-11:40
+165            android:name="com.squareup.picasso.PicassoProvider"
+165-->[com.squareup.picasso:picasso:2.71828] C:\Users\aswin\.gradle\caches\transforms-3\7382e7f444b584172664e3f7e0ea6fda\transformed\picasso-2.71828\AndroidManifest.xml:9:13-64
+166            android:authorities="com.example.pos_android.com.squareup.picasso"
+166-->[com.squareup.picasso:picasso:2.71828] C:\Users\aswin\.gradle\caches\transforms-3\7382e7f444b584172664e3f7e0ea6fda\transformed\picasso-2.71828\AndroidManifest.xml:10:13-72
+167            android:exported="false" />
+167-->[com.squareup.picasso:picasso:2.71828] C:\Users\aswin\.gradle\caches\transforms-3\7382e7f444b584172664e3f7e0ea6fda\transformed\picasso-2.71828\AndroidManifest.xml:11:13-37
+168    </application>
+169
+170</manifest>

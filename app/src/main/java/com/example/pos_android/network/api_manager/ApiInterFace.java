@@ -83,10 +83,10 @@ public interface ApiInterFace {
             @Query("type") String type
     );
 
-    @GET("income-per-item-monthly")
+    @GET("report-food-item-monthly")
     Observable<IncomePerItemMonthlyResponse> incomePerItemMonthly(
             @Header("Authorization") String string,
-            @Query("food") String food
+            @Query("foodId") int foodId
     );
 
     @GET("kitchen-order")

@@ -236,6 +236,7 @@ layout activity_home
 layout activity_income_report
 layout activity_kitchen
 layout activity_kitchen_order_detail
+layout activity_list_all_food
 layout activity_login
 layout activity_register
 layout activity_report
@@ -261,6 +262,7 @@ layout item_cart_product
 layout kitchen_food_item
 layout kitchen_order_item
 layout layout_add_cart_item
+layout layout_all_food_item
 layout layout_history
 layout layout_popular_item
 layout layout_select_date

@@ -1,11 +1,12 @@
 package com.example.pos_android.data.model.sales_report;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BestSellingReportData {
     public String type;
-    public ArrayList<FoodDetail> food_details;
-    public ArrayList<Double> chart_data;
+    public List<FoodDetail> food_details;
+    public List<Double> chart_data;
 
     public String getType() {
         return type;
@@ -15,7 +16,7 @@ public class BestSellingReportData {
         this.type = type;
     }
 
-    public ArrayList<FoodDetail> getFood_details() {
+    public List<FoodDetail> getFood_details() {
         return food_details;
     }
 
@@ -23,12 +24,21 @@ public class BestSellingReportData {
         this.food_details = food_details;
     }
 
-    public ArrayList<Double> getChart_data() {
+    public List<Double> getChart_data() {
         return chart_data;
     }
 
     public void setChart_data(ArrayList<Double> chart_data) {
         this.chart_data = chart_data;
+    }
+
+    @Override
+    public String toString() {
+        return "BestSellingReportData{" +
+                "type='" + type + '\'' +
+                ", food_details=" + food_details +
+                ", chart_data=" + chart_data +
+                '}';
     }
 }
 

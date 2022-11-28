@@ -30,11 +30,11 @@ public class IncomePerItemMonthlyPresenter implements IncomePerItemMonthlyContra
     }
 
     @Override
-    public void geIncomePerItemMonthly(String type) {
+    public void geIncomePerItemMonthly(int i) {
         if (NetworkManager.isNetworkAvailable(mContext)) {
             mView.showProgressBar();
 
-            mApiDataManager.getIncomePerItemMonthly(sessionManager.getUserToken(), this, type);
+            mApiDataManager.getIncomePerItemMonthly(sessionManager.getUserToken(), this, i);
 
         } else
             mView.showWarningMessage(mContext.getString(R.string.no_network));
@@ -43,7 +43,7 @@ public class IncomePerItemMonthlyPresenter implements IncomePerItemMonthlyContra
     @Override
     public void onIncomePerItemMonthlyCallback(IncomePerItemMonthlyResponse response) {
         mView.hideProgressBar();
-        if (response.isSuccess()) {
+        if (response.getStatus()) {
             mView.showIncomePerItemMonthlyResponse(response);
         } else
             mView.showWarningMessage(response.getMessage());

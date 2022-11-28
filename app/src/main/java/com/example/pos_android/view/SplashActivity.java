@@ -28,7 +28,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(() -> {
 
             Intent i = new Intent(SplashActivity.this,
-                    ReportActivity.class);
+                    AdminHomeActivity.class);
             startActivity(i);
 
           /*  if (sessionManager.isLoggedIn()) {

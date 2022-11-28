@@ -9,7 +9,6 @@ import com.example.pos_android.R;
 import com.example.pos_android.adapter.KitchenOrderListingAdapter;
 import com.example.pos_android.contracts.KitchenListingContract;
 import com.example.pos_android.data.model.KitchenResponse;
-import com.example.pos_android.data.model.kitchen.KitchenOrderResponse;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.databinding.ActivityKitchenBinding;
 import com.example.pos_android.presenter.KitchenPresenter;
@@ -39,19 +38,24 @@ public class KitchenActivity extends BaseActivity implements KitchenListingContr
     private void initView() {
         presenter = new KitchenPresenter(this, this);
         sessionManager = new SessionManager(this);
-        adapter = new KitchenOrderListingAdapter(kitchenDataList,this);
+        adapter = new KitchenOrderListingAdapter(kitchenDataList, this);
         binding.rvOrder.setLayoutManager(new LinearLayoutManager(this));
         binding.rvOrder.setAdapter(adapter);
         binding.btnLogout.setOnClickListener(v -> {
             showLogoutDialog();
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         presenter.callKitchenOrderList();
     }
 
     @Override
     public void onItemClick(Integer position, String from) {
         KitchenResponse.KitchenData data = kitchenDataList.get(position);
-        Intent i = new Intent(this,KitchenOrderDetailActivity.class);
+        Intent i = new Intent(this, KitchenOrderDetailActivity.class);
         i.putExtra("data", data);
         startActivity(i);
     }
@@ -95,7 +99,13 @@ public class KitchenActivity extends BaseActivity implements KitchenListingContr
     @Override
     public void showKitchenOrderListApiSuccess(List<KitchenResponse.KitchenData> saveResponse) {
         if (saveResponse.size() > 0) {
-            kitchenDataList.addAll(saveResponse);
+            for (KitchenResponse.KitchenData data : saveResponse) {
+                if (data.getStatus() == null) {
+                    kitchenDataList.add(data);
+                } else if (!data.getStatus().equals("Completed")) {
+                    kitchenDataList.add(data);
+                }
+            }
             adapter.notifyDataSetChanged();
         }
     }

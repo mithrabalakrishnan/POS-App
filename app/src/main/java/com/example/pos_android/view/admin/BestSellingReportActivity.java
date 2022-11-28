@@ -10,7 +10,9 @@ import androidx.core.util.Pair;
 
 import com.example.pos_android.adapter.BestSellingAdapter;
 import com.example.pos_android.contracts.BestSellingReportContract;
+import com.example.pos_android.data.model.sales_report.BestSellingReportData;
 import com.example.pos_android.data.model.sales_report.BestSellingReportResponse;
+import com.example.pos_android.data.model.sales_report.FoodDetail;
 import com.example.pos_android.databinding.ActivityBestSellingReportBinding;
 import com.example.pos_android.presenter.BestSellingReportPresenter;
 import com.example.pos_android.view.BaseActivity;
@@ -21,6 +23,7 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.material.datepicker.MaterialDatePicker;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class BestSellingReportActivity extends BaseActivity implements AdapterView.OnItemSelectedListener,
@@ -29,8 +32,9 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
     String[] titleList = {"Pizza", "Burger", "Bangers and Mash", "Sunday Roast", "Sandwich"};
     Double[] salesList = {25.0, 15.0, 11.0, 5.0, 17.0};
     BestSellingAdapter adapter;
-    private ActivityBestSellingReportBinding binding;
     MaterialDatePicker materialDatePicker;
+    private List<FoodDetail> foodDetailList = new ArrayList<>();
+    private ActivityBestSellingReportBinding binding;
     private BestSellingReportPresenter presenter;
 
     @Override
@@ -44,11 +48,11 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
         } else {
 //            binding.fromLayout.setVisibility(View.VISIBLE);
 //            weeklyData();
-          //  presenter.getBestSellingReport("weekly");
+            //  presenter.getBestSellingReport("weekly");
         }
     }
 
-    private void weeklyData(ArrayList<Double> chart_data) {
+    private void weeklyData(List<Double> chart_data) {
         ArrayList<PieEntry> pieEntries = new ArrayList<>();
         pieEntries.add(new PieEntry(chart_data.get(0).floatValue(), "Pizza"));
         pieEntries.add(new PieEntry(chart_data.get(1).floatValue(), "Burger"));
@@ -73,20 +77,21 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
 //        binding.pieChart.getXAxis().setGranularityEnabled(true);
     }
 
-    private void monthlyData(ArrayList<Double> chart_data) {
+    private void monthlyData(BestSellingReportData chart_data) {
         ArrayList<PieEntry> pieEntries = new ArrayList<>();
-        pieEntries.add(new PieEntry(chart_data.get(0).floatValue(), "Pizza"));
-        pieEntries.add(new PieEntry(chart_data.get(1).floatValue(), "Burger"));
-        pieEntries.add(new PieEntry(chart_data.get(2).floatValue(), "Bangers and Mash"));
-        pieEntries.add(new PieEntry(chart_data.get(3).floatValue(), "Sunday Roast"));
-        pieEntries.add(new PieEntry(chart_data.get(4).floatValue(), "Sandwich"));
+
+        for (int i = 0; i < chart_data.getChart_data().size(); i++) {
+            if (chart_data.getChart_data().get(i).floatValue() > 0.0) {
+                pieEntries.add(new PieEntry(chart_data.getChart_data().get(i).floatValue(), chart_data.getFood_details().get(i).getFood()));
+            }
+        }
         PieDataSet pieDataSet = new PieDataSet(pieEntries, "Monthly Report");
         binding.pieChart.setEntryLabelTextSize(8f);
 
         pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-        pieDataSet.setValueTextSize(12);
+        pieDataSet.setValueTextSize(10);
         binding.pieChart.setData(new PieData(pieDataSet));
-        binding.pieChart.animateY(5000);
+        binding.pieChart.animateY(3000);
         //  binding.pieChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter());
         binding.pieChart.getDescription().setText("");
         binding.pieChart.getDescription().setTextColor(Color.BLUE);
@@ -109,7 +114,10 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
         super.onCreate(savedInstanceState);
         binding = ActivityBestSellingReportBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        presenter = new BestSellingReportPresenter(this,this);
+        presenter = new BestSellingReportPresenter(this, this);
+
+        adapter = new BestSellingAdapter(this, this, foodDetailList);
+        binding.list.setAdapter(adapter);
 
         MaterialDatePicker.Builder<Pair<Long, Long>> materialDateBuilder
                 = MaterialDatePicker.Builder.dateRangePicker();
@@ -173,14 +181,19 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
 
     @Override
     public void showBestSellingReportResponse(BestSellingReportResponse response) {
-        adapter = new BestSellingAdapter(this, this, response.data.food_details);
-        binding.list.setAdapter(adapter);
-        if(response.data.type.equals("weekly")){
+
+        for (FoodDetail detail : response.getData().getFood_details()) {
+            if (detail.getSale_amount() > 0.0) {
+                foodDetailList.add(detail);
+            }
+        }
+        if (response.data.type.equals("weekly")) {
             weeklyData(response.data.chart_data);
+        } else {
+            monthlyData(response.data);
         }
-        else{
-            monthlyData(response.data.chart_data);
-        }
+        adapter.notifyDataSetChanged();
+
     }
 
     @Override

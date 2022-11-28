@@ -15,7 +15,7 @@
             android:id="@+id/iv_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
+            android:layout_marginLeft="16dp"
             android:src="@drawable/ic_arrow_back" />
 
         <TextView
@@ -25,7 +25,7 @@
             android:gravity="center"
             android:text="Order Details"
             android:textColor="@color/black"
-            android:textSize="25sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
     </LinearLayout>

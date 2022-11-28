@@ -52,6 +52,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
                         android:layout_margin="5dp"
+                        android:letterSpacing="0"
+                        android:textAllCaps="false"
                         android:elevation="3dp"
                         android:text="Logout"
                         android:textColor="@color/black" />

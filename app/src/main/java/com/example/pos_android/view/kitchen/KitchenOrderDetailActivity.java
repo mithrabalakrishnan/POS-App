@@ -19,6 +19,7 @@ public class KitchenOrderDetailActivity extends BaseActivity implements KitchenO
     String[] filterData = {"Select", "In-Progress", "Completed"};
     KitchenResponse.KitchenData kitchenData;
     KitchenPresenter presenter;
+    String selectedStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +37,15 @@ public class KitchenOrderDetailActivity extends BaseActivity implements KitchenO
         binding.spinner.setAdapter(spinnerAdapter);
 
         kitchenData = (KitchenResponse.KitchenData) getIntent().getSerializableExtra("data");
-        binding.tvStatus.setText("Current Status :" + kitchenData.getStatus());
+        binding.tvStatus.setText(kitchenData.getStatus() != null ? "Current Status :" + kitchenData.getStatus() : "In-Progress");
         presenter = new KitchenPresenter(this, this);
+
+        binding.buttonStatus.setOnClickListener(v -> {
+            if (!Objects.equals(selectedStatus, "Select")) {
+                presenter.updateKitchenOrder(kitchenData, selectedStatus);
+            } else
+                showSnackBar(binding.getRoot(), "Please select status");
+        });
     }
 
     @Override
@@ -73,10 +81,8 @@ public class KitchenOrderDetailActivity extends BaseActivity implements KitchenO
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String selectedItem = filterData[position];
-        if (!Objects.equals(selectedItem, "Select")) {
-            presenter.updateKitchenOrder(kitchenData, selectedItem);
-        }
+        selectedStatus = filterData[position];
+
     }
 
     @Override

@@ -9,7 +9,7 @@ public interface IncomePerItemMonthlyContract {
 
     interface Presenter extends BasePresenter {
 
-        void geIncomePerItemMonthly(String type);
+        void geIncomePerItemMonthly(int id);
         void onIncomePerItemMonthlyCallback(IncomePerItemMonthlyResponse response);
 
     }

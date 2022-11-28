@@ -412,14 +412,14 @@ public class ApiDataManager {
         }
     }
 
-    public void getIncomePerItemMonthly(String token, IncomePerItemMonthlyPresenter mPresenter, String food)
+    public void getIncomePerItemMonthly(String token, IncomePerItemMonthlyPresenter mPresenter, int foodId)
     {
         try {
             if (apiInterFace == null)
                 apiInterFace = ApiClient.getClientServerApi().create(ApiInterFace.class);
 
             apiInterFace
-                    .incomePerItemMonthly("Bearer " + token, food)
+                    .incomePerItemMonthly("Bearer " + token, foodId)
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeOn(Schedulers.io())
                     .subscribe(new Observer<IncomePerItemMonthlyResponse>() {
