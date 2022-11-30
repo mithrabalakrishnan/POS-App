@@ -1,10 +1,17 @@
 package com.example.pos_android.view.kitchen;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
+import com.example.pos_android.R;
 import com.example.pos_android.contracts.KitchenOrderDetailContract;
 import com.example.pos_android.data.model.CommonResponse;
 import com.example.pos_android.data.model.KitchenResponse;
@@ -14,9 +21,8 @@ import com.example.pos_android.view.BaseActivity;
 
 import java.util.Objects;
 
-public class KitchenOrderDetailActivity extends BaseActivity implements KitchenOrderDetailContract.View, AdapterView.OnItemSelectedListener {
+public class KitchenOrderDetailActivity extends BaseActivity implements KitchenOrderDetailContract.View {
     ActivityKitchenOrderDetailBinding binding;
-    String[] filterData = {"Select", "In-Progress", "Completed"};
     KitchenResponse.KitchenData kitchenData;
     KitchenPresenter presenter;
     String selectedStatus;
@@ -30,29 +36,50 @@ public class KitchenOrderDetailActivity extends BaseActivity implements KitchenO
     }
 
     private void initView() {
-        binding.spinner.setOnItemSelectedListener(this);
-        ArrayAdapter spinnerAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, filterData);
-        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        binding.spinner.setAdapter(spinnerAdapter);
-
         kitchenData = (KitchenResponse.KitchenData) getIntent().getSerializableExtra("data");
-        binding.tvStatus.setText(kitchenData.getStatus() != null ? "Current Status :" + kitchenData.getStatus() : "Current Status : TO-DO");
-        binding.tvDetails.setText(
-                "Food Id :" + kitchenData.getFoodId()   + "\n" +
-                        "Quantity :" + String.valueOf(kitchenData.getQuanty())   + "\n" +
-                        "User Id :" + String.valueOf(kitchenData.getUserId())   + "\n" +
-                        "Time :" + kitchenData.getTime()   + "\n" +
-                        "Date :" + kitchenData.getDate()   + "\n" +
-                        "Table Id :" + String.valueOf(kitchenData.getTableId())
-        );
+
         presenter = new KitchenPresenter(this, this);
 
+        for (int i = 0; i < 5; i++) {
+            ///create linear layout programmatically
+            LinearLayout layout = new LinearLayout(this);
+            layout.setOrientation(LinearLayout.HORIZONTAL);
+            layout.setPadding(0,8,0,0);
+
+            ///Adds the itemName
+            TextView itemName = new TextView(this);
+            itemName.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1.0f));
+            itemName.setText("RiceAndChicken");
+            itemName.setTextSize(15);
+            itemName.setPadding(15, 0, 0, 0);
+            itemName.setTextColor(getResources().getColor(R.color.black));
+
+            ///Adds the itemCount
+            TextView itemCount = new TextView(this);
+            itemCount.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1.0f));
+            itemCount.setText("X2");
+            itemCount.setTextSize(15);
+            itemCount.setGravity(Gravity.END);
+            itemCount.setPadding(0, 0, 15, 0);
+            itemCount.setTextColor(getResources().getColor(R.color.red_500));
+
+            layout.addView(itemName);
+            layout.addView(itemCount);
+
+            binding.layoutFoodDetails.addView(layout);
+        }
+
+        binding.rgStatus.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                binding.buttonStatus.setVisibility(View.VISIBLE);
+                RadioButton button = findViewById(checkedId);
+                selectedStatus = button.getText().toString();
+            }
+        });
+
         binding.buttonStatus.setOnClickListener(v -> {
-            if (!Objects.equals(selectedStatus, "Select")) {
-                presenter.updateKitchenOrder(kitchenData, selectedStatus);
-            } else
-                showSnackBar(binding.getRoot(), "Please select status");
+                //  presenter.updateKitchenOrder(kitchenData, selectedStatus);
         });
     }
 
@@ -87,14 +114,4 @@ public class KitchenOrderDetailActivity extends BaseActivity implements KitchenO
         super.onPointerCaptureChanged(hasCapture);
     }
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        selectedStatus = filterData[position];
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
-    }
 }

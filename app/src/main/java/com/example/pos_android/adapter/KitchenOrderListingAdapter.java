@@ -19,7 +19,7 @@ public class KitchenOrderListingAdapter extends RecyclerView.Adapter<KitchenOrde
     private List<KitchenResponse.KitchenData> kitchenDataList;
     private OnItemClickListener onItemClickListener;
 
-    public KitchenOrderListingAdapter(List<KitchenResponse.KitchenData> kitchenDataList,OnItemClickListener clickListener) {
+    public KitchenOrderListingAdapter(List<KitchenResponse.KitchenData> kitchenDataList, OnItemClickListener clickListener) {
         this.kitchenDataList = kitchenDataList;
         this.onItemClickListener = clickListener;
     }
@@ -40,12 +40,13 @@ public class KitchenOrderListingAdapter extends RecyclerView.Adapter<KitchenOrde
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         KitchenResponse.KitchenData data = kitchenDataList.get(position);
-        holder.orderId.setText("Order Id : "+String.valueOf(data.getId()));
-        holder.userId.setText("User Id : "+String.valueOf(data.getUserId()));
+        holder.orderId.setText("Order Id : #" + String.valueOf(data.getId()));
+        holder.foodDetails.setText("User Id : " + String.valueOf(data.getUserId()));
+        holder.date.setText(String.valueOf(data.getDate()));
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onItemClickListener.onItemClick(position,"");
+                onItemClickListener.onItemClick(position, "");
             }
         });
     }
@@ -57,12 +58,14 @@ public class KitchenOrderListingAdapter extends RecyclerView.Adapter<KitchenOrde
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // Constructor - accepts entire row item
-        private TextView orderId, userId;
+        private TextView orderId, foodDetails, date;
         private LinearLayout button;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             orderId = itemView.findViewById(R.id.tv_order_id);
-            userId = itemView.findViewById(R.id.tv_order_total);
+            foodDetails = itemView.findViewById(R.id.tv_food_details);
+            date = itemView.findViewById(R.id.tv_date);
             button = itemView.findViewById(R.id.btn_view_order);
         }
     }
