@@ -44,6 +44,10 @@
         "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/drawable/ic_shopping_bag.xml"
     },
     {
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-merged_res-50:/drawable_ic_email.xml.flat",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/drawable/ic_email.xml"
+    },
+    {
         "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-merged_res-50:/drawable_iv_payment.webp.flat",
         "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/drawable/iv_payment.webp"
     },
@@ -188,10 +192,6 @@
         "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/anim/to_left.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-50:/layout_activity_kitchen.xml.flat",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_kitchen.xml"
-    },
-    {
         "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-merged_res-50:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
         "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-pngs-45:/drawable-anydpi-v24/ic_launcher_foreground.xml"
     },
@@ -280,8 +280,16 @@
         "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/drawable/border.xml"
     },
     {
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-merged_res-50:/drawable_ic_smartphone.xml.flat",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/drawable/ic_smartphone.xml"
+    },
+    {
         "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-merged_res-50:/menu_bottom_nav_menu.xml.flat",
         "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.example.pos_android.app-merged_res-50:/drawable_ic_email.xml.flat",
+        "source": "com.example.pos_android.app-main-52:/drawable/ic_email.xml"
     },
     {
         "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-merged_res-50:/drawable-v24_ic_minus.xml.flat",
@@ -312,6 +320,10 @@
         "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/activity_best_selling_report.xml"
     },
     {
+        "merged": "com.example.pos_android.app-merged_res-50:/layout_fragment_profile.xml.flat",
+        "source": "com.example.pos_android.app-main-52:/layout/fragment_profile.xml"
+    },
+    {
         "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-merged_res-50:/layout_activity_add_food.xml.flat",
         "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/activity_add_food.xml"
     },
@@ -322,6 +334,10 @@
     {
         "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-merged_res-50:/layout_activity_login.xml.flat",
         "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.example.pos_android.app-merged_res-50:/drawable_ic_person.xml.flat",
+        "source": "com.example.pos_android.app-main-52:/drawable/ic_person.xml"
     },
     {
         "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-merged_res-50:/layout_layout_select_time.xml.flat",
@@ -358,6 +374,10 @@
     {
         "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-merged_res-50:/drawable_ic_person.xml.flat",
         "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/drawable/ic_person.xml"
+    },
+    {
+        "merged": "com.example.pos_android.app-merged_res-50:/drawable_ic_smartphone.xml.flat",
+        "source": "com.example.pos_android.app-main-52:/drawable/ic_smartphone.xml"
     },
     {
         "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-merged_res-50:/layout_table_layout.xml.flat",

@@ -61,9 +61,8 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
         }
 
         void setData(HistoryResponse.Order model) {
-            historyBinding.tvTime.setText("Date and Time : " + model.getTimeDate());
-            historyBinding.tvName.setText("Food : " + "Pizza");
-            historyBinding.tvTotal.setText("Total price : £" + String.valueOf(model.getTotalPrice()));
+            historyBinding.tvTime.setText(model.getTimeDate());
+            historyBinding.tvTotal.setText(String.valueOf(model.getTotalPrice()));
         }
     }
 }

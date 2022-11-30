@@ -2605,6 +2605,7 @@ int drawable ic_clock_black_24dp 0x7f070082
 int drawable ic_currency_pound 0x7f070083
 int drawable ic_delete 0x7f070084
 int drawable ic_discount 0x7f070085
+int drawable ic_email 0x7f0700d0
 int drawable ic_home 0x7f070086
 int drawable ic_info 0x7f070087
 int drawable ic_keyboard_black_24dp 0x7f070088
@@ -2622,6 +2623,7 @@ int drawable ic_no_cart 0x7f070093
 int drawable ic_person 0x7f070094
 int drawable ic_remove_circle 0x7f070095
 int drawable ic_shopping_bag 0x7f070096
+int drawable ic_smartphone 0x7f0700d1
 int drawable item_bg 0x7f070097
 int drawable iv_payment 0x7f070098
 int drawable loading 0x7f070099
@@ -2999,6 +3001,7 @@ int id iv_booking 0x7f09013b
 int id iv_books 0x7f09013c
 int id iv_no_cart 0x7f09013d
 int id iv_remove 0x7f09013e
+int id iv_user 0x7f0902b4
 int id jumpToEnd 0x7f09013f
 int id jumpToStart 0x7f090140
 int id labeled 0x7f090141
@@ -3316,12 +3319,13 @@ int id tv_food 0x7f090274
 int id tv_food_details 0x7f090275
 int id tv_guest 0x7f090276
 int id tv_guest_count 0x7f090277
+int id tv_mobile 0x7f0902b5
 int id tv_month 0x7f090278
 int id tv_name 0x7f090279
 int id tv_order_id 0x7f09027a
 int id tv_phone 0x7f09027b
-int id tv_qty 0x7f09027c
 int id tv_signup 0x7f09027d
+int id tv_status 0x7f0902b6
 int id tv_success 0x7f09027e
 int id tv_table 0x7f09027f
 int id tv_table_Id 0x7f090280

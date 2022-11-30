@@ -16,6 +16,10 @@
         "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/fragment_home.xml"
     },
     {
+        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_profile.xml",
+        "source": "com.example.pos_android.app-main-52:/layout/fragment_profile.xml"
+    },
+    {
         "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/activity_kitchen_order_detail.xml",
         "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/activity_kitchen_order_detail.xml"
     },
@@ -44,10 +48,6 @@
         "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/fragment_discount.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/activity_kitchen.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_kitchen.xml"
-    },
-    {
         "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/layout_add_cart_item.xml",
         "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/layout_add_cart_item.xml"
     },
@@ -60,12 +60,12 @@
         "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/fragment_payment.xml"
     },
     {
-        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/best_selling_layout.xml",
-        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/best_selling_layout.xml"
-    },
-    {
         "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_order.xml",
         "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/fragment_order.xml"
+    },
+    {
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/best_selling_layout.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/best_selling_layout.xml"
     },
     {
         "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_food_list.xml",

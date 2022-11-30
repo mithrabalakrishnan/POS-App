@@ -2606,6 +2606,7 @@ drawable ic_clock_black_24dp
 drawable ic_currency_pound
 drawable ic_delete
 drawable ic_discount
+drawable ic_email
 drawable ic_home
 drawable ic_info
 drawable ic_keyboard_black_24dp
@@ -2623,6 +2624,7 @@ drawable ic_no_cart
 drawable ic_person
 drawable ic_remove_circle
 drawable ic_shopping_bag
+drawable ic_smartphone
 drawable item_bg
 drawable iv_payment
 drawable loading
@@ -3000,6 +3002,7 @@ id iv_booking
 id iv_books
 id iv_no_cart
 id iv_remove
+id iv_user
 id jumpToEnd
 id jumpToStart
 id labeled
@@ -3317,12 +3320,13 @@ id tv_food
 id tv_food_details
 id tv_guest
 id tv_guest_count
+id tv_mobile
 id tv_month
 id tv_name
 id tv_order_id
 id tv_phone
-id tv_qty
 id tv_signup
+id tv_status
 id tv_success
 id tv_table
 id tv_table_Id

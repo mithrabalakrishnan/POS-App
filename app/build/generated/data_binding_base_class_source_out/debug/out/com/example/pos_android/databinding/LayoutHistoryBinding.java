@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.pos_android.R;
@@ -17,13 +18,19 @@ import java.lang.String;
 
 public final class LayoutHistoryBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final CardView rootView;
 
   @NonNull
-  public final TextView tvName;
+  public final LinearLayout layoutFoodDetails;
 
   @NonNull
-  public final TextView tvQty;
+  public final TextView tvDate;
+
+  @NonNull
+  public final TextView tvStatus;
+
+  @NonNull
+  public final TextView tvTableId;
 
   @NonNull
   public final TextView tvTime;
@@ -31,18 +38,21 @@ public final class LayoutHistoryBinding implements ViewBinding {
   @NonNull
   public final TextView tvTotal;
 
-  private LayoutHistoryBinding(@NonNull LinearLayout rootView, @NonNull TextView tvName,
-      @NonNull TextView tvQty, @NonNull TextView tvTime, @NonNull TextView tvTotal) {
+  private LayoutHistoryBinding(@NonNull CardView rootView, @NonNull LinearLayout layoutFoodDetails,
+      @NonNull TextView tvDate, @NonNull TextView tvStatus, @NonNull TextView tvTableId,
+      @NonNull TextView tvTime, @NonNull TextView tvTotal) {
     this.rootView = rootView;
-    this.tvName = tvName;
-    this.tvQty = tvQty;
+    this.layoutFoodDetails = layoutFoodDetails;
+    this.tvDate = tvDate;
+    this.tvStatus = tvStatus;
+    this.tvTableId = tvTableId;
     this.tvTime = tvTime;
     this.tvTotal = tvTotal;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public CardView getRoot() {
     return rootView;
   }
 
@@ -67,15 +77,27 @@ public final class LayoutHistoryBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.tv_name;
-      TextView tvName = ViewBindings.findChildViewById(rootView, id);
-      if (tvName == null) {
+      id = R.id.layout_food_details;
+      LinearLayout layoutFoodDetails = ViewBindings.findChildViewById(rootView, id);
+      if (layoutFoodDetails == null) {
         break missingId;
       }
 
-      id = R.id.tv_qty;
-      TextView tvQty = ViewBindings.findChildViewById(rootView, id);
-      if (tvQty == null) {
+      id = R.id.tv_date;
+      TextView tvDate = ViewBindings.findChildViewById(rootView, id);
+      if (tvDate == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_status;
+      TextView tvStatus = ViewBindings.findChildViewById(rootView, id);
+      if (tvStatus == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_table_Id;
+      TextView tvTableId = ViewBindings.findChildViewById(rootView, id);
+      if (tvTableId == null) {
         break missingId;
       }
 
@@ -91,7 +113,8 @@ public final class LayoutHistoryBinding implements ViewBinding {
         break missingId;
       }
 
-      return new LayoutHistoryBinding((LinearLayout) rootView, tvName, tvQty, tvTime, tvTotal);
+      return new LayoutHistoryBinding((CardView) rootView, layoutFoodDetails, tvDate, tvStatus,
+          tvTableId, tvTime, tvTotal);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

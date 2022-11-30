@@ -1,17 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".view.user.ProfileFragment">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_logout"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:elevation="3dp"
-        android:text="Logout"
-        android:textColor="@color/black" />
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="My Profile"
+                android:textColor="@color/orange_700"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="15dp"
+            android:background="#1E1E1E" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:gravity="start"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="250dp">
+
+                <ImageView
+                    android:id="@+id/iv_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="Alex smith"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:drawablePadding="10dp"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:paddingLeft="15dp"
+                android:singleLine="true"
+                android:text="Username"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:drawableLeftCompat="@drawable/ic_person"
+                app:drawableTint="@color/orange_500" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="10dp"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:paddingLeft="15dp"
+                android:singleLine="true"
+                android:text="Alex Ferguson"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:drawablePadding="10dp"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:paddingLeft="15dp"
+                android:singleLine="true"
+                android:text="Email"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:drawableLeftCompat="@drawable/ic_email"
+                app:drawableTint="@color/orange_500" />
+
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="10dp"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:paddingLeft="15dp"
+                android:singleLine="true"
+                android:text="alex00@gmail.com"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:drawablePadding="10dp"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:paddingLeft="15dp"
+                android:singleLine="true"
+                android:text="Mobile"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:drawableLeftCompat="@drawable/ic_smartphone"
+                app:drawableTint="@color/orange_500" />
+
+            <TextView
+                android:id="@+id/tv_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="10dp"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:paddingLeft="15dp"
+                android:singleLine="true"
+                android:text="1234567890"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:letterSpacing="0"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Logout"
+                android:textAllCaps="false"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/orange_500"
+                app:cornerRadius="0dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_alignParentBottom="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/wavy_bg" />
+
+
+</RelativeLayout>
