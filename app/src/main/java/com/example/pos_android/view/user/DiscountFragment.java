@@ -3,12 +3,16 @@ package com.example.pos_android.view.user;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.pos_android.R;
+import com.example.pos_android.adapter.CouponsAdapter;
+import com.example.pos_android.data.model.CouponsData;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,12 +59,35 @@ public class DiscountFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_discount, container, false);
+        View view = inflater.inflate(R.layout.fragment_discount, container, false);
+
+        CouponsData[] CouponsData = new CouponsData[] {
+                new CouponsData("MASTERCARD50","Valid until 01 February 2022","20% OFF", R.drawable.mastercard),
+                new CouponsData("FRIDAYOFF","Valid until 05 January 2022","50% OFF", R.drawable.black_friday),
+                new CouponsData("MBK40","Valid until 20 AUGUST 2022","CASHBACK", R.drawable.offer),
+                new CouponsData("BUY1GET1","Valid until 01 February 2022","BUY1GET1",R.drawable.shopping_bag),
+
+        };
+
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerView_coupon);
+        CouponsAdapter adapter = new CouponsAdapter(CouponsData);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        recyclerView.setAdapter(adapter);
+
+
+
+        return view;
+
+
     }
 }
