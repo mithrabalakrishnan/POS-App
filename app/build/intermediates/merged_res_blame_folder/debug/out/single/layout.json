@@ -1,150 +1,162 @@
 [
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/activity_add_food.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_add_food.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_order_success.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/fragment_order_success.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/item_cart_product.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/item_cart_product.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/activity_sales_report.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/activity_sales_report.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/table_layout.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/table_layout.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/checkout_layout.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/checkout_layout.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/activity_home.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_home.xml"
-    },
-    {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/activity_register.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_register.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_home.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/fragment_home.xml"
     },
     {
         "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_profile.xml",
         "source": "com.example.pos_android.app-main-52:/layout/fragment_profile.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_discount.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/fragment_discount.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/activity_kitchen_order_detail.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/activity_kitchen_order_detail.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/activity_admin_home.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_admin_home.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/dialogue_loading_layout.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/dialogue_loading_layout.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/layout_select_time.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/layout_select_time.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/layout_history.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/layout_history.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/add_guest_layout.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/add_guest_layout.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/activity_add_food.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/activity_add_food.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/layout_select_date.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/layout_select_date.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_reservation.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/fragment_reservation.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/best_selling_layout.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/best_selling_layout.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/activity_login.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/activity_login.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/activity_kitchen_order_detail.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_kitchen_order_detail.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_discount.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/fragment_discount.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_order.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/fragment_order.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/layout_add_cart_item.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/layout_add_cart_item.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/dialogue_loading_layout.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/dialogue_loading_layout.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_summary.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/fragment_summary.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_home.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/fragment_home.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_payment.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/fragment_payment.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/kitchen_food_item.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/kitchen_food_item.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_order.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/fragment_order.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/activity_kitchen.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_kitchen.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/best_selling_layout.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/best_selling_layout.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/layout_popular_item.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/layout_popular_item.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_food_list.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/fragment_food_list.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/activity_report.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_report.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_profile.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/fragment_profile.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/activity_best_selling_report.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_best_selling_report.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/add_cart_view.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/add_cart_view.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_food_list.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/fragment_food_list.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/kitchen_food_item.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/kitchen_food_item.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/activity_login.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_login.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/layout_all_food_item.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/layout_all_food_item.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/layout_history.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/layout_history.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/activity_admin_home.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/activity_admin_home.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/layout_add_cart_item.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/layout_add_cart_item.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/table_layout.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/table_layout.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/activity_splash.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_splash.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/layout_select_time.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/layout_select_time.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_summary.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/fragment_summary.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/layout_popular_item.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/layout_popular_item.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/activity_income_report.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_income_report.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/layout_select_date.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/layout_select_date.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_order_success.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/fragment_order_success.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/inc_dec_view.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/inc_dec_view.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/add_cart_view.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/add_cart_view.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/activity_list_all_food.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/activity_list_all_food.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/inc_dec_view.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/inc_dec_view.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/item_cart_product.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/item_cart_product.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_reservation.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/fragment_reservation.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/activity_splash.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/activity_splash.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_payment.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/fragment_payment.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/activity_report.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/activity_report.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/checkout_layout.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/checkout_layout.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/activity_register.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/activity_register.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_contact_details.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/fragment_contact_details.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/activity_kitchen.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/activity_kitchen.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/activity_sales_report.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/activity_sales_report.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/activity_home.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/activity_home.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-49:/layout/kitchen_order_item.xml",
-        "source": "com.example.pos_android.app-main-52:/layout/kitchen_order_item.xml"
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/fragment_contact_details.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/fragment_contact_details.xml"
+    },
+    {
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/activity_best_selling_report.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/activity_best_selling_report.xml"
+    },
+    {
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/add_guest_layout.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/add_guest_layout.xml"
+    },
+    {
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/activity_income_report.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/activity_income_report.xml"
+    },
+    {
+        "merged": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-mergeDebugResources-49:/layout/kitchen_order_item.xml",
+        "source": "/Users/aswin/.gradle/daemon/7.4/com.example.pos_android.app-main-52:/layout/kitchen_order_item.xml"
     }
 ]

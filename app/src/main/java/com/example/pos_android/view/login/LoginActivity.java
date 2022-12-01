@@ -10,6 +10,7 @@ import com.example.pos_android.presenter.LoginPresenter;
 import com.example.pos_android.utils.Validation;
 import com.example.pos_android.view.BaseActivity;
 import com.example.pos_android.view.admin.AdminHomeActivity;
+import com.example.pos_android.view.kitchen.KitchenActivity;
 import com.example.pos_android.view.register.RegisterActivity;
 import com.example.pos_android.view.user.UserHomeActivity;
 
@@ -20,6 +21,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     private ActivityLoginBinding binding;
     private SessionManager sessionManager;
     private boolean isAdmin = false;
+    private boolean isKitchen = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
             binding.passwordLayout.setError(null);
 
             isAdmin = binding.txtEmail.getText().toString().trim().equals("admin");
+            isKitchen = binding.txtEmail.getText().toString().trim().equals("kitchen");
 
             presenter.callLogin(binding.txtEmail.getText().toString().trim(),
                     binding.txtPass.getText().toString().trim());
@@ -96,6 +99,9 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
         if (isAdmin) {
             sessionManager.setUsertype(SessionManager.UserRoles.ADMIN);
             startActivity(new Intent(LoginActivity.this, AdminHomeActivity.class));
+        } else if(isKitchen) {
+            sessionManager.setUsertype(SessionManager.UserRoles.KITCHEN);
+            startActivity(new Intent(LoginActivity.this, KitchenActivity.class));
         }
         else {
             sessionManager.setUsertype(SessionManager.UserRoles.USER);

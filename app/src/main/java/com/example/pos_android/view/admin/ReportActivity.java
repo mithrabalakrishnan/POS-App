@@ -44,7 +44,7 @@ public class ReportActivity extends AppCompatActivity {
         binding.totalIncomeReport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ReportActivity.this,IncomeReportActivity.class));
+                startActivity(new Intent(ReportActivity.this,ListAllFoodActivity.class));
             }
         });
 

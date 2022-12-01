@@ -81,7 +81,7 @@ public class SalesReportActivity extends BaseActivity implements
         } else {
 //            binding.fromLayout.setVisibility(View.VISIBLE);
 //            weaklyData();
-            presenter.callSalesReport("weekly");
+          //  presenter.callSalesReport("weekly");
         }
     }
 
@@ -178,8 +178,8 @@ public class SalesReportActivity extends BaseActivity implements
 
     @Override
     public void showSuccess(SalesReportResponse saveResponse) {
-        binding.txtPrice.setText(saveResponse.data.total_sale);
-        binding.txtPeople.setText(saveResponse.data.total_customers);
+        binding.txtPrice.setText(String.valueOf(saveResponse.data.total_sale));
+        binding.txtPeople.setText(String.valueOf(saveResponse.data.total_customers));
         if(saveResponse.data.type.equals("weekly")){
             weaklyData(saveResponse.data.chart_data);
         }

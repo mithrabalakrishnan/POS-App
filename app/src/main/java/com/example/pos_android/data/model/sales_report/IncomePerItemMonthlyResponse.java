@@ -1,25 +1,27 @@
 package com.example.pos_android.data.model.sales_report;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
+
 public class IncomePerItemMonthlyResponse {
-    public int statuscode;
-    public boolean success;
-    public String message;
-    public IncomePerItemMonthlyData data;
+    @SerializedName("status")
+    @Expose
+    private Boolean status;
+    @SerializedName("message")
+    @Expose
+    private String message;
+    @SerializedName("data")
+    @Expose
+    private List<Double> data = null;
 
-    public int getStatuscode() {
-        return statuscode;
+    public Boolean getStatus() {
+        return status;
     }
 
-    public void setStatuscode(int statuscode) {
-        this.statuscode = statuscode;
-    }
-
-    public boolean isSuccess() {
-        return success;
-    }
-
-    public void setSuccess(boolean success) {
-        this.success = success;
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 
     public String getMessage() {
@@ -30,11 +32,11 @@ public class IncomePerItemMonthlyResponse {
         this.message = message;
     }
 
-    public IncomePerItemMonthlyData getData() {
+    public List<Double> getData() {
         return data;
     }
 
-    public void setData(IncomePerItemMonthlyData data) {
+    public void setData(List<Double> data) {
         this.data = data;
     }
 }

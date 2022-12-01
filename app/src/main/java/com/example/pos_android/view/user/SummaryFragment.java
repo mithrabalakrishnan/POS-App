@@ -217,7 +217,7 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
 
 
         OrderInfoModel orderInfoModel = new OrderInfoModel(
-                foodId, quantity, total, tableInfoModel.getDate() + tableInfoModel.getTime(),
+                foodId, quantity, total, tableInfoModel.getTime(), tableInfoModel.getDate(),
                 tableInfoModel
         );
 

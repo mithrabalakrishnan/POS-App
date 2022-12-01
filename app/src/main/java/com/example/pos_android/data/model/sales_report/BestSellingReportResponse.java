@@ -1,25 +1,25 @@
 package com.example.pos_android.data.model.sales_report;
 
 public class BestSellingReportResponse {
-    public int statuscode;
-    public boolean success;
+    public boolean status;
     public String message;
     public BestSellingReportData data;
 
-    public int getStatuscode() {
-        return statuscode;
-    }
-
-    public void setStatuscode(int statuscode) {
-        this.statuscode = statuscode;
-    }
 
     public boolean isSuccess() {
-        return success;
+        return status;
     }
 
     public void setSuccess(boolean success) {
-        this.success = success;
+        this.status = success;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
     public String getMessage() {

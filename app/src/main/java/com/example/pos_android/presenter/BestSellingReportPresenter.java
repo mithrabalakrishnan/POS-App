@@ -42,7 +42,7 @@ public class BestSellingReportPresenter implements BestSellingReportContract.Pre
     @Override
     public void onBestSellingReportCallback(BestSellingReportResponse response) {
         mView.hideProgressBar();
-        if (response.isSuccess()) {
+        if (response.isStatus()) {
             mView.showBestSellingReportResponse(response);
         } else
             mView.showWarningMessage(response.getMessage());

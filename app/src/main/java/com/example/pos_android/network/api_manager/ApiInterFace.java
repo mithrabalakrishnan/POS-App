@@ -3,6 +3,7 @@ package com.example.pos_android.network.api_manager;
 import com.example.pos_android.data.model.CommonResponse;
 import com.example.pos_android.data.model.HistoryResponse;
 import com.example.pos_android.data.model.ImagePickerResponse;
+import com.example.pos_android.data.model.KitchenResponse;
 import com.example.pos_android.data.model.LoginResponse;
 import com.example.pos_android.data.model.RegisterResponse;
 import com.example.pos_android.data.model.TableReservationResponse;
@@ -11,6 +12,7 @@ import com.example.pos_android.data.model.kitchen.KitchenOrderResponse;
 import com.example.pos_android.data.model.kitchen.KitchenUpdateOrderPayload;
 import com.example.pos_android.data.model.request.AddFoodRequestData;
 import com.example.pos_android.data.model.request.FoodOrderRequestData;
+import com.example.pos_android.data.model.request.KitchenRequestData;
 import com.example.pos_android.data.model.request.LoginRequestData;
 import com.example.pos_android.data.model.request.RegisterRequestData;
 import com.example.pos_android.data.model.request.TableRequestData;
@@ -25,6 +27,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Part;
 import retrofit2.http.Query;
 
@@ -69,32 +72,31 @@ public interface ApiInterFace {
             @Header("Authorization") String string
     );
 
-    @GET("sales-report")
-    Observable<SalesReportResponse> salesReport(
-            @Header("Authorization") String string,
-            @Query("type") String type
+    @GET("report-monthly")
+    Observable<SalesReportResponse> salesReportMonthly(
+            @Header("Authorization") String string
     );
 
-    @GET("best-selling-report")
+    @GET("report-food-sales-monthly")
     Observable<BestSellingReportResponse> bestSellingReport(
             @Header("Authorization") String string,
             @Query("type") String type
     );
 
-    @GET("income-per-item-monthly")
+    @GET("report-food-item-monthly")
     Observable<IncomePerItemMonthlyResponse> incomePerItemMonthly(
             @Header("Authorization") String string,
-            @Query("food") String food
+            @Query("foodId") int foodId
     );
 
-    @GET("kitchen-get-orders")
-    Observable<KitchenOrderResponse> kitchenGetOrders(
+    @GET("kitchen-order")
+    Observable<KitchenResponse> kitchenGetOrders(
             @Header("Authorization") String string
     );
 
-    @POST("kitchen-update-order")
+    @PUT("kitchen-order")
     Observable<CommonResponse> kitchenUpdateOrder(
             @Header("Authorization") String string,
-            @Body KitchenUpdateOrderPayload requestData);
+            @Body KitchenRequestData requestData);
 
 }

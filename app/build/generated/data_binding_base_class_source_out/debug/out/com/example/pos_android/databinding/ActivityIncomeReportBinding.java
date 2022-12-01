@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Spinner;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -27,15 +26,11 @@ public final class ActivityIncomeReportBinding implements ViewBinding {
   @NonNull
   public final LineChart lineChart;
 
-  @NonNull
-  public final Spinner spinner;
-
   private ActivityIncomeReportBinding(@NonNull LinearLayout rootView, @NonNull ImageView iconBack,
-      @NonNull LineChart lineChart, @NonNull Spinner spinner) {
+      @NonNull LineChart lineChart) {
     this.rootView = rootView;
     this.iconBack = iconBack;
     this.lineChart = lineChart;
-    this.spinner = spinner;
   }
 
   @Override
@@ -77,13 +72,7 @@ public final class ActivityIncomeReportBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.spinner;
-      Spinner spinner = ViewBindings.findChildViewById(rootView, id);
-      if (spinner == null) {
-        break missingId;
-      }
-
-      return new ActivityIncomeReportBinding((LinearLayout) rootView, iconBack, lineChart, spinner);
+      return new ActivityIncomeReportBinding((LinearLayout) rootView, iconBack, lineChart);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

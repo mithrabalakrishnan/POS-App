@@ -27,7 +27,7 @@ android {
         }
         debug {
             buildConfigField "String", "API_URL", "\"https://abcd.com/\""
-            buildConfigField "String", "BASE_URL_LOCAL", "\"http://10.96.78.77:8012/\""
+            buildConfigField "String", "BASE_URL_LOCAL", "\"http://192.168.1.8:8012/\""
         }
     }
     compileOptions {

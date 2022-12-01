@@ -39,7 +39,7 @@ public class ConfirmOrderPresenter implements FoodReservationContract.Presenter 
             mApiDataManager.makeFoodOrder(new FoodOrderRequestData(
                             orderInfoModel.getFoodId(), orderInfoModel.getQuantity(),
                             orderInfoModel.getTableInfoModel().getId(), orderInfoModel.getTotalPrice(),
-                            orderInfoModel.getTimeAndDate()
+                            orderInfoModel.getTime(),orderInfoModel.getDate()
                     ),
                     sessionManager.getUserToken(), this);
 
