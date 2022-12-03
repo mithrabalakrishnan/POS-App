@@ -13,6 +13,8 @@ public class SessionManager {
     private static final String USERTYPE = "userType";
     private static final String IS_FOOD_ADDED = "is_food_added";
     private static final String PROFILE_IMAGE_URL = "profile_image";
+    private static final String IS_COUPON_SELECTED = "is_coupon_select";
+    private static final String COUPON_PERCENT = "coupon_percent";
     private final SharedPreferences sharedPref;
     private final SharedPreferences.Editor editor;
     Context context;
@@ -76,6 +78,21 @@ public class SessionManager {
     public String getProfileImageUrl() {
         return sharedPref.getString(PROFILE_IMAGE_URL, "");
     }
+
+    public void setIsCouponSelected(Boolean apply_value) {
+        editor.putBoolean(IS_COUPON_SELECTED, apply_value);
+        editor.apply();
+    }
+     public Boolean getIsCouponSelected(){
+        return sharedPref.getBoolean(IS_COUPON_SELECTED,false);
+     }
+    public void setCouponPercent(int coupon) {
+        editor.putInt(COUPON_PERCENT, coupon);
+        editor.apply();
+    }
+     public int getCouponPercent(){
+        return sharedPref.getInt(COUPON_PERCENT,0);
+     }
 
     public void clear() {
         editor.clear();

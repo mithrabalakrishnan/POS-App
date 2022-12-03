@@ -74,6 +74,14 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
                 return false;
             }
         });
+        if(sessionManager.getIsCouponSelected()){
+            binding.layoutCoupon.setVisibility(View.GONE);
+            binding.txtCoupon.setText("Applied "+sessionManager.getCouponPercent()+"% Off");
+            binding.layoutCouponItem.setVisibility(View.VISIBLE);
+        }else{
+           binding.layoutCoupon.setVisibility(View.VISIBLE);
+           binding.layoutCouponItem.setVisibility(View.GONE);
+        }
     }
 
 
@@ -99,7 +107,14 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
         binding.tvTableType.setText("Table : " + tableInfoModel.getTableCategory());
         binding.tvTableTime.setText("Date : " + tableInfoModel.getDate() + " | " + "Time : " + tableInfoModel.getTime());
 
-
+        if(sessionManager.getIsCouponSelected()){
+            binding.layoutCoupon.setVisibility(View.GONE);
+            binding.txtCoupon.setText("Applied "+sessionManager.getCouponPercent()+"% Off");
+            binding.layoutCouponItem.setVisibility(View.VISIBLE);
+        }else{
+            binding.layoutCoupon.setVisibility(View.VISIBLE);
+            binding.layoutCouponItem.setVisibility(View.GONE);
+        }
         binding.buttonUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -233,4 +248,5 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
         navController.popBackStack(id, true);
         navController.navigate(id);
     }
+
 }

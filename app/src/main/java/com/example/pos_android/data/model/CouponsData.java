@@ -5,12 +5,14 @@ public class CouponsData {
     private String txtExpDate;
     private String Amount;
     private int image;
+    private int percentage;
 
-    public CouponsData(String txtCouponName, String txtExpDate, String Amount, int image) {
+    public CouponsData(String txtCouponName, String txtExpDate, String Amount, int image, int percentage) {
         this.txtCouponName = txtCouponName;
         this.txtExpDate = txtExpDate;
         this.Amount = Amount;
         this.image = image;
+        this.percentage = percentage;
     }
 
     public String getTxtCouponName() {
@@ -43,5 +45,13 @@ public class CouponsData {
 
     public void setImage(int image) {
         this.image = image;
+    }
+
+    public int getPercentage() {
+        return percentage;
+    }
+
+    public void setPercentage(int percentage) {
+        this.percentage = percentage;
     }
 }

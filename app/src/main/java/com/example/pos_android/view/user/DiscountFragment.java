@@ -2,7 +2,10 @@ package com.example.pos_android.view.user;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,81 +16,56 @@ import android.view.ViewGroup;
 import com.example.pos_android.R;
 import com.example.pos_android.adapter.CouponsAdapter;
 import com.example.pos_android.data.model.CouponsData;
+import com.example.pos_android.data.preference.SessionManager;
+import com.example.pos_android.databinding.FragmentDiscountBinding;
+import com.example.pos_android.utils.OnItemClickListener;
+import com.example.pos_android.view.BaseFragment;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link DiscountFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class DiscountFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+public class DiscountFragment extends BaseFragment implements OnItemClickListener {
+    private FragmentDiscountBinding binding;
+    private SessionManager sessionManager;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public DiscountFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment DiscountFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static DiscountFragment newInstance(String param1, String param2) {
-        DiscountFragment fragment = new DiscountFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-
-
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_discount, container, false);
+        binding = FragmentDiscountBinding.inflate(inflater, container, false);
+        return binding.getRoot();
+    }
 
-        CouponsData[] CouponsData = new CouponsData[] {
-                new CouponsData("MASTERCARD50","Valid until 01 February 2022","20% OFF", R.drawable.mastercard),
-                new CouponsData("FRIDAYOFF","Valid until 05 January 2022","50% OFF", R.drawable.black_friday),
-                new CouponsData("MBK40","Valid until 20 AUGUST 2022","CASHBACK", R.drawable.offer),
-                new CouponsData("BUY1GET1","Valid until 01 February 2022","BUY1GET1",R.drawable.shopping_bag),
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        initView();
+    }
+
+    private void initView() {
+        sessionManager = new SessionManager(requireContext());
+        CouponsData[] CouponsData = new CouponsData[]{
+                new CouponsData("MASTERCARD", "Get up to 20% off \nValid until 01 February 2022", "20% OFF", R.drawable.mastercard,20),
+                new CouponsData("FRIDAY50", "Get up to 50% off \nValid until 05 January 2022", "50% OFF", R.drawable.black_friday,50),
+                new CouponsData("MBK40", "Get up to 20 € \nValid until 20 AUGUST 2022", "20 €", R.drawable.offer,20),
+                new CouponsData("DAYOFF25", "Get up to 25% off \nValid until 01 February 2022", "25% OFF", R.drawable.shopping_bag,25),
 
         };
 
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerView_coupon);
-        CouponsAdapter adapter = new CouponsAdapter(CouponsData);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        recyclerView.setAdapter(adapter);
+
+        CouponsAdapter adapter = new CouponsAdapter(CouponsData,requireContext(),this);
+        binding.recyclerViewCoupon.setHasFixedSize(true);
+        binding.recyclerViewCoupon.setLayoutManager(new LinearLayoutManager(requireContext()));
+        binding.recyclerViewCoupon.setAdapter(adapter);
+    }
 
 
-
-        return view;
-
-
+    @Override
+    public void onItemClick(Integer position, String from) {
+        Navigation.findNavController(binding.getRoot()).navigate(R.id.action_couponFragment_to_summaryFragment);
     }
 }

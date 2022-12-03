@@ -1,8 +1,10 @@
 package com.example.pos_android.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,12 +13,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pos_android.R;
 import com.example.pos_android.data.model.CouponsData;
+import com.example.pos_android.data.preference.SessionManager;
+import com.example.pos_android.utils.OnItemClickListener;
 
 public class CouponsAdapter extends RecyclerView.Adapter<CouponsAdapter.ViewHolder>{
-    private CouponsData[] couponsData;
+    private final CouponsData[] couponsData;
+    private Context context;
+    private final SessionManager sessionManager;
+    OnItemClickListener onItemClickListener;
 
-     public CouponsAdapter(CouponsData[] couponsData) {
+    {
+        assert context != null;
+        sessionManager = new SessionManager(context);
+    }
+
+    public CouponsAdapter(CouponsData[] couponsData, Context context, OnItemClickListener onItemClickListener) {
         this.couponsData = couponsData;
+        this.context = context;
+        this.onItemClickListener = onItemClickListener;
     }
 
     @NonNull
@@ -35,6 +49,15 @@ public class CouponsAdapter extends RecyclerView.Adapter<CouponsAdapter.ViewHold
         holder.txtPrice.setText(myListData.getAmount());
         holder.txtExpDate.setText(myListData.getTxtExpDate());
         holder.imgLogo.setImageResource(myListData.getImage());
+
+        holder.layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sessionManager.setIsCouponSelected(true);
+                sessionManager.setCouponPercent(myListData.getPercentage());
+                onItemClickListener.onItemClick(position,"coupon");
+            }
+        });
     }
 
     @Override
@@ -45,6 +68,7 @@ public class CouponsAdapter extends RecyclerView.Adapter<CouponsAdapter.ViewHold
       public static class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView imgLogo;
         public TextView txtName,txtExpDate,txtPrice;
+        public FrameLayout layout;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -52,6 +76,7 @@ public class CouponsAdapter extends RecyclerView.Adapter<CouponsAdapter.ViewHold
             this.txtName = (TextView) itemView.findViewById(R.id.txtName);
             this.txtExpDate = (TextView) itemView.findViewById(R.id.txtMonth);
             this.txtPrice = (TextView) itemView.findViewById(R.id.txtPrice);
+            this.layout = (FrameLayout) itemView.findViewById(R.id.frameCoupon);
 
         }
     }
