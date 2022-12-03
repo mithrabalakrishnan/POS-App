@@ -39,12 +39,17 @@ public class KitchenOrderDetailActivity extends BaseActivity implements KitchenO
         kitchenData = (KitchenResponse.KitchenData) getIntent().getSerializableExtra("data");
 
         presenter = new KitchenPresenter(this, this);
-
+        binding.tvOrderId.setText("Order ID : #00" + kitchenData.getId());
+        binding.tvDate.setText(kitchenData.getDate());
+        binding.tvTime.setText(kitchenData.getTime());
+        binding.tvTableId.setText(kitchenData.getTableId());
+        if (kitchenData.getStatus() =="")
+//        binding.tvCustomerDetails.setText(kitchenData.);
         for (int i = 0; i < 5; i++) {
             ///create linear layout programmatically
             LinearLayout layout = new LinearLayout(this);
             layout.setOrientation(LinearLayout.HORIZONTAL);
-            layout.setPadding(0,8,0,0);
+            layout.setPadding(0, 8, 0, 0);
 
             ///Adds the itemName
             TextView itemName = new TextView(this);
@@ -79,7 +84,7 @@ public class KitchenOrderDetailActivity extends BaseActivity implements KitchenO
         });
 
         binding.buttonStatus.setOnClickListener(v -> {
-                //  presenter.updateKitchenOrder(kitchenData, selectedStatus);
+            //  presenter.updateKitchenOrder(kitchenData, selectedStatus);
         });
     }
 
