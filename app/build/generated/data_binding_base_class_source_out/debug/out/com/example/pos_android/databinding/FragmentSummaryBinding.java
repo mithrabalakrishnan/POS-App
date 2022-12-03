@@ -29,6 +29,12 @@ public final class FragmentSummaryBinding implements ViewBinding {
   public final LinearLayout cardTable;
 
   @NonNull
+  public final ImageView imageArrowright;
+
+  @NonNull
+  public final ImageView imageSettings;
+
+  @NonNull
   public final ImageView imageVeg;
 
   @NonNull
@@ -45,6 +51,12 @@ public final class FragmentSummaryBinding implements ViewBinding {
 
   @NonNull
   public final LinearLayout layoutTotal;
+
+  @NonNull
+  public final LinearLayout linearCheckoutoffers;
+
+  @NonNull
+  public final LinearLayout linearRowsettings;
 
   @NonNull
   public final RecyclerView recyclerFoodItems;
@@ -70,22 +82,32 @@ public final class FragmentSummaryBinding implements ViewBinding {
   @NonNull
   public final TextView tvTableType;
 
+  @NonNull
+  public final TextView txtAddCoupon;
+
   private FragmentSummaryBinding(@NonNull RelativeLayout rootView, @NonNull TextView buttonUpdate,
-      @NonNull LinearLayout cardTable, @NonNull ImageView imageVeg, @NonNull ImageView ivBack,
+      @NonNull LinearLayout cardTable, @NonNull ImageView imageArrowright,
+      @NonNull ImageView imageSettings, @NonNull ImageView imageVeg, @NonNull ImageView ivBack,
       @NonNull ImageView ivNoCart, @NonNull LinearLayout layoutContent,
       @NonNull AddCartViewBinding layoutQuantityControl, @NonNull LinearLayout layoutTotal,
+      @NonNull LinearLayout linearCheckoutoffers, @NonNull LinearLayout linearRowsettings,
       @NonNull RecyclerView recyclerFoodItems, @NonNull TextView textFoodName,
       @NonNull TextView textTotal, @NonNull LinearLayout toolbar, @NonNull TextView tvGuestCount,
-      @NonNull TextView tvTable, @NonNull TextView tvTableTime, @NonNull TextView tvTableType) {
+      @NonNull TextView tvTable, @NonNull TextView tvTableTime, @NonNull TextView tvTableType,
+      @NonNull TextView txtAddCoupon) {
     this.rootView = rootView;
     this.buttonUpdate = buttonUpdate;
     this.cardTable = cardTable;
+    this.imageArrowright = imageArrowright;
+    this.imageSettings = imageSettings;
     this.imageVeg = imageVeg;
     this.ivBack = ivBack;
     this.ivNoCart = ivNoCart;
     this.layoutContent = layoutContent;
     this.layoutQuantityControl = layoutQuantityControl;
     this.layoutTotal = layoutTotal;
+    this.linearCheckoutoffers = linearCheckoutoffers;
+    this.linearRowsettings = linearRowsettings;
     this.recyclerFoodItems = recyclerFoodItems;
     this.textFoodName = textFoodName;
     this.textTotal = textTotal;
@@ -94,6 +116,7 @@ public final class FragmentSummaryBinding implements ViewBinding {
     this.tvTable = tvTable;
     this.tvTableTime = tvTableTime;
     this.tvTableType = tvTableType;
+    this.txtAddCoupon = txtAddCoupon;
   }
 
   @Override
@@ -135,6 +158,18 @@ public final class FragmentSummaryBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.imageArrowright;
+      ImageView imageArrowright = ViewBindings.findChildViewById(rootView, id);
+      if (imageArrowright == null) {
+        break missingId;
+      }
+
+      id = R.id.imageSettings;
+      ImageView imageSettings = ViewBindings.findChildViewById(rootView, id);
+      if (imageSettings == null) {
+        break missingId;
+      }
+
       id = R.id.image_veg;
       ImageView imageVeg = ViewBindings.findChildViewById(rootView, id);
       if (imageVeg == null) {
@@ -169,6 +204,18 @@ public final class FragmentSummaryBinding implements ViewBinding {
       id = R.id.layout_total;
       LinearLayout layoutTotal = ViewBindings.findChildViewById(rootView, id);
       if (layoutTotal == null) {
+        break missingId;
+      }
+
+      id = R.id.linearCheckoutoffers;
+      LinearLayout linearCheckoutoffers = ViewBindings.findChildViewById(rootView, id);
+      if (linearCheckoutoffers == null) {
+        break missingId;
+      }
+
+      id = R.id.linearRowsettings;
+      LinearLayout linearRowsettings = ViewBindings.findChildViewById(rootView, id);
+      if (linearRowsettings == null) {
         break missingId;
       }
 
@@ -220,10 +267,17 @@ public final class FragmentSummaryBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.txtAddCoupon;
+      TextView txtAddCoupon = ViewBindings.findChildViewById(rootView, id);
+      if (txtAddCoupon == null) {
+        break missingId;
+      }
+
       return new FragmentSummaryBinding((RelativeLayout) rootView, buttonUpdate, cardTable,
-          imageVeg, ivBack, ivNoCart, layoutContent, binding_layoutQuantityControl, layoutTotal,
+          imageArrowright, imageSettings, imageVeg, ivBack, ivNoCart, layoutContent,
+          binding_layoutQuantityControl, layoutTotal, linearCheckoutoffers, linearRowsettings,
           recyclerFoodItems, textFoodName, textTotal, toolbar, tvGuestCount, tvTable, tvTableTime,
-          tvTableType);
+          tvTableType, txtAddCoupon);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

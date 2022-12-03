@@ -4,25 +4,43 @@ package com.example.pos_android.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.pos_android.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentDiscountBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final LinearLayout rootView;
 
-  private FragmentDiscountBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final ImageView ivBack;
+
+  @NonNull
+  public final RecyclerView recyclerViewCoupon;
+
+  @NonNull
+  public final TextView tvOrderId;
+
+  private FragmentDiscountBinding(@NonNull LinearLayout rootView, @NonNull ImageView ivBack,
+      @NonNull RecyclerView recyclerViewCoupon, @NonNull TextView tvOrderId) {
     this.rootView = rootView;
+    this.ivBack = ivBack;
+    this.recyclerViewCoupon = recyclerViewCoupon;
+    this.tvOrderId = tvOrderId;
   }
 
   @Override
   @NonNull
-  public FrameLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -43,10 +61,32 @@ public final class FragmentDiscountBinding implements ViewBinding {
 
   @NonNull
   public static FragmentDiscountBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.iv_back;
+      ImageView ivBack = ViewBindings.findChildViewById(rootView, id);
+      if (ivBack == null) {
+        break missingId;
+      }
 
-    return new FragmentDiscountBinding((FrameLayout) rootView);
+      id = R.id.recyclerView_coupon;
+      RecyclerView recyclerViewCoupon = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerViewCoupon == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_order_id;
+      TextView tvOrderId = ViewBindings.findChildViewById(rootView, id);
+      if (tvOrderId == null) {
+        break missingId;
+      }
+
+      return new FragmentDiscountBinding((LinearLayout) rootView, ivBack, recyclerViewCoupon,
+          tvOrderId);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

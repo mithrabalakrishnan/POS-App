@@ -2,12 +2,11 @@ package com.example.pos_android.view.user;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
@@ -44,6 +43,9 @@ public class ProfileFragment extends Fragment {
         });
         sessionManager = new SessionManager(requireContext());
         String randomText = generateRandomString();
+
+        binding.tvUserName.setText(sessionManager.getUserName());
+
         Glide.with(this)
                 .load("https://avatars.dicebear.com/api/male/" + randomText + ".png")
                 .transition(DrawableTransitionOptions.withCrossFade())

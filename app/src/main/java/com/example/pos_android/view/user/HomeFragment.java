@@ -1,13 +1,18 @@
 package com.example.pos_android.view.user;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +27,8 @@ import com.example.pos_android.data.model.UserHomeResponse;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.databinding.FragmentHomeBinding;
 import com.example.pos_android.presenter.UserHomePresenter;
+import com.example.pos_android.utils.VoiceCommandUtil;
+import com.example.pos_android.utils.VoiceDialog;
 import com.example.pos_android.view.BaseFragment;
 import com.example.pos_android.view.login.LoginActivity;
 
@@ -29,7 +36,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class HomeFragment extends BaseFragment implements UserHomeContract.View {
+public class HomeFragment extends BaseFragment implements UserHomeContract.View, VoiceDialog.OnVoiceReceivedListener {
+    private static final int RECORD_REQUEST_CODE = 100;
     FoodAdapter popularAdapter;
     FoodAdapter recentAdapter;
     UserHomePresenter presenter;
@@ -37,6 +45,7 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View 
     ArrayList<FoodModel> popularArrayList = new ArrayList<>();
     ArrayList<FoodModel> recentArray = new ArrayList<>();
     private FragmentHomeBinding binding;
+    VoiceCommandUtil voiceCommandUtil;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -84,6 +93,10 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View 
         binding.ivBooking.setOnClickListener(v -> {
             Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_tableReservationFragment);
         });
+
+        binding.ivMic.setOnClickListener(v -> {
+            checkPermissions();
+        });
     }
 
     @Override
@@ -129,5 +142,40 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View 
         binding.popularRecyclerview.setAdapter(popularAdapter);
         binding.popularRecyclerview.setLayoutManager(new LinearLayoutManager(requireActivity(), RecyclerView.HORIZONTAL, false));
 
+    }
+
+    private void checkPermissions() {
+        if (ContextCompat.checkSelfPermission(requireContext(),
+                Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(requireActivity(),
+                    new String[]{Manifest.permission.RECORD_AUDIO},
+                    RECORD_REQUEST_CODE);
+        } else {
+            VoiceDialog voiceDialog = new VoiceDialog(requireContext(), this);
+            voiceDialog.show();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == RECORD_REQUEST_CODE && grantResults.length > 0) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                VoiceDialog voiceDialog = new VoiceDialog(requireContext(), this);
+                voiceDialog.show();
+            } else
+                showSnackBar(requireView(), "Please give access to microphone");
+        }
+    }
+
+    @Override
+    public void onReceiveText(String value) {
+        showToast(requireContext(), value);
+        Log.d("Voice command", "onReceiveText: "+value);
+        if (voiceCommandUtil == null)
+            voiceCommandUtil = new VoiceCommandUtil(value.toUpperCase(), getActivity().findViewById(R.id.bottomNavigationView));
+        else
+            voiceCommandUtil.performCommand(value.toUpperCase());
     }
 }
