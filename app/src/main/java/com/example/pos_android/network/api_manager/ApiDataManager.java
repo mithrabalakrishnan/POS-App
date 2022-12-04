@@ -10,6 +10,7 @@ import com.example.pos_android.data.model.LoginResponse;
 import com.example.pos_android.data.model.RegisterResponse;
 import com.example.pos_android.data.model.TableReservationResponse;
 import com.example.pos_android.data.model.UserHomeResponse;
+import com.example.pos_android.data.model.UserProfileResponse;
 import com.example.pos_android.data.model.request.AddFoodRequestData;
 import com.example.pos_android.data.model.request.FoodOrderRequestData;
 import com.example.pos_android.data.model.request.KitchenRequestData;
@@ -30,6 +31,7 @@ import com.example.pos_android.presenter.RegisterPresenter;
 import com.example.pos_android.presenter.SalesReportPresenter;
 import com.example.pos_android.presenter.TableReservationPresenter;
 import com.example.pos_android.presenter.UserHomePresenter;
+import com.example.pos_android.presenter.UserProfilePresenter;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -504,6 +506,43 @@ public class ApiDataManager {
                         @Override
                         public void onNext(CommonResponse response) {
                             mPresenter.onKitchenOrderDetailApiResponse(response);
+                        }
+
+                        @Override
+                        public void onError(Throwable e) {
+                            Log.e(TAG, "onError: " + e.getMessage());
+                            mPresenter.onApiError(e.getMessage());
+                        }
+
+                        @Override
+                        public void onComplete() {
+                        }
+                    });
+
+
+        } catch (Exception e) {
+            mPresenter.onApiError(e.getMessage());
+            Log.e(TAG, "Exception caught in " + e.getMessage().toString());
+        }
+    }
+
+   public void userGetProfile(String token, UserProfilePresenter mPresenter) {
+        try {
+            if (apiInterFace == null)
+                apiInterFace = ApiClient.getClientServerApi().create(ApiInterFace.class);
+
+            apiInterFace
+                    .userGetProfile("Bearer " + token)
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeOn(Schedulers.io())
+                    .subscribe(new Observer<UserProfileResponse>() {
+                        @Override
+                        public void onSubscribe(Disposable d) {
+                        }
+
+                        @Override
+                        public void onNext(UserProfileResponse response) {
+                            mPresenter.onUserProfileResponseCallback(response);
                         }
 
                         @Override
