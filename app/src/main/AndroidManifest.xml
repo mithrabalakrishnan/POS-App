@@ -32,7 +32,14 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".AddKitchenActivity"
+            android:name=".view.admin.CustomerReportActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".view.admin.AddKitchenActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

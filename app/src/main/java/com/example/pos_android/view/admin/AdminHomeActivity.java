@@ -51,6 +51,9 @@ public class AdminHomeActivity extends BaseActivity {
         binding.layoutKitchenUser.setOnClickListener(view -> {
             startActivity(new Intent(getApplicationContext(), AddKitchenActivity.class));
         });
+        binding.btnAddVoucher.setOnClickListener(view -> {
+            startActivity(new Intent(getApplicationContext(), AddKitchenActivity.class));
+        });
     }
 
     private void showLogoutDialog() {

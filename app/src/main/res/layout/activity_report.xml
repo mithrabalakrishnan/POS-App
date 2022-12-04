@@ -46,16 +46,23 @@
         <Button
             android:id="@+id/btn_best_selling"
             android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="Menu Performance Report" />
 
         <Button
             android:id="@+id/total_income_report"
             android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="Total Income per Item Report" />
+
+        <Button
+            android:id="@+id/customer_report"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Customer Report" />
 
     </LinearLayout>
 

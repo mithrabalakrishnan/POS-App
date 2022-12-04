@@ -2894,6 +2894,7 @@
     <dimen name="_9sp">9.0sp</dimen>
     <id name="viewBinding"/>
     <string name="app_name">POS-Android</string>
+    <string name="customer_report">Customer Report</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="income_report">TOTAL INCOME REPORT</string>
     <string name="label_to_pay">Grand Total</string>

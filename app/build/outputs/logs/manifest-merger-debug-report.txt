@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\POS git\app\src\main\AndroidManifest.xml:2:1-141:12
-INJECTED from C:\POS git\app\src\main\AndroidManifest.xml:2:1-141:12
-INJECTED from C:\POS git\app\src\main\AndroidManifest.xml:2:1-141:12
-INJECTED from C:\POS git\app\src\main\AndroidManifest.xml:2:1-141:12
+ADDED from C:\POS git\app\src\main\AndroidManifest.xml:2:1-148:12
+INJECTED from C:\POS git\app\src\main\AndroidManifest.xml:2:1-148:12
+INJECTED from C:\POS git\app\src\main\AndroidManifest.xml:2:1-148:12
+INJECTED from C:\POS git\app\src\main\AndroidManifest.xml:2:1-148:12
 MERGED from [androidx.databinding:viewbinding:7.3.0] C:\Users\aswin\.gradle\caches\transforms-3\cd8e2a3f36ba1561b1c742db6b7563c3\transformed\viewbinding-7.3.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.navigation:navigation-ui:2.5.3] C:\Users\aswin\.gradle\caches\transforms-3\124689b07c4708038c463a026d509968\transformed\navigation-ui-2.5.3\AndroidManifest.xml:17:1-24:12
 MERGED from [com.github.denzcoskun:ImageSlideshow:0.1.0] C:\Users\aswin\.gradle\caches\transforms-3\21755ddbf8d567e8cbd4a14103e9f33a\transformed\ImageSlideshow-0.1.0\AndroidManifest.xml:2:1-11:12
@@ -72,22 +72,22 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\aswin\.gradle\caches\transform
 MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\aswin\.gradle\caches\transforms-3\7382e7f444b584172664e3f7e0ea6fda\transformed\picasso-2.71828\AndroidManifest.xml:2:1-14:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\aswin\.gradle\caches\transforms-3\8e94ddf4200431c5a0228caf9e1afa49\transformed\annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:exifinterface:27.1.0] C:\Users\aswin\.gradle\caches\transforms-3\1e4fed798473b00fb542ed3955293230\transformed\exifinterface-27.1.0\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\POS git\app\src\main\AndroidManifest.xml:2:1-141:12
-INJECTED from C:\POS git\app\src\main\AndroidManifest.xml:2:1-141:12
-INJECTED from C:\POS git\app\src\main\AndroidManifest.xml:2:1-141:12
+INJECTED from C:\POS git\app\src\main\AndroidManifest.xml:2:1-148:12
+INJECTED from C:\POS git\app\src\main\AndroidManifest.xml:2:1-148:12
+INJECTED from C:\POS git\app\src\main\AndroidManifest.xml:2:1-148:12
 	package
 		INJECTED from C:\POS git\app\src\main\AndroidManifest.xml
-		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:2:1-141:12
+		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:2:1-148:12
 		INJECTED from C:\POS git\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\POS git\app\src\main\AndroidManifest.xml
-		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:2:1-141:12
+		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:2:1-148:12
 		INJECTED from C:\POS git\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\POS git\app\src\main\AndroidManifest.xml
-		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:2:1-141:12
+		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:2:1-148:12
 		INJECTED from C:\POS git\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:2:11-69
@@ -134,7 +134,7 @@ ADDED from C:\POS git\app\src\main\AndroidManifest.xml:20:5-71
 	android:name
 		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:20:22-68
 application
-ADDED from C:\POS git\app\src\main\AndroidManifest.xml:22:5-139:19
+ADDED from C:\POS git\app\src\main\AndroidManifest.xml:22:5-146:19
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\aswin\.gradle\caches\transforms-3\16864338184caa82c05d1f43da5d9fee\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\aswin\.gradle\caches\transforms-3\16864338184caa82c05d1f43da5d9fee\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\aswin\.gradle\caches\transforms-3\ddb14abb4386d3ae3df3b67f617ddff3\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -185,108 +185,114 @@ MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\aswin\.gradle\caches
 		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:24:9-65
 	android:usesCleartextTraffic
 		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:32:9-44
-activity#com.example.pos_android.AddKitchenActivity
+activity#com.example.pos_android.view.admin.CustomerReportActivity
 ADDED from C:\POS git\app\src\main\AndroidManifest.xml:34:9-40:20
 	android:exported
 		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:36:13-37
 	android:name
-		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:35:13-47
+		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:35:13-62
 meta-data#android.app.lib_name
 ADDED from C:\POS git\app\src\main\AndroidManifest.xml:37:13-39:36
 	android:value
 		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:39:17-33
 	android:name
 		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:38:17-52
-activity#com.example.pos_android.view.admin.ListAllFoodActivity
+activity#com.example.pos_android.AddKitchenActivity
 ADDED from C:\POS git\app\src\main\AndroidManifest.xml:41:9-47:20
 	android:exported
 		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:43:13-37
 	android:name
-		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:42:13-59
-activity#com.example.pos_android.view.kitchen.KitchenOrderDetailActivity
+		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:42:13-47
+activity#com.example.pos_android.view.admin.ListAllFoodActivity
 ADDED from C:\POS git\app\src\main\AndroidManifest.xml:48:9-54:20
 	android:exported
 		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:50:13-37
 	android:name
-		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:49:13-68
-activity#com.example.pos_android.view.kitchen.KitchenActivity
+		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:49:13-59
+activity#com.example.pos_android.view.kitchen.KitchenOrderDetailActivity
 ADDED from C:\POS git\app\src\main\AndroidManifest.xml:55:9-61:20
 	android:exported
 		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:57:13-37
 	android:name
-		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:56:13-57
-activity#com.example.pos_android.view.admin.IncomeReportActivity
+		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:56:13-68
+activity#com.example.pos_android.view.kitchen.KitchenActivity
 ADDED from C:\POS git\app\src\main\AndroidManifest.xml:62:9-68:20
 	android:exported
 		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:64:13-37
 	android:name
-		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:63:13-60
-activity#com.example.pos_android.view.admin.BestSellingReportActivity
+		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:63:13-57
+activity#com.example.pos_android.view.admin.IncomeReportActivity
 ADDED from C:\POS git\app\src\main\AndroidManifest.xml:69:9-75:20
 	android:exported
 		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:71:13-37
 	android:name
-		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:70:13-65
-activity#com.example.pos_android.view.admin.ReportActivity
+		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:70:13-60
+activity#com.example.pos_android.view.admin.BestSellingReportActivity
 ADDED from C:\POS git\app\src\main\AndroidManifest.xml:76:9-82:20
 	android:exported
 		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:78:13-37
 	android:name
-		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:77:13-54
-activity#com.example.pos_android.view.admin.SalesReportActivity
+		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:77:13-65
+activity#com.example.pos_android.view.admin.ReportActivity
 ADDED from C:\POS git\app\src\main\AndroidManifest.xml:83:9-89:20
 	android:exported
 		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:85:13-37
 	android:name
-		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:84:13-59
-activity#com.example.pos_android.view.admin.AddFoodActivity
+		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:84:13-54
+activity#com.example.pos_android.view.admin.SalesReportActivity
 ADDED from C:\POS git\app\src\main\AndroidManifest.xml:90:9-96:20
 	android:exported
 		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:92:13-37
 	android:name
-		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:91:13-55
-activity#com.example.pos_android.view.admin.AdminHomeActivity
+		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:91:13-59
+activity#com.example.pos_android.view.admin.AddFoodActivity
 ADDED from C:\POS git\app\src\main\AndroidManifest.xml:97:9-103:20
 	android:exported
 		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:99:13-37
 	android:name
-		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:98:13-57
-activity#com.example.pos_android.view.user.UserHomeActivity
+		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:98:13-55
+activity#com.example.pos_android.view.admin.AdminHomeActivity
 ADDED from C:\POS git\app\src\main\AndroidManifest.xml:104:9-110:20
 	android:exported
 		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:106:13-37
 	android:name
-		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:105:13-55
-activity#com.example.pos_android.view.register.RegisterActivity
+		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:105:13-57
+activity#com.example.pos_android.view.user.UserHomeActivity
 ADDED from C:\POS git\app\src\main\AndroidManifest.xml:111:9-117:20
 	android:exported
 		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:113:13-37
 	android:name
-		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:112:13-59
-activity#com.example.pos_android.view.login.LoginActivity
+		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:112:13-55
+activity#com.example.pos_android.view.register.RegisterActivity
 ADDED from C:\POS git\app\src\main\AndroidManifest.xml:118:9-124:20
 	android:exported
 		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:120:13-37
 	android:name
-		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:119:13-53
-activity#com.example.pos_android.view.SplashActivity
-ADDED from C:\POS git\app\src\main\AndroidManifest.xml:125:9-138:20
+		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:119:13-59
+activity#com.example.pos_android.view.login.LoginActivity
+ADDED from C:\POS git\app\src\main\AndroidManifest.xml:125:9-131:20
 	android:exported
-		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:127:13-36
+		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:127:13-37
+	android:name
+		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:126:13-53
+activity#com.example.pos_android.view.SplashActivity
+ADDED from C:\POS git\app\src\main\AndroidManifest.xml:132:9-145:20
+	android:exported
+		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:134:13-36
 	android:theme
-		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:128:13-47
+		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:135:13-47
 	android:name
-		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:126:13-48
+		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:133:13-48
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\POS git\app\src\main\AndroidManifest.xml:129:13-133:29
+ADDED from C:\POS git\app\src\main\AndroidManifest.xml:136:13-140:29
 action#android.intent.action.MAIN
-ADDED from C:\POS git\app\src\main\AndroidManifest.xml:130:17-69
+ADDED from C:\POS git\app\src\main\AndroidManifest.xml:137:17-69
 	android:name
-		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:130:25-66
+		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:137:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\POS git\app\src\main\AndroidManifest.xml:132:17-77
+ADDED from C:\POS git\app\src\main\AndroidManifest.xml:139:17-77
 	android:name
-		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:132:27-74
+		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:139:27-74
 uses-sdk
 INJECTED from C:\POS git\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\POS git\app\src\main\AndroidManifest.xml
