@@ -5504,6 +5504,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_no_cart
+drawable ic_percent
 drawable ic_person
 drawable ic_remove_circle
 drawable ic_shopping_bag
@@ -6397,6 +6398,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_food
 layout activity_add_kitchen
+layout activity_add_voucher
 layout activity_admin_home
 layout activity_best_selling_report
 layout activity_customer_report

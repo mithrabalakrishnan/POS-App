@@ -12,12 +12,14 @@ import com.example.pos_android.contracts.SalesReportContract;
 import com.example.pos_android.data.model.sales_report.SalesReportResponse;
 import com.example.pos_android.databinding.ActivitySalesReportBinding;
 import com.example.pos_android.presenter.SalesReportPresenter;
+import com.example.pos_android.utils.RangeDateValidator;
 import com.example.pos_android.view.BaseActivity;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.datepicker.MaterialDatePicker;
 
 import java.util.ArrayList;
@@ -36,23 +38,26 @@ public class SalesReportActivity extends BaseActivity implements
         binding = ActivitySalesReportBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         presenter =new  SalesReportPresenter(this,this);
-//        reportGraphData();
+
+
         MaterialDatePicker.Builder<Pair<Long, Long>> materialDateBuilder
                 = MaterialDatePicker.Builder.dateRangePicker();
+        CalendarConstraints.Builder calendarConstraints = new CalendarConstraints.Builder();
+        RangeDateValidator validator = new RangeDateValidator(7);
+        calendarConstraints.setValidator(validator);
+        materialDateBuilder.setCalendarConstraints(calendarConstraints.build());
         materialDateBuilder.setTitleText("Select date range");
         materialDatePicker = materialDateBuilder.build();
+        validator.setDatePicker(materialDatePicker);
+
+
 
         materialDatePicker.addOnPositiveButtonClickListener(selection -> {
             binding.tvDateRange.setVisibility(View.VISIBLE);
-            binding.tvDateRange.setText("Selected Date Range : " + materialDatePicker.getHeaderText());
+            binding.tvDateRange.setText("Selected Week : " + materialDatePicker.getHeaderText());
         });
         filterSpinnerSet();
-        binding.iconBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+        binding.iconBack.setOnClickListener(view -> onBackPressed());
 
         binding.btnFrom.setOnClickListener(v -> {
             materialDatePicker.show(getSupportFragmentManager(), "MATERIAL_DATE_PICKER");
@@ -76,10 +81,10 @@ public class SalesReportActivity extends BaseActivity implements
         binding.tvDateRange.setVisibility(View.GONE);
         if (Objects.equals(filterData[position], "Monthly")) {
 //            monthlyData();
-//            binding.fromLayout.setVisibility(View.GONE);
+            binding.fromLayout.setVisibility(View.GONE);
             presenter.callSalesReport("monthly");
         } else {
-//            binding.fromLayout.setVisibility(View.VISIBLE);
+            binding.fromLayout.setVisibility(View.VISIBLE);
 //            weaklyData();
           //  presenter.callSalesReport("weekly");
         }

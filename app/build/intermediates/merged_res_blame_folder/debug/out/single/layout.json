@@ -36,8 +36,8 @@
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\fragment_food_list.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-4:/layout/activity_admin_home.xml",
-        "source": "com.example.pos_android.app-main-7:/layout/activity_admin_home.xml"
+        "merged": "com.example.pos_android.app-mergeDebugResources-4:/layout/activity_sales_report.xml",
+        "source": "com.example.pos_android.app-main-7:/layout/activity_sales_report.xml"
     },
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-mergeDebugResources-4:\\layout\\activity_home.xml",
@@ -108,8 +108,8 @@
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\fragment_discount.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-4:/layout/loading_layout.xml",
-        "source": "com.example.pos_android.app-main-7:/layout/loading_layout.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-mergeDebugResources-4:\\layout\\loading_layout.xml",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\loading_layout.xml"
     },
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-mergeDebugResources-4:\\layout\\layout_popular_item.xml",
@@ -118,6 +118,10 @@
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-mergeDebugResources-4:\\layout\\activity_list_all_food.xml",
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\activity_list_all_food.xml"
+    },
+    {
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-mergeDebugResources-4:\\layout\\activity_add_voucher.xml",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\activity_add_voucher.xml"
     },
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-mergeDebugResources-4:\\layout\\add_guest_layout.xml",

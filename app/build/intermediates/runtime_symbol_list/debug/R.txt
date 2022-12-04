@@ -5503,6 +5503,7 @@ int drawable ic_mtrl_chip_checked_black 0x7f070097
 int drawable ic_mtrl_chip_checked_circle 0x7f070098
 int drawable ic_mtrl_chip_close_circle 0x7f070099
 int drawable ic_no_cart 0x7f07009a
+int drawable ic_percent 0x7f0700e3
 int drawable ic_person 0x7f07009b
 int drawable ic_remove_circle 0x7f07009c
 int drawable ic_shopping_bag 0x7f07009d
@@ -6396,6 +6397,7 @@ int layout abc_select_dialog_material 0x7f0c001a
 int layout abc_tooltip 0x7f0c001b
 int layout activity_add_food 0x7f0c001c
 int layout activity_add_kitchen 0x7f0c001d
+int layout activity_add_voucher 0x7f0c00a3
 int layout activity_admin_home 0x7f0c001e
 int layout activity_best_selling_report 0x7f0c001f
 int layout activity_customer_report 0x7f0c00a1
