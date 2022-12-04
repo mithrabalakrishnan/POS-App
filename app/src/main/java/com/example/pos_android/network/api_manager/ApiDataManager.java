@@ -2,6 +2,7 @@ package com.example.pos_android.network.api_manager;
 
 import android.util.Log;
 
+import com.example.pos_android.data.model.AddKitchenResponse;
 import com.example.pos_android.data.model.CommonResponse;
 import com.example.pos_android.data.model.HistoryResponse;
 import com.example.pos_android.data.model.ImagePickerResponse;
@@ -21,6 +22,7 @@ import com.example.pos_android.data.model.sales_report.BestSellingReportResponse
 import com.example.pos_android.data.model.sales_report.IncomePerItemMonthlyResponse;
 import com.example.pos_android.data.model.sales_report.SalesReportResponse;
 import com.example.pos_android.presenter.AddFoodPresenter;
+import com.example.pos_android.presenter.AddKitchenPresenter;
 import com.example.pos_android.presenter.BestSellingReportPresenter;
 import com.example.pos_android.presenter.ConfirmOrderPresenter;
 import com.example.pos_android.presenter.HistoryPresenter;
@@ -582,6 +584,43 @@ public class ApiDataManager {
                         @Override
                         public void onNext(UserProfileResponse response) {
                             mPresenter.onUserProfileResponseCallback(response);
+                        }
+
+                        @Override
+                        public void onError(Throwable e) {
+                            Log.e(TAG, "onError: " + e.getMessage());
+                            mPresenter.onApiError(e.getMessage());
+                        }
+
+                        @Override
+                        public void onComplete() {
+                        }
+                    });
+
+
+        } catch (Exception e) {
+            mPresenter.onApiError(e.getMessage());
+            Log.e(TAG, "Exception caught in " + e.getMessage().toString());
+        }
+    }
+
+    public void addKitchenUser(RegisterRequestData requestData, String token, AddKitchenPresenter mPresenter) {
+        try {
+            if (apiInterFace == null)
+                apiInterFace = ApiClient.getClientServerApi().create(ApiInterFace.class);
+
+            apiInterFace
+                    .addKitchenUser("Bearer " + token, requestData)
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeOn(Schedulers.io())
+                    .subscribe(new Observer<AddKitchenResponse>() {
+                        @Override
+                        public void onSubscribe(Disposable d) {
+                        }
+
+                        @Override
+                        public void onNext(AddKitchenResponse response) {
+                            mPresenter.onAddUserResponse(response);
                         }
 
                         @Override
