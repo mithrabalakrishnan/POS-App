@@ -22,14 +22,10 @@ public class CouponsAdapter extends RecyclerView.Adapter<CouponsAdapter.ViewHold
     private final SessionManager sessionManager;
     OnItemClickListener onItemClickListener;
 
-    {
-        assert context != null;
-        sessionManager = new SessionManager(context);
-    }
-
     public CouponsAdapter(CouponsData[] couponsData, Context context, OnItemClickListener onItemClickListener) {
         this.couponsData = couponsData;
         this.context = context;
+        sessionManager = new SessionManager(context);
         this.onItemClickListener = onItemClickListener;
     }
 

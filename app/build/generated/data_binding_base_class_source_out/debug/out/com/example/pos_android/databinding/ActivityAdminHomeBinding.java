@@ -26,9 +26,6 @@ public final class ActivityAdminHomeBinding implements ViewBinding {
   public final ConstraintLayout addFood;
 
   @NonNull
-  public final ConstraintLayout addItem;
-
-  @NonNull
   public final ConstraintLayout addItem1;
 
   @NonNull
@@ -42,6 +39,9 @@ public final class ActivityAdminHomeBinding implements ViewBinding {
 
   @NonNull
   public final ConstraintLayout layoutBest;
+
+  @NonNull
+  public final ConstraintLayout layoutKitchenUser;
 
   @NonNull
   public final LinearLayout linearLayout12;
@@ -62,20 +62,20 @@ public final class ActivityAdminHomeBinding implements ViewBinding {
   public final TextView txtPro;
 
   private ActivityAdminHomeBinding(@NonNull LinearLayout rootView,
-      @NonNull ConstraintLayout addFood, @NonNull ConstraintLayout addItem,
-      @NonNull ConstraintLayout addItem1, @NonNull MaterialButton btnLogout,
-      @NonNull ConstraintLayout btnReport, @NonNull ImageView ivProduct,
-      @NonNull ConstraintLayout layoutBest, @NonNull LinearLayout linearLayout12,
+      @NonNull ConstraintLayout addFood, @NonNull ConstraintLayout addItem1,
+      @NonNull MaterialButton btnLogout, @NonNull ConstraintLayout btnReport,
+      @NonNull ImageView ivProduct, @NonNull ConstraintLayout layoutBest,
+      @NonNull ConstraintLayout layoutKitchenUser, @NonNull LinearLayout linearLayout12,
       @NonNull TextView textView19, @NonNull TextView textView29, @NonNull TextView textView9,
       @NonNull TextView txtItemname, @NonNull TextView txtPro) {
     this.rootView = rootView;
     this.addFood = addFood;
-    this.addItem = addItem;
     this.addItem1 = addItem1;
     this.btnLogout = btnLogout;
     this.btnReport = btnReport;
     this.ivProduct = ivProduct;
     this.layoutBest = layoutBest;
+    this.layoutKitchenUser = layoutKitchenUser;
     this.linearLayout12 = linearLayout12;
     this.textView19 = textView19;
     this.textView29 = textView29;
@@ -117,12 +117,6 @@ public final class ActivityAdminHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.add_item;
-      ConstraintLayout addItem = ViewBindings.findChildViewById(rootView, id);
-      if (addItem == null) {
-        break missingId;
-      }
-
       id = R.id.add_item1;
       ConstraintLayout addItem1 = ViewBindings.findChildViewById(rootView, id);
       if (addItem1 == null) {
@@ -150,6 +144,12 @@ public final class ActivityAdminHomeBinding implements ViewBinding {
       id = R.id.layout_best;
       ConstraintLayout layoutBest = ViewBindings.findChildViewById(rootView, id);
       if (layoutBest == null) {
+        break missingId;
+      }
+
+      id = R.id.layout_kitchen_user;
+      ConstraintLayout layoutKitchenUser = ViewBindings.findChildViewById(rootView, id);
+      if (layoutKitchenUser == null) {
         break missingId;
       }
 
@@ -189,9 +189,9 @@ public final class ActivityAdminHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityAdminHomeBinding((LinearLayout) rootView, addFood, addItem, addItem1,
-          btnLogout, btnReport, ivProduct, layoutBest, linearLayout12, textView19, textView29,
-          textView9, txtItemname, txtPro);
+      return new ActivityAdminHomeBinding((LinearLayout) rootView, addFood, addItem1, btnLogout,
+          btnReport, ivProduct, layoutBest, layoutKitchenUser, linearLayout12, textView19,
+          textView29, textView9, txtItemname, txtPro);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

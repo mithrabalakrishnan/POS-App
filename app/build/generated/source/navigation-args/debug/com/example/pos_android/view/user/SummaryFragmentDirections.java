@@ -3,6 +3,7 @@ package com.example.pos_android.view.user;
 import android.os.Bundle;
 import android.os.Parcelable;
 import androidx.annotation.NonNull;
+import androidx.navigation.ActionOnlyNavDirections;
 import androidx.navigation.NavDirections;
 import com.example.pos_android.R;
 import com.example.pos_android.data.model.OrderInfoModel;
@@ -22,6 +23,11 @@ public class SummaryFragmentDirections {
   public static ActionSummaryFragmentToPaymentFragment actionSummaryFragmentToPaymentFragment(
       @NonNull OrderInfoModel orderInfo) {
     return new ActionSummaryFragmentToPaymentFragment(orderInfo);
+  }
+
+  @NonNull
+  public static NavDirections actionSummaryFragmentToCouponFragment() {
+    return new ActionOnlyNavDirections(R.id.action_summaryFragment_to_couponFragment);
   }
 
   public static class ActionSummaryFragmentToPaymentFragment implements NavDirections {

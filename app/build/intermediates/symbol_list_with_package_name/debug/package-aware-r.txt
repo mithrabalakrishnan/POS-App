@@ -5658,6 +5658,7 @@ id action_bar_subtitle
 id action_bar_title
 id action_container
 id action_context_bar
+id action_couponFragment_to_summaryFragment
 id action_divider
 id action_foodListFragment_to_summaryFragment
 id action_homeFragment_to_tableReservationFragment
@@ -5669,6 +5670,7 @@ id action_mode_bar_stub
 id action_mode_close_button
 id action_orderSuccessFragment_to_homeFragment
 id action_paymentFragment_to_orderSuccessFragment
+id action_summaryFragment_to_couponFragment
 id action_summaryFragment_to_paymentFragment
 id action_tableReservationFragment_to_foodListFragment
 id action_text
@@ -5676,7 +5678,6 @@ id actions
 id activity_chooser_view_content
 id add
 id add_food
-id add_item
 id add_item1
 id alertTitle
 id aligned
@@ -5712,6 +5713,7 @@ id bounceEnd
 id bounceStart
 id btnAdd
 id btn_add_cart
+id btn_add_kitchen_user
 id btn_best_selling
 id btn_cancel
 id btn_clear
@@ -5883,6 +5885,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageArrowRightCoupon
 id imageArrowright
 id imageLogo
 id imageSettings
@@ -5918,8 +5921,11 @@ id layout
 id layoutQuantityControl
 id layout_best
 id layout_content
+id layout_coupon
+id layout_coupon_item
 id layout_debit_card
 id layout_food_details
+id layout_kitchen_user
 id layout_root
 id layout_total
 id left
@@ -5932,9 +5938,9 @@ id line3
 id lineVectorOne
 id line_chart
 id linear
-id linearCheckoutoffers
 id linearColumnprice
 id linearLayout12
+id linearRow
 id linearRowcar
 id linearRowsettings
 id linear_layout
@@ -6251,6 +6257,7 @@ id tv_total
 id tv_user
 id tv_user_name
 id txtAddCoupon
+id txtCoupon
 id txtMonth
 id txtName
 id txtPeople
@@ -6386,6 +6393,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_food
+layout activity_add_kitchen
 layout activity_admin_home
 layout activity_best_selling_report
 layout activity_home

@@ -12,5 +12,5 @@ public final class BuildConfig {
   // Field from build type: debug
   public static final String API_URL = "https://abcd.com/";
   // Field from build type: debug
-  public static final String BASE_URL_LOCAL = "http://192.168.1.9:8013/";
+  public static final String BASE_URL_LOCAL = "http://10.0.0.122:8013/";
 }

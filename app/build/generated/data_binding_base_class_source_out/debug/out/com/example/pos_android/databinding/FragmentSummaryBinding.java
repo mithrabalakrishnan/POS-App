@@ -29,6 +29,12 @@ public final class FragmentSummaryBinding implements ViewBinding {
   public final LinearLayout cardTable;
 
   @NonNull
+  public final ImageView image;
+
+  @NonNull
+  public final ImageView imageArrowRightCoupon;
+
+  @NonNull
   public final ImageView imageArrowright;
 
   @NonNull
@@ -47,13 +53,19 @@ public final class FragmentSummaryBinding implements ViewBinding {
   public final LinearLayout layoutContent;
 
   @NonNull
+  public final LinearLayout layoutCoupon;
+
+  @NonNull
+  public final LinearLayout layoutCouponItem;
+
+  @NonNull
   public final AddCartViewBinding layoutQuantityControl;
 
   @NonNull
   public final LinearLayout layoutTotal;
 
   @NonNull
-  public final LinearLayout linearCheckoutoffers;
+  public final LinearLayout linearRow;
 
   @NonNull
   public final LinearLayout linearRowsettings;
@@ -85,28 +97,37 @@ public final class FragmentSummaryBinding implements ViewBinding {
   @NonNull
   public final TextView txtAddCoupon;
 
+  @NonNull
+  public final TextView txtCoupon;
+
   private FragmentSummaryBinding(@NonNull RelativeLayout rootView, @NonNull TextView buttonUpdate,
-      @NonNull LinearLayout cardTable, @NonNull ImageView imageArrowright,
+      @NonNull LinearLayout cardTable, @NonNull ImageView image,
+      @NonNull ImageView imageArrowRightCoupon, @NonNull ImageView imageArrowright,
       @NonNull ImageView imageSettings, @NonNull ImageView imageVeg, @NonNull ImageView ivBack,
       @NonNull ImageView ivNoCart, @NonNull LinearLayout layoutContent,
+      @NonNull LinearLayout layoutCoupon, @NonNull LinearLayout layoutCouponItem,
       @NonNull AddCartViewBinding layoutQuantityControl, @NonNull LinearLayout layoutTotal,
-      @NonNull LinearLayout linearCheckoutoffers, @NonNull LinearLayout linearRowsettings,
+      @NonNull LinearLayout linearRow, @NonNull LinearLayout linearRowsettings,
       @NonNull RecyclerView recyclerFoodItems, @NonNull TextView textFoodName,
       @NonNull TextView textTotal, @NonNull LinearLayout toolbar, @NonNull TextView tvGuestCount,
       @NonNull TextView tvTable, @NonNull TextView tvTableTime, @NonNull TextView tvTableType,
-      @NonNull TextView txtAddCoupon) {
+      @NonNull TextView txtAddCoupon, @NonNull TextView txtCoupon) {
     this.rootView = rootView;
     this.buttonUpdate = buttonUpdate;
     this.cardTable = cardTable;
+    this.image = image;
+    this.imageArrowRightCoupon = imageArrowRightCoupon;
     this.imageArrowright = imageArrowright;
     this.imageSettings = imageSettings;
     this.imageVeg = imageVeg;
     this.ivBack = ivBack;
     this.ivNoCart = ivNoCart;
     this.layoutContent = layoutContent;
+    this.layoutCoupon = layoutCoupon;
+    this.layoutCouponItem = layoutCouponItem;
     this.layoutQuantityControl = layoutQuantityControl;
     this.layoutTotal = layoutTotal;
-    this.linearCheckoutoffers = linearCheckoutoffers;
+    this.linearRow = linearRow;
     this.linearRowsettings = linearRowsettings;
     this.recyclerFoodItems = recyclerFoodItems;
     this.textFoodName = textFoodName;
@@ -117,6 +138,7 @@ public final class FragmentSummaryBinding implements ViewBinding {
     this.tvTableTime = tvTableTime;
     this.tvTableType = tvTableType;
     this.txtAddCoupon = txtAddCoupon;
+    this.txtCoupon = txtCoupon;
   }
 
   @Override
@@ -158,6 +180,18 @@ public final class FragmentSummaryBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.image;
+      ImageView image = ViewBindings.findChildViewById(rootView, id);
+      if (image == null) {
+        break missingId;
+      }
+
+      id = R.id.imageArrowRightCoupon;
+      ImageView imageArrowRightCoupon = ViewBindings.findChildViewById(rootView, id);
+      if (imageArrowRightCoupon == null) {
+        break missingId;
+      }
+
       id = R.id.imageArrowright;
       ImageView imageArrowright = ViewBindings.findChildViewById(rootView, id);
       if (imageArrowright == null) {
@@ -194,6 +228,18 @@ public final class FragmentSummaryBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.layout_coupon;
+      LinearLayout layoutCoupon = ViewBindings.findChildViewById(rootView, id);
+      if (layoutCoupon == null) {
+        break missingId;
+      }
+
+      id = R.id.layout_coupon_item;
+      LinearLayout layoutCouponItem = ViewBindings.findChildViewById(rootView, id);
+      if (layoutCouponItem == null) {
+        break missingId;
+      }
+
       id = R.id.layoutQuantityControl;
       View layoutQuantityControl = ViewBindings.findChildViewById(rootView, id);
       if (layoutQuantityControl == null) {
@@ -207,9 +253,9 @@ public final class FragmentSummaryBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.linearCheckoutoffers;
-      LinearLayout linearCheckoutoffers = ViewBindings.findChildViewById(rootView, id);
-      if (linearCheckoutoffers == null) {
+      id = R.id.linearRow;
+      LinearLayout linearRow = ViewBindings.findChildViewById(rootView, id);
+      if (linearRow == null) {
         break missingId;
       }
 
@@ -273,11 +319,17 @@ public final class FragmentSummaryBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentSummaryBinding((RelativeLayout) rootView, buttonUpdate, cardTable,
-          imageArrowright, imageSettings, imageVeg, ivBack, ivNoCart, layoutContent,
-          binding_layoutQuantityControl, layoutTotal, linearCheckoutoffers, linearRowsettings,
-          recyclerFoodItems, textFoodName, textTotal, toolbar, tvGuestCount, tvTable, tvTableTime,
-          tvTableType, txtAddCoupon);
+      id = R.id.txtCoupon;
+      TextView txtCoupon = ViewBindings.findChildViewById(rootView, id);
+      if (txtCoupon == null) {
+        break missingId;
+      }
+
+      return new FragmentSummaryBinding((RelativeLayout) rootView, buttonUpdate, cardTable, image,
+          imageArrowRightCoupon, imageArrowright, imageSettings, imageVeg, ivBack, ivNoCart,
+          layoutContent, layoutCoupon, layoutCouponItem, binding_layoutQuantityControl, layoutTotal,
+          linearRow, linearRowsettings, recyclerFoodItems, textFoodName, textTotal, toolbar,
+          tvGuestCount, tvTable, tvTableTime, tvTableType, txtAddCoupon, txtCoupon);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

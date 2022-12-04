@@ -140,6 +140,10 @@
         "source": "com.example.pos_android.app-main-7:/layout/activity_register.xml"
     },
     {
+        "merged": "com.example.pos_android.app-mergeDebugResources-4:/layout/activity_add_kitchen.xml",
+        "source": "com.example.pos_android.app-main-7:/layout/activity_add_kitchen.xml"
+    },
+    {
         "merged": "com.example.pos_android.app-mergeDebugResources-4:/layout/layout_add_cart_item.xml",
         "source": "com.example.pos_android.app-main-7:/layout/layout_add_cart_item.xml"
     },

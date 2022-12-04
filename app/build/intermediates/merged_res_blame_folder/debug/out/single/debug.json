@@ -436,6 +436,10 @@
         "source": "com.example.pos_android.app-main-7:/font/interregular.ttf"
     },
     {
+        "merged": "com.example.pos_android.app-merged_res-5:/layout_activity_add_kitchen.xml.flat",
+        "source": "com.example.pos_android.app-main-7:/layout/activity_add_kitchen.xml"
+    },
+    {
         "merged": "com.example.pos_android.app-merged_res-5:/drawable-hdpi_black_friday.png.flat",
         "source": "com.example.pos_android.app-pngs-0:/drawable-hdpi/black_friday.png"
     },
