@@ -52,7 +52,7 @@ public class AdminHomeActivity extends BaseActivity {
             startActivity(new Intent(getApplicationContext(), AddKitchenActivity.class));
         });
         binding.btnAddVoucher.setOnClickListener(view -> {
-            startActivity(new Intent(getApplicationContext(), AddKitchenActivity.class));
+            startActivity(new Intent(getApplicationContext(), AddVoucherActivity.class));
         });
     }
 
