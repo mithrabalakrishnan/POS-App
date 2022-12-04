@@ -42,10 +42,10 @@ public class UserHomeResponse {
 
     public class PopularFood {
 
-        @SerializedName("foodId")
+        @SerializedName("foodid")
         @Expose
         private Integer foodId;
-        @SerializedName("name")
+        @SerializedName("food_name")
         @Expose
         private String name;
         @SerializedName("category")

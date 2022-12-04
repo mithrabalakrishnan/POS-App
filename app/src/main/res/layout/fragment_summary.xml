@@ -198,6 +198,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_12pxv"
                 android:layout_width="match_parent"
+                android:visibility="gone"
                 android:orientation="horizontal" android:background="@drawable/rectangle_bg_gray_50">
                 <LinearLayout android:id="@+id/linearRow"
                     android:layout_height="wrap_content"
@@ -230,8 +231,8 @@
                     android:layout_marginTop="@dimen/_22pxv"
                     android:layout_width="@dimen/_7pxh"
                     android:scaleType="fitXY"
-                    android:src="@drawable/img_arrowleft"
-                    tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft"/>
+                    android:src="@drawable/ic_baseline_close_24"
+                    tools:ignore="ContentDescription" tools:src="@drawable/ic_baseline_close_24"/>
             </LinearLayout>
         </RelativeLayout>
 
@@ -284,6 +285,18 @@
                 android:gravity="center|end"
                 android:minWidth="60dp"
                 android:text="₹50"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/offer_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center|end"
+                android:minWidth="60dp"
+                android:text="₹50"
+                android:visibility="gone"
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />

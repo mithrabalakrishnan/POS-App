@@ -16,10 +16,10 @@ import java.util.List;
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHolder> {
 
     public OnItemClickListener clickListener;
-    List<HistoryResponse.Order> list;
+    List<HistoryResponse.FoodOrderList> list;
     Context context;
 
-    public HistoryAdapter(List<HistoryResponse.Order> list, Context context) {
+    public HistoryAdapter(List<HistoryResponse.FoodOrderList> list, Context context) {
         this.list = list;
         this.context = context;
 
@@ -36,7 +36,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull HistoryAdapter.ViewHolder holder, int position) {
-        HistoryResponse.Order currentItem = list.get(position);
+        HistoryResponse.FoodOrderList currentItem = list.get(position);
         holder.setData(currentItem);
         /*holder.itemView.setOnClickListener(nv -> {
             clickListener.onItemClick(position, "Table");
@@ -60,12 +60,12 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
             this.historyBinding = itemView;
         }
 
-        void setData(HistoryResponse.Order model) {
-            historyBinding.tvTime.setText(model.getTimeDate());
+        void setData(HistoryResponse.FoodOrderList model) {
+            historyBinding.tvTime.setText(model.getTime());
             historyBinding.tvTotal.setText(String.valueOf(model.getTotalPrice()));
-            historyBinding.tvDate.setText(String.valueOf(model.getTimeDate()));
+            historyBinding.tvDate.setText(String.valueOf(model.getDate()));
             historyBinding.tvTableId.setText(String.valueOf(model.getTableId()));
-//            historyBinding.tvStatus.setText(String.valueOf(model.getStatus()));
+            historyBinding.tvStatus.setText(String.valueOf(model.getStatus()));
         }
     }
 }

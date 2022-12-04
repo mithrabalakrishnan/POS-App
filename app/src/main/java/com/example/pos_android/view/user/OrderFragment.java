@@ -21,7 +21,7 @@ import com.example.pos_android.view.login.LoginActivity;
 import java.util.ArrayList;
 
 public class OrderFragment extends BaseFragment implements HistoryContract.View {
-    ArrayList<HistoryResponse.Order> historyList = new ArrayList<>();
+    ArrayList<HistoryResponse.FoodOrderList> historyList = new ArrayList<>();
     private FragmentOrderBinding binding;
     private HistoryPresenter presenter;
     private HistoryAdapter adapter;
@@ -79,13 +79,15 @@ public class OrderFragment extends BaseFragment implements HistoryContract.View 
         // showToast(requireContext(), response.getMessage());
         historyList.clear();
 
-        for (HistoryResponse.Order order : response.getData().getOrderList()) {
-            historyList.add(new HistoryResponse.Order(
-                    order.getId(), order.getUserId(), order.getFoodId(), order.getQuanty(), order.getTableId(),
-                    order.getTotalPrice(), order.getTimeDate()
-            ));
-        }
-        adapter = new HistoryAdapter(historyList, requireContext());
+
+
+//        for (HistoryResponse.FoodOrderList order : response.getData().getFoodOrderList()) {
+//            historyList.add(new HistoryResponse.FoodOrderList(
+//                    order.getId(), order.getUserId(), order.getFoodId(), order.getQuanty(), order.getTableId(),
+//                    order.getTotalPrice(), order.getDate()
+//            ));
+//        }
+        adapter = new HistoryAdapter(response.getData().getFoodOrderList(), requireContext());
         binding.popularRecyclerview.setAdapter(adapter);
         binding.popularRecyclerview.setLayoutManager(new LinearLayoutManager(requireActivity()));
     }

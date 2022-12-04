@@ -136,6 +136,7 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
 
     @Override
     public void onItemClick(Integer position, String from) {
+        sessionManager.setIsCouponSelected(false);
         try {
             FoodModel model = popularArrayList.get(position);
             Cart cart = new Cart();
