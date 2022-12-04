@@ -83,6 +83,7 @@ public class SalesReportActivity extends BaseActivity implements
         });
     }
 
+
     private void filterSpinnerSet() {
         binding.spinner.setOnItemSelectedListener(this);
         ArrayAdapter spinnerAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, filterData);

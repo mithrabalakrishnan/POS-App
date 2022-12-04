@@ -1,5 +1,7 @@
 package com.example.pos_android.view.kitchen;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -11,6 +13,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import com.example.pos_android.R;
 import com.example.pos_android.contracts.KitchenOrderDetailContract;
 import com.example.pos_android.data.model.CommonResponse;
@@ -18,6 +24,7 @@ import com.example.pos_android.data.model.KitchenResponse;
 import com.example.pos_android.databinding.ActivityKitchenOrderDetailBinding;
 import com.example.pos_android.presenter.KitchenPresenter;
 import com.example.pos_android.view.BaseActivity;
+import com.example.pos_android.view.admin.AddFoodActivity;
 
 import java.util.Objects;
 
@@ -26,6 +33,8 @@ public class KitchenOrderDetailActivity extends BaseActivity implements KitchenO
     KitchenResponse.KitchenData kitchenData;
     KitchenPresenter presenter;
     String selectedStatus;
+    boolean hasPermission = false;
+    int SMS_PERMISSION_CODE = 300;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,6 +126,30 @@ public class KitchenOrderDetailActivity extends BaseActivity implements KitchenO
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
+    }
+
+    private void checkPermissions() {
+        if (ContextCompat.checkSelfPermission(KitchenOrderDetailActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)
+                == PackageManager.PERMISSION_GRANTED) {
+            hasPermission = true;
+        } else {
+            ActivityCompat.requestPermissions(KitchenOrderDetailActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                    SMS_PERMISSION_CODE);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        // Checking whether user granted the permission or not.
+        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            // Showing the toast message
+            // showToast(AddFoodActivity.this, "Permission granted");
+            hasPermission = true;
+        } else {
+            hasPermission = false;
+            //  showToast(AddFoodActivity.this, "Permission denied");
+        }
     }
 
 }

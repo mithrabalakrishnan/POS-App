@@ -1,5 +1,6 @@
 package com.example.pos_android.network.api_manager;
 
+import com.example.pos_android.data.model.AddKitchenResponse;
 import com.example.pos_android.data.model.CommonResponse;
 import com.example.pos_android.data.model.HistoryResponse;
 import com.example.pos_android.data.model.ImagePickerResponse;
@@ -104,5 +105,10 @@ public interface ApiInterFace {
     Observable<UserProfileResponse> userGetProfile(
             @Header("Authorization") String string
     );
+
+    @POST("kitchen-register")
+    Observable<AddKitchenResponse> addKitchenUser(
+            @Header("Authorization") String string,
+            @Body RegisterRequestData requestData);
 
 }

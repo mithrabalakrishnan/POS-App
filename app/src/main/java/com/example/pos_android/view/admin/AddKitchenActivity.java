@@ -1,14 +1,18 @@
 package com.example.pos_android.view.admin;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
-import com.example.pos_android.contracts.AddKitchenUserContract;
+import com.example.pos_android.contracts.AddKitchenContract;
+import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.databinding.ActivityAddKitchenBinding;
+import com.example.pos_android.presenter.AddKitchenPresenter;
 import com.example.pos_android.view.BaseActivity;
+import com.example.pos_android.view.login.LoginActivity;
 
-public class AddKitchenActivity extends BaseActivity implements AddKitchenUserContract.View {
+public class AddKitchenActivity extends BaseActivity implements AddKitchenContract.View {
     private ActivityAddKitchenBinding binding;
+    private AddKitchenPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,44 +23,41 @@ public class AddKitchenActivity extends BaseActivity implements AddKitchenUserCo
     }
 
     private void initUi() {
+        presenter = new AddKitchenPresenter(this, this);
         binding.ivBack.setOnClickListener(view -> {
-                onBackPressed();
+            onBackPressed();
 
         });
         binding.btnAddKitchenUser.setOnClickListener(view -> {
-                if(binding.etFirstName.getText().toString().trim().isEmpty()){
-                    showWarningMessage("Please enter firstname");
+                    if (binding.etFirstName.getText().toString().trim().isEmpty()) {
+                        showSnackBar(binding.getRoot(), "Please enter firstname");
+                    } else if (binding.etLastName.getText().toString().trim().isEmpty()) {
+                        showSnackBar(binding.getRoot(), "Please enter last name");
+                    } else if (binding.etUsername.getText().toString().trim().isEmpty()) {
+                        showSnackBar(binding.getRoot(), "Please enter user name");
+                    } else if (binding.etEmail.getText().toString().trim().isEmpty()) {
+                        showSnackBar(binding.getRoot(), "Please enter user email");
+                    } else if (binding.etMobile.getText().toString().trim().isEmpty()) {
+                        showSnackBar(binding.getRoot(), "Please enter user mobile number");
+                    } else if (binding.etPassword.getText().toString().trim().isEmpty()) {
+                        showSnackBar(binding.getRoot(), "Please enter password");
+                    } else {
+                        presenter.addKitchenUser(binding.etFirstName.getText().toString(),
+                                binding.etLastName.getText().toString(),
+                                binding.etUsername.getText().toString(),
+                                binding.etMobile.getText().toString(),
+                                binding.etEmail.getText().toString(),
+                                binding.etPassword.getText().toString()
+                        );
+                    }
                 }
-                else if(binding.etLastName.getText().toString().trim().isEmpty()){
-                    showWarningMessage("Please enter last name");
-                }
-                else if(binding.etUsername.getText().toString().trim().isEmpty()){
-                    showWarningMessage("Please enter user name");
-                }
-                else if(binding.etEmail.getText().toString().trim().isEmpty()){
-                    showWarningMessage("Please enter user email");
-                }
-                else if(binding.etMobile.getText().toString().trim().isEmpty()){
-                    showWarningMessage("Please enter user mobile number");
-                }
-                else if(binding.etPassword.getText().toString().trim().isEmpty()){
-                    showWarningMessage("Please enter password");
-                }
-                else{
-
-                }
-            }
         );
     }
 
     @Override
     public void showSuccess(String message) {
-
-    }
-
-    @Override
-    public void showInputWarning() {
-
+        showWarningMessage(message);
+        finish();
     }
 
     @Override
@@ -71,7 +72,16 @@ public class AddKitchenActivity extends BaseActivity implements AddKitchenUserCo
 
     @Override
     public void showApiErrorWarning(String string) {
-        showToast(this, string);
+        hideLoadingDialog();
+        if (string.equals("HTTP 401 ")) {
+            SessionManager sessionManager = new SessionManager(this);
+            sessionManager.clear();
+            showToast(this, "Session expired");
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finishAffinity();
+        } else
+            showToast(this, string);
     }
 
     @Override
