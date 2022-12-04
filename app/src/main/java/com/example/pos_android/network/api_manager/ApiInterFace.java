@@ -91,10 +91,23 @@ public interface ApiInterFace {
             @Query("type") String type
     );
 
+    @GET("report-food-sales-weekly")
+    Observable<BestSellingReportResponse> reportFoodSalesWeekly(
+            @Header("Authorization") String string,
+            @Query("dateList") List<String> dateList
+    );
+
     @GET("report-food-item-monthly")
     Observable<IncomePerItemMonthlyResponse> incomePerItemMonthly(
             @Header("Authorization") String string,
             @Query("foodId") int foodId
+    );
+
+    @GET("report-food-item-weekly")
+    Observable<IncomePerItemMonthlyResponse> reportFoodItemWeekly(
+            @Header("Authorization") String string,
+            @Query("foodId") int foodId,
+            @Query("dateList") List<String> dateList
     );
 
     @GET("kitchen-order")

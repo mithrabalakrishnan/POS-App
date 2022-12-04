@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:2:1-155:12
-INJECTED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:2:1-155:12
-INJECTED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:2:1-155:12
-INJECTED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:2:1-155:12
+ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:2:1-156:12
+INJECTED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:2:1-156:12
+INJECTED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:2:1-156:12
+INJECTED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:2:1-156:12
 MERGED from [androidx.databinding:viewbinding:7.3.0] C:\Users\Naju\.gradle\caches\transforms-3\cd8e2a3f36ba1561b1c742db6b7563c3\transformed\viewbinding-7.3.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.navigation:navigation-ui:2.5.3] C:\Users\Naju\.gradle\caches\transforms-3\124689b07c4708038c463a026d509968\transformed\navigation-ui-2.5.3\AndroidManifest.xml:17:1-24:12
 MERGED from [com.github.denzcoskun:ImageSlideshow:0.1.0] C:\Users\Naju\.gradle\caches\transforms-3\21755ddbf8d567e8cbd4a14103e9f33a\transformed\ImageSlideshow-0.1.0\AndroidManifest.xml:2:1-11:12
@@ -72,22 +72,22 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\Naju\.gradle\caches\transforms
 MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Naju\.gradle\caches\transforms-3\7382e7f444b584172664e3f7e0ea6fda\transformed\picasso-2.71828\AndroidManifest.xml:2:1-14:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\Naju\.gradle\caches\transforms-3\8e94ddf4200431c5a0228caf9e1afa49\transformed\annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:exifinterface:27.1.0] C:\Users\Naju\.gradle\caches\transforms-3\1e4fed798473b00fb542ed3955293230\transformed\exifinterface-27.1.0\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:2:1-155:12
-INJECTED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:2:1-155:12
-INJECTED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:2:1-155:12
+INJECTED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:2:1-156:12
+INJECTED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:2:1-156:12
+INJECTED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:2:1-156:12
 	package
 		INJECTED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:2:1-155:12
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:2:1-156:12
 		INJECTED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:2:1-155:12
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:2:1-156:12
 		INJECTED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:2:1-155:12
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:2:1-156:12
 		INJECTED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:2:11-69
@@ -133,8 +133,12 @@ uses-permission#android.permission.RECORD_AUDIO
 ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:20:5-71
 	android:name
 		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:20:22-68
+uses-permission#android.permission.SEND_SMS
+ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:21:5-67
+	android:name
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:21:22-64
 application
-ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:22:5-153:19
+ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:23:5-154:19
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\Naju\.gradle\caches\transforms-3\16864338184caa82c05d1f43da5d9fee\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\Naju\.gradle\caches\transforms-3\16864338184caa82c05d1f43da5d9fee\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Naju\.gradle\caches\transforms-3\ddb14abb4386d3ae3df3b67f617ddff3\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -162,143 +166,143 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Na
 MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Naju\.gradle\caches\transforms-3\7382e7f444b584172664e3f7e0ea6fda\transformed\picasso-2.71828\AndroidManifest.xml:7:5-12:19
 MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Naju\.gradle\caches\transforms-3\7382e7f444b584172664e3f7e0ea6fda\transformed\picasso-2.71828\AndroidManifest.xml:7:5-12:19
 	android:requestLegacyExternalStorage
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:28:9-52
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:29:9-52
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.8.0] C:\Users\Naju\.gradle\caches\transforms-3\577ee95d2de04b4758c03245d25b9bbc\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:30:9-35
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:31:9-35
 	android:label
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:27:9-41
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:28:9-41
 	android:fullBackupContent
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:25:9-54
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:26:9-54
 	android:roundIcon
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:29:9-54
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:30:9-54
 	tools:targetApi
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:33:9-29
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:34:9-29
 	android:icon
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:26:9-43
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:27:9-43
 	android:allowBackup
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:23:9-35
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:24:9-35
 	android:theme
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:31:9-48
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:32:9-48
 	android:dataExtractionRules
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:24:9-65
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:25:9-65
 	android:usesCleartextTraffic
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:32:9-44
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:33:9-44
 activity#com.example.pos_android.view.admin.AddVoucherActivity
-ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:34:9-40:20
+ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:35:9-41:20
 	android:exported
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:36:13-37
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:37:13-37
 	android:name
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:35:13-58
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:36:13-58
 meta-data#android.app.lib_name
-ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:37:13-39:36
+ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:38:13-40:36
 	android:value
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:39:17-33
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:40:17-33
 	android:name
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:38:17-52
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:39:17-52
 activity#com.example.pos_android.view.admin.CustomerReportActivity
-ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:41:9-47:20
+ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:42:9-48:20
 	android:exported
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:43:13-37
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:44:13-37
 	android:name
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:42:13-62
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:43:13-62
 activity#com.example.pos_android.view.admin.AddKitchenActivity
-ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:48:9-54:20
+ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:49:9-55:20
 	android:exported
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:50:13-37
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:51:13-37
 	android:name
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:49:13-58
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:50:13-58
 activity#com.example.pos_android.view.admin.ListAllFoodActivity
-ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:55:9-61:20
+ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:56:9-62:20
 	android:exported
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:57:13-37
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:58:13-37
 	android:name
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:56:13-59
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:57:13-59
 activity#com.example.pos_android.view.kitchen.KitchenOrderDetailActivity
-ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:62:9-68:20
+ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:63:9-69:20
 	android:exported
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:64:13-37
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:65:13-37
 	android:name
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:63:13-68
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:64:13-68
 activity#com.example.pos_android.view.kitchen.KitchenActivity
-ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:69:9-75:20
+ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:70:9-76:20
 	android:exported
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:71:13-37
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:72:13-37
 	android:name
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:70:13-57
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:71:13-57
 activity#com.example.pos_android.view.admin.IncomeReportActivity
-ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:76:9-82:20
+ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:77:9-83:20
 	android:exported
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:78:13-37
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:79:13-37
 	android:name
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:77:13-60
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:78:13-60
 activity#com.example.pos_android.view.admin.BestSellingReportActivity
-ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:83:9-89:20
+ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:84:9-90:20
 	android:exported
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:85:13-37
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:86:13-37
 	android:name
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:84:13-65
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:85:13-65
 activity#com.example.pos_android.view.admin.ReportActivity
-ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:90:9-96:20
+ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:91:9-97:20
 	android:exported
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:92:13-37
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:93:13-37
 	android:name
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:91:13-54
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:92:13-54
 activity#com.example.pos_android.view.admin.SalesReportActivity
-ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:97:9-103:20
+ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:98:9-104:20
 	android:exported
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:99:13-37
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:100:13-37
 	android:name
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:98:13-59
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:99:13-59
 activity#com.example.pos_android.view.admin.AddFoodActivity
-ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:104:9-110:20
+ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:105:9-111:20
 	android:exported
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:106:13-37
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:107:13-37
 	android:name
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:105:13-55
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:106:13-55
 activity#com.example.pos_android.view.admin.AdminHomeActivity
-ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:111:9-117:20
+ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:112:9-118:20
 	android:exported
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:113:13-37
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:114:13-37
 	android:name
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:112:13-57
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:113:13-57
 activity#com.example.pos_android.view.user.UserHomeActivity
-ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:118:9-124:20
+ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:119:9-125:20
 	android:exported
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:120:13-37
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:121:13-37
 	android:name
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:119:13-55
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:120:13-55
 activity#com.example.pos_android.view.register.RegisterActivity
-ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:125:9-131:20
+ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:126:9-132:20
 	android:exported
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:127:13-37
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:128:13-37
 	android:name
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:126:13-59
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:127:13-59
 activity#com.example.pos_android.view.login.LoginActivity
-ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:132:9-138:20
+ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:133:9-139:20
 	android:exported
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:134:13-37
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:135:13-37
 	android:name
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:133:13-53
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:134:13-53
 activity#com.example.pos_android.view.SplashActivity
-ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:139:9-152:20
+ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:140:9-153:20
 	android:exported
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:141:13-36
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:142:13-36
 	android:theme
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:142:13-47
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:143:13-47
 	android:name
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:140:13-48
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:141:13-48
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:143:13-147:29
+ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:144:13-148:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:144:17-69
+ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:145:17-69
 	android:name
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:144:25-66
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:145:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:146:17-77
+ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:147:17-77
 	android:name
-		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:146:27-74
+		ADDED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:147:27-74
 uses-sdk
 INJECTED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml
