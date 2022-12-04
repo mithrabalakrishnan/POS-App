@@ -138,12 +138,12 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
             binding.tvDateRange.setText("Selected Week : " + materialDatePicker.getHeaderText());
             String startDate = android.text.format.DateFormat.format("yyyy-MM-dd", new Date(dateLongs.first)).toString();
             String endDate = android.text.format.DateFormat.format("yyyy-MM-dd", new Date(dateLongs.second)).toString();
-            List<Date> dates = getDates(startDate, endDate);
-
-            for (Date date : dates) {
-                dateList.add(String.valueOf(android.text.format.DateFormat.format("dd/MM/yyyy", date)));
-                Log.d("Date List", String.valueOf(android.text.format.DateFormat.format("dd/MM/yyyy", date)));
-            }
+//            List<Date> dates = getDates(startDate, endDate);
+//
+//            for (Date date : dates) {
+//                dateList.add(String.valueOf(android.text.format.DateFormat.format("dd/MM/yyyy", date)));
+//                Log.d("Date List", String.valueOf(android.text.format.DateFormat.format("dd/MM/yyyy", date)));
+//            }
 
           presenter.getBestSellingWeaklyReport(dateList);
         });

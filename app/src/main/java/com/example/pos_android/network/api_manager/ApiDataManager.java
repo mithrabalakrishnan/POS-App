@@ -7,6 +7,7 @@ import com.example.pos_android.data.model.CommonResponse;
 import com.example.pos_android.data.model.HistoryResponse;
 import com.example.pos_android.data.model.ImagePickerResponse;
 import com.example.pos_android.data.model.KitchenResponse;
+import com.example.pos_android.data.model.KitchenUpdateStatusResponse;
 import com.example.pos_android.data.model.LoginResponse;
 import com.example.pos_android.data.model.RegisterResponse;
 import com.example.pos_android.data.model.TableReservationResponse;
@@ -613,13 +614,13 @@ public class ApiDataManager {
                     .kitchenUpdateOrder("Bearer " + token,data)
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeOn(Schedulers.io())
-                    .subscribe(new Observer<CommonResponse>() {
+                    .subscribe(new Observer<KitchenUpdateStatusResponse>() {
                         @Override
                         public void onSubscribe(Disposable d) {
                         }
 
                         @Override
-                        public void onNext(CommonResponse response) {
+                        public void onNext(KitchenUpdateStatusResponse response) {
                                 mPresenter.onKitchenOrderDetailApiResponse(response);
                         }
 
