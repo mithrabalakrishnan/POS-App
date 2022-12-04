@@ -2,6 +2,7 @@ package com.example.pos_android.view.admin;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -23,6 +24,7 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.material.datepicker.MaterialDatePicker;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -31,6 +33,7 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
     String[] filterData = {"Weekly", "Monthly"};
     String[] titleList = {"Pizza", "Burger", "Bangers and Mash", "Sunday Roast", "Sandwich"};
     Double[] salesList = {25.0, 15.0, 11.0, 5.0, 17.0};
+    private List<String> dateList = new ArrayList<>();
     BestSellingAdapter adapter;
     MaterialDatePicker materialDatePicker;
     private List<FoodDetail> foodDetailList = new ArrayList<>();
@@ -43,10 +46,10 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
         binding.tvDateRange.setVisibility(View.GONE);
         if (Objects.equals(filterData[position], "Monthly")) {
 //            monthlyData();
-//            binding.fromLayout.setVisibility(View.GONE);
+            binding.fromLayout.setVisibility(View.GONE);
             presenter.getBestSellingReport("monthly");
         } else {
-//            binding.fromLayout.setVisibility(View.VISIBLE);
+            binding.fromLayout.setVisibility(View.VISIBLE);
 //            weeklyData();
             //  presenter.getBestSellingReport("weekly");
         }
@@ -125,8 +128,20 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
         materialDatePicker = materialDateBuilder.build();
 
         materialDatePicker.addOnPositiveButtonClickListener(selection -> {
+            dateList.clear();
+            Pair<Long, Long> dateLongs = (Pair<Long, Long>) selection;
             binding.tvDateRange.setVisibility(View.VISIBLE);
-            binding.tvDateRange.setText("Selected Date Range : " + materialDatePicker.getHeaderText());
+            binding.tvDateRange.setText("Selected Week : " + materialDatePicker.getHeaderText());
+            String startDate = android.text.format.DateFormat.format("yyyy-MM-dd", new Date(dateLongs.first)).toString();
+            String endDate = android.text.format.DateFormat.format("yyyy-MM-dd", new Date(dateLongs.second)).toString();
+            List<Date> dates = getDates(startDate, endDate);
+
+            for (Date date : dates) {
+                dateList.add(String.valueOf(android.text.format.DateFormat.format("dd/MM/yyyy", date)));
+                Log.d("Date List", String.valueOf(android.text.format.DateFormat.format("dd/MM/yyyy", date)));
+            }
+
+//            presenter.callWeaklySalesReport(dateList);
         });
         filterSpinnerSet();
         binding.ivBack.setOnClickListener(new View.OnClickListener() {

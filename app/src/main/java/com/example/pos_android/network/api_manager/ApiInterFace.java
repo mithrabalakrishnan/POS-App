@@ -21,6 +21,8 @@ import com.example.pos_android.data.model.sales_report.BestSellingReportResponse
 import com.example.pos_android.data.model.sales_report.IncomePerItemMonthlyResponse;
 import com.example.pos_android.data.model.sales_report.SalesReportResponse;
 
+import java.util.List;
+
 import io.reactivex.Observable;
 import okhttp3.MultipartBody;
 import retrofit2.http.Body;
@@ -77,7 +79,11 @@ public interface ApiInterFace {
     Observable<SalesReportResponse> salesReportMonthly(
             @Header("Authorization") String string
     );
-
+    @GET("report-weekly")
+    Observable<SalesReportResponse> getReportWeekly(
+            @Header("Authorization") String string,
+               @Query("dateList") List<String> dateList
+    );
     @GET("report-food-sales-monthly")
     Observable<BestSellingReportResponse> bestSellingReport(
             @Header("Authorization") String string,

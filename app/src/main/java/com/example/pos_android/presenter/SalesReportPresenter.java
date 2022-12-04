@@ -9,6 +9,8 @@ import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.network.api_manager.ApiDataManager;
 import com.example.pos_android.utils.NetworkManager;
 
+import java.util.List;
+
 public class SalesReportPresenter implements SalesReportContract.Presenter {
 
     SalesReportContract.View mView;
@@ -45,6 +47,26 @@ public class SalesReportPresenter implements SalesReportContract.Presenter {
         mView.hideProgressBar();
         if (saveResponse.isStatus()) {
             mView.showSuccess(saveResponse);
+        } else
+            mView.showWarningMessage(saveResponse.getMessage());
+    }
+
+    @Override
+    public void callWeaklySalesReport(List<String> dateList) {
+        if (NetworkManager.isNetworkAvailable(mContext)) {
+            mView.showProgressBar();
+
+            mApiDataManager.getReportWeekly(sessionManager.getUserToken(), this,dateList);
+
+        } else
+            mView.showWarningMessage(mContext.getString(R.string.no_network));
+    }
+
+    @Override
+    public void onWeaklySalesReportResponse(SalesReportResponse saveResponse) {
+        mView.hideProgressBar();
+        if (saveResponse.isStatus()) {
+            mView.onWeaklySalesReportResponse(saveResponse);
         } else
             mView.showWarningMessage(saveResponse.getMessage());
     }

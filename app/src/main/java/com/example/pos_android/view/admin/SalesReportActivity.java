@@ -63,6 +63,7 @@ public class SalesReportActivity extends BaseActivity implements
         materialDatePicker.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener() {
             @Override
             public void onPositiveButtonClick(Object selection) {
+                dateList.clear();
                 Pair<Long, Long> dateLongs = (Pair<Long, Long>) selection;
                 binding.tvDateRange.setVisibility(View.VISIBLE);
                 binding.tvDateRange.setText("Selected Week : " + materialDatePicker.getHeaderText());
@@ -71,8 +72,11 @@ public class SalesReportActivity extends BaseActivity implements
                 List<Date> dates = getDates(startDate, endDate);
 
                 for (Date date : dates) {
+                    dateList.add(String.valueOf(android.text.format.DateFormat.format("dd/MM/yyyy", date)));
                     Log.d("Date List", String.valueOf(android.text.format.DateFormat.format("dd/MM/yyyy", date)));
                 }
+
+                presenter.callWeaklySalesReport(dateList);
             }
         });
         filterSpinnerSet();
@@ -135,9 +139,9 @@ public class SalesReportActivity extends BaseActivity implements
         binding.barChart.animateY(5000);
         binding.barChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter());
 
-        final String[] labels = new String[]{"start", "Mon", "Tue", "Wed", "Thu", "Fri",
-                "Sat", "Sun"};
-        binding.barChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
+//        final String[] labels = new String[]{"start", "Mon", "Tue", "Wed", "Thu", "Fri",
+//                "Sat", "Sun"};
+//        binding.barChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
         binding.barChart.getXAxis().setGranularity(0f);
         binding.barChart.getXAxis().setGranularityEnabled(true);
 
@@ -203,11 +207,16 @@ public class SalesReportActivity extends BaseActivity implements
     public void showSuccess(SalesReportResponse saveResponse) {
         binding.txtPrice.setText(String.valueOf(saveResponse.data.total_sale));
         binding.txtPeople.setText(String.valueOf(saveResponse.data.total_customers));
-        if (saveResponse.data.type.equals("weekly")) {
+        if (saveResponse.data.type.equals("Weekly")) {
             weaklyData(saveResponse.data.chart_data);
         } else {
             monthlyData(saveResponse.data.chart_data);
         }
+    }
+
+    @Override
+    public void onWeaklySalesReportResponse(SalesReportResponse saveResponse) {
+
     }
 
     @Override

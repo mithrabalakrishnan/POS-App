@@ -123,8 +123,9 @@ public class KitchenOrderDetailActivity extends BaseActivity implements KitchenO
 
     @Override
     public void showWarningMessage(String message) {
-        if(message != null)
-        showToast(KitchenOrderDetailActivity.this, message);
+        if(message != null) {
+            showToast(KitchenOrderDetailActivity.this, message);
+        }
     }
 
     @Override
