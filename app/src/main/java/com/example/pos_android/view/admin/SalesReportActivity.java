@@ -2,6 +2,7 @@ package com.example.pos_android.view.admin;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,14 +22,22 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.datepicker.MaterialDatePicker;
+import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 public class SalesReportActivity extends BaseActivity implements
         AdapterView.OnItemSelectedListener, SalesReportContract.View {
     String[] filterData = {"Weekly", "Monthly"};
     MaterialDatePicker materialDatePicker;
+    private List<String> dateList = new ArrayList<>();
     private ActivitySalesReportBinding binding;
     private SalesReportPresenter presenter;
 
@@ -37,7 +46,7 @@ public class SalesReportActivity extends BaseActivity implements
         super.onCreate(savedInstanceState);
         binding = ActivitySalesReportBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        presenter =new  SalesReportPresenter(this,this);
+        presenter = new SalesReportPresenter(this, this);
 
 
         MaterialDatePicker.Builder<Pair<Long, Long>> materialDateBuilder
@@ -51,10 +60,20 @@ public class SalesReportActivity extends BaseActivity implements
         validator.setDatePicker(materialDatePicker);
 
 
+        materialDatePicker.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener() {
+            @Override
+            public void onPositiveButtonClick(Object selection) {
+                Pair<Long, Long> dateLongs = (Pair<Long, Long>) selection;
+                binding.tvDateRange.setVisibility(View.VISIBLE);
+                binding.tvDateRange.setText("Selected Week : " + materialDatePicker.getHeaderText());
+                String startDate = android.text.format.DateFormat.format("yyyy-MM-dd", new Date(dateLongs.first)).toString();
+                String endDate = android.text.format.DateFormat.format("yyyy-MM-dd", new Date(dateLongs.second)).toString();
+                List<Date> dates = getDates(startDate, endDate);
 
-        materialDatePicker.addOnPositiveButtonClickListener(selection -> {
-            binding.tvDateRange.setVisibility(View.VISIBLE);
-            binding.tvDateRange.setText("Selected Week : " + materialDatePicker.getHeaderText());
+                for (Date date : dates) {
+                    Log.d("Date List", String.valueOf(android.text.format.DateFormat.format("dd/MM/yyyy", date)));
+                }
+            }
         });
         filterSpinnerSet();
         binding.iconBack.setOnClickListener(view -> onBackPressed());
@@ -73,7 +92,6 @@ public class SalesReportActivity extends BaseActivity implements
     }
 
 
-
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
         //Toast.makeText(getApplicationContext(), filterData[position], Toast.LENGTH_LONG).show();
@@ -86,7 +104,7 @@ public class SalesReportActivity extends BaseActivity implements
         } else {
             binding.fromLayout.setVisibility(View.VISIBLE);
 //            weaklyData();
-          //  presenter.callSalesReport("weekly");
+            //  presenter.callSalesReport("weekly");
         }
     }
 
@@ -185,10 +203,9 @@ public class SalesReportActivity extends BaseActivity implements
     public void showSuccess(SalesReportResponse saveResponse) {
         binding.txtPrice.setText(String.valueOf(saveResponse.data.total_sale));
         binding.txtPeople.setText(String.valueOf(saveResponse.data.total_customers));
-        if(saveResponse.data.type.equals("weekly")){
+        if (saveResponse.data.type.equals("weekly")) {
             weaklyData(saveResponse.data.chart_data);
-        }
-        else{
+        } else {
             monthlyData(saveResponse.data.chart_data);
         }
     }
@@ -196,5 +213,29 @@ public class SalesReportActivity extends BaseActivity implements
     @Override
     public void showInputWarning() {
 
+    }
+
+    private List<Date> getDates(String startDate, String endDate) {
+        List<Date> dates = new ArrayList<>();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date start = null;
+        Date end = null;
+        try {
+            start = dateFormat.parse(startDate);
+            end = dateFormat.parse(endDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Calendar calendar1 = Calendar.getInstance();
+        assert start != null;
+        calendar1.setTime(start);
+        Calendar calendar2 = Calendar.getInstance();
+        assert end != null;
+        calendar2.setTime(end);
+        while (!calendar1.after(calendar2)) {
+            dates.add(calendar1.getTime());
+            calendar1.add(Calendar.DATE, 1);
+        }
+        return dates;
     }
 }
