@@ -243,12 +243,37 @@
                 android:id="@+id/layout_food_details"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:paddingStart="15dp"
                 android:paddingTop="10dp"
                 android:paddingEnd="15dp"
+                android:weightSum="2"
                 android:paddingBottom="10dp">
-
+                <TextView
+                    android:id="@+id/txt_food_items"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:paddingLeft="10dp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/txt_food_qty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:paddingLeft="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:textStyle="bold"/>
             </LinearLayout>
 
             <TextView

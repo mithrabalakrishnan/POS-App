@@ -65,7 +65,7 @@ public class KitchenPresenter implements KitchenListingContract.Presenter, Kitch
             detailView.showProgressBar();
 
             KitchenRequestData requestData = new KitchenRequestData(
-                    data.getFoodId(), data.getUserId(), status
+                    data.getId(), data.getUserId(), status
             );
 
             mApiDataManager.updateKitchenOrder(sessionManager.getUserToken(), requestData, this);

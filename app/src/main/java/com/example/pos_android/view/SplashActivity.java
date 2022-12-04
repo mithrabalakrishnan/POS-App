@@ -28,7 +28,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(() -> {
 
             Intent i = new Intent(SplashActivity.this,
-                    AdminHomeActivity.class);
+                    KitchenActivity.class);
             startActivity(i);
 
           /*  if (sessionManager.isLoggedIn()) {

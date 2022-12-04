@@ -41,7 +41,7 @@ public class KitchenOrderListingAdapter extends RecyclerView.Adapter<KitchenOrde
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         KitchenResponse.KitchenData data = kitchenDataList.get(position);
         holder.orderId.setText("Order Id : #" + String.valueOf(data.getId()));
-        holder.foodDetails.setText("User Id : " + String.valueOf(data.getUserId()));
+        holder.foodDetails.setText(String.format("%s  X %d", data.getFoodName(), data.getQuanty()));
         holder.date.setText(String.valueOf(data.getDate()));
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -3158,6 +3158,8 @@ id txtTotalSale
 id txtTotal_people
 id txt_category
 id txt_email
+id txt_food_items
+id txt_food_qty
 id txt_itemname
 id txt_layout_category
 id txt_layout_price

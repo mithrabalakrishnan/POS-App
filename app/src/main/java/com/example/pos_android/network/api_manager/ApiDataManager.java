@@ -505,7 +505,7 @@ public class ApiDataManager {
 
                         @Override
                         public void onNext(CommonResponse response) {
-                            mPresenter.onKitchenOrderDetailApiResponse(response);
+                                mPresenter.onKitchenOrderDetailApiResponse(response);
                         }
 
                         @Override

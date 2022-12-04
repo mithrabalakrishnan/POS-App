@@ -100,11 +100,11 @@ public class KitchenActivity extends BaseActivity implements KitchenListingContr
     public void showKitchenOrderListApiSuccess(List<KitchenResponse.KitchenData> saveResponse) {
         if (saveResponse.size() > 0) {
             for (KitchenResponse.KitchenData data : saveResponse) {
-                if (data.getStatus() == null) {
+//                if (data.getStatus() == null) {
                     kitchenDataList.add(data);
-                } else if (!data.getStatus().equals("Completed")) {
-                    kitchenDataList.add(data);
-                }
+//                } else if (!data.getStatus().equals("Completed")) {
+//                    kitchenDataList.add(data);
+//                }
             }
             adapter.notifyDataSetChanged();
         }

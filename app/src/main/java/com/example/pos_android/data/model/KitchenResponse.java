@@ -73,12 +73,45 @@ public class KitchenResponse {
         @SerializedName("month")
         @Expose
         private String month;
+        @SerializedName("username")
+        @Expose
+        private String username;
+        @SerializedName("userPhoneNumber")
+        @Expose
+        private String userPhoneNumber;
+        @SerializedName("foodName")
+        @Expose
+        private String foodName;
         @SerializedName("year")
         @Expose
         private Integer year;
         @SerializedName("status")
         @Expose
         private Object status;
+
+        public String getUsername() {
+            return username;
+        }
+
+        public void setUsername(String username) {
+            this.username = username;
+        }
+
+        public String getUserPhoneNumber() {
+            return userPhoneNumber;
+        }
+
+        public void setUserPhoneNumber(String userPhoneNumber) {
+            this.userPhoneNumber = userPhoneNumber;
+        }
+
+        public String getFoodName() {
+            return foodName;
+        }
+
+        public void setFoodName(String foodName) {
+            this.foodName = foodName;
+        }
 
         public Integer getId() {
             return id;

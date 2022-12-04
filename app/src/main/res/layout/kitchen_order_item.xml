@@ -124,19 +124,19 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/orange_500"
+                android:background="@color/white"
                 android:orientation="horizontal"
                 android:paddingTop="12dp"
                 android:paddingBottom="12dp">
 
                 <TextView
-                    android:id="@+id/tv_food_details"
+                    android:id="@+id/tv_order_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="20dp"
                     android:textAllCaps="true"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     tools:text="#001" />
@@ -149,7 +149,7 @@
                     android:layout_marginEnd="20dp"
                     android:gravity="end"
                     android:textAllCaps="true"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     tools:text="02/11/22" />
@@ -158,7 +158,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/black" />
+                android:background="@color/orange_500" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -167,7 +167,7 @@
                 android:paddingBottom="12dp">
 
                 <TextView
-                    android:id="@+id/tv_order_id"
+                    android:id="@+id/tv_food_details"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -180,14 +180,14 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/btn_view_order"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/orange_500"
+                android:background="@color/black"
                 android:paddingTop="12dp"
                 android:paddingBottom="12dp">
 
                 <TextView
-                    android:id="@+id/btn_view_order"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
