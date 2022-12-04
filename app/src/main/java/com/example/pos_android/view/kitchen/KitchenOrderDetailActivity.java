@@ -43,7 +43,7 @@ public class KitchenOrderDetailActivity extends BaseActivity implements KitchenO
         binding.tvDate.setText(kitchenData.getDate());
         binding.tvTime.setText(kitchenData.getTime());
         binding.tvTableId.setText(kitchenData.getTableId());
-        if (kitchenData.getStatus() =="")
+//        if (kitchenData.getStatus() =="")
 //        binding.tvCustomerDetails.setText(kitchenData.);
         for (int i = 0; i < 5; i++) {
             ///create linear layout programmatically
@@ -84,7 +84,7 @@ public class KitchenOrderDetailActivity extends BaseActivity implements KitchenO
         });
 
         binding.buttonStatus.setOnClickListener(v -> {
-            //  presenter.updateKitchenOrder(kitchenData, selectedStatus);
+//              presenter.updateKitchenOrder(kitchenData, selectedStatus);
         });
     }
 
