@@ -2922,6 +2922,7 @@ drawable ic_add
 drawable ic_add_circle
 drawable ic_arrow_back
 drawable ic_baseline_brightness_1_24
+drawable ic_baseline_close_24
 drawable ic_baseline_deck_24
 drawable ic_baseline_email_24
 drawable ic_baseline_filter_list_24
@@ -3077,6 +3078,7 @@ id lottie
 id mobile_layout
 id name_layout
 id nav_graph
+id offer_price
 id orderFragment
 id orderSuccessFragment
 id order_success

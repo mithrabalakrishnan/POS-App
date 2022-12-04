@@ -1,5 +1,7 @@
 package com.example.pos_android.data.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 public class FoodModel implements Serializable {

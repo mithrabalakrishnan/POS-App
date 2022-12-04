@@ -40,10 +40,10 @@ public class TableReservationResponse {
 
     public class Data {
 
-        @SerializedName("id")
+        @SerializedName("tableid")
         @Expose
         private Integer id;
-        @SerializedName("userId")
+        @SerializedName("userid")
         @Expose
         private Integer userId;
         @SerializedName("date")

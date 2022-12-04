@@ -1,5 +1,6 @@
 package com.example.pos_android.view.user;
 
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -111,6 +112,7 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
             binding.layoutCoupon.setVisibility(View.GONE);
             binding.txtCoupon.setText("Applied "+sessionManager.getCouponPercent()+"% Off");
             binding.layoutCouponItem.setVisibility(View.VISIBLE);
+
         }else{
             binding.layoutCoupon.setVisibility(View.VISIBLE);
             binding.layoutCouponItem.setVisibility(View.GONE);
@@ -120,6 +122,16 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
             public void onClick(View view) {
                 dialog.show();
             }
+        });
+        binding.layoutCoupon.setOnClickListener(view -> {
+            Navigation.findNavController(binding.getRoot()).navigate(R.id.action_summaryFragment_to_couponFragment);
+        });
+        binding.layoutCouponItem.setOnClickListener(view -> {
+            sessionManager.setIsCouponSelected(false);
+            binding.layoutCouponItem.setVisibility(View.GONE);
+            binding.layoutCoupon.setVisibility(View.VISIBLE);
+            binding.offerPrice.setVisibility(View.GONE);
+            binding.textTotal.setPaintFlags(0);
         });
     }
 
@@ -195,8 +207,20 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
             }
         }
         formattedString = String.format("%.02f", total);
+
         binding.textTotal.setText("£" + String.valueOf(formattedString));
         Log.d("foodList", foodList.toString());
+        if(sessionManager.getIsCouponSelected()){
+            binding.offerPrice.setVisibility(View.VISIBLE);
+            double total_pri = Double.valueOf(formattedString);
+            double amount = total;
+            double result = (amount / 100.0f) * sessionManager.getCouponPercent();
+            binding.offerPrice.setText("£" + String.valueOf(amount - result));
+            binding.textTotal.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
+        }
+        else{
+            binding.offerPrice.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -224,6 +248,7 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
         List<Integer> total = new ArrayList<>();
 
         for (FoodModel model : foodList) {
+            Log.e("model",model.toString());
             int totalPrice = model.getQuantity() * Integer.parseInt(model.getPrice());
             foodId.add(Integer.parseInt(model.getFoodId()));
             quantity.add(model.getQuantity());

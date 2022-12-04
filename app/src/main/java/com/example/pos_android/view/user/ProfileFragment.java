@@ -11,16 +11,22 @@ import androidx.fragment.app.Fragment;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.example.pos_android.R;
+import com.example.pos_android.contracts.UserProfileContract;
+import com.example.pos_android.data.model.UserProfileData;
+import com.example.pos_android.data.model.UserProfileResponse;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.databinding.FragmentProfileBinding;
+import com.example.pos_android.presenter.UserProfilePresenter;
+import com.example.pos_android.view.BaseFragment;
 import com.example.pos_android.view.login.LoginActivity;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.Random;
 
-public class ProfileFragment extends Fragment {
+public class ProfileFragment extends BaseFragment implements UserProfileContract.View {
     private FragmentProfileBinding binding;
     private SessionManager sessionManager;
+    private UserProfilePresenter presenter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,6 +48,8 @@ public class ProfileFragment extends Fragment {
             showLogoutDialog();
         });
         sessionManager = new SessionManager(requireContext());
+        presenter = new UserProfilePresenter(this, requireContext());
+        presenter.getUserProfile();
         String randomText = generateRandomString();
 
         binding.tvUserName.setText(sessionManager.getUserName());
@@ -80,5 +88,35 @@ public class ProfileFragment extends Fragment {
             sb.append(randomChar);
         }
         return sb.toString();
+    }
+
+    @Override
+    public void showProgressBar() {
+        showLoadingDialog(requireContext());
+    }
+
+    @Override
+    public void hideProgressBar() {
+        hideLoadingDialog();
+    }
+
+    @Override
+    public void showApiErrorWarning(String string) {
+        showToast(requireContext(), string);
+    }
+
+    @Override
+    public void showWarningMessage(String message) {
+        showToast(requireContext(), message);
+    }
+
+
+    @Override
+    public void showUserProfileResponse(UserProfileResponse response) {
+        UserProfileData mData = response.getData();
+        binding.tvName.setText(mData.username);
+        binding.tvEmail.setText(mData.email);
+        binding.tvMobile.setText(mData.phone_no);
+        binding.tvUserName.setText(String.format("%s%s%s", mData.firstName," ", mData.lastName));
     }
 }

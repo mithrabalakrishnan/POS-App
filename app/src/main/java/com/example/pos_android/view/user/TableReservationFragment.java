@@ -277,12 +277,13 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
             startActivity(intent);
             requireActivity().finishAffinity();
         } else
-            showToast(requireContext(), string);
+
+        showSnackBar(requireView(), string);
     }
 
     @Override
     public void showWarningMessage(String message) {
-        showToast(requireContext(), message);
+        showSnackBar(requireView(), message);
     }
 
     @Override

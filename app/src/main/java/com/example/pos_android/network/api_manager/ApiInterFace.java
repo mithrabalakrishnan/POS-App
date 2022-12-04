@@ -8,6 +8,7 @@ import com.example.pos_android.data.model.LoginResponse;
 import com.example.pos_android.data.model.RegisterResponse;
 import com.example.pos_android.data.model.TableReservationResponse;
 import com.example.pos_android.data.model.UserHomeResponse;
+import com.example.pos_android.data.model.UserProfileResponse;
 import com.example.pos_android.data.model.kitchen.KitchenOrderResponse;
 import com.example.pos_android.data.model.kitchen.KitchenUpdateOrderPayload;
 import com.example.pos_android.data.model.request.AddFoodRequestData;
@@ -98,5 +99,10 @@ public interface ApiInterFace {
     Observable<CommonResponse> kitchenUpdateOrder(
             @Header("Authorization") String string,
             @Body KitchenRequestData requestData);
+
+    @GET("user-profile")
+    Observable<UserProfileResponse> userGetProfile(
+            @Header("Authorization") String string
+    );
 
 }
