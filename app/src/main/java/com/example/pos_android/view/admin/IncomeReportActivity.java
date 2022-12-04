@@ -64,7 +64,7 @@ public class IncomeReportActivity extends BaseActivity implements AdapterView.On
                 Log.d("Date List", String.valueOf(android.text.format.DateFormat.format("dd/MM/yyyy", date)));
             }
 
-//            presenter.getBestSellingWeaklyReport(dateList);
+            presenter.geIncomePerItemWeakly(foodId,dateList);
         });
     }
 

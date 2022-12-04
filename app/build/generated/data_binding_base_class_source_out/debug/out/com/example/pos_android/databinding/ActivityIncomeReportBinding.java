@@ -6,12 +6,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.pos_android.R;
 import com.github.mikephil.charting.charts.LineChart;
+import com.google.android.material.button.MaterialButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -21,16 +24,34 @@ public final class ActivityIncomeReportBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final MaterialButton btnFrom;
+
+  @NonNull
+  public final LinearLayout fromLayout;
+
+  @NonNull
   public final ImageView iconBack;
 
   @NonNull
   public final LineChart lineChart;
 
-  private ActivityIncomeReportBinding(@NonNull LinearLayout rootView, @NonNull ImageView iconBack,
-      @NonNull LineChart lineChart) {
+  @NonNull
+  public final Spinner spinner;
+
+  @NonNull
+  public final TextView tvDateRange;
+
+  private ActivityIncomeReportBinding(@NonNull LinearLayout rootView,
+      @NonNull MaterialButton btnFrom, @NonNull LinearLayout fromLayout,
+      @NonNull ImageView iconBack, @NonNull LineChart lineChart, @NonNull Spinner spinner,
+      @NonNull TextView tvDateRange) {
     this.rootView = rootView;
+    this.btnFrom = btnFrom;
+    this.fromLayout = fromLayout;
     this.iconBack = iconBack;
     this.lineChart = lineChart;
+    this.spinner = spinner;
+    this.tvDateRange = tvDateRange;
   }
 
   @Override
@@ -60,6 +81,18 @@ public final class ActivityIncomeReportBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btn_from;
+      MaterialButton btnFrom = ViewBindings.findChildViewById(rootView, id);
+      if (btnFrom == null) {
+        break missingId;
+      }
+
+      id = R.id.from_layout;
+      LinearLayout fromLayout = ViewBindings.findChildViewById(rootView, id);
+      if (fromLayout == null) {
+        break missingId;
+      }
+
       id = R.id.icon_back;
       ImageView iconBack = ViewBindings.findChildViewById(rootView, id);
       if (iconBack == null) {
@@ -72,7 +105,20 @@ public final class ActivityIncomeReportBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityIncomeReportBinding((LinearLayout) rootView, iconBack, lineChart);
+      id = R.id.spinner;
+      Spinner spinner = ViewBindings.findChildViewById(rootView, id);
+      if (spinner == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_date_range;
+      TextView tvDateRange = ViewBindings.findChildViewById(rootView, id);
+      if (tvDateRange == null) {
+        break missingId;
+      }
+
+      return new ActivityIncomeReportBinding((LinearLayout) rootView, btnFrom, fromLayout, iconBack,
+          lineChart, spinner, tvDateRange);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
