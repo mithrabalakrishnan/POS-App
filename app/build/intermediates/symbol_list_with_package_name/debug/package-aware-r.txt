@@ -5473,6 +5473,7 @@ drawable dm4
 drawable edit_text_border
 drawable error
 drawable fast_food
+drawable gift_voucher
 drawable gradient
 drawable ic_add
 drawable ic_add_circle
@@ -5679,7 +5680,6 @@ id actions
 id activity_chooser_view_content
 id add
 id add_food
-id add_item1
 id alertTitle
 id aligned
 id all
@@ -5715,6 +5715,7 @@ id bounceStart
 id btnAdd
 id btn_add_cart
 id btn_add_kitchen_user
+id btn_add_voucher
 id btn_best_selling
 id btn_cancel
 id btn_clear
@@ -5747,6 +5748,7 @@ id center_vertical
 id chain
 id chain2
 id chains
+id chart
 id checkbox
 id checked
 id chip
@@ -5779,6 +5781,7 @@ id coverImage
 id currentState
 id custom
 id customPanel
+id customer_report
 id cut
 id date_picker_actions
 id decelerate
@@ -6398,6 +6401,7 @@ layout activity_add_food
 layout activity_add_kitchen
 layout activity_admin_home
 layout activity_best_selling_report
+layout activity_customer_report
 layout activity_home
 layout activity_income_report
 layout activity_kitchen
@@ -6450,6 +6454,7 @@ layout layout_history
 layout layout_popular_item
 layout layout_select_date
 layout layout_select_time
+layout loading_layout
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -6570,6 +6575,7 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
+string customer_report
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior

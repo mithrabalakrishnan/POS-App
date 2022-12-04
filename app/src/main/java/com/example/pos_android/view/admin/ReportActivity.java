@@ -48,5 +48,12 @@ public class ReportActivity extends AppCompatActivity {
             }
         });
 
+        binding.customerReport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ReportActivity.this,CustomerReportActivity.class));
+            }
+        });
+
     }
 }

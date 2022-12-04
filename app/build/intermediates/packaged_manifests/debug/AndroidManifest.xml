@@ -40,6 +40,13 @@
         android:theme="@style/Theme.POSAndroid"
         android:usesCleartextTraffic="true" >
         <activity
+            android:name="com.example.pos_android.view.admin.CustomerReportActivity"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name="com.example.pos_android.AddKitchenActivity"
             android:exported="false" >
             <meta-data

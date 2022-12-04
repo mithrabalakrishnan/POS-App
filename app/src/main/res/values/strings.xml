@@ -9,6 +9,7 @@
     <string name="sales_report">SALES REPORT</string>
     <string name="income_report">TOTAL INCOME REPORT</string>
     <string name="lbl_add_coupon">Add Coupon</string>
+    <string name="customer_report">Customer Report</string>
 
     <id name="viewBinding" />
 </resources>

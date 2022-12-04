@@ -5472,6 +5472,7 @@ int drawable dm4 0x7f070079
 int drawable edit_text_border 0x7f07007a
 int drawable error 0x7f07007b
 int drawable fast_food 0x7f07007c
+int drawable gift_voucher 0x7f0700e2
 int drawable gradient 0x7f07007d
 int drawable ic_add 0x7f07007e
 int drawable ic_add_circle 0x7f07007f
@@ -5678,7 +5679,6 @@ int id actions 0x7f09005b
 int id activity_chooser_view_content 0x7f09005c
 int id add 0x7f09005d
 int id add_food 0x7f09005e
-int id add_item1 0x7f09005f
 int id alertTitle 0x7f090060
 int id aligned 0x7f090061
 int id all 0x7f090062
@@ -5714,6 +5714,7 @@ int id bounceStart 0x7f09007f
 int id btnAdd 0x7f090080
 int id btn_add_cart 0x7f090081
 int id btn_add_kitchen_user 0x7f090082
+int id btn_add_voucher 0x7f0902ce
 int id btn_best_selling 0x7f090083
 int id btn_cancel 0x7f090084
 int id btn_clear 0x7f090085
@@ -5746,6 +5747,7 @@ int id center_vertical 0x7f09009f
 int id chain 0x7f0900a0
 int id chain2 0x7f0900a1
 int id chains 0x7f0900a2
+int id chart 0x7f0902cc
 int id checkbox 0x7f0900a3
 int id checked 0x7f0900a4
 int id chip 0x7f0900a5
@@ -5778,6 +5780,7 @@ int id coverImage 0x7f0900bf
 int id currentState 0x7f0900c0
 int id custom 0x7f0900c1
 int id customPanel 0x7f0900c2
+int id customer_report 0x7f0902cd
 int id cut 0x7f0900c3
 int id date_picker_actions 0x7f0900c4
 int id decelerate 0x7f0900c5
@@ -6397,6 +6400,7 @@ int layout activity_add_food 0x7f0c001c
 int layout activity_add_kitchen 0x7f0c001d
 int layout activity_admin_home 0x7f0c001e
 int layout activity_best_selling_report 0x7f0c001f
+int layout activity_customer_report 0x7f0c00a1
 int layout activity_home 0x7f0c0020
 int layout activity_income_report 0x7f0c0021
 int layout activity_kitchen 0x7f0c0022
@@ -6449,6 +6453,7 @@ int layout layout_history 0x7f0c0050
 int layout layout_popular_item 0x7f0c0051
 int layout layout_select_date 0x7f0c0052
 int layout layout_select_time 0x7f0c0053
+int layout loading_layout 0x7f0c00a2
 int layout m3_alert_dialog 0x7f0c0054
 int layout m3_alert_dialog_actions 0x7f0c0055
 int layout m3_alert_dialog_title 0x7f0c0056
@@ -6569,6 +6574,7 @@ int string character_counter_overflowed_content_description 0x7f110021
 int string character_counter_pattern 0x7f110022
 int string chip_text 0x7f110023
 int string clear_text_end_icon_content_description 0x7f110024
+int string customer_report 0x7f110087
 int string error_icon_content_description 0x7f110025
 int string exposed_dropdown_menu_content_description 0x7f110026
 int string fab_transformation_scrim_behavior 0x7f110027
