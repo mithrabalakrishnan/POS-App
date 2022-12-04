@@ -1,32 +1,34 @@
 package com.example.pos_android.view.kitchen;
 
-import android.graphics.Typeface;
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.example.pos_android.R;
 import com.example.pos_android.contracts.KitchenOrderDetailContract;
-import com.example.pos_android.data.model.CommonResponse;
 import com.example.pos_android.data.model.KitchenResponse;
+import com.example.pos_android.data.model.KitchenUpdateStatusResponse;
 import com.example.pos_android.databinding.ActivityKitchenOrderDetailBinding;
 import com.example.pos_android.presenter.KitchenPresenter;
 import com.example.pos_android.view.BaseActivity;
-
-import java.util.Objects;
 
 public class KitchenOrderDetailActivity extends BaseActivity implements KitchenOrderDetailContract.View {
     ActivityKitchenOrderDetailBinding binding;
     KitchenResponse.KitchenData kitchenData;
     KitchenPresenter presenter;
+    int SMS_PERMISSION_CODE = 300;
+    boolean hasPermission = false;
     String selectedStatus;
+    private SmsManager smsManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,8 @@ public class KitchenOrderDetailActivity extends BaseActivity implements KitchenO
         kitchenData = (KitchenResponse.KitchenData) getIntent().getSerializableExtra("data");
 
         presenter = new KitchenPresenter(this, this);
+        smsManager = SmsManager.getDefault();
+        checkPermissions();
         binding.tvOrderId.setText("Order ID : #" + kitchenData.getId());
         binding.tvDate.setText(kitchenData.getDate());
         binding.tvTime.setText(kitchenData.getTime());
@@ -49,14 +53,12 @@ public class KitchenOrderDetailActivity extends BaseActivity implements KitchenO
         binding.txtFoodQty.setText(String.format("x %s", kitchenData.getQuanty()));
         Log.e("Status", String.valueOf(kitchenData.getStatus()));
 
-        if(kitchenData.getStatus().equals("In-Progress")){
+        if (kitchenData.getStatus().equals("In-Progress")) {
             binding.rbInProgress.setChecked(true);
-        }
-        else if(kitchenData.getStatus().equals("Completed")){
+        } else if (kitchenData.getStatus().equals("Completed")) {
 
             binding.rbCompleted.setChecked(true);
-        }
-        else{
+        } else {
             binding.rbCompleted.setChecked(false);
             binding.rbInProgress.setChecked(false);
         }
@@ -102,7 +104,10 @@ public class KitchenOrderDetailActivity extends BaseActivity implements KitchenO
         });
 
         binding.buttonStatus.setOnClickListener(v -> {
-              presenter.updateKitchenOrder(kitchenData, selectedStatus);
+            if (hasPermission) {
+                presenter.updateKitchenOrder(kitchenData, selectedStatus);
+            } else
+                checkPermissions();
         });
     }
 
@@ -123,15 +128,22 @@ public class KitchenOrderDetailActivity extends BaseActivity implements KitchenO
 
     @Override
     public void showWarningMessage(String message) {
-        if(message != null) {
+        if (message != null) {
             showToast(KitchenOrderDetailActivity.this, message);
         }
     }
 
     @Override
-    public void showSuccessResponse(CommonResponse saveResponse) {
-        showWarningMessage(saveResponse.getMessage());
-        finish();
+    public void showSuccessResponse(KitchenUpdateStatusResponse saveResponse) {
+        String message = "Hi Customer, Your order with id " + kitchenData.getId() + " Is " + saveResponse.getData().getStatus() + ". \nThanks from " + getResources().getString(R.string.app_name);
+        Log.d("Update Status", message);
+//        try {
+//            smsManager.sendTextMessage(kitchenData.getUserPhoneNumber(), null, "From kitchen", null, null);
+//            showWarningMessage(saveResponse.getMessage());
+//            finish();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 
     @Override
@@ -139,5 +151,28 @@ public class KitchenOrderDetailActivity extends BaseActivity implements KitchenO
         super.onPointerCaptureChanged(hasCapture);
     }
 
+    private void checkPermissions() {
+        if (ContextCompat.checkSelfPermission(KitchenOrderDetailActivity.this, Manifest.permission.SEND_SMS)
+                == PackageManager.PERMISSION_GRANTED) {
+            hasPermission = true;
+        } else {
+            ActivityCompat.requestPermissions(KitchenOrderDetailActivity.this, new String[]{Manifest.permission.SEND_SMS},
+                    SMS_PERMISSION_CODE);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        // Checking whether user granted the permission or not.
+        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            // Showing the toast message
+            // showToast(AddFoodActivity.this, "Permission granted");
+            hasPermission = true;
+        } else {
+            hasPermission = false;
+            //  showToast(AddFoodActivity.this, "Permission denied");
+        }
+    }
 
 }

@@ -7,6 +7,7 @@ import com.example.pos_android.contracts.KitchenListingContract;
 import com.example.pos_android.contracts.KitchenOrderDetailContract;
 import com.example.pos_android.data.model.CommonResponse;
 import com.example.pos_android.data.model.KitchenResponse;
+import com.example.pos_android.data.model.KitchenUpdateStatusResponse;
 import com.example.pos_android.data.model.request.KitchenRequestData;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.network.api_manager.ApiDataManager;
@@ -75,7 +76,7 @@ public class KitchenPresenter implements KitchenListingContract.Presenter, Kitch
     }
 
     @Override
-    public void onKitchenOrderDetailApiResponse(CommonResponse saveResponse) {
+    public void onKitchenOrderDetailApiResponse(KitchenUpdateStatusResponse saveResponse) {
         detailView.hideProgressBar();
         if (saveResponse.getStatus()) {
             detailView.showSuccessResponse(saveResponse);

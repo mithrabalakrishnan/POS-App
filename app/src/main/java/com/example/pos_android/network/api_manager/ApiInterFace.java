@@ -5,6 +5,7 @@ import com.example.pos_android.data.model.CommonResponse;
 import com.example.pos_android.data.model.HistoryResponse;
 import com.example.pos_android.data.model.ImagePickerResponse;
 import com.example.pos_android.data.model.KitchenResponse;
+import com.example.pos_android.data.model.KitchenUpdateStatusResponse;
 import com.example.pos_android.data.model.LoginResponse;
 import com.example.pos_android.data.model.RegisterResponse;
 import com.example.pos_android.data.model.TableReservationResponse;
@@ -103,7 +104,7 @@ public interface ApiInterFace {
     );
 
     @PUT("kitchen-order")
-    Observable<CommonResponse> kitchenUpdateOrder(
+    Observable<KitchenUpdateStatusResponse> kitchenUpdateOrder(
             @Header("Authorization") String string,
             @Body KitchenRequestData requestData);
 
