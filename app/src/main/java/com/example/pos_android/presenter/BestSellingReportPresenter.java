@@ -9,6 +9,8 @@ import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.network.api_manager.ApiDataManager;
 import com.example.pos_android.utils.NetworkManager;
 
+import java.util.List;
+
 public class BestSellingReportPresenter implements BestSellingReportContract.Presenter {
     BestSellingReportContract.View mView;
     ApiDataManager mApiDataManager;
@@ -46,5 +48,16 @@ public class BestSellingReportPresenter implements BestSellingReportContract.Pre
             mView.showBestSellingReportResponse(response);
         } else
             mView.showWarningMessage(response.getMessage());
+    }
+
+    @Override
+    public void getBestSellingWeaklyReport(List<String> dateList) {
+        if (NetworkManager.isNetworkAvailable(mContext)) {
+            mView.showProgressBar();
+
+            mApiDataManager.getBestSellingWeaklyReport(sessionManager.getUserToken(), this, dateList);
+
+        } else
+            mView.showWarningMessage(mContext.getString(R.string.no_network));
     }
 }

@@ -23,7 +23,11 @@ import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.material.datepicker.MaterialDatePicker;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -51,7 +55,7 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
         } else {
             binding.fromLayout.setVisibility(View.VISIBLE);
 //            weeklyData();
-            //  presenter.getBestSellingReport("weekly");
+            //  presenter.getBestSellingWeaklyReport("weekly");
         }
     }
 
@@ -141,7 +145,7 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
 //                Log.d("Date List", String.valueOf(android.text.format.DateFormat.format("dd/MM/yyyy", date)));
 //            }
 
-//            presenter.callWeaklySalesReport(dateList);
+          presenter.getBestSellingWeaklyReport(dateList);
         });
         filterSpinnerSet();
         binding.ivBack.setOnClickListener(new View.OnClickListener() {
@@ -202,7 +206,7 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
                 foodDetailList.add(detail);
             }
         }
-        if (response.data.type.equals("weekly")) {
+        if (response.data.type.equals("Weekly")) {
             weeklyData(response.data.chart_data);
         } else {
             monthlyData(response.data);
@@ -214,5 +218,28 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
+    }
+    private List<Date> getDates(String startDate, String endDate) {
+        List<Date> dates = new ArrayList<>();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date start = null;
+        Date end = null;
+        try {
+            start = dateFormat.parse(startDate);
+            end = dateFormat.parse(endDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Calendar calendar1 = Calendar.getInstance();
+        assert start != null;
+        calendar1.setTime(start);
+        Calendar calendar2 = Calendar.getInstance();
+        assert end != null;
+        calendar2.setTime(end);
+        while (!calendar1.after(calendar2)) {
+            dates.add(calendar1.getTime());
+            calendar1.add(Calendar.DATE, 1);
+        }
+        return dates;
     }
 }

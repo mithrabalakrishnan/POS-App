@@ -2,7 +2,12 @@ package com.example.pos_android.view.admin;
 
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+
+import androidx.core.util.Pair;
 
 import com.example.pos_android.contracts.IncomePerItemMonthlyContract;
 import com.example.pos_android.data.model.sales_report.IncomePerItemMonthlyResponse;
@@ -14,13 +19,24 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.android.material.datepicker.MaterialDatePicker;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
-public class IncomeReportActivity extends BaseActivity implements IncomePerItemMonthlyContract.View {
+public class IncomeReportActivity extends BaseActivity implements AdapterView.OnItemSelectedListener, IncomePerItemMonthlyContract.View {
     private ActivityIncomeReportBinding binding;
     private IncomePerItemMonthlyPresenter presenter;
+    MaterialDatePicker materialDatePicker;
+    private List<String> dateList = new ArrayList<>();
+    String[] filterData = {"Weekly", "Monthly"};
+    int foodId = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,18 +44,48 @@ public class IncomeReportActivity extends BaseActivity implements IncomePerItemM
         binding = ActivityIncomeReportBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         initView();
+
+        MaterialDatePicker.Builder<Pair<Long, Long>> materialDateBuilder
+                = MaterialDatePicker.Builder.dateRangePicker();
+        materialDateBuilder.setTitleText("Select date range");
+        materialDatePicker = materialDateBuilder.build();
+
+        materialDatePicker.addOnPositiveButtonClickListener(selection -> {
+            dateList.clear();
+            Pair<Long, Long> dateLongs = (Pair<Long, Long>) selection;
+            binding.tvDateRange.setVisibility(View.VISIBLE);
+            binding.tvDateRange.setText("Selected Week : " + materialDatePicker.getHeaderText());
+            String startDate = android.text.format.DateFormat.format("yyyy-MM-dd", new Date(dateLongs.first)).toString();
+            String endDate = android.text.format.DateFormat.format("yyyy-MM-dd", new Date(dateLongs.second)).toString();
+            List<Date> dates = getDates(startDate, endDate);
+
+            for (Date date : dates) {
+                dateList.add(String.valueOf(android.text.format.DateFormat.format("dd/MM/yyyy", date)));
+                Log.d("Date List", String.valueOf(android.text.format.DateFormat.format("dd/MM/yyyy", date)));
+            }
+
+//            presenter.getBestSellingWeaklyReport(dateList);
+        });
     }
 
     private void initView() {
         presenter = new IncomePerItemMonthlyPresenter(this, this);
-        int foodId = getIntent().getExtras().getInt("id");
+        foodId = getIntent().getExtras().getInt("id");
         binding.iconBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
             }
         });
-        presenter.geIncomePerItemMonthly(foodId);
+        binding.spinner.setOnItemSelectedListener(this);
+        ArrayAdapter spinnerAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, filterData);
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Setting the ArrayAdapter data on the Spinner
+        binding.spinner.setAdapter(spinnerAdapter);
+
+        binding.btnFrom.setOnClickListener(view -> {
+            materialDatePicker.show(getSupportFragmentManager(), "MATERIAL_DATE_PICKER");
+        });
     }
 
     public void FoodData(List<Double> chart_data) {
@@ -117,5 +163,49 @@ public class IncomeReportActivity extends BaseActivity implements IncomePerItemM
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+        binding.tvDateRange.setText("");
+        binding.tvDateRange.setVisibility(View.GONE);
+        if (Objects.equals(filterData[position], "Monthly")) {
+//            monthlyData();
+            binding.fromLayout.setVisibility(View.GONE);
+            presenter.geIncomePerItemMonthly(foodId);
+
+        } else {
+            binding.fromLayout.setVisibility(View.VISIBLE);
+//            weeklyData();
+            //  presenter.getBestSellingWeaklyReport("weekly");
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+    private List<Date> getDates(String startDate, String endDate) {
+        List<Date> dates = new ArrayList<>();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date start = null;
+        Date end = null;
+        try {
+            start = dateFormat.parse(startDate);
+            end = dateFormat.parse(endDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Calendar calendar1 = Calendar.getInstance();
+        assert start != null;
+        calendar1.setTime(start);
+        Calendar calendar2 = Calendar.getInstance();
+        assert end != null;
+        calendar2.setTime(end);
+        while (!calendar1.after(calendar2)) {
+            dates.add(calendar1.getTime());
+            calendar1.add(Calendar.DATE, 1);
+        }
+        return dates;
     }
 }

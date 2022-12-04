@@ -456,6 +456,43 @@ public class ApiDataManager {
         }
     }
 
+    public void getBestSellingWeaklyReport(String token, BestSellingReportPresenter mPresenter, List<String> dateList) {
+        try {
+            if (apiInterFace == null)
+                apiInterFace = ApiClient.getClientServerApi().create(ApiInterFace.class);
+
+            apiInterFace
+                    .reportFoodSalesWeekly("Bearer " + token, dateList)
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeOn(Schedulers.io())
+                    .subscribe(new Observer<BestSellingReportResponse>() {
+                        @Override
+                        public void onSubscribe(Disposable d) {
+                        }
+
+                        @Override
+                        public void onNext(BestSellingReportResponse response) {
+                            mPresenter.onBestSellingReportCallback(response);
+                        }
+
+                        @Override
+                        public void onError(Throwable e) {
+                            Log.e(TAG, "onError: " + e.getMessage());
+                            mPresenter.onApiError(e.getLocalizedMessage());
+                        }
+
+                        @Override
+                        public void onComplete() {
+                        }
+                    });
+
+
+        } catch (Exception e) {
+            mPresenter.onApiError(e.getMessage());
+            Log.e(TAG, "Exception caught in " + e.getMessage().toString());
+        }
+    }
+
     public void getIncomePerItemMonthly(String token, IncomePerItemMonthlyPresenter mPresenter, int foodId)
     {
         try {
@@ -494,6 +531,43 @@ public class ApiDataManager {
         }
     }
 
+     public void getIncomePerItemMonthly(String token, IncomePerItemMonthlyPresenter mPresenter, int foodId,List<String> dateList)
+    {
+        try {
+            if (apiInterFace == null)
+                apiInterFace = ApiClient.getClientServerApi().create(ApiInterFace.class);
+
+            apiInterFace
+                    .reportFoodItemWeekly("Bearer " + token, foodId,dateList)
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeOn(Schedulers.io())
+                    .subscribe(new Observer<IncomePerItemMonthlyResponse>() {
+                        @Override
+                        public void onSubscribe(Disposable d) {
+                        }
+
+                        @Override
+                        public void onNext(IncomePerItemMonthlyResponse response) {
+                            mPresenter.onIncomePerItemMonthlyCallback(response);
+                        }
+
+                        @Override
+                        public void onError(Throwable e) {
+                            Log.e(TAG, "onError: " + e.getMessage());
+                            mPresenter.onApiError(e.getLocalizedMessage());
+                        }
+
+                        @Override
+                        public void onComplete() {
+                        }
+                    });
+
+
+        } catch (Exception e) {
+            mPresenter.onApiError(e.getMessage());
+            Log.e(TAG, "Exception caught in " + e.getMessage().toString());
+        }
+    }
     public void getKitchenGetOrders(String token, KitchenPresenter mPresenter) {
         try {
             if (apiInterFace == null)

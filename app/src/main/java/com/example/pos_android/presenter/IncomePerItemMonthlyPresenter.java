@@ -9,6 +9,8 @@ import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.network.api_manager.ApiDataManager;
 import com.example.pos_android.utils.NetworkManager;
 
+import java.util.List;
+
 public class IncomePerItemMonthlyPresenter implements IncomePerItemMonthlyContract.Presenter {
 
        IncomePerItemMonthlyContract.View mView;
@@ -35,6 +37,17 @@ public class IncomePerItemMonthlyPresenter implements IncomePerItemMonthlyContra
             mView.showProgressBar();
 
             mApiDataManager.getIncomePerItemMonthly(sessionManager.getUserToken(), this, i);
+
+        } else
+            mView.showWarningMessage(mContext.getString(R.string.no_network));
+    }
+
+    @Override
+    public void geIncomePerItemWeakly(int id, List<String> dateList) {
+        if (NetworkManager.isNetworkAvailable(mContext)) {
+            mView.showProgressBar();
+
+            mApiDataManager.getIncomePerItemMonthly(sessionManager.getUserToken(), this, id,dateList);
 
         } else
             mView.showWarningMessage(mContext.getString(R.string.no_network));
