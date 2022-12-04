@@ -1,5 +1,6 @@
 package com.example.pos_android.view.admin;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,10 +12,12 @@ import androidx.core.util.Pair;
 
 import com.example.pos_android.contracts.SalesReportContract;
 import com.example.pos_android.data.model.sales_report.SalesReportResponse;
+import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.databinding.ActivitySalesReportBinding;
 import com.example.pos_android.presenter.SalesReportPresenter;
 import com.example.pos_android.utils.RangeDateValidator;
 import com.example.pos_android.view.BaseActivity;
+import com.example.pos_android.view.login.LoginActivity;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
@@ -72,7 +75,7 @@ public class SalesReportActivity extends BaseActivity implements
                 List<Date> dates = getDates(startDate, endDate);
 
                 for (Date date : dates) {
-                    dateList.add(String.valueOf(android.text.format.DateFormat.format("dd/MM/yyyy", date)));
+                    dateList.add(String.valueOf(android.text.format.DateFormat.format("yyyy-MM-dd", date)));
                     Log.d("Date List", String.valueOf(android.text.format.DateFormat.format("dd/MM/yyyy", date)));
                 }
 
@@ -126,14 +129,10 @@ public class SalesReportActivity extends BaseActivity implements
     public void weaklyData(ArrayList<Double> chart_data) {
 
         ArrayList<BarEntry> barEntries = new ArrayList<>();
-        barEntries.add(new BarEntry(1.F, chart_data.get(0).floatValue(), "Mon"));
-        barEntries.add(new BarEntry(2.F, chart_data.get(1).floatValue(), "Tue"));
-        barEntries.add(new BarEntry(3.F, chart_data.get(2).floatValue(), "Wed"));
-        barEntries.add(new BarEntry(4.F, chart_data.get(3).floatValue(), "Thu"));
-        barEntries.add(new BarEntry(5.F, chart_data.get(4).floatValue(), "Fri"));
-        barEntries.add(new BarEntry(6.F, chart_data.get(5).floatValue(), "Sat"));
-        barEntries.add(new BarEntry(7.F, chart_data.get(6).floatValue(), "Sun"));
-        BarDataSet barDataSet = new BarDataSet(barEntries, "Report");
+        for (int i = 0; i < chart_data.size(); i++) {
+            barEntries.add(new BarEntry(i, chart_data.get(i).floatValue(), "Mon"));
+        }
+        BarDataSet barDataSet = new BarDataSet(barEntries, "Weekly Report");
         barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         barDataSet.setValueTextSize(12);
         binding.barChart.setData(new BarData(barDataSet));
@@ -196,7 +195,16 @@ public class SalesReportActivity extends BaseActivity implements
 
     @Override
     public void showApiErrorWarning(String string) {
-        showSnackBar(binding.getRoot(), string);
+        hideLoadingDialog();
+        if (string.equals("HTTP 401 ")) {
+            SessionManager sessionManager = new SessionManager(this);
+            sessionManager.clear();
+            showToast(this, "Session expired");
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finishAffinity();
+        } else
+            showSnackBar(binding.getRoot(), string);
     }
 
     @Override

@@ -28,6 +28,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -37,9 +38,9 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
     String[] filterData = {"Weekly", "Monthly"};
     String[] titleList = {"Pizza", "Burger", "Bangers and Mash", "Sunday Roast", "Sandwich"};
     Double[] salesList = {25.0, 15.0, 11.0, 5.0, 17.0};
-    private List<String> dateList = new ArrayList<>();
     BestSellingAdapter adapter;
     MaterialDatePicker materialDatePicker;
+    private List<String> dateList = new ArrayList<>();
     private List<FoodDetail> foodDetailList = new ArrayList<>();
     private ActivityBestSellingReportBinding binding;
     private BestSellingReportPresenter presenter;
@@ -60,12 +61,13 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
     }
 
     private void weeklyData(List<Double> chart_data) {
+        ArrayList<Double> convertedList = new ArrayList<>(chart_data);
+        Collections.sort(convertedList, Collections.reverseOrder());
+
         ArrayList<PieEntry> pieEntries = new ArrayList<>();
-        pieEntries.add(new PieEntry(chart_data.get(0).floatValue(), "Pizza"));
-        pieEntries.add(new PieEntry(chart_data.get(1).floatValue(), "Burger"));
-        pieEntries.add(new PieEntry(chart_data.get(2).floatValue(), "Bangers and Mash"));
-        pieEntries.add(new PieEntry(chart_data.get(3).floatValue(), "Sunday Roast"));
-        pieEntries.add(new PieEntry(chart_data.get(4).floatValue(), "Sandwich"));
+        for (int i = 0; i < 5; i++) {
+            pieEntries.add(new PieEntry(convertedList.get(i).floatValue(), foodDetailList.get(i).getFood()));
+        }
         PieDataSet pieDataSet = new PieDataSet(pieEntries, "Weekly Report");
         pieDataSet.setValueTextSize(12);
         pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
@@ -138,14 +140,14 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
             binding.tvDateRange.setText("Selected Week : " + materialDatePicker.getHeaderText());
             String startDate = android.text.format.DateFormat.format("yyyy-MM-dd", new Date(dateLongs.first)).toString();
             String endDate = android.text.format.DateFormat.format("yyyy-MM-dd", new Date(dateLongs.second)).toString();
-//            List<Date> dates = getDates(startDate, endDate);
-//
-//            for (Date date : dates) {
-//                dateList.add(String.valueOf(android.text.format.DateFormat.format("dd/MM/yyyy", date)));
-//                Log.d("Date List", String.valueOf(android.text.format.DateFormat.format("dd/MM/yyyy", date)));
-//            }
+            List<Date> dates = getDates(startDate, endDate);
 
-          presenter.getBestSellingWeaklyReport(dateList);
+            for (Date date : dates) {
+                dateList.add(String.valueOf(android.text.format.DateFormat.format("yyyy-MM-dd", date)));
+                Log.d("Date List", String.valueOf(android.text.format.DateFormat.format("dd/MM/yyyy", date)));
+            }
+
+            presenter.getBestSellingWeaklyReport(dateList);
         });
         filterSpinnerSet();
         binding.ivBack.setOnClickListener(new View.OnClickListener() {
@@ -219,6 +221,7 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
     }
+
     private List<Date> getDates(String startDate, String endDate) {
         List<Date> dates = new ArrayList<>();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");

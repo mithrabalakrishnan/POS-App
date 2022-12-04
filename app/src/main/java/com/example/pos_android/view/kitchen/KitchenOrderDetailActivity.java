@@ -137,13 +137,13 @@ public class KitchenOrderDetailActivity extends BaseActivity implements KitchenO
     public void showSuccessResponse(KitchenUpdateStatusResponse saveResponse) {
         String message = "Hi Customer, Your order with id " + kitchenData.getId() + " Is " + saveResponse.getData().getStatus() + ". \nThanks from " + getResources().getString(R.string.app_name);
         Log.d("Update Status", message);
-//        try {
-//            smsManager.sendTextMessage(kitchenData.getUserPhoneNumber(), null, "From kitchen", null, null);
-//            showWarningMessage(saveResponse.getMessage());
-//            finish();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        try {
+            smsManager.sendTextMessage(kitchenData.getUserPhoneNumber(), null, message, null, null);
+            showWarningMessage(saveResponse.getMessage());
+            finish();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

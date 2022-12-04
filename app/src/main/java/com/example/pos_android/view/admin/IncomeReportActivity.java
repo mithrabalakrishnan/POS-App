@@ -31,12 +31,12 @@ import java.util.List;
 import java.util.Objects;
 
 public class IncomeReportActivity extends BaseActivity implements AdapterView.OnItemSelectedListener, IncomePerItemMonthlyContract.View {
-    private ActivityIncomeReportBinding binding;
-    private IncomePerItemMonthlyPresenter presenter;
     MaterialDatePicker materialDatePicker;
-    private List<String> dateList = new ArrayList<>();
     String[] filterData = {"Weekly", "Monthly"};
     int foodId = 0;
+    private ActivityIncomeReportBinding binding;
+    private IncomePerItemMonthlyPresenter presenter;
+    private List<String> dateList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,11 +60,11 @@ public class IncomeReportActivity extends BaseActivity implements AdapterView.On
             List<Date> dates = getDates(startDate, endDate);
 
             for (Date date : dates) {
-                dateList.add(String.valueOf(android.text.format.DateFormat.format("dd/MM/yyyy", date)));
+                dateList.add(String.valueOf(android.text.format.DateFormat.format("yyyy-MM-dd", date)));
                 Log.d("Date List", String.valueOf(android.text.format.DateFormat.format("dd/MM/yyyy", date)));
             }
 
-            presenter.geIncomePerItemWeakly(foodId,dateList);
+            presenter.geIncomePerItemWeakly(foodId, dateList);
         });
     }
 
@@ -90,14 +90,10 @@ public class IncomeReportActivity extends BaseActivity implements AdapterView.On
 
     public void FoodData(List<Double> chart_data) {
         ArrayList<Entry> lineEntries = new ArrayList<>();
-        lineEntries.add(new Entry(1.F, chart_data.get(0).floatValue(), "Mon"));
-        lineEntries.add(new Entry(2.F, chart_data.get(1).floatValue(), "Tue"));
-        lineEntries.add(new Entry(3.F, chart_data.get(2).floatValue(), "Wed"));
-        lineEntries.add(new Entry(4.F, chart_data.get(3).floatValue(), "Thu"));
-        lineEntries.add(new Entry(5.F, chart_data.get(4).floatValue(), "Fri"));
-        lineEntries.add(new Entry(6.F, chart_data.get(5).floatValue(), "Sat"));
-        lineEntries.add(new Entry(7.F, chart_data.get(6).floatValue(), "Sun"));
-        LineDataSet lineDataSet = new LineDataSet(lineEntries, "Report");
+        for (int i = 0; i < 5; i++) {
+            lineEntries.add(new Entry(i, chart_data.get(i).floatValue(), ""));
+        }
+        LineDataSet lineDataSet = new LineDataSet(lineEntries, "Weekly Report");
         lineDataSet.setValueTextSize(12);
         lineDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         binding.lineChart.setData(new LineData(lineDataSet));
@@ -115,19 +111,19 @@ public class IncomeReportActivity extends BaseActivity implements AdapterView.On
 
     public void foodDataMonthly(List<Double> chart_data) {
         ArrayList<Entry> lineEntries = new ArrayList<>();
-        for (int i = 0; i < chart_data.size(); i++) {
-            lineEntries.add(new Entry(i + 1F, chart_data.get(i).floatValue(), ""));
+        for (int i = 0; i < 5; i++) {
+            lineEntries.add(new Entry(i, chart_data.get(i).floatValue(), ""));
         }
-        LineDataSet lineDataSet = new LineDataSet(lineEntries, "Report");
+        LineDataSet lineDataSet = new LineDataSet(lineEntries, "Weekly Report");
         lineDataSet.setValueTextSize(12);
         lineDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         binding.lineChart.setData(new LineData(lineDataSet));
         binding.lineChart.animateY(3000);
         binding.lineChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter());
 
-        final String[] labels = new String[]{"Mon", "Tue", "Wed", "Thu", "Fri",
-                "Sat", "Sun"};
-        binding.lineChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
+        /*final String[] labels = new String[]{"Mon", "Tue", "Wed", "Thu", "Fri",
+                "Sat", "Sun"};*/
+       // binding.lineChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
         binding.lineChart.getXAxis().setGranularity(0f);
         binding.lineChart.getXAxis().setGranularityEnabled(true);
 
@@ -185,6 +181,7 @@ public class IncomeReportActivity extends BaseActivity implements AdapterView.On
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
     private List<Date> getDates(String startDate, String endDate) {
         List<Date> dates = new ArrayList<>();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
