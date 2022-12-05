@@ -174,7 +174,7 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View,
         showToast(requireContext(), value);
         Log.d("Voice command", "onReceiveText: "+value);
         if (voiceCommandUtil == null)
-            voiceCommandUtil = new VoiceCommandUtil(value.toUpperCase(), getActivity().findViewById(R.id.bottomNavigationView));
+            voiceCommandUtil = new VoiceCommandUtil(value.toUpperCase(), getActivity().findViewById(R.id.bottomNavigationView),Navigation.findNavController(requireView()));
         else
             voiceCommandUtil.performCommand(value.toUpperCase());
     }
