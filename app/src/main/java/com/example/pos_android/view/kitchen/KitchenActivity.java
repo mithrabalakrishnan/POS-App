@@ -99,6 +99,7 @@ public class KitchenActivity extends BaseActivity implements KitchenListingContr
     @Override
     public void showKitchenOrderListApiSuccess(List<KitchenResponse.KitchenData> saveResponse) {
         if (saveResponse.size() > 0) {
+            kitchenDataList.clear();
             for (KitchenResponse.KitchenData data : saveResponse) {
 //                if (data.getStatus() == null) {
                     kitchenDataList.add(data);
