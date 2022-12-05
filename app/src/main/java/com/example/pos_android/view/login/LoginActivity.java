@@ -11,7 +11,7 @@ import com.example.pos_android.utils.Validation;
 import com.example.pos_android.view.BaseActivity;
 import com.example.pos_android.view.admin.AdminHomeActivity;
 import com.example.pos_android.view.kitchen.KitchenActivity;
-import com.example.pos_android.view.register.RegisterActivity;
+import com.example.pos_android.view.user.register.RegisterActivity;
 import com.example.pos_android.view.user.UserHomeActivity;
 
 import java.util.Objects;

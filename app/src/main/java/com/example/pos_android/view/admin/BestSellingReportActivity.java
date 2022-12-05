@@ -30,8 +30,11 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 public class BestSellingReportActivity extends BaseActivity implements AdapterView.OnItemSelectedListener,
         BestSellingReportContract.View {
@@ -61,11 +64,15 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
     }
 
     private void weeklyData(List<Double> chart_data) {
-        ArrayList<Double> convertedList = new ArrayList<>(chart_data);
+        Log.d("ReportList", "from response:"+chart_data.toString());
+        Set<Double> doubleSet = new HashSet<>(chart_data);
+
+        ArrayList<Double> convertedList = new ArrayList<>(doubleSet);
+        Log.d("ReportList", "from conversion:"+ convertedList);
         Collections.sort(convertedList, Collections.reverseOrder());
 
         ArrayList<PieEntry> pieEntries = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < convertedList.size(); i++) {
             pieEntries.add(new PieEntry(convertedList.get(i).floatValue(), foodDetailList.get(i).getFood()));
         }
         PieDataSet pieDataSet = new PieDataSet(pieEntries, "Weekly Report");
@@ -203,11 +210,16 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
     @Override
     public void showBestSellingReportResponse(BestSellingReportResponse response) {
 
+        Set<FoodDetail> doubleSet = new HashSet<>();
         for (FoodDetail detail : response.getData().getFood_details()) {
             if (detail.getSale_amount() > 0.0) {
-                foodDetailList.add(detail);
+                doubleSet.add(detail);
             }
         }
+        Log.d("Food Detail list", "from set:"+ doubleSet);
+        foodDetailList.addAll(doubleSet);
+        Collections.sort(foodDetailList);
+
         if (response.data.type.equals("Weekly")) {
             weeklyData(response.data.chart_data);
         } else {

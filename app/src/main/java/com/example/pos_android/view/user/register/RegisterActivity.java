@@ -1,4 +1,4 @@
-package com.example.pos_android.view.register;
+package com.example.pos_android.view.user.register;
 
 import android.content.Intent;
 import android.os.Bundle;
