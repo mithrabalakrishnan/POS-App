@@ -13,6 +13,7 @@ import com.example.pos_android.data.model.RegisterResponse;
 import com.example.pos_android.data.model.TableReservationResponse;
 import com.example.pos_android.data.model.UserHomeResponse;
 import com.example.pos_android.data.model.UserProfileResponse;
+import com.example.pos_android.data.model.food.FoodOrderResponseModel;
 import com.example.pos_android.data.model.request.AddFoodRequestData;
 import com.example.pos_android.data.model.request.FoodOrderRequestData;
 import com.example.pos_android.data.model.request.KitchenRequestData;
@@ -280,13 +281,13 @@ public class ApiDataManager {
                     .doOrderFood("Bearer " + token, requestData)
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeOn(Schedulers.io())
-                    .subscribe(new Observer<CommonResponse>() {
+                    .subscribe(new Observer<FoodOrderResponseModel>() {
                         @Override
                         public void onSubscribe(Disposable d) {
                         }
 
                         @Override
-                        public void onNext(CommonResponse response) {
+                        public void onNext(FoodOrderResponseModel response) {
                             mPresenter.onAddFoodResponseCallback(response);
                         }
 

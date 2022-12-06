@@ -6,6 +6,7 @@ import com.example.pos_android.R;
 import com.example.pos_android.contracts.FoodReservationContract;
 import com.example.pos_android.data.model.CommonResponse;
 import com.example.pos_android.data.model.OrderInfoModel;
+import com.example.pos_android.data.model.food.FoodOrderResponseModel;
 import com.example.pos_android.data.model.request.FoodOrderRequestData;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.network.api_manager.ApiDataManager;
@@ -48,10 +49,10 @@ public class ConfirmOrderPresenter implements FoodReservationContract.Presenter 
     }
 
     @Override
-    public void onAddFoodResponseCallback(CommonResponse tableReservationResponse) {
+    public void onAddFoodResponseCallback(FoodOrderResponseModel tableReservationResponse) {
         mView.hideProgressBar();
-        if (tableReservationResponse.getStatus()) {
-            mView.showTableOrderSuccessResponse("Order Successfully");
+        if (tableReservationResponse.isStatus()) {
+            mView.showTableOrderSuccessResponse(tableReservationResponse);
         } else
             mView.showWarningMessage(tableReservationResponse.getMessage());
     }

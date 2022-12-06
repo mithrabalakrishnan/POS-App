@@ -1,29 +1,42 @@
 package com.example.pos_android.view.user;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.telephony.SmsManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.navigation.Navigation;
 
 import com.example.pos_android.R;
 import com.example.pos_android.contracts.FoodReservationContract;
 import com.example.pos_android.data.model.OrderInfoModel;
+import com.example.pos_android.data.model.food.FoodOrderResponseModel;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.data.room.CartDatabase;
 import com.example.pos_android.databinding.FragmentPaymentBinding;
 import com.example.pos_android.presenter.ConfirmOrderPresenter;
 import com.example.pos_android.view.BaseFragment;
+import com.example.pos_android.view.kitchen.KitchenOrderDetailActivity;
 import com.example.pos_android.view.login.LoginActivity;
+
+import java.util.ArrayList;
 
 public class PaymentFragment extends BaseFragment implements FoodReservationContract.View {
     ConfirmOrderPresenter presenter;
     private FragmentPaymentBinding binding;
     private OrderInfoModel orderInfoModel;
     private CartDatabase database;
-
+    int SMS_PERMISSION_CODE = 300;
+    boolean hasPermission = false;
+    private SmsManager smsManager;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +51,8 @@ public class PaymentFragment extends BaseFragment implements FoodReservationCont
     }
 
     private void initView() {
+        smsManager = SmsManager.getDefault();
+        checkPermissions();
         database = CartDatabase.getAppDatabase(requireContext());
         orderInfoModel = PaymentFragmentArgs.fromBundle(getArguments()).getOrderInfo();
         presenter = new ConfirmOrderPresenter(this, requireContext());
@@ -89,9 +104,42 @@ public class PaymentFragment extends BaseFragment implements FoodReservationCont
     }
 
     @Override
-    public void showTableOrderSuccessResponse(String message) {
+    public void showTableOrderSuccessResponse(FoodOrderResponseModel tableReservationResponse) {
         database.orderDao().deleteAll();
-        showWarningMessage(message);
+         ArrayList<String> phoneNumberArray = tableReservationResponse.data.phone;
+        for(int i = 0; i< phoneNumberArray.size();i++){
+            String message = "Hi Customer, Your order with id " + tableReservationResponse.data.foodOrderedItemModel.orderid + " Is " + tableReservationResponse.data.foodOrderedItemModel.getStatus() + ". \nThanks from " + getResources().getString(R.string.app_name);
+            Log.d("Update Status", message);
+            try {
+                smsManager.sendTextMessage(phoneNumberArray.get(i), null, message, null, null);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        showWarningMessage(tableReservationResponse.message);
         Navigation.findNavController(requireView()).navigate(R.id.action_paymentFragment_to_orderSuccessFragment);
+    }
+    private void checkPermissions() {
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.SEND_SMS)
+                == PackageManager.PERMISSION_GRANTED) {
+            hasPermission = true;
+        } else {
+            ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.SEND_SMS},
+                    SMS_PERMISSION_CODE);
+        }
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        // Checking whether user granted the permission or not.
+        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            // Showing the toast message
+            // showToast(AddFoodActivity.this, "Permission granted");
+            hasPermission = true;
+        } else {
+            hasPermission = false;
+            //  showToast(AddFoodActivity.this, "Permission denied");
+        }
     }
 }

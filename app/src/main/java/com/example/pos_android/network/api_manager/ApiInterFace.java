@@ -11,6 +11,10 @@ import com.example.pos_android.data.model.RegisterResponse;
 import com.example.pos_android.data.model.TableReservationResponse;
 import com.example.pos_android.data.model.UserHomeResponse;
 import com.example.pos_android.data.model.UserProfileResponse;
+import com.example.pos_android.data.model.food.CategoryDetailResponse;
+import com.example.pos_android.data.model.food.CategoryModel;
+import com.example.pos_android.data.model.food.FoodOrderResponseModel;
+import com.example.pos_android.data.model.food.foodCategoryResponse;
 import com.example.pos_android.data.model.kitchen.KitchenOrderResponse;
 import com.example.pos_android.data.model.kitchen.KitchenUpdateOrderPayload;
 import com.example.pos_android.data.model.request.AddFoodRequestData;
@@ -68,7 +72,7 @@ public interface ApiInterFace {
             @Body TableRequestData requestData);
 
     @POST("food-order")
-    Observable<CommonResponse> doOrderFood(
+    Observable<FoodOrderResponseModel> doOrderFood(
             @Header("Authorization") String string,
             @Body FoodOrderRequestData requestData);
 
@@ -81,11 +85,13 @@ public interface ApiInterFace {
     Observable<SalesReportResponse> salesReportMonthly(
             @Header("Authorization") String string
     );
+
     @GET("report-weekly")
     Observable<SalesReportResponse> getReportWeekly(
             @Header("Authorization") String string,
-               @Query("dateList") List<String> dateList
+            @Query("dateList") List<String> dateList
     );
+
     @GET("report-food-sales-monthly")
     Observable<BestSellingReportResponse> bestSellingReport(
             @Header("Authorization") String string,
@@ -131,4 +137,13 @@ public interface ApiInterFace {
             @Header("Authorization") String string,
             @Body RegisterRequestData requestData);
 
+    @GET("food-categorye")
+    Observable<foodCategoryResponse> getFoodCategory(
+            @Header("Authorization") String string
+    );
+
+    @GET("category-detail")
+    Observable<CategoryDetailResponse> getCategoryDetail(
+            @Header("Authorization") String string,
+            @Body CategoryModel categoryModel);
 }
