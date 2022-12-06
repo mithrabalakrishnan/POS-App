@@ -14,6 +14,7 @@ import com.example.pos_android.data.model.TableReservationResponse;
 import com.example.pos_android.data.model.UserHomeResponse;
 import com.example.pos_android.data.model.UserProfileResponse;
 import com.example.pos_android.data.model.food.FoodOrderResponseModel;
+import com.example.pos_android.data.model.food.foodCategoryResponse;
 import com.example.pos_android.data.model.request.AddFoodRequestData;
 import com.example.pos_android.data.model.request.FoodOrderRequestData;
 import com.example.pos_android.data.model.request.KitchenRequestData;
@@ -703,6 +704,43 @@ public class ApiDataManager {
                         public void onError(Throwable e) {
                             Log.e(TAG, "onError: " + e.getMessage());
                             mPresenter.onApiError(e.getMessage());
+                        }
+
+                        @Override
+                        public void onComplete() {
+                        }
+                    });
+
+
+        } catch (Exception e) {
+            mPresenter.onApiError(e.getMessage());
+            Log.e(TAG, "Exception caught in " + e.getMessage().toString());
+        }
+    }
+
+ public void getCategories(String token, UserHomePresenter mPresenter) {
+        try {
+            if (apiInterFace == null)
+                apiInterFace = ApiClient.getClientServerApi().create(ApiInterFace.class);
+
+            apiInterFace
+                    .getFoodCategory("Bearer " + token)
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeOn(Schedulers.io())
+                    .subscribe(new Observer<foodCategoryResponse>() {
+                        @Override
+                        public void onSubscribe(Disposable d) {
+                        }
+
+                        @Override
+                        public void onNext(foodCategoryResponse response) {
+                            mPresenter.onCategoryResponse(response);
+                        }
+
+                        @Override
+                        public void onError(Throwable e) {
+                            Log.e(TAG, "onError: " + e.getMessage());
+                            mPresenter.onApiError(e.getLocalizedMessage());
                         }
 
                         @Override

@@ -5,6 +5,7 @@ import android.content.Context;
 import com.example.pos_android.R;
 import com.example.pos_android.contracts.UserHomeContract;
 import com.example.pos_android.data.model.UserHomeResponse;
+import com.example.pos_android.data.model.food.foodCategoryResponse;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.network.api_manager.ApiDataManager;
 import com.example.pos_android.utils.NetworkManager;
@@ -47,5 +48,26 @@ public class UserHomePresenter implements UserHomeContract.Presenter {
             mView.showUserResponse(userHomeResponse);
         } else
             mView.showWarningMessage(userHomeResponse.getMessage());
+    }
+
+    @Override
+    public void getCategory() {
+        if (NetworkManager.isNetworkAvailable(mContext)) {
+            mView.showProgressBar();
+
+            mApiDataManager.getCategories(sessionManager.getUserToken(), this);
+
+        } else
+            mView.showWarningMessage(mContext.getString(R.string.no_network));
+
+    }
+
+    @Override
+    public void onCategoryResponse(foodCategoryResponse foodCategoryResponse) {
+        mView.hideProgressBar();
+        if (foodCategoryResponse.isStatus()) {
+            mView.showCategoryResponse(foodCategoryResponse);
+        } else
+            mView.showWarningMessage(foodCategoryResponse.getMessage());
     }
 }

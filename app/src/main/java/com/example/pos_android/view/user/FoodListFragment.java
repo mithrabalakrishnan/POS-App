@@ -13,10 +13,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pos_android.adapter.AddFoodAdapter;
+import com.example.pos_android.adapter.CategoryListingAdapter;
 import com.example.pos_android.contracts.UserHomeContract;
 import com.example.pos_android.data.model.FoodModel;
 import com.example.pos_android.data.model.TableInfoModel;
 import com.example.pos_android.data.model.UserHomeResponse;
+import com.example.pos_android.data.model.food.foodCategoryResponse;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.data.room.CartDatabase;
 import com.example.pos_android.data.room.entity.Cart;
@@ -31,6 +33,7 @@ import java.util.ArrayList;
 public class FoodListFragment extends BaseFragment implements UserHomeContract.View, OnItemClickListener {
     AddFoodAdapter popularAdapter;
     AddFoodAdapter recentAdapter;
+    CategoryListingAdapter categoryListingAdapter;
     UserHomePresenter presenter;
     ArrayList<FoodModel> popularArrayList = new ArrayList<>();
     ArrayList<FoodModel> recommendedList = new ArrayList<>();
@@ -132,6 +135,15 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
         binding.rvPopular.setAdapter(popularAdapter);
         binding.rvPopular.setLayoutManager(new LinearLayoutManager(requireActivity(), RecyclerView.HORIZONTAL, false));
 
+    }
+
+    @Override
+    public void showCategoryResponse(foodCategoryResponse foodCategoryResponse) {
+        binding.titleCategory.setVisibility(View.VISIBLE);
+        binding.rvCategories.setVisibility(View.VISIBLE);
+        categoryListingAdapter =new CategoryListingAdapter(foodCategoryResponse.data.foodCategory,requireContext(),this);
+        binding.rvCategories.setLayoutManager(new LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false));
+        binding.rvCategories.setAdapter(categoryListingAdapter);
     }
 
     @Override

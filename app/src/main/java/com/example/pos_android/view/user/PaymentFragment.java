@@ -108,7 +108,7 @@ public class PaymentFragment extends BaseFragment implements FoodReservationCont
         database.orderDao().deleteAll();
          ArrayList<String> phoneNumberArray = tableReservationResponse.data.phone;
         for(int i = 0; i< phoneNumberArray.size();i++){
-            String message = "Hi Customer, Your order with id " + tableReservationResponse.data.foodOrderedItemModel.orderid + " Is " + tableReservationResponse.data.foodOrderedItemModel.getStatus() + ". \nThanks from " + getResources().getString(R.string.app_name);
+            String message = "Hi Kitchen, Your order with id " + tableReservationResponse.data.foodOrderedItemModel.orderid + " Is " + tableReservationResponse.data.foodOrderedItemModel.getStatus() + ". \nThanks from " + getResources().getString(R.string.app_name);
             Log.d("Update Status", message);
             try {
                 smsManager.sendTextMessage(phoneNumberArray.get(i), null, message, null, null);
