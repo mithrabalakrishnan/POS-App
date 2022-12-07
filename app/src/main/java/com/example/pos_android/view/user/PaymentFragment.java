@@ -1,6 +1,7 @@
 package com.example.pos_android.view.user;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import androidx.navigation.Navigation;
 import com.example.pos_android.R;
 import com.example.pos_android.contracts.FoodReservationContract;
 import com.example.pos_android.data.model.OrderInfoModel;
+import com.example.pos_android.data.model.RecaptchaVerifyResponse;
 import com.example.pos_android.data.model.food.FoodOrderResponseModel;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.data.room.CartDatabase;
@@ -26,8 +28,14 @@ import com.example.pos_android.presenter.ConfirmOrderPresenter;
 import com.example.pos_android.view.BaseFragment;
 import com.example.pos_android.view.kitchen.KitchenOrderDetailActivity;
 import com.example.pos_android.view.login.LoginActivity;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.safetynet.SafetyNet;
+import com.google.android.gms.safetynet.SafetyNetApi;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class PaymentFragment extends BaseFragment implements FoodReservationContract.View {
     ConfirmOrderPresenter presenter;
@@ -37,6 +45,7 @@ public class PaymentFragment extends BaseFragment implements FoodReservationCont
     int SMS_PERMISSION_CODE = 300;
     boolean hasPermission = false;
     private SmsManager smsManager;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +72,8 @@ public class PaymentFragment extends BaseFragment implements FoodReservationCont
                     if (binding.etCard.getText().toString().length() >= 16) {
                         if (!binding.etExpiry.getText().toString().isEmpty()) {
                             if (!binding.etCvv.getText().toString().isEmpty()) {
-                                presenter.doFoodReservation(orderInfoModel);
+//                                presenter.doFoodReservation(orderInfoModel);
+                                clickedPay();
                             } else binding.etCvv.setError("Please enter CVV");
                         } else binding.etExpiry.setError("Please enter expiry");
                     } else binding.etCard.setError("Please enter 16 digit number");
@@ -72,6 +82,12 @@ public class PaymentFragment extends BaseFragment implements FoodReservationCont
         });
 
 
+    }
+
+    private void clickedPay() {
+        SafetyNet.getClient(requireActivity()).verifyWithRecaptcha(getResources().getString(R.string.pubK))
+                .addOnSuccessListener(new SuccessListener())
+                .addOnFailureListener(new FailureListener());
     }
 
     @Override
@@ -120,6 +136,12 @@ public class PaymentFragment extends BaseFragment implements FoodReservationCont
         showWarningMessage(tableReservationResponse.message);
         Navigation.findNavController(requireView()).navigate(R.id.action_paymentFragment_to_orderSuccessFragment);
     }
+
+    @Override
+    public void showCaptchaVerifyCallback(RecaptchaVerifyResponse recaptchaVerifyResponse) {
+
+    }
+
     private void checkPermissions() {
         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.SEND_SMS)
                 == PackageManager.PERMISSION_GRANTED) {
@@ -140,6 +162,40 @@ public class PaymentFragment extends BaseFragment implements FoodReservationCont
         } else {
             hasPermission = false;
             //  showToast(AddFoodActivity.this, "Permission denied");
+        }
+    }
+    private void showAlertWithButton(@NonNull String title, @NonNull String message, @NonNull String buttonMessage) {
+        new AlertDialog.Builder(requireContext()).setTitle(title).setMessage(message).setCancelable(false).setPositiveButton(buttonMessage, null).create().show();
+    }
+
+     static class SuccessListener implements OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse> {
+
+        @Override
+        public void onSuccess(final SafetyNetApi.RecaptchaTokenResponse recaptchaTokenResponse) {
+
+            String userResponseToken = recaptchaTokenResponse.getTokenResult();
+            assert userResponseToken != null;
+            if (!userResponseToken.isEmpty()) {
+//                RecaptchaResponseViewModel mViewModel = ViewModelProviders.of(MainActivity.this).get(RecaptchaResponseViewModel.class);
+//                mViewModel.getmRecaptchaObservable("https://www.google.com", userResponseToken, getApplicationContext().getString(R.string.priK)).observe(MainActivity.this, new Observer<RecaptchaVerifyResponse>() {
+//                    @Override
+//                    public void onChanged(@Nullable RecaptchaVerifyResponse recaptchaVerifyResponse) {
+//                        if (recaptchaVerifyResponse != null && recaptchaVerifyResponse.isSuccess()) {
+//                            showAlertWithButton("Obie is a human", "Yes Siree, he a human I tell ya", "Well now ain't that nice!");
+//                        } else {
+//                            showAlertWithButton("Obie ain't a human", "No Siree, Obie ain't no human at all", "Doggone it!");
+//                        }
+//                    }
+//                });
+            }
+        }
+    }
+
+    private class FailureListener implements OnFailureListener {
+
+        @Override
+        public void onFailure(@NonNull Exception e) {
+            showAlertWithButton("Obie is Unknown", Objects.requireNonNull(e.getLocalizedMessage()), "Doggone it!");
         }
     }
 }

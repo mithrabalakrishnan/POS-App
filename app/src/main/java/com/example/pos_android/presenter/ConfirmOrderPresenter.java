@@ -6,11 +6,14 @@ import com.example.pos_android.R;
 import com.example.pos_android.contracts.FoodReservationContract;
 import com.example.pos_android.data.model.CommonResponse;
 import com.example.pos_android.data.model.OrderInfoModel;
+import com.example.pos_android.data.model.RecaptchaVerifyResponse;
 import com.example.pos_android.data.model.food.FoodOrderResponseModel;
 import com.example.pos_android.data.model.request.FoodOrderRequestData;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.network.api_manager.ApiDataManager;
 import com.example.pos_android.utils.NetworkManager;
+
+import java.util.Map;
 
 public class ConfirmOrderPresenter implements FoodReservationContract.Presenter {
 
@@ -55,5 +58,25 @@ public class ConfirmOrderPresenter implements FoodReservationContract.Presenter 
             mView.showTableOrderSuccessResponse(tableReservationResponse);
         } else
             mView.showWarningMessage(tableReservationResponse.getMessage());
+    }
+
+    @Override
+    public void callCaptchaVerify(Map<String, String> params) {
+         if (NetworkManager.isNetworkAvailable(mContext)) {
+            mView.showProgressBar();
+
+            mApiDataManager.validateCaptcha(params, this);
+
+        } else
+            mView.showWarningMessage(mContext.getString(R.string.no_network));
+    }
+
+    @Override
+    public void onCaptchaVerifyCallback(RecaptchaVerifyResponse recaptchaVerifyResponse) {
+        mView.hideProgressBar();
+        if (recaptchaVerifyResponse.isSuccess()) {
+            mView.showCaptchaVerifyCallback(recaptchaVerifyResponse);
+        } else
+            mView.showWarningMessage(recaptchaVerifyResponse.getErrorCodes().toString());
     }
 }

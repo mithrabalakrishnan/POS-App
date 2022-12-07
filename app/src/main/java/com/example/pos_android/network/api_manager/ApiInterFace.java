@@ -7,6 +7,7 @@ import com.example.pos_android.data.model.ImagePickerResponse;
 import com.example.pos_android.data.model.KitchenResponse;
 import com.example.pos_android.data.model.KitchenUpdateStatusResponse;
 import com.example.pos_android.data.model.LoginResponse;
+import com.example.pos_android.data.model.RecaptchaVerifyResponse;
 import com.example.pos_android.data.model.RegisterResponse;
 import com.example.pos_android.data.model.TableReservationResponse;
 import com.example.pos_android.data.model.UserHomeResponse;
@@ -29,17 +30,21 @@ import com.example.pos_android.data.model.sales_report.IncomePerItemMonthlyRespo
 import com.example.pos_android.data.model.sales_report.SalesReportResponse;
 
 import java.util.List;
+import java.util.Map;
 
 import io.reactivex.Observable;
 import okhttp3.MultipartBody;
+import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Part;
 import retrofit2.http.Query;
+import retrofit2.http.QueryMap;
 
 public interface ApiInterFace {
 
@@ -147,4 +152,10 @@ public interface ApiInterFace {
     Observable<CategoryDetailResponse> getCategoryDetail(
             @Header("Authorization") String string,
             @Body CategoryModel categoryModel);
+
+    @Headers("Content-Type: application/x-www-form-urlencoded; charset=utf-8")
+    @POST("/recaptcha/api/siteverify")
+    Observable<RecaptchaVerifyResponse> verifyResponse
+            (@QueryMap Map<String, String> params);
+
 }
