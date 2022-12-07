@@ -24,6 +24,7 @@ import com.example.pos_android.data.model.request.LoginRequestData;
 import com.example.pos_android.data.model.request.RegisterRequestData;
 import com.example.pos_android.data.model.request.TableRequestData;
 import com.example.pos_android.data.model.sales_report.BestSellingReportResponse;
+import com.example.pos_android.data.model.sales_report.BestSellingReportWeeklyResponse;
 import com.example.pos_android.data.model.sales_report.IncomePerItemMonthlyResponse;
 import com.example.pos_android.data.model.sales_report.SalesReportResponse;
 
@@ -99,7 +100,7 @@ public interface ApiInterFace {
     );
 
     @GET("report-food-sales-weekly")
-    Observable<BestSellingReportResponse> reportFoodSalesWeekly(
+    Observable<BestSellingReportWeeklyResponse> reportFoodSalesWeekly(
             @Header("Authorization") String string,
             @Query("dateList") List<String> dateList
     );

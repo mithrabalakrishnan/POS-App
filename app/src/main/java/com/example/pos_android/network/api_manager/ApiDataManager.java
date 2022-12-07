@@ -22,6 +22,7 @@ import com.example.pos_android.data.model.request.LoginRequestData;
 import com.example.pos_android.data.model.request.RegisterRequestData;
 import com.example.pos_android.data.model.request.TableRequestData;
 import com.example.pos_android.data.model.sales_report.BestSellingReportResponse;
+import com.example.pos_android.data.model.sales_report.BestSellingReportWeeklyResponse;
 import com.example.pos_android.data.model.sales_report.IncomePerItemMonthlyResponse;
 import com.example.pos_android.data.model.sales_report.SalesReportResponse;
 import com.example.pos_android.presenter.AddFoodPresenter;
@@ -467,14 +468,14 @@ public class ApiDataManager {
                     .reportFoodSalesWeekly("Bearer " + token, dateList)
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeOn(Schedulers.io())
-                    .subscribe(new Observer<BestSellingReportResponse>() {
+                    .subscribe(new Observer<BestSellingReportWeeklyResponse>() {
                         @Override
                         public void onSubscribe(Disposable d) {
                         }
 
                         @Override
-                        public void onNext(BestSellingReportResponse response) {
-                            mPresenter.onBestSellingReportCallback(response);
+                        public void onNext(BestSellingReportWeeklyResponse response) {
+                            mPresenter.onBestSellingReportWeeklyCallback(response);
                         }
 
                         @Override

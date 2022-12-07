@@ -184,10 +184,6 @@
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\font\\montserratsemibold.ttf"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-5:/layout_activity_sales_report.xml.flat",
-        "source": "com.example.pos_android.app-main-7:/layout/activity_sales_report.xml"
-    },
-    {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_activity_best_selling_report.xml.flat",
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\activity_best_selling_report.xml"
     },
@@ -226,6 +222,10 @@
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_fragment_summary.xml.flat",
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\fragment_summary.xml"
+    },
+    {
+        "merged": "com.example.pos_android.app-merged_res-5:/layout_layout_category_item.xml.flat",
+        "source": "com.example.pos_android.app-main-7:/layout/layout_category_item.xml"
     },
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_img_settings.xml.flat",
@@ -334,6 +334,10 @@
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_layout_select_date.xml.flat",
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\layout_select_date.xml"
+    },
+    {
+        "merged": "com.example.pos_android.app-merged_res-5:/layout_fragment_food_list.xml.flat",
+        "source": "com.example.pos_android.app-main-7:/layout/fragment_food_list.xml"
     },
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_t4.jpg.flat",

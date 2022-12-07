@@ -36,10 +36,6 @@
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\fragment_food_list.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-4:/layout/activity_sales_report.xml",
-        "source": "com.example.pos_android.app-main-7:/layout/activity_sales_report.xml"
-    },
-    {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-mergeDebugResources-4:\\layout\\activity_home.xml",
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\activity_home.xml"
     },
@@ -78,6 +74,10 @@
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-mergeDebugResources-4:\\layout\\activity_login.xml",
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "com.example.pos_android.app-mergeDebugResources-4:/layout/fragment_food_list.xml",
+        "source": "com.example.pos_android.app-main-7:/layout/fragment_food_list.xml"
     },
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-mergeDebugResources-4:\\layout\\activity_kitchen_order_detail.xml",
@@ -150,6 +150,10 @@
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-mergeDebugResources-4:\\layout\\best_selling_layout.xml",
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\best_selling_layout.xml"
+    },
+    {
+        "merged": "com.example.pos_android.app-mergeDebugResources-4:/layout/layout_category_item.xml",
+        "source": "com.example.pos_android.app-main-7:/layout/layout_category_item.xml"
     },
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-mergeDebugResources-4:\\layout\\activity_register.xml",

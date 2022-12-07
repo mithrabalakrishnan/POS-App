@@ -5,6 +5,7 @@ import android.content.Context;
 import com.example.pos_android.R;
 import com.example.pos_android.contracts.BestSellingReportContract;
 import com.example.pos_android.data.model.sales_report.BestSellingReportResponse;
+import com.example.pos_android.data.model.sales_report.BestSellingReportWeeklyResponse;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.network.api_manager.ApiDataManager;
 import com.example.pos_android.utils.NetworkManager;
@@ -46,6 +47,15 @@ public class BestSellingReportPresenter implements BestSellingReportContract.Pre
         mView.hideProgressBar();
         if (response.isStatus()) {
             mView.showBestSellingReportResponse(response);
+        } else
+            mView.showWarningMessage(response.getMessage());
+    }
+
+    @Override
+    public void onBestSellingReportWeeklyCallback(BestSellingReportWeeklyResponse response) {
+        mView.hideProgressBar();
+        if (response.getStatus()) {
+            mView.showBestSellingReportWeeklyResponse(response);
         } else
             mView.showWarningMessage(response.getMessage());
     }

@@ -13,6 +13,7 @@ import com.example.pos_android.adapter.BestSellingAdapter;
 import com.example.pos_android.contracts.BestSellingReportContract;
 import com.example.pos_android.data.model.sales_report.BestSellingReportData;
 import com.example.pos_android.data.model.sales_report.BestSellingReportResponse;
+import com.example.pos_android.data.model.sales_report.BestSellingReportWeeklyResponse;
 import com.example.pos_android.data.model.sales_report.FoodDetail;
 import com.example.pos_android.databinding.ActivityBestSellingReportBinding;
 import com.example.pos_android.presenter.BestSellingReportPresenter;
@@ -31,7 +32,6 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
@@ -64,16 +64,32 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
     }
 
     private void weeklyData(List<Double> chart_data) {
-        Log.d("ReportList", "from response:"+chart_data.toString());
-        Set<Double> doubleSet = new HashSet<>(chart_data);
-
-        ArrayList<Double> convertedList = new ArrayList<>(doubleSet);
-        Log.d("ReportList", "from conversion:"+ convertedList);
-        Collections.sort(convertedList, Collections.reverseOrder());
-
         ArrayList<PieEntry> pieEntries = new ArrayList<>();
-        for (int i = 0; i < convertedList.size(); i++) {
-            pieEntries.add(new PieEntry(convertedList.get(i).floatValue(), foodDetailList.get(i).getFood()));
+        for (int i = 0; i < chart_data.size(); i++) {
+            //  pieEntries.add(new PieEntry(convertedList.get(i).floatValue(), foodDetailList.get(i).getFood()));
+        }
+        PieDataSet pieDataSet = new PieDataSet(pieEntries, "Weekly Report");
+        pieDataSet.setValueTextSize(12);
+        pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+        binding.pieChart.setData(new PieData(pieDataSet));
+        binding.pieChart.setEntryLabelTextSize(8f);
+        binding.pieChart.animateY(5000);
+        // binding.pieChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter());
+        binding.pieChart.getDescription().setText("");
+        binding.pieChart.getDescription().setTextColor(Color.BLUE);
+
+
+        final String[] labels = new String[]{"start", "Mon", "Tue", "Wed", "Thu", "Fri",
+                "Sat", "Sun"};
+//        binding.pieChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
+//        binding.pieChart.getXAxis().setGranularity(1f);
+//        binding.pieChart.getXAxis().setGranularityEnabled(true);
+    }
+
+    private void weeklyDataChart(List<String> foodList,List<Integer> integerList) {
+        ArrayList<PieEntry> pieEntries = new ArrayList<>();
+        for (int i = 0; i < foodList.size(); i++) {
+            pieEntries.add(new PieEntry(integerList.get(i).floatValue(), foodList.get(i)));
         }
         PieDataSet pieDataSet = new PieDataSet(pieEntries, "Weekly Report");
         pieDataSet.setValueTextSize(12);
@@ -211,12 +227,13 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
     public void showBestSellingReportResponse(BestSellingReportResponse response) {
 
         Set<FoodDetail> doubleSet = new HashSet<>();
+        foodDetailList.clear();
         for (FoodDetail detail : response.getData().getFood_details()) {
             if (detail.getSale_amount() > 0.0) {
                 doubleSet.add(detail);
             }
         }
-        Log.d("Food Detail list", "from set:"+ doubleSet);
+        Log.d("Food Detail list", "from set:" + doubleSet);
         foodDetailList.addAll(doubleSet);
         Collections.sort(foodDetailList);
 
@@ -227,6 +244,43 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
         }
         adapter.notifyDataSetChanged();
 
+    }
+
+    @Override
+    public void showBestSellingReportWeeklyResponse(BestSellingReportWeeklyResponse response) {
+        handleWeeklyResponse(response);
+    }
+
+    private void handleWeeklyResponse(BestSellingReportWeeklyResponse response) {
+        List<Integer> valueResponseList = new ArrayList<>(response.getData().getChartData());
+        List<String> foodResponseList = new ArrayList<>(response.getData().getFoodNameList());
+
+        List<String> foodList = new ArrayList<>();
+        List<Integer> valueList = new ArrayList<>();
+        foodDetailList.clear();
+
+        for (int i = 0; i < foodResponseList.size(); i++) {
+            if (!foodList.contains(foodResponseList.get(i))) {
+                String item = foodResponseList.get(i);
+                int total = valueResponseList.get(i);
+                for (int j = i+1; j < foodResponseList.size(); j++) {
+                   if (foodResponseList.get(j).equals(item)) {
+                       total+= valueResponseList.get(j);
+                   }
+                }
+
+                foodList.add(item);
+                valueList.add(total);
+                FoodDetail foodDetail = new FoodDetail();
+                foodDetail.setFood(item);
+                foodDetail.setSale_amount((double) total);
+                foodDetailList.add(foodDetail);
+            }
+        }
+        weeklyDataChart(foodList,valueList);
+        adapter.notifyDataSetChanged();
+        Log.d("handleWeeklyResponse", "foodList: " + foodList);
+        Log.d("handleWeeklyResponse", "valueList: " + valueList);
     }
 
     @Override

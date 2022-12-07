@@ -2990,6 +2990,7 @@ id btn_add_kitchen_user
 id btn_add_voucher
 id btn_best_selling
 id btn_cancel
+id btn_category
 id btn_clear
 id btn_continue
 id btn_delete
@@ -3118,6 +3119,7 @@ id text_food_price
 id text_layout_name
 id text_quantity
 id text_total
+id title_category
 id title_layout
 id toolbar
 id total_income_report
@@ -3207,6 +3209,7 @@ layout item_cart_product
 layout kitchen_order_item
 layout layout_add_cart_item
 layout layout_all_food_item
+layout layout_category_item
 layout layout_history
 layout layout_popular_item
 layout layout_select_date

@@ -273,12 +273,12 @@ ADDED from C:\POS git\app\src\main\AndroidManifest.xml:119:9-125:20
 		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:121:13-37
 	android:name
 		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:120:13-55
-activity#com.example.pos_android.view.register.RegisterActivity
+activity#com.example.pos_android.view.user.register.RegisterActivity
 ADDED from C:\POS git\app\src\main\AndroidManifest.xml:126:9-132:20
 	android:exported
 		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:128:13-37
 	android:name
-		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:127:13-59
+		ADDED from C:\POS git\app\src\main\AndroidManifest.xml:127:13-64
 activity#com.example.pos_android.view.login.LoginActivity
 ADDED from C:\POS git\app\src\main\AndroidManifest.xml:133:9-139:20
 	android:exported

@@ -1,8 +1,11 @@
 package com.example.pos_android.data.model.food;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 
 public class FoodOrderResponseModelData {
+    @SerializedName("foodOrder")
     public FoodOrderedItemModel foodOrderedItemModel;
     public ArrayList<String> phone;
 

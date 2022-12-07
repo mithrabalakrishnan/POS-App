@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.utils.widget.MotionButton;
@@ -38,18 +39,23 @@ public final class FragmentFoodListBinding implements ViewBinding {
   public final RecyclerView rvRecommended;
 
   @NonNull
+  public final TextView titleCategory;
+
+  @NonNull
   public final LinearLayout toolbar;
 
   private FragmentFoodListBinding(@NonNull RelativeLayout rootView,
       @NonNull MotionButton btnContinue, @NonNull ImageView ivBack,
       @NonNull RecyclerView rvCategories, @NonNull RecyclerView rvPopular,
-      @NonNull RecyclerView rvRecommended, @NonNull LinearLayout toolbar) {
+      @NonNull RecyclerView rvRecommended, @NonNull TextView titleCategory,
+      @NonNull LinearLayout toolbar) {
     this.rootView = rootView;
     this.btnContinue = btnContinue;
     this.ivBack = ivBack;
     this.rvCategories = rvCategories;
     this.rvPopular = rvPopular;
     this.rvRecommended = rvRecommended;
+    this.titleCategory = titleCategory;
     this.toolbar = toolbar;
   }
 
@@ -110,6 +116,12 @@ public final class FragmentFoodListBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.title_category;
+      TextView titleCategory = ViewBindings.findChildViewById(rootView, id);
+      if (titleCategory == null) {
+        break missingId;
+      }
+
       id = R.id.toolbar;
       LinearLayout toolbar = ViewBindings.findChildViewById(rootView, id);
       if (toolbar == null) {
@@ -117,7 +129,7 @@ public final class FragmentFoodListBinding implements ViewBinding {
       }
 
       return new FragmentFoodListBinding((RelativeLayout) rootView, btnContinue, ivBack,
-          rvCategories, rvPopular, rvRecommended, toolbar);
+          rvCategories, rvPopular, rvRecommended, titleCategory, toolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

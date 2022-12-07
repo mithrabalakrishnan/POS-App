@@ -248,8 +248,8 @@
 133        </activity>
 134        <activity
 134-->C:\POS git\app\src\main\AndroidManifest.xml:126:9-132:20
-135            android:name="com.example.pos_android.view.register.RegisterActivity"
-135-->C:\POS git\app\src\main\AndroidManifest.xml:127:13-59
+135            android:name="com.example.pos_android.view.user.register.RegisterActivity"
+135-->C:\POS git\app\src\main\AndroidManifest.xml:127:13-64
 136            android:exported="false" >
 136-->C:\POS git\app\src\main\AndroidManifest.xml:128:13-37
 137            <meta-data

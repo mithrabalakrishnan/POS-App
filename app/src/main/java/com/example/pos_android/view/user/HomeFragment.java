@@ -24,6 +24,7 @@ import com.example.pos_android.adapter.FoodAdapter;
 import com.example.pos_android.contracts.UserHomeContract;
 import com.example.pos_android.data.model.FoodModel;
 import com.example.pos_android.data.model.UserHomeResponse;
+import com.example.pos_android.data.model.food.foodCategoryResponse;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.databinding.FragmentHomeBinding;
 import com.example.pos_android.presenter.UserHomePresenter;
@@ -141,6 +142,11 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View,
         popularAdapter = new FoodAdapter(popularArrayList, requireContext());
         binding.popularRecyclerview.setAdapter(popularAdapter);
         binding.popularRecyclerview.setLayoutManager(new LinearLayoutManager(requireActivity(), RecyclerView.HORIZONTAL, false));
+
+    }
+
+    @Override
+    public void showCategoryResponse(foodCategoryResponse foodCategoryResponse) {
 
     }
 

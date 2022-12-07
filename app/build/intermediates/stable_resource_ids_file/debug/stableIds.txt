@@ -1,3 +1,5 @@
+com.example.pos_android:layout/layout_category_item = 0x7f0c00a4
+com.example.pos_android:id/title_category = 0x7f0902d2
 com.example.pos_android:style/Widget.MaterialComponents.NavigationRailView.Colored = 0x7f120421
 com.example.pos_android:dimen/_628pxv = 0x7f060745
 com.example.pos_android:styleable/MaterialAlertDialog = 0x7f130053
@@ -6911,6 +6913,7 @@ com.example.pos_android:attr/materialCardViewStyle = 0x7f0302d4
 com.example.pos_android:color/design_fab_stroke_top_inner_color = 0x7f050054
 com.example.pos_android:style/Widget.Material3.TextInputEditText.OutlinedBox = 0x7f1203c4
 com.example.pos_android:attr/trackColorInactive = 0x7f03047b
+com.example.pos_android:id/btn_category = 0x7f0902d1
 com.example.pos_android:styleable/KeyTrigger = 0x7f13004c
 com.example.pos_android:drawable/abc_scrubber_control_to_pressed_mtrl_000 = 0x7f07003d
 com.example.pos_android:dimen/_498pxv = 0x7f060592

@@ -9,6 +9,7 @@ import com.example.pos_android.adapter.AllFoodAdapter;
 import com.example.pos_android.contracts.UserHomeContract;
 import com.example.pos_android.data.model.FoodModel;
 import com.example.pos_android.data.model.UserHomeResponse;
+import com.example.pos_android.data.model.food.foodCategoryResponse;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.databinding.ActivityListAllFoodBinding;
 import com.example.pos_android.presenter.UserHomePresenter;
@@ -82,6 +83,11 @@ public class ListAllFoodActivity extends BaseActivity implements UserHomeContrac
         adapter = new AllFoodAdapter(foodModelArrayList, this, this);
         binding.rvRecommended.setAdapter(adapter);
         binding.rvRecommended.setLayoutManager(new LinearLayoutManager(this));
+
+    }
+
+    @Override
+    public void showCategoryResponse(foodCategoryResponse foodCategoryResponse) {
 
     }
 
