@@ -13,6 +13,8 @@ import com.example.pos_android.data.model.RegisterResponse;
 import com.example.pos_android.data.model.TableReservationResponse;
 import com.example.pos_android.data.model.UserHomeResponse;
 import com.example.pos_android.data.model.UserProfileResponse;
+import com.example.pos_android.data.model.food.CategoryDetailResponse;
+import com.example.pos_android.data.model.food.CategoryModel;
 import com.example.pos_android.data.model.food.FoodOrderResponseModel;
 import com.example.pos_android.data.model.food.foodCategoryResponse;
 import com.example.pos_android.data.model.request.AddFoodRequestData;
@@ -736,6 +738,43 @@ public class ApiDataManager {
                         @Override
                         public void onNext(foodCategoryResponse response) {
                             mPresenter.onCategoryResponse(response);
+                        }
+
+                        @Override
+                        public void onError(Throwable e) {
+                            Log.e(TAG, "onError: " + e.getMessage());
+                            mPresenter.onApiError(e.getLocalizedMessage());
+                        }
+
+                        @Override
+                        public void onComplete() {
+                        }
+                    });
+
+
+        } catch (Exception e) {
+            mPresenter.onApiError(e.getMessage());
+            Log.e(TAG, "Exception caught in " + e.getMessage().toString());
+        }
+    }
+
+     public void getCategoriesItems(String token, UserHomePresenter mPresenter, CategoryModel categoryModel) {
+        try {
+            if (apiInterFace == null)
+                apiInterFace = ApiClient.getClientServerApi().create(ApiInterFace.class);
+
+            apiInterFace
+                    .getCategoryDetail("Bearer " + token,categoryModel)
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeOn(Schedulers.io())
+                    .subscribe(new Observer<CategoryDetailResponse>() {
+                        @Override
+                        public void onSubscribe(Disposable d) {
+                        }
+
+                        @Override
+                        public void onNext(CategoryDetailResponse response) {
+                            mPresenter.onCategoryItemsResponse(response);
                         }
 
                         @Override

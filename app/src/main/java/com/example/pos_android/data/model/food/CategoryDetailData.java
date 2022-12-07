@@ -9,6 +9,16 @@ public class CategoryDetailData {
     public String image;
     public String status;
 
+    public CategoryDetailData(int foodid, String food_name, String category, String rating, String price, String image, String status) {
+        this.foodid = foodid;
+        this.food_name = food_name;
+        this.category = category;
+        this.rating = rating;
+        this.price = price;
+        this.image = image;
+        this.status = status;
+    }
+
     public int getFoodid() {
         return foodid;
     }

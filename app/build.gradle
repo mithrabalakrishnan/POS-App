@@ -94,4 +94,6 @@ dependencies {
     //Report graph
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
+    //safty capta
+    implementation 'com.google.android.gms:play-services-safetynet:18.0.1'
 }
