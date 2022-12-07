@@ -28,9 +28,11 @@ import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 
 import java.text.DateFormat;
+import java.text.Format;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -40,7 +42,11 @@ public class SalesReportActivity extends BaseActivity implements
         AdapterView.OnItemSelectedListener, SalesReportContract.View {
     String[] filterData = {"Weekly", "Monthly"};
     MaterialDatePicker materialDatePicker;
+
     private List<String> dateList = new ArrayList<>();
+    List<String> dayList = new ArrayList<>();
+
+    private String[] dayArray = {};
     private ActivitySalesReportBinding binding;
     private SalesReportPresenter presenter;
 
@@ -50,7 +56,6 @@ public class SalesReportActivity extends BaseActivity implements
         binding = ActivitySalesReportBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         presenter = new SalesReportPresenter(this, this);
-
 
 
         filterSpinnerSet();
@@ -77,11 +82,16 @@ public class SalesReportActivity extends BaseActivity implements
                     binding.tvDateRange.setText("Selected Week : " + materialDatePicker.getHeaderText());
                     String startDate = android.text.format.DateFormat.format("yyyy-MM-dd", new Date(dateLongs.first)).toString();
                     String endDate = android.text.format.DateFormat.format("yyyy-MM-dd", new Date(dateLongs.second)).toString();
+                    Format f = new SimpleDateFormat("EEE");
                     List<Date> dates = getDates(startDate, endDate);
 
+
+                    dayList.clear();
                     for (Date date : dates) {
                         dateList.add(String.valueOf(android.text.format.DateFormat.format("yyyy-MM-dd", date)));
-                        Log.d("Date List", String.valueOf(android.text.format.DateFormat.format("dd/MM/yyyy", date)));
+                        dayList.add(f.format(date));
+                        Log.d("Day", f.format(date));
+
                     }
 
                     presenter.callWeaklySalesReport(dateList);
@@ -139,10 +149,11 @@ public class SalesReportActivity extends BaseActivity implements
         binding.barChart.setData(new BarData(barDataSet));
         binding.barChart.animateY(5000);
         binding.barChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter());
+        Arrays.fill(dayArray,null);
 
-//        final String[] labels = new String[]{"start", "Mon", "Tue", "Wed", "Thu", "Fri",
-//                "Sat", "Sun"};
-//        binding.barChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
+
+        final String[] labels = dayList.toArray(new String[0]);
+        binding.barChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
         binding.barChart.getXAxis().setGranularity(0f);
         binding.barChart.getXAxis().setGranularityEnabled(true);
 
