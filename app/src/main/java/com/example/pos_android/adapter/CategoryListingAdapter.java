@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.pos_android.R;
-import com.example.pos_android.utils.OnItemClickListener;
+import com.example.pos_android.utils.onCategoryItemClick;
 import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;
@@ -16,9 +16,9 @@ public class CategoryListingAdapter extends RecyclerView.Adapter<CategoryListing
     // ... ViewHolder class and its constructor as per above
     ArrayList<String> list;
     private Context context;
-    private OnItemClickListener clickListener;
+    private onCategoryItemClick clickListener;
 
-    public CategoryListingAdapter(ArrayList<String> list, Context context, OnItemClickListener clickListener) {
+    public CategoryListingAdapter(ArrayList<String> list, Context context, onCategoryItemClick clickListener) {
         this.list = list;
         this.context = context;
         this.clickListener = clickListener;
@@ -45,7 +45,7 @@ public class CategoryListingAdapter extends RecyclerView.Adapter<CategoryListing
 //        foodCategoryData currentItem = list.get(position);
         holder.button.setText(list.get(position));
         holder.button.setOnClickListener(v -> {
-            clickListener.onItemClick(position, "");
+            clickListener.onCategoryClick(position, list.get(position));
         });
     }
 

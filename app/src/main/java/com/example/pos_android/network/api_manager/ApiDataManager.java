@@ -9,10 +9,13 @@ import com.example.pos_android.data.model.ImagePickerResponse;
 import com.example.pos_android.data.model.KitchenResponse;
 import com.example.pos_android.data.model.KitchenUpdateStatusResponse;
 import com.example.pos_android.data.model.LoginResponse;
+import com.example.pos_android.data.model.RecaptchaVerifyResponse;
 import com.example.pos_android.data.model.RegisterResponse;
 import com.example.pos_android.data.model.TableReservationResponse;
 import com.example.pos_android.data.model.UserHomeResponse;
 import com.example.pos_android.data.model.UserProfileResponse;
+import com.example.pos_android.data.model.food.CategoryDetailResponse;
+import com.example.pos_android.data.model.food.CategoryModel;
 import com.example.pos_android.data.model.food.FoodOrderResponseModel;
 import com.example.pos_android.data.model.food.foodCategoryResponse;
 import com.example.pos_android.data.model.request.AddFoodRequestData;
@@ -40,6 +43,7 @@ import com.example.pos_android.presenter.UserHomePresenter;
 import com.example.pos_android.presenter.UserProfilePresenter;
 
 import java.util.List;
+import java.util.Map;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -391,7 +395,7 @@ public class ApiDataManager {
                 apiInterFace = ApiClient.getClientServerApi().create(ApiInterFace.class);
 
             apiInterFace
-                    .getReportWeekly("Bearer " + token,dateList)
+                    .getReportWeekly("Bearer " + token, dateList)
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeOn(Schedulers.io())
                     .subscribe(new Observer<SalesReportResponse>() {
@@ -496,8 +500,7 @@ public class ApiDataManager {
         }
     }
 
-    public void getIncomePerItemMonthly(String token, IncomePerItemMonthlyPresenter mPresenter, int foodId)
-    {
+    public void getIncomePerItemMonthly(String token, IncomePerItemMonthlyPresenter mPresenter, int foodId) {
         try {
             if (apiInterFace == null)
                 apiInterFace = ApiClient.getClientServerApi().create(ApiInterFace.class);
@@ -534,14 +537,13 @@ public class ApiDataManager {
         }
     }
 
-     public void getIncomePerItemMonthly(String token, IncomePerItemMonthlyPresenter mPresenter, int foodId,List<String> dateList)
-    {
+    public void getIncomePerItemMonthly(String token, IncomePerItemMonthlyPresenter mPresenter, int foodId, List<String> dateList) {
         try {
             if (apiInterFace == null)
                 apiInterFace = ApiClient.getClientServerApi().create(ApiInterFace.class);
 
             apiInterFace
-                    .reportFoodItemWeekly("Bearer " + token, foodId,dateList)
+                    .reportFoodItemWeekly("Bearer " + token, foodId, dateList)
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeOn(Schedulers.io())
                     .subscribe(new Observer<IncomePerItemMonthlyResponse>() {
@@ -571,6 +573,7 @@ public class ApiDataManager {
             Log.e(TAG, "Exception caught in " + e.getMessage().toString());
         }
     }
+
     public void getKitchenGetOrders(String token, KitchenPresenter mPresenter) {
         try {
             if (apiInterFace == null)
@@ -608,13 +611,13 @@ public class ApiDataManager {
         }
     }
 
-    public void updateKitchenOrder(String token, KitchenRequestData data,KitchenPresenter mPresenter) {
+    public void updateKitchenOrder(String token, KitchenRequestData data, KitchenPresenter mPresenter) {
         try {
             if (apiInterFace == null)
                 apiInterFace = ApiClient.getClientServerApi().create(ApiInterFace.class);
 
             apiInterFace
-                    .kitchenUpdateOrder("Bearer " + token,data)
+                    .kitchenUpdateOrder("Bearer " + token, data)
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeOn(Schedulers.io())
                     .subscribe(new Observer<KitchenUpdateStatusResponse>() {
@@ -624,7 +627,7 @@ public class ApiDataManager {
 
                         @Override
                         public void onNext(KitchenUpdateStatusResponse response) {
-                                mPresenter.onKitchenOrderDetailApiResponse(response);
+                            mPresenter.onKitchenOrderDetailApiResponse(response);
                         }
 
                         @Override
@@ -645,7 +648,7 @@ public class ApiDataManager {
         }
     }
 
-   public void userGetProfile(String token, UserProfilePresenter mPresenter) {
+    public void userGetProfile(String token, UserProfilePresenter mPresenter) {
         try {
             if (apiInterFace == null)
                 apiInterFace = ApiClient.getClientServerApi().create(ApiInterFace.class);
@@ -719,7 +722,7 @@ public class ApiDataManager {
         }
     }
 
- public void getCategories(String token, UserHomePresenter mPresenter) {
+    public void getCategories(String token, UserHomePresenter mPresenter) {
         try {
             if (apiInterFace == null)
                 apiInterFace = ApiClient.getClientServerApi().create(ApiInterFace.class);
@@ -742,6 +745,81 @@ public class ApiDataManager {
                         public void onError(Throwable e) {
                             Log.e(TAG, "onError: " + e.getMessage());
                             mPresenter.onApiError(e.getLocalizedMessage());
+                        }
+
+                        @Override
+                        public void onComplete() {
+                        }
+                    });
+
+
+        } catch (Exception e) {
+            mPresenter.onApiError(e.getMessage());
+            Log.e(TAG, "Exception caught in " + e.getMessage().toString());
+        }
+    }
+
+    public void getCategoriesItems(String token, UserHomePresenter mPresenter, CategoryModel categoryModel) {
+        try {
+            if (apiInterFace == null)
+                apiInterFace = ApiClient.getClientServerApi().create(ApiInterFace.class);
+
+            apiInterFace
+                    .getCategoryDetail("Bearer " + token, categoryModel)
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeOn(Schedulers.io())
+                    .subscribe(new Observer<CategoryDetailResponse>() {
+                        @Override
+                        public void onSubscribe(Disposable d) {
+                        }
+
+                        @Override
+                        public void onNext(CategoryDetailResponse response) {
+                            mPresenter.onCategoryItemsResponse(response);
+                        }
+
+                        @Override
+                        public void onError(Throwable e) {
+                            Log.e(TAG, "onError: " + e.getMessage());
+                            mPresenter.onApiError(e.getLocalizedMessage());
+                        }
+
+                        @Override
+                        public void onComplete() {
+                        }
+                    });
+
+
+        } catch (Exception e) {
+            mPresenter.onApiError(e.getMessage());
+            Log.e(TAG, "Exception caught in " + e.getMessage().toString());
+        }
+    }
+
+
+    public void validateCaptcha(Map<String, String> params, ConfirmOrderPresenter mPresenter) {
+        try {
+            if (apiInterFace == null)
+                apiInterFace = GoogleApiClient.getClientServerApi().create(ApiInterFace.class);
+
+            apiInterFace
+                    .verifyResponse(params)
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeOn(Schedulers.io())
+                    .subscribe(new Observer<RecaptchaVerifyResponse>() {
+                        @Override
+                        public void onSubscribe(Disposable d) {
+                        }
+
+                        @Override
+                        public void onNext(RecaptchaVerifyResponse response) {
+                            mPresenter.onCaptchaVerifyCallback(response);
+                        }
+
+                        @Override
+                        public void onError(Throwable e) {
+                            Log.e(TAG, "onError: " + e.getMessage());
+                            mPresenter.onApiError(e.getMessage());
                         }
 
                         @Override

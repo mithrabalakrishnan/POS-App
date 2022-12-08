@@ -9,15 +9,19 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pos_android.adapter.AddFoodAdapter;
+import com.example.pos_android.adapter.CategoryFoodAdapter;
 import com.example.pos_android.adapter.CategoryListingAdapter;
 import com.example.pos_android.contracts.UserHomeContract;
 import com.example.pos_android.data.model.FoodModel;
 import com.example.pos_android.data.model.TableInfoModel;
 import com.example.pos_android.data.model.UserHomeResponse;
+import com.example.pos_android.data.model.food.CategoryDetailResponse;
+import com.example.pos_android.data.model.food.CategoryModel;
 import com.example.pos_android.data.model.food.foodCategoryResponse;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.data.room.CartDatabase;
@@ -25,14 +29,16 @@ import com.example.pos_android.data.room.entity.Cart;
 import com.example.pos_android.databinding.FragmentFoodListBinding;
 import com.example.pos_android.presenter.UserHomePresenter;
 import com.example.pos_android.utils.OnItemClickListener;
+import com.example.pos_android.utils.onCategoryItemClick;
 import com.example.pos_android.view.BaseFragment;
 import com.example.pos_android.view.login.LoginActivity;
 
 import java.util.ArrayList;
 
-public class FoodListFragment extends BaseFragment implements UserHomeContract.View, OnItemClickListener {
+public class FoodListFragment extends BaseFragment implements UserHomeContract.View, OnItemClickListener, onCategoryItemClick {
     AddFoodAdapter popularAdapter;
     AddFoodAdapter recentAdapter;
+    CategoryFoodAdapter categoryFoodAdapter;
     CategoryListingAdapter categoryListingAdapter;
     UserHomePresenter presenter;
     ArrayList<FoodModel> popularArrayList = new ArrayList<>();
@@ -147,7 +153,15 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
     }
 
     @Override
+    public void showCategoryItemsResponse(CategoryDetailResponse categoryDetailResponse) {
+        categoryFoodAdapter = new CategoryFoodAdapter(categoryDetailResponse.data,requireContext(),this);
+        binding.rvCategoriesItems.setLayoutManager(new GridLayoutManager(requireContext(),2));
+        binding.rvCategoriesItems
+    }
+
+    @Override
     public void onItemClick(Integer position, String from) {
+
         sessionManager.setIsCouponSelected(false);
         try {
             FoodModel model = popularArrayList.get(position);
@@ -167,5 +181,10 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void onCategoryClick(Integer position, String from) {
+        presenter.getCategoryItems(new CategoryModel(from));
     }
 }
