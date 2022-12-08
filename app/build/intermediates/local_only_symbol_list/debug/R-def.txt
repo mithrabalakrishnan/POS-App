@@ -2982,6 +2982,7 @@ id action_summaryFragment_to_couponFragment
 id action_summaryFragment_to_paymentFragment
 id action_tableReservationFragment_to_foodListFragment
 id add_food
+id alan_button
 id bar_chart
 id bottomNavigationView
 id btnAdd

@@ -10,6 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentContainerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.alan.alansdk.button.AlanButton;
 import com.example.pos_android.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.lang.NullPointerException;
@@ -21,15 +22,19 @@ public final class ActivityHomeBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final AlanButton alanButton;
+
+  @NonNull
   public final BottomNavigationView bottomNavigationView;
 
   @NonNull
   public final FragmentContainerView fragmentContainerView;
 
-  private ActivityHomeBinding(@NonNull ConstraintLayout rootView,
+  private ActivityHomeBinding(@NonNull ConstraintLayout rootView, @NonNull AlanButton alanButton,
       @NonNull BottomNavigationView bottomNavigationView,
       @NonNull FragmentContainerView fragmentContainerView) {
     this.rootView = rootView;
+    this.alanButton = alanButton;
     this.bottomNavigationView = bottomNavigationView;
     this.fragmentContainerView = fragmentContainerView;
   }
@@ -61,6 +66,12 @@ public final class ActivityHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.alan_button;
+      AlanButton alanButton = ViewBindings.findChildViewById(rootView, id);
+      if (alanButton == null) {
+        break missingId;
+      }
+
       id = R.id.bottomNavigationView;
       BottomNavigationView bottomNavigationView = ViewBindings.findChildViewById(rootView, id);
       if (bottomNavigationView == null) {
@@ -73,7 +84,7 @@ public final class ActivityHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityHomeBinding((ConstraintLayout) rootView, bottomNavigationView,
+      return new ActivityHomeBinding((ConstraintLayout) rootView, alanButton, bottomNavigationView,
           fragmentContainerView);
     }
     String missingId = rootView.getResources().getResourceName(id);
