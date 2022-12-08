@@ -7,7 +7,7 @@ public interface VoucherContract {
 //        void showInputWarning();
     }
     interface Presenter extends BasePresenter {
-//         void callAddVoucher();
-//        void onAddVoucherApiResponse();
+         void callAddVoucher(String name, String Category, String Price);
+        void onAddVoucherApiResponse();
     }
 }

@@ -6,11 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pos_android.contracts.VoucherContract;
 import com.example.pos_android.databinding.ActivityAddVoucherBinding;
+import com.example.pos_android.presenter.VoucherPresenter;
 import com.example.pos_android.utils.Validation;
 import com.example.pos_android.view.BaseActivity;
 
 public class AddVoucherActivity extends BaseActivity implements VoucherContract.View {
     private ActivityAddVoucherBinding binding;
+    private VoucherPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,7 @@ public class AddVoucherActivity extends BaseActivity implements VoucherContract.
     }
 
     private void initView() {
+        presenter = new VoucherPresenter(this,this);
         binding.iconBack.setOnClickListener(v -> {
             onBackPressed();
         });
@@ -40,7 +43,8 @@ public class AddVoucherActivity extends BaseActivity implements VoucherContract.
             binding.txtPrice.setError("Please enter discount");
             binding.txtLayoutCategory.setError(null);
         } else {
-
+            presenter.callAddVoucher(binding.txtName.getText().toString(),
+                    binding.txtCategory.getText().toString(),binding.txtPrice.getText().toString());
         }
     }
 

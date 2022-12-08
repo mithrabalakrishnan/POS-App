@@ -158,4 +158,9 @@ public interface ApiInterFace {
     Observable<RecaptchaVerifyResponse> verifyResponse
             (@QueryMap Map<String, String> params);
 
+
+//     @POST("voucher-add")
+//    Observable<AddVoucherResponse> addKitchenUser(
+//            @Header("Authorization") String string,
+//            @Body VoucherRequestData voucherData);
 }

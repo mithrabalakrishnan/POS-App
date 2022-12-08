@@ -1,9 +1,11 @@
 package com.example.pos_android.data.model.food;
 
+import java.util.ArrayList;
+
 public class CategoryDetailResponse {
     public boolean status;
     public String message;
-    public CategoryDetailData data;
+    public ArrayList<CategoryDetailData> data;
 
     public boolean isStatus() {
         return status;
@@ -21,11 +23,11 @@ public class CategoryDetailResponse {
         this.message = message;
     }
 
-    public CategoryDetailData getData() {
+    public ArrayList<CategoryDetailData> getData() {
         return data;
     }
 
-    public void setData(CategoryDetailData data) {
+    public void setData(ArrayList<CategoryDetailData> data) {
         this.data = data;
     }
 }
