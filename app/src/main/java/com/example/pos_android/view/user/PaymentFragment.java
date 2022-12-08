@@ -72,8 +72,8 @@ public class PaymentFragment extends BaseFragment implements FoodReservationCont
                     if (binding.etCard.getText().toString().length() >= 16) {
                         if (!binding.etExpiry.getText().toString().isEmpty()) {
                             if (!binding.etCvv.getText().toString().isEmpty()) {
-//                                presenter.doFoodReservation(orderInfoModel);
-                                clickedPay();
+                                presenter.doFoodReservation(orderInfoModel);
+
                             } else binding.etCvv.setError("Please enter CVV");
                         } else binding.etExpiry.setError("Please enter expiry");
                     } else binding.etCard.setError("Please enter 16 digit number");
@@ -84,11 +84,11 @@ public class PaymentFragment extends BaseFragment implements FoodReservationCont
 
     }
 
-    private void clickedPay() {
-        SafetyNet.getClient(requireActivity()).verifyWithRecaptcha(getResources().getString(R.string.pubK))
-                .addOnSuccessListener(new SuccessListener())
-                .addOnFailureListener(new FailureListener());
-    }
+//    private void clickedPay() {
+//        SafetyNet.getClient(requireActivity()).verifyWithRecaptcha(getResources().getString(R.string.pubK))
+//                .addOnSuccessListener(new SuccessListener())
+//                .addOnFailureListener(new FailureListener());
+//    }
 
     @Override
     public void showProgressBar() {

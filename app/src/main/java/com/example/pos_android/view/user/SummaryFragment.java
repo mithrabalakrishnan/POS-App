@@ -126,6 +126,9 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
         binding.layoutCoupon.setOnClickListener(view -> {
             Navigation.findNavController(binding.getRoot()).navigate(R.id.action_summaryFragment_to_couponFragment);
         });
+        binding.ivBack.setOnClickListener(view -> {
+            Navigation.findNavController(binding.getRoot()).popBackStack();
+        });
         binding.layoutCouponItem.setOnClickListener(view -> {
             sessionManager.setIsCouponSelected(false);
             binding.layoutCouponItem.setVisibility(View.GONE);

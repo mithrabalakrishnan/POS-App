@@ -9,6 +9,7 @@ import com.example.pos_android.adapter.AllFoodAdapter;
 import com.example.pos_android.contracts.UserHomeContract;
 import com.example.pos_android.data.model.FoodModel;
 import com.example.pos_android.data.model.UserHomeResponse;
+import com.example.pos_android.data.model.food.CategoryDetailResponse;
 import com.example.pos_android.data.model.food.foodCategoryResponse;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.databinding.ActivityListAllFoodBinding;
@@ -92,11 +93,21 @@ public class ListAllFoodActivity extends BaseActivity implements UserHomeContrac
     }
 
     @Override
+    public void showCategoryItemsResponse(CategoryDetailResponse categoryDetailResponse) {
+
+    }
+
+    @Override
     public void onItemClick(Integer position, String from) {
         FoodModel model = foodModelArrayList.get(position);
         int id = Integer.parseInt(model.getFoodId());
         Intent intent = new Intent(ListAllFoodActivity.this, IncomeReportActivity.class);
         intent.putExtra("id", id);
         startActivity(intent);
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
     }
 }

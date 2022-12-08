@@ -52,7 +52,9 @@ public class KitchenOrderDetailActivity extends BaseActivity implements KitchenO
         binding.txtFoodItems.setText(String.format("%s", kitchenData.getFoodName()));
         binding.txtFoodQty.setText(String.format("x %s", kitchenData.getQuanty()));
         Log.e("Status", String.valueOf(kitchenData.getStatus()));
-
+        binding.ivBack.setOnClickListener(view -> {
+            onBackPressed();
+        });
         if (kitchenData.getStatus().equals("In-Progress")) {
             binding.rbInProgress.setChecked(true);
         } else if (kitchenData.getStatus().equals("Completed")) {

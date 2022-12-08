@@ -25,6 +25,9 @@ public class CustomerReportActivity extends BaseActivity {
     }
 
     private void initView() {
+        binding.iconBack.setOnClickListener(view -> {
+            onBackPressed();
+        });
         ArrayList<Double> dataList = new ArrayList<Double>();
         dataList.add(8.0);
         dataList.add(6.0);
