@@ -4,10 +4,12 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.pos_android.contracts.VoucherContract;
 import com.example.pos_android.databinding.ActivityAddVoucherBinding;
 import com.example.pos_android.utils.Validation;
+import com.example.pos_android.view.BaseActivity;
 
-public class AddVoucherActivity extends AppCompatActivity {
+public class AddVoucherActivity extends BaseActivity implements VoucherContract.View {
     private ActivityAddVoucherBinding binding;
 
     @Override
@@ -40,5 +42,30 @@ public class AddVoucherActivity extends AppCompatActivity {
         } else {
 
         }
+    }
+
+    @Override
+    public void showProgressBar() {
+        showLoadingDialog(this);
+    }
+
+    @Override
+    public void hideProgressBar() {
+        hideLoadingDialog();
+    }
+
+    @Override
+    public void showApiErrorWarning(String string) {
+
+    }
+
+    @Override
+    public void showWarningMessage(String message) {
+        showToast(this, message);
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
     }
 }
