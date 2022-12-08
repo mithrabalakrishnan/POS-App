@@ -17,6 +17,9 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.alan.alansdk.AlanCallback;
+import com.alan.alansdk.button.AlanButton;
+import com.alan.alansdk.events.EventCommand;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.pos_android.R;
@@ -28,16 +31,18 @@ import com.example.pos_android.data.model.food.foodCategoryResponse;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.databinding.FragmentHomeBinding;
 import com.example.pos_android.presenter.UserHomePresenter;
-import com.example.pos_android.utils.VoiceCommandUtil;
-import com.example.pos_android.utils.VoiceDialog;
 import com.example.pos_android.view.BaseFragment;
 import com.example.pos_android.view.login.LoginActivity;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class HomeFragment extends BaseFragment implements UserHomeContract.View, VoiceDialog.OnVoiceReceivedListener {
+public class HomeFragment extends BaseFragment implements UserHomeContract.View {
     private static final int RECORD_REQUEST_CODE = 100;
     FoodAdapter popularAdapter;
     FoodAdapter recentAdapter;
@@ -46,7 +51,9 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View,
     ArrayList<FoodModel> popularArrayList = new ArrayList<>();
     ArrayList<FoodModel> recentArray = new ArrayList<>();
     private FragmentHomeBinding binding;
-    VoiceCommandUtil voiceCommandUtil;
+    private AlanButton alanButton;
+    private AlanCallback alanCallback;
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,11 +74,18 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View,
 
         initData();
 
+        bottomNavigationView = getActivity().findViewById(R.id.bottomNavigationView);
         binding.imageSlider.setImageList(slideModels);
 
         binding.recentRecyclerview.setLayoutManager(new LinearLayoutManager(requireActivity(), RecyclerView.HORIZONTAL, false));
         recentAdapter = new FoodAdapter(recentArray, false, requireContext());
         binding.recentRecyclerview.setAdapter(recentAdapter);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        alanButton.removeCallback(alanCallback);
     }
 
     private void initData() {
@@ -98,6 +112,26 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View,
         binding.ivMic.setOnClickListener(v -> {
             checkPermissions();
         });
+
+        alanButton = getActivity().findViewById(R.id.alan_button);
+
+        alanCallback = new AlanCallback() {
+            /// Handle commands from Alan Studio
+            @Override
+            public void onCommand(final EventCommand eventCommand) {
+                try {
+                    JSONObject command = eventCommand.getData();
+                    JSONObject data = command.getJSONObject("data");
+                    String commandName = data.getString("commandName");
+                    //based on commandName we can perform different tasks
+                    executeCommand(commandName, data);
+                } catch (JSONException e) {
+                    Log.e("AlanButton", e.getMessage());
+                    showToast(requireContext(), e.getMessage());
+                }
+            }
+        };
+        alanButton.registerCallback(alanCallback);
     }
 
     @Override
@@ -157,9 +191,6 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View,
             ActivityCompat.requestPermissions(requireActivity(),
                     new String[]{Manifest.permission.RECORD_AUDIO},
                     RECORD_REQUEST_CODE);
-        } else {
-            VoiceDialog voiceDialog = new VoiceDialog(requireContext(), this);
-            voiceDialog.show();
         }
     }
 
@@ -167,21 +198,40 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View,
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == RECORD_REQUEST_CODE && grantResults.length > 0) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                VoiceDialog voiceDialog = new VoiceDialog(requireContext(), this);
-                voiceDialog.show();
-            } else
+            if (grantResults[0] != PackageManager.PERMISSION_GRANTED)
                 showSnackBar(requireView(), "Please give access to microphone");
         }
     }
 
-    @Override
-    public void onReceiveText(String value) {
-        showToast(requireContext(), value);
-        Log.d("Voice command", "onReceiveText: "+value);
-        if (voiceCommandUtil == null)
-            voiceCommandUtil = new VoiceCommandUtil(value.toUpperCase(), getActivity().findViewById(R.id.bottomNavigationView),Navigation.findNavController(requireView()));
-        else
-            voiceCommandUtil.performCommand(value.toUpperCase());
+    private void executeCommand(String commandName, JSONObject data) {
+        switch (commandName) {
+            case "go_to_orders": {
+                bottomNavigationView.setSelectedItemId(R.id.orderFragment);
+                break;
+            }
+            case "go_to_offers": {
+                bottomNavigationView.setSelectedItemId(R.id.discountFragment);
+                break;
+            }
+            case "go_to_profile": {
+                bottomNavigationView.setSelectedItemId(R.id.profileFragment);
+                break;
+            }
+            /*case "search_item": {
+                try {
+                    String title = data.getString("title");
+                    Navigation.findNavController(requireView()).navigate(HomeFragmentDirections.actionHomeFragmentToSearchFragment(title));
+                } catch (JSONException e) {
+                    Log.e("AlanButton", e.getMessage());
+                    alanButton.playText("I'm sorry I'm unable to do this at the moment");
+                }
+            }*/
+            default: {
+                break;
+            }
+        }
+
     }
+
+
 }
