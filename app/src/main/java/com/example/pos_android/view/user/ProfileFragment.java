@@ -76,9 +76,12 @@ public class ProfileFragment extends BaseFragment implements UserProfileContract
                 if (isChecked) {
                     boolean checkSupport = checkBiometricSupport();
                     if (checkSupport) {
+
                         sessionManager.setIsAuthentication(true);
+                        binding.simpleSwitch.setChecked(true);
                     } else {
                         sessionManager.setIsAuthentication(false);
+                        binding.simpleSwitch.setChecked(false);
                     }
                 }
                 sessionManager.setIsAuthentication(false);
