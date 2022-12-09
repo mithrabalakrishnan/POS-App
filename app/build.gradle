@@ -99,4 +99,7 @@ dependencies {
 
     //safty capta
     implementation 'com.google.android.gms:play-services-safetynet:18.0.1'
+
+    //finger print
+    implementation "androidx.biometric:biometric:1.1.0"
 }

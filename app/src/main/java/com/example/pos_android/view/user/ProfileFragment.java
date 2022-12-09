@@ -1,12 +1,18 @@
 package com.example.pos_android.view.user;
 
+import static android.content.Context.KEYGUARD_SERVICE;
+
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.app.KeyguardManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 
-import androidx.fragment.app.Fragment;
+import androidx.core.app.ActivityCompat;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
@@ -59,6 +65,25 @@ public class ProfileFragment extends BaseFragment implements UserProfileContract
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .fitCenter()
                 .into(binding.ivUser);
+        if (sessionManager.getIsAuthentication()) {
+            binding.simpleSwitch.setChecked(true);
+        } else {
+            binding.simpleSwitch.setChecked(false);
+        }
+
+        binding.simpleSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    boolean checkSupport = checkBiometricSupport();
+                    if (checkSupport) {
+                        sessionManager.setIsAuthentication(true);
+                    } else {
+                        sessionManager.setIsAuthentication(false);
+                    }
+                }
+                sessionManager.setIsAuthentication(false);
+            }
+        });
     }
 
     private void showLogoutDialog() {
@@ -117,6 +142,32 @@ public class ProfileFragment extends BaseFragment implements UserProfileContract
         binding.tvName.setText(mData.username);
         binding.tvEmail.setText(mData.email);
         binding.tvMobile.setText(mData.phone_no);
-        binding.tvUserName.setText(String.format("%s%s%s", mData.firstName," ", mData.lastName));
+        binding.tvUserName.setText(String.format("%s%s%s", mData.firstName, " ", mData.lastName));
+    }
+
+    private Boolean checkBiometricSupport() {
+
+        KeyguardManager keyguardManager =
+                (KeyguardManager) requireContext().getSystemService(KEYGUARD_SERVICE);
+
+        PackageManager packageManager = requireContext().getPackageManager();
+
+        if (!keyguardManager.isKeyguardSecure()) {
+            showToast(requireContext(), "Lock screen security not enabled in Settings");
+
+            return false;
+        }
+
+        if (ActivityCompat.checkSelfPermission(requireContext(),
+                Manifest.permission.USE_BIOMETRIC) !=
+                PackageManager.PERMISSION_GRANTED) {
+            showToast(requireContext(), "Fingerprint authentication permission not enabled");
+
+            return false;
+        }
+
+        packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT);
+
+        return true;
     }
 }

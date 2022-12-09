@@ -15,6 +15,7 @@ public class SessionManager {
     private static final String PROFILE_IMAGE_URL = "profile_image";
     private static final String IS_COUPON_SELECTED = "is_coupon_select";
     private static final String COUPON_PERCENT = "coupon_percent";
+    private static final String IS_AUTHENTICATION = "is_auth";
     private final SharedPreferences sharedPref;
     private final SharedPreferences.Editor editor;
     Context context;
@@ -93,6 +94,12 @@ public class SessionManager {
      public int getCouponPercent(){
         return sharedPref.getInt(COUPON_PERCENT,0);
      }
+
+     public void setIsAuthentication(boolean isAuth){
+        editor.putBoolean(IS_AUTHENTICATION,isAuth);
+        editor.apply();
+     }
+     public boolean getIsAuthentication(){return  sharedPref.getBoolean(IS_AUTHENTICATION,false);}
 
     public void clear() {
         editor.clear();
