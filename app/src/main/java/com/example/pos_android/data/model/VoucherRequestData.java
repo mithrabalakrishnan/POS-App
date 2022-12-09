@@ -5,13 +5,13 @@ import com.google.gson.annotations.SerializedName;
 
 public class VoucherRequestData {
 
-    @SerializedName("name")
+    @SerializedName("title")
     @Expose
     private String voucher_name;
-    @SerializedName("Category")
+    @SerializedName("voucher_code")
     @Expose
     private String Category_name;
-    @SerializedName("Price")
+    @SerializedName("discount_value")
     @Expose
     private String Price;
 

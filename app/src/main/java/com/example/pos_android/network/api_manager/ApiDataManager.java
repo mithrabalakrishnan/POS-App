@@ -14,6 +14,7 @@ import com.example.pos_android.data.model.RegisterResponse;
 import com.example.pos_android.data.model.TableReservationResponse;
 import com.example.pos_android.data.model.UserHomeResponse;
 import com.example.pos_android.data.model.UserProfileResponse;
+import com.example.pos_android.data.model.VoucherRequestData;
 import com.example.pos_android.data.model.food.CategoryDetailResponse;
 import com.example.pos_android.data.model.food.CategoryModel;
 import com.example.pos_android.data.model.food.FoodOrderResponseModel;
@@ -41,6 +42,7 @@ import com.example.pos_android.presenter.SalesReportPresenter;
 import com.example.pos_android.presenter.TableReservationPresenter;
 import com.example.pos_android.presenter.UserHomePresenter;
 import com.example.pos_android.presenter.UserProfilePresenter;
+import com.example.pos_android.presenter.VoucherPresenter;
 
 import java.util.List;
 import java.util.Map;
@@ -796,24 +798,23 @@ public class ApiDataManager {
         }
     }
 
-
-    public void validateCaptcha(Map<String, String> params, ConfirmOrderPresenter mPresenter) {
+ public void addVoucherToUser(VoucherRequestData voucherData, String token, VoucherPresenter mPresenter) {
         try {
             if (apiInterFace == null)
-                apiInterFace = GoogleApiClient.getClientServerApi().create(ApiInterFace.class);
+                apiInterFace = ApiClient.getClientServerApi().create(ApiInterFace.class);
 
             apiInterFace
-                    .verifyResponse(params)
+                    .addVoucherToUser("Bearer " + token, voucherData)
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeOn(Schedulers.io())
-                    .subscribe(new Observer<RecaptchaVerifyResponse>() {
+                    .subscribe(new Observer<CommonResponse>() {
                         @Override
                         public void onSubscribe(Disposable d) {
                         }
 
                         @Override
-                        public void onNext(RecaptchaVerifyResponse response) {
-                            mPresenter.onCaptchaVerifyCallback(response);
+                        public void onNext(CommonResponse response) {
+                            mPresenter.onAddVoucherApiResponse(response);
                         }
 
                         @Override
@@ -833,4 +834,5 @@ public class ApiDataManager {
             Log.e(TAG, "Exception caught in " + e.getMessage().toString());
         }
     }
+
 }

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pos_android.contracts.VoucherContract;
+import com.example.pos_android.data.model.CommonResponse;
 import com.example.pos_android.databinding.ActivityAddVoucherBinding;
 import com.example.pos_android.presenter.VoucherPresenter;
 import com.example.pos_android.utils.Validation;
@@ -71,5 +72,17 @@ public class AddVoucherActivity extends BaseActivity implements VoucherContract.
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
+    }
+
+    @Override
+    public void showAddVoucherApiResponseSuccess(CommonResponse response) {
+        hideProgressBar();
+        showToast(this,response.getMessage());
+        finish();
+    }
+
+    @Override
+    public void showInputWarning() {
+
     }
 }

@@ -84,11 +84,7 @@ public class PaymentFragment extends BaseFragment implements FoodReservationCont
 
     }
 
-//    private void clickedPay() {
-//        SafetyNet.getClient(requireActivity()).verifyWithRecaptcha(getResources().getString(R.string.pubK))
-//                .addOnSuccessListener(new SuccessListener())
-//                .addOnFailureListener(new FailureListener());
-//    }
+
 
     @Override
     public void showProgressBar() {
@@ -168,34 +164,4 @@ public class PaymentFragment extends BaseFragment implements FoodReservationCont
         new AlertDialog.Builder(requireContext()).setTitle(title).setMessage(message).setCancelable(false).setPositiveButton(buttonMessage, null).create().show();
     }
 
-     static class SuccessListener implements OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse> {
-
-        @Override
-        public void onSuccess(final SafetyNetApi.RecaptchaTokenResponse recaptchaTokenResponse) {
-
-            String userResponseToken = recaptchaTokenResponse.getTokenResult();
-            assert userResponseToken != null;
-            if (!userResponseToken.isEmpty()) {
-//                RecaptchaResponseViewModel mViewModel = ViewModelProviders.of(MainActivity.this).get(RecaptchaResponseViewModel.class);
-//                mViewModel.getmRecaptchaObservable("https://www.google.com", userResponseToken, getApplicationContext().getString(R.string.priK)).observe(MainActivity.this, new Observer<RecaptchaVerifyResponse>() {
-//                    @Override
-//                    public void onChanged(@Nullable RecaptchaVerifyResponse recaptchaVerifyResponse) {
-//                        if (recaptchaVerifyResponse != null && recaptchaVerifyResponse.isSuccess()) {
-//                            showAlertWithButton("Obie is a human", "Yes Siree, he a human I tell ya", "Well now ain't that nice!");
-//                        } else {
-//                            showAlertWithButton("Obie ain't a human", "No Siree, Obie ain't no human at all", "Doggone it!");
-//                        }
-//                    }
-//                });
-            }
-        }
-    }
-
-    private class FailureListener implements OnFailureListener {
-
-        @Override
-        public void onFailure(@NonNull Exception e) {
-            showAlertWithButton("Obie is Unknown", Objects.requireNonNull(e.getLocalizedMessage()), "Doggone it!");
-        }
-    }
 }

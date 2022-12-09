@@ -2,10 +2,13 @@ package com.example.pos_android.presenter;
 
 import android.content.Context;
 
+import com.example.pos_android.R;
 import com.example.pos_android.contracts.VoucherContract;
+import com.example.pos_android.data.model.CommonResponse;
 import com.example.pos_android.data.model.VoucherRequestData;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.network.api_manager.ApiDataManager;
+import com.example.pos_android.utils.NetworkManager;
 
 public class VoucherPresenter implements VoucherContract.Presenter {
     VoucherContract.View mView;
@@ -31,10 +34,21 @@ public class VoucherPresenter implements VoucherContract.Presenter {
          VoucherRequestData voucherData = new VoucherRequestData(
                     name,Category, Price
             );
+                 if (NetworkManager.isNetworkAvailable(mContext)) {
+            mView.showProgressBar();
+
+            mApiDataManager.addVoucherToUser(voucherData,sessionManager.getUserToken(), this);
+
+        } else
+            mView.showWarningMessage(mContext.getString(R.string.no_network));
     }
 
     @Override
-    public void onAddVoucherApiResponse() {
-
+    public void onAddVoucherApiResponse(CommonResponse response) {
+        mView.hideProgressBar();
+        if (response.getStatus()) {
+            mView.showAddVoucherApiResponseSuccess(response);
+        } else
+            mView.showWarningMessage(response.getMessage());
     }
 }

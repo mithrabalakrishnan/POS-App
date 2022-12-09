@@ -12,6 +12,7 @@ import com.example.pos_android.data.model.RegisterResponse;
 import com.example.pos_android.data.model.TableReservationResponse;
 import com.example.pos_android.data.model.UserHomeResponse;
 import com.example.pos_android.data.model.UserProfileResponse;
+import com.example.pos_android.data.model.VoucherRequestData;
 import com.example.pos_android.data.model.food.CategoryDetailResponse;
 import com.example.pos_android.data.model.food.CategoryModel;
 import com.example.pos_android.data.model.food.FoodOrderResponseModel;
@@ -153,14 +154,10 @@ public interface ApiInterFace {
             @Header("Authorization") String string,
             @Body CategoryModel categoryModel);
 
-    @Headers("Content-Type: application/x-www-form-urlencoded; charset=utf-8")
-    @POST("/recaptcha/api/siteverify")
-    Observable<RecaptchaVerifyResponse> verifyResponse
-            (@QueryMap Map<String, String> params);
 
 
-//     @POST("voucher-add")
-//    Observable<AddVoucherResponse> addKitchenUser(
-//            @Header("Authorization") String string,
-//            @Body VoucherRequestData voucherData);
+     @POST("voucher-add")
+    Observable<CommonResponse> addVoucherToUser(
+            @Header("Authorization") String string,
+            @Body VoucherRequestData voucherData);
 }

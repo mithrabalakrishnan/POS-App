@@ -60,23 +60,6 @@ public class ConfirmOrderPresenter implements FoodReservationContract.Presenter 
             mView.showWarningMessage(tableReservationResponse.getMessage());
     }
 
-    @Override
-    public void callCaptchaVerify(Map<String, String> params) {
-         if (NetworkManager.isNetworkAvailable(mContext)) {
-            mView.showProgressBar();
 
-            mApiDataManager.validateCaptcha(params, this);
 
-        } else
-            mView.showWarningMessage(mContext.getString(R.string.no_network));
-    }
-
-    @Override
-    public void onCaptchaVerifyCallback(RecaptchaVerifyResponse recaptchaVerifyResponse) {
-        mView.hideProgressBar();
-        if (recaptchaVerifyResponse.isSuccess()) {
-            mView.showCaptchaVerifyCallback(recaptchaVerifyResponse);
-        } else
-            mView.showWarningMessage(recaptchaVerifyResponse.getErrorCodes().toString());
-    }
 }
