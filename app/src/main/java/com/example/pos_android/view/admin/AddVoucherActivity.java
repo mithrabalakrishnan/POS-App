@@ -43,7 +43,7 @@ public class AddVoucherActivity extends BaseActivity implements VoucherContract.
                 .build();
 
         datePicker.addOnPositiveButtonClickListener(selection -> {
-            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+            SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
             expDate = format.format(selection);
             binding.tvDate.setText(expDate);
         });

@@ -188,6 +188,10 @@
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\font\\montserratsemibold.ttf"
     },
     {
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_black_cursor.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\black_cursor.xml"
+    },
+    {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_activity_best_selling_report.xml.flat",
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\activity_best_selling_report.xml"
     },
@@ -324,10 +328,6 @@
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\ic_edit.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-5:/layout_fragment_edit_profile.xml.flat",
-        "source": "com.example.pos_android.app-main-7:/layout/fragment_edit_profile.xml"
-    },
-    {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable-v24_ic_no_cart.png.flat",
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable-v24\\ic_no_cart.png"
     },
@@ -426,10 +426,6 @@
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_layout_category_item.xml.flat",
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\layout_category_item.xml"
-    },
-    {
-        "merged": "com.example.pos_android.app-merged_res-5:/drawable_black_cursor.xml.flat",
-        "source": "com.example.pos_android.app-main-7:/drawable/black_cursor.xml"
     },
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_ic_email.xml.flat",
@@ -620,12 +616,12 @@
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-debug-6:\\mipmap-xhdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_poster.jpeg.flat",
-        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\poster.jpeg"
-    },
-    {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_fragment_reservation.xml.flat",
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\fragment_reservation.xml"
+    },
+    {
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_poster.jpeg.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\poster.jpeg"
     },
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_best_selling_layout.xml.flat",

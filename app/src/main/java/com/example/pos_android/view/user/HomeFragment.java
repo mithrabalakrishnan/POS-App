@@ -72,6 +72,7 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        checkPermissions();
 
         initData();
 
@@ -108,10 +109,6 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View 
 
         binding.ivBooking.setOnClickListener(v -> {
             Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_tableReservationFragment);
-        });
-
-        binding.ivMic.setOnClickListener(v -> {
-            checkPermissions();
         });
 
         alanButton = getActivity().findViewById(R.id.alan_button);

@@ -4,8 +4,11 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.pos_android.R;
 import com.example.pos_android.utils.onCategoryItemClick;
 import com.google.android.material.button.MaterialButton;
@@ -15,13 +18,15 @@ import java.util.ArrayList;
 public class CategoryListingAdapter extends RecyclerView.Adapter<CategoryListingAdapter.ViewHolder> {
     // ... ViewHolder class and its constructor as per above
     ArrayList<String> list;
+    int selectedPosition;
     private Context context;
     private onCategoryItemClick clickListener;
 
-    public CategoryListingAdapter(ArrayList<String> list, Context context, onCategoryItemClick clickListener) {
+    public CategoryListingAdapter(ArrayList<String> list, Context context, onCategoryItemClick clickListener, int selectedPosition) {
         this.list = list;
         this.context = context;
         this.clickListener = clickListener;
+        this.selectedPosition = selectedPosition;
     }
 
     // Creating a viewHolder
@@ -43,6 +48,10 @@ public class CategoryListingAdapter extends RecyclerView.Adapter<CategoryListing
     public void onBindViewHolder(@NonNull CategoryListingAdapter.ViewHolder holder, int position) {
         // Get the Subject based on the current position
 //        foodCategoryData currentItem = list.get(position);
+        if (position == selectedPosition)
+            holder.button.setBackgroundColor(ContextCompat.getColor(context, R.color.orange_500));
+        else
+            holder.button.setBackgroundColor(ContextCompat.getColor(context, R.color.white));
         holder.button.setText(list.get(position));
         holder.button.setOnClickListener(v -> {
             clickListener.onCategoryClick(position, list.get(position));
@@ -55,6 +64,10 @@ public class CategoryListingAdapter extends RecyclerView.Adapter<CategoryListing
         return list.size();
     }
 
+    public void updatePosition(int selectedPosition) {
+        this.selectedPosition = selectedPosition;
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public MaterialButton button;
 
@@ -65,5 +78,6 @@ public class CategoryListingAdapter extends RecyclerView.Adapter<CategoryListing
             button = itemView.findViewById(R.id.btn_category);
         }
     }
+
 }
 

@@ -22,13 +22,14 @@ import com.example.pos_android.presenter.VoucherPresenter;
 import com.example.pos_android.utils.OnItemClickListener;
 import com.example.pos_android.view.BaseFragment;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
 import java.util.Random;
 
 
@@ -108,34 +109,31 @@ public class DiscountFragment extends BaseFragment implements OnItemClickListene
     @Override
     public void showAllVouchers(GetVoucherResponse response) {
         try {
-            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-            String currentDateToString = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
-            Date currentDate = sdf.parse(currentDateToString);
+            Calendar cal = Calendar.getInstance();
+            DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+            System.out.println("Today's date is "+dateFormat.format(cal.getTime()));
+
             couponsData.clear();
             for (int i = 0; i < response.getData().size(); i++) {
-
-                Date offerDate = sdf.parse(response.getData().get(i).getDate());
-                if (Objects.requireNonNull(currentDate).compareTo(offerDate)<0){
-                    Log.e("hit","hit at");
+                String offerDate = response.getData().get(i).getDate();
+                if (dateFormat.parse(offerDate).after(new Date(System.currentTimeMillis() - 24 * 60 * 60 * 1000))) {
+                    Random rand = new Random();
+                    CouponsData data = new CouponsData(
+                            response.getData().get(i).getVoucherTitle(),
+                            response.getData().get(i).getDate(),
+                            response.getData().get(i).getVoucherCode(),
+                            presenter.voucherImages.get(rand.nextInt(presenter.voucherImages.size())),
+                            Integer.parseInt(response.getData().get(i).getVoucherDiscount()
+                            )
+                    );
+                    couponsData.add(data);
+                    adapter.notifyDataSetChanged();
                 }
-                else{
-                Random rand = new Random();
-                CouponsData data = new CouponsData(
-                        response.getData().get(i).getVoucherTitle(),
-                        response.getData().get(i).getDate(),
-                        response.getData().get(i).getVoucherCode(),
-                        presenter.voucherImages.get(rand.nextInt(presenter.voucherImages.size())),
-                        Integer.parseInt(response.getData().get(i).getVoucherDiscount()
-                        )
-                );
-                couponsData.add(data);
-                adapter.notifyDataSetChanged();
-            }
             }
 
 
         } catch (ParseException e1) {
-            e1.printStackTrace();
+            Log.d("Date exception", "showAllVouchers: " + e1.toString());
         }
     }
 }

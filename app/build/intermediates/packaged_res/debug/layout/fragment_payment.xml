@@ -162,7 +162,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="8dp"
                                     android:background="@drawable/edit_text_border"
-                                    android:inputType="number"
+                                    android:inputType="numberPassword"
                                     android:maxLength="4"
                                     android:padding="8dp"
                                     android:singleLine="true"

@@ -152,7 +152,7 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
         categories.addAll(foodCategoryResponse.data.foodCategory);
         binding.titleCategory.setVisibility(View.VISIBLE);
         binding.rvCategories.setVisibility(View.VISIBLE);
-        categoryListingAdapter = new CategoryListingAdapter(foodCategoryResponse.data.foodCategory, requireContext(), this);
+        categoryListingAdapter = new CategoryListingAdapter(foodCategoryResponse.data.foodCategory, requireContext(), this, -1);
         binding.rvCategories.setLayoutManager(new LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false));
         binding.rvCategories.setAdapter(categoryListingAdapter);
     }
@@ -174,7 +174,13 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
 
         sessionManager.setIsCouponSelected(false);
         try {
-            FoodModel model = popularArrayList.get(position);
+            FoodModel model;
+
+            if (from == "category")
+                model = categoryList.get(position);
+            else
+                model = popularArrayList.get(position);
+
             Cart cart = new Cart();
             cart.food = model;
             cart.food.setFoodId(model.getFoodId());
@@ -195,6 +201,8 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
 
     @Override
     public void onCategoryClick(Integer position, String from) {
+        categoryListingAdapter.updatePosition(position);
+        categoryListingAdapter.notifyDataSetChanged();
         presenter.getCategoryItems(categories.get(position));
     }
 }

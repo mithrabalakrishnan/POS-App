@@ -9,7 +9,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.CancellationSignal;
 import android.os.Handler;
-import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
@@ -18,7 +17,6 @@ import androidx.core.content.ContextCompat;
 
 import com.example.pos_android.R;
 import com.example.pos_android.data.preference.SessionManager;
-import com.example.pos_android.view.admin.AdminHomeActivity;
 import com.example.pos_android.view.user.UserHomeActivity;
 
 import java.util.concurrent.Executor;
@@ -37,16 +35,15 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         sessionManager = new SessionManager(this);
-
-
         executor = ContextCompat.getMainExecutor(this);
 
-
-        new Handler().postDelayed(() -> {
-
-            Intent i = new Intent(SplashActivity.this,
-                    UserHomeActivity.class);
-            startActivity(i);
+        if (sessionManager.getIsAuthentication()) {
+            authenticateUser();
+        } else {
+            new Handler().postDelayed(() -> {
+                Intent i = new Intent(SplashActivity.this,
+                        UserHomeActivity.class);
+                startActivity(i );
 
           /*  if (sessionManager.isLoggedIn()) {
                 if (sessionManager.getUserType().equals(SessionManager.UserRoles.ADMIN.toString())) {
@@ -71,11 +68,12 @@ public class SplashActivity extends AppCompatActivity {
                 finishAffinity();
             }*/
 
-        }, SPLASH_SCREEN_TIME_OUT);
+            }, SPLASH_SCREEN_TIME_OUT);
+        }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.P)
-    public void authenticateUser(View view) {
+    public void authenticateUser() {
         BiometricPrompt biometricPrompt = new BiometricPrompt.Builder(this)
                 .setTitle("Biometric Login")
                 .setSubtitle("Authentication is required to continue")
@@ -130,7 +128,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void onAuthenticationSucceeded(
                     BiometricPrompt.AuthenticationResult result) {
-                showToast(SplashActivity.this, "Authentication Succeeded");
+                // showToast(SplashActivity.this, "Authentication Succeeded");
                 Intent i = new Intent(SplashActivity.this,
                         UserHomeActivity.class);
                 startActivity(i);

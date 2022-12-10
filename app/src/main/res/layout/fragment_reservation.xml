@@ -111,6 +111,46 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="18dp"
+                android:gravity="start"
+                android:text="Select Table Number"
+                android:textColor="@color/black"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/bg_rounded_stroke"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingStart="15dp">
+
+                <ImageView
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+
+                    android:src="@drawable/ic_baseline_filter_list_24" />
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="149dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp" />
+            </LinearLayout>
+
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_continue"
                 android:layout_width="match_parent"

@@ -6,6 +6,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -33,7 +35,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class TableReservationFragment extends BaseFragment implements OnItemClickListener, TableReservationContract.View {
+public class TableReservationFragment extends BaseFragment implements OnItemClickListener, TableReservationContract.View, AdapterView.OnItemSelectedListener {
+    String[] classicBoothNum = {"Select", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+    String[] windowsSideNum = {"Select", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"};
+    String[] highTopNum = {"Select", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"};
     private FragmentReservationBinding binding;
     private List<DateModel> dateList = new ArrayList<>();
     private List<DateModel> apiDateList = new ArrayList<>();
@@ -47,6 +52,7 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
     private Integer selectedDatePosition = null;
     private String selectedTime = null;
     private String selectedTable = null;
+    private String selectedTableNum = null;
     private TableInfoModel model;
 
     @Override
@@ -98,7 +104,7 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
 
         Date date = new Date();
         String pattern = "MMM-dd";
-       // String apiPattern = "dd-MM-yyyy";
+        // String apiPattern = "dd-MM-yyyy";
         String apiPattern = "yyyy-MM-dd";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
         SimpleDateFormat apiDateFormat = new SimpleDateFormat(apiPattern);
@@ -150,12 +156,12 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
                 showSnackBar(requireView(), "Please select date");
             } else if (selectedTime == null) {
                 showSnackBar(requireView(), "Please select time");
-            } else if (selectedTable == null) {
+            } else if (selectedTableNum == null) {
                 showSnackBar(requireView(), "Please choose table preference");
             } else {
                 String myDate = apiDateList.get(selectedDatePosition).getDate();
                 presenter.doTableReservation(
-                        myDate, selectedTime, String.valueOf(totalCount), selectedTable
+                        myDate, selectedTime, String.valueOf(totalCount), selectedTableNum
                 );
             }
         });
@@ -194,6 +200,7 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
                     if (checkSeatAvailability(position)) {
                         tableList.get(i).setSelected(true);
                         selectedTable = tableList.get(i).getTable();
+                        setupSpinnerData(getTableList(selectedTable));
                     } else {
                         showSnackBar(requireView(), showSeatValidation(position));
                         tableList.get(i).setSelected(false);
@@ -278,7 +285,7 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
             requireActivity().finishAffinity();
         } else
 
-        showSnackBar(requireView(), string);
+            showSnackBar(requireView(), string);
     }
 
     @Override
@@ -294,5 +301,45 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
         );
         TableReservationFragmentDirections.ActionTableReservationFragmentToFoodListFragment directions = TableReservationFragmentDirections.actionTableReservationFragmentToFoodListFragment(model);
         Navigation.findNavController(requireView()).navigate(directions);
+    }
+
+    private void setupSpinnerData(String[] list) {
+        selectedTableNum = null;
+        binding.spinner.setOnItemSelectedListener(this);
+        ArrayAdapter spinnerAdapter = new ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, list);
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Setting the ArrayAdapter data on the Spinner
+        binding.spinner.setAdapter(spinnerAdapter);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String item = parent.getItemAtPosition(position).toString();
+        if (!item.equals("Select")) {
+            selectedTableNum = item;
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    private String[] getTableList(String item) {
+        switch (item) {
+            case "Classic booth": {
+                return classicBoothNum;
+            }
+            case "Window side": {
+                return windowsSideNum;
+            }
+            case "High top table": {
+                return highTopNum;
+            }
+
+            default: {
+                return null;
+            }
+        }
     }
 }

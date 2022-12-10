@@ -33,15 +33,6 @@
                 android:textColor="@color/orange_700"
                 android:textSize="20dp"
                 android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/iv_mic"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_gravity="center"
-                android:layout_marginEnd="10dp"
-                android:src="@drawable/ic_mic"
-                app:tint="@color/black" />
         </LinearLayout>
 
         <RelativeLayout

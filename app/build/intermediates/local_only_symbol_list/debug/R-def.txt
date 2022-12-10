@@ -3057,12 +3057,12 @@ id image_add
 id image_slider
 id image_sub
 id image_veg
+id item_layout
 id ivProduct
 id iv_add
 id iv_back
 id iv_booking
 id iv_books
-id iv_mic
 id iv_no_cart
 id iv_remove
 id iv_user
