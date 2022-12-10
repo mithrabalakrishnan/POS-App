@@ -75,7 +75,7 @@
                 android:ellipsize="end"
                 android:gravity="center"
                 android:singleLine="true"
-                android:text="Choose week"
+                android:text="Choose month"
                 android:textColor="@color/black"
                 android:textSize="17sp"
                 android:textStyle="bold" />

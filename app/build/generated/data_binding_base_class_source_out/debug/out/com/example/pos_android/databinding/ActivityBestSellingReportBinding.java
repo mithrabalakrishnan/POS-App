@@ -14,7 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.pos_android.R;
-import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.charts.HorizontalBarChart;
 import com.google.android.material.button.MaterialButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -37,7 +37,7 @@ public final class ActivityBestSellingReportBinding implements ViewBinding {
   public final ListView list;
 
   @NonNull
-  public final PieChart pieChart;
+  public final HorizontalBarChart pieChart;
 
   @NonNull
   public final Spinner spinner;
@@ -47,7 +47,7 @@ public final class ActivityBestSellingReportBinding implements ViewBinding {
 
   private ActivityBestSellingReportBinding(@NonNull LinearLayout rootView,
       @NonNull MaterialButton btnFrom, @NonNull LinearLayout fromLayout, @NonNull ImageView ivBack,
-      @NonNull ListView list, @NonNull PieChart pieChart, @NonNull Spinner spinner,
+      @NonNull ListView list, @NonNull HorizontalBarChart pieChart, @NonNull Spinner spinner,
       @NonNull TextView tvDateRange) {
     this.rootView = rootView;
     this.btnFrom = btnFrom;
@@ -111,7 +111,7 @@ public final class ActivityBestSellingReportBinding implements ViewBinding {
       }
 
       id = R.id.pie_chart;
-      PieChart pieChart = ViewBindings.findChildViewById(rootView, id);
+      HorizontalBarChart pieChart = ViewBindings.findChildViewById(rootView, id);
       if (pieChart == null) {
         break missingId;
       }

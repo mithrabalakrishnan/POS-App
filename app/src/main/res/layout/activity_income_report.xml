@@ -28,6 +28,7 @@
             android:textColor="@color/black"
             android:textSize="20dp" />
     </RelativeLayout>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="40dp"
@@ -86,6 +87,7 @@
             android:textSize="17sp" />
 
     </LinearLayout>
+
     <TextView
         android:id="@+id/tv_date_range"
         android:layout_width="match_parent"
@@ -97,52 +99,54 @@
         android:singleLine="true"
         android:textColor="@color/black"
         android:textSize="17sp" />
+
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/line_chart"
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:layout_gravity="center"
         android:layout_marginTop="10dp" />
 
-<!--    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/rectangle_gradient_s_gray_900_e_bluegray_800_radius_15"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:padding="10dp"
-
-        >
-
-        <TextView
-            android:id="@+id/txtTotalSale"
-            android:layout_width="wrap_content"
+    <!--    <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="20dp"
-            android:ellipsize="end"
-            android:singleLine="true"
-            android:text="Total Sale : "
-            android:textColor="@color/white"
-            android:textSize="23sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/txtPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
-            android:ellipsize="end"
-            android:gravity="center_vertical"
-            android:singleLine="true"
-            android:text="1000 €"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-    </RelativeLayout>-->
+            android:background="@drawable/rectangle_gradient_s_gray_900_e_bluegray_800_radius_15"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dp"
+
+            >
+
+            <TextView
+                android:id="@+id/txtTotalSale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="Total Sale : "
+                android:textColor="@color/white"
+                android:textSize="23sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="1000 €"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </RelativeLayout>-->
 
     <!-- <LinearLayout
         android:layout_width="match_parent"

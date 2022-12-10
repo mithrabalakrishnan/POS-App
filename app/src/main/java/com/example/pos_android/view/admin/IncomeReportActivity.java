@@ -88,9 +88,28 @@ public class IncomeReportActivity extends BaseActivity implements AdapterView.On
         });
     }
 
-    public void FoodData(List<Double> chart_data) {
+    public void foodDataMonthly(List<Double> chart_data) {
         ArrayList<Entry> lineEntries = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < chart_data.size(); i++) {
+            lineEntries.add(new Entry(i, chart_data.get(i).floatValue(), ""));
+        }
+        LineDataSet lineDataSet = new LineDataSet(lineEntries, "Monthly Report");
+        lineDataSet.setValueTextSize(12);
+        lineDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+        binding.lineChart.setData(new LineData(lineDataSet));
+        binding.lineChart.animateY(3000);
+        binding.lineChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter());
+        final String[] labels = new String[]{"Jan", "Feb", "Mar", "Apr", "May",
+                "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+        binding.lineChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
+        binding.lineChart.getXAxis().setGranularity(0f);
+        binding.lineChart.getXAxis().setGranularityEnabled(true);
+
+    }
+
+    public void foodDataWeekly(List<Double> chart_data) {
+        ArrayList<Entry> lineEntries = new ArrayList<>();
+        for (int i = 0; i < chart_data.size(); i++) {
             lineEntries.add(new Entry(i, chart_data.get(i).floatValue(), ""));
         }
         LineDataSet lineDataSet = new LineDataSet(lineEntries, "Weekly Report");
@@ -100,7 +119,7 @@ public class IncomeReportActivity extends BaseActivity implements AdapterView.On
         binding.lineChart.animateY(3000);
         binding.lineChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter());
 
-        final String[] labels = new String[]{"start", "Mon", "Tue", "Wed", "Thu", "Fri",
+        final String[] labels = new String[]{"Mon", "Tue", "Wed", "Thu", "Fri",
                 "Sat", "Sun"};
         binding.lineChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
         binding.lineChart.getXAxis().setGranularity(0f);
@@ -109,26 +128,6 @@ public class IncomeReportActivity extends BaseActivity implements AdapterView.On
 
     }
 
-    public void foodDataMonthly(List<Double> chart_data) {
-        ArrayList<Entry> lineEntries = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            lineEntries.add(new Entry(i, chart_data.get(i).floatValue(), ""));
-        }
-        LineDataSet lineDataSet = new LineDataSet(lineEntries, "Weekly Report");
-        lineDataSet.setValueTextSize(12);
-        lineDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-        binding.lineChart.setData(new LineData(lineDataSet));
-        binding.lineChart.animateY(3000);
-        binding.lineChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter());
-
-        /*final String[] labels = new String[]{"Mon", "Tue", "Wed", "Thu", "Fri",
-                "Sat", "Sun"};*/
-       // binding.lineChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
-        binding.lineChart.getXAxis().setGranularity(0f);
-        binding.lineChart.getXAxis().setGranularityEnabled(true);
-
-
-    }
 
     @Override
     public void showProgressBar() {
@@ -157,6 +156,11 @@ public class IncomeReportActivity extends BaseActivity implements AdapterView.On
     }
 
     @Override
+    public void showIncomePerItemWeeklyResponse(IncomePerItemMonthlyResponse response) {
+        foodDataWeekly(response.getData());
+    }
+
+    @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
     }
@@ -169,7 +173,6 @@ public class IncomeReportActivity extends BaseActivity implements AdapterView.On
 //            monthlyData();
             binding.fromLayout.setVisibility(View.GONE);
             presenter.geIncomePerItemMonthly(foodId);
-
         } else {
             binding.fromLayout.setVisibility(View.VISIBLE);
 //            weeklyData();

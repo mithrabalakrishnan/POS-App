@@ -43,8 +43,6 @@ import java.util.Set;
 public class BestSellingReportActivity extends BaseActivity implements AdapterView.OnItemSelectedListener,
         BestSellingReportContract.View {
     String[] filterData = {"Weekly", "Monthly"};
-    String[] titleList = {"Pizza", "Burger", "Bangers and Mash", "Sunday Roast", "Sandwich"};
-    Double[] salesList = {25.0, 15.0, 11.0, 5.0, 17.0};
     BestSellingAdapter adapter;
     MaterialDatePicker materialDatePicker;
     private List<String> dateList = new ArrayList<>();
@@ -105,7 +103,7 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
         binding.pieChart.getDescription().setTextColor(Color.BLUE);
 
 
-        final String[] labels = new String[]{"start", "Mon", "Tue", "Wed", "Thu", "Fri",
+        final String[] labels = new String[]{"Mon", "Tue", "Wed", "Thu", "Fri",
                 "Sat", "Sun"};
         binding.pieChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
         binding.pieChart.getXAxis().setGranularity(1f);

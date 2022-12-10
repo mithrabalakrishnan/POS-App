@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\font_montserrat.xml.flat",
-        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\font\\montserrat.xml"
-    },
-    {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_ic_shopping_bag.xml.flat",
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\ic_shopping_bag.xml"
+    },
+    {
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\font_montserrat.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\font\\montserrat.xml"
     },
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_img_arrowleft.xml.flat",
@@ -44,12 +44,12 @@
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-pngs-0:\\drawable-xxxhdpi\\black_friday.png"
     },
     {
-        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_button_selector.xml.flat",
-        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\button_selector.xml"
-    },
-    {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable-v24_fast_food.png.flat",
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable-v24\\fast_food.png"
+    },
+    {
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_button_selector.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\button_selector.xml"
     },
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_mastercard.xml.flat",

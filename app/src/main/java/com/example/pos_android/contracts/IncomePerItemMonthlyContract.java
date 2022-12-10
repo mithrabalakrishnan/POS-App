@@ -7,6 +7,7 @@ import java.util.List;
 public interface IncomePerItemMonthlyContract {
             interface View extends BaseView {
         void showIncomePerItemMonthlyResponse( IncomePerItemMonthlyResponse response);
+        void showIncomePerItemWeeklyResponse( IncomePerItemMonthlyResponse response);
     }
 
     interface Presenter extends BasePresenter {
@@ -14,6 +15,7 @@ public interface IncomePerItemMonthlyContract {
         void geIncomePerItemMonthly(int id);
         void geIncomePerItemWeakly(int id, List<String> dateList);
         void onIncomePerItemMonthlyCallback(IncomePerItemMonthlyResponse response);
+        void onIncomePerItemWeeklyCallback(IncomePerItemMonthlyResponse response);
 
     }
 }

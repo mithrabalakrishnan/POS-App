@@ -20,7 +20,6 @@ import com.example.pos_android.data.model.UserProfileResponse;
 import com.example.pos_android.data.model.request.EditProfileRequestData;
 import com.example.pos_android.data.model.request.VoucherRequestData;
 import com.example.pos_android.data.model.food.CategoryDetailResponse;
-import com.example.pos_android.data.model.food.CategoryModel;
 import com.example.pos_android.data.model.food.FoodOrderResponseModel;
 import com.example.pos_android.data.model.food.foodCategoryResponse;
 import com.example.pos_android.data.model.request.AddFoodRequestData;
@@ -506,7 +505,7 @@ public class ApiDataManager {
         }
     }
 
-    public void getIncomePerItemMonthly(String token, IncomePerItemMonthlyPresenter mPresenter, int foodId) {
+    public void getIncomePerItemWeekly(String token, IncomePerItemMonthlyPresenter mPresenter, int foodId) {
         try {
             if (apiInterFace == null)
                 apiInterFace = ApiClient.getClientServerApi().create(ApiInterFace.class);
@@ -543,7 +542,7 @@ public class ApiDataManager {
         }
     }
 
-    public void getIncomePerItemMonthly(String token, IncomePerItemMonthlyPresenter mPresenter, int foodId, List<String> dateList) {
+    public void getIncomePerItemWeekly(String token, IncomePerItemMonthlyPresenter mPresenter, int foodId, List<String> dateList) {
         try {
             if (apiInterFace == null)
                 apiInterFace = ApiClient.getClientServerApi().create(ApiInterFace.class);
@@ -559,7 +558,7 @@ public class ApiDataManager {
 
                         @Override
                         public void onNext(IncomePerItemMonthlyResponse response) {
-                            mPresenter.onIncomePerItemMonthlyCallback(response);
+                            mPresenter.onIncomePerItemWeeklyCallback(response);
                         }
 
                         @Override

@@ -103,28 +103,29 @@
         android:textSize="17sp" />
 
 
-    <com.github.mikephil.charting.charts.PieChart
+    <com.github.mikephil.charting.charts.HorizontalBarChart
         android:id="@+id/pie_chart"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="16dp" />
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:text="Details"
         android:textColor="@color/black"
         android:textSize="22sp"
-        android:layout_marginTop="10dp"
         android:textStyle="bold" />
 
     <ListView
         android:id="@+id/list"
-        android:divider="@null"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp" />
+        android:layout_height="250dp"
+        android:layout_marginTop="10dp"
+        android:divider="@null" />
 
 
 </LinearLayout>

@@ -36,7 +36,7 @@ public class IncomePerItemMonthlyPresenter implements IncomePerItemMonthlyContra
         if (NetworkManager.isNetworkAvailable(mContext)) {
             mView.showProgressBar();
 
-            mApiDataManager.getIncomePerItemMonthly(sessionManager.getUserToken(), this, i);
+            mApiDataManager.getIncomePerItemWeekly(sessionManager.getUserToken(), this, i);
 
         } else
             mView.showWarningMessage(mContext.getString(R.string.no_network));
@@ -47,7 +47,7 @@ public class IncomePerItemMonthlyPresenter implements IncomePerItemMonthlyContra
         if (NetworkManager.isNetworkAvailable(mContext)) {
             mView.showProgressBar();
 
-            mApiDataManager.getIncomePerItemMonthly(sessionManager.getUserToken(), this, id,dateList);
+            mApiDataManager.getIncomePerItemWeekly(sessionManager.getUserToken(), this, id,dateList);
 
         } else
             mView.showWarningMessage(mContext.getString(R.string.no_network));
@@ -58,6 +58,15 @@ public class IncomePerItemMonthlyPresenter implements IncomePerItemMonthlyContra
         mView.hideProgressBar();
         if (response.getStatus()) {
             mView.showIncomePerItemMonthlyResponse(response);
+        } else
+            mView.showWarningMessage(response.getMessage());
+    }
+
+    @Override
+    public void onIncomePerItemWeeklyCallback(IncomePerItemMonthlyResponse response) {
+        mView.hideProgressBar();
+        if (response.getStatus()) {
+            mView.showIncomePerItemWeeklyResponse(response);
         } else
             mView.showWarningMessage(response.getMessage());
     }

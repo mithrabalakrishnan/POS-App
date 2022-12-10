@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.pos_android.R;
-import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.charts.LineChart;
 import com.google.android.material.button.MaterialButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -24,7 +24,7 @@ public final class ActivitySalesReportBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final BarChart barChart;
+  public final LineChart barChart;
 
   @NonNull
   public final MaterialButton btnFrom;
@@ -53,7 +53,7 @@ public final class ActivitySalesReportBinding implements ViewBinding {
   @NonNull
   public final TextView txtTotalSale;
 
-  private ActivitySalesReportBinding(@NonNull LinearLayout rootView, @NonNull BarChart barChart,
+  private ActivitySalesReportBinding(@NonNull LinearLayout rootView, @NonNull LineChart barChart,
       @NonNull MaterialButton btnFrom, @NonNull LinearLayout fromLayout,
       @NonNull ImageView iconBack, @NonNull Spinner spinner, @NonNull TextView tvDateRange,
       @NonNull TextView txtPeople, @NonNull TextView txtPrice, @NonNull TextView txtTotalPeople,
@@ -99,7 +99,7 @@ public final class ActivitySalesReportBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.bar_chart;
-      BarChart barChart = ViewBindings.findChildViewById(rootView, id);
+      LineChart barChart = ViewBindings.findChildViewById(rootView, id);
       if (barChart == null) {
         break missingId;
       }
