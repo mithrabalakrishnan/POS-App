@@ -119,7 +119,7 @@
                     android:ellipsize="end"
                     android:gravity="end"
                     android:singleLine="true"
-                    android:text="250 "
+                    android:text="-"
                     android:textColor="@color/white"
                     android:textSize="25sp"
                     android:textStyle="bold" />

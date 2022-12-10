@@ -18,9 +18,9 @@ import com.example.pos_android.presenter.SalesReportPresenter;
 import com.example.pos_android.utils.RangeDateValidator;
 import com.example.pos_android.view.BaseActivity;
 import com.example.pos_android.view.login.LoginActivity;
-import com.github.mikephil.charting.data.BarData;
-import com.github.mikephil.charting.data.BarDataSet;
-import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.material.datepicker.CalendarConstraints;
@@ -42,10 +42,8 @@ public class SalesReportActivity extends BaseActivity implements
         AdapterView.OnItemSelectedListener, SalesReportContract.View {
     String[] filterData = {"Weekly", "Monthly"};
     MaterialDatePicker materialDatePicker;
-
-    private List<String> dateList = new ArrayList<>();
     List<String> dayList = new ArrayList<>();
-
+    private List<String> dateList = new ArrayList<>();
     private String[] dayArray = {};
     private ActivitySalesReportBinding binding;
     private SalesReportPresenter presenter;
@@ -139,17 +137,17 @@ public class SalesReportActivity extends BaseActivity implements
 
     public void weaklyData(ArrayList<Double> chart_data) {
 
-        ArrayList<BarEntry> barEntries = new ArrayList<>();
+        ArrayList<Entry> barEntries = new ArrayList<>();
         for (int i = 0; i < chart_data.size(); i++) {
-            barEntries.add(new BarEntry(i, chart_data.get(i).floatValue(), "Mon"));
+            barEntries.add(new Entry(i, chart_data.get(i).floatValue(), ""));
         }
-        BarDataSet barDataSet = new BarDataSet(barEntries, "Weekly Report");
-        barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-        barDataSet.setValueTextSize(12);
-        binding.barChart.setData(new BarData(barDataSet));
+        LineDataSet lineDataSet = new LineDataSet(barEntries, "Weekly Report");
+        lineDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+        lineDataSet.setValueTextSize(12);
+        binding.barChart.setData(new LineData(lineDataSet));
         binding.barChart.animateY(5000);
         binding.barChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter());
-        Arrays.fill(dayArray,null);
+        Arrays.fill(dayArray, null);
 
 
         final String[] labels = dayList.toArray(new String[0]);
@@ -163,23 +161,23 @@ public class SalesReportActivity extends BaseActivity implements
     }
 
     public void monthlyData(ArrayList<Double> chart_data) {
-        ArrayList<BarEntry> barEntries = new ArrayList<>();
-        barEntries.add(new BarEntry(0.F, chart_data.get(0).floatValue(), "Jan"));
-        barEntries.add(new BarEntry(1.F, chart_data.get(1).floatValue(), "Feb"));
-        barEntries.add(new BarEntry(2.F, chart_data.get(2).floatValue(), "Mar"));
-        barEntries.add(new BarEntry(3.F, chart_data.get(3).floatValue(), "Apr"));
-        barEntries.add(new BarEntry(4.F, chart_data.get(4).floatValue(), "May"));
-        barEntries.add(new BarEntry(5.F, chart_data.get(5).floatValue(), "Jun"));
-        barEntries.add(new BarEntry(6.F, chart_data.get(6).floatValue(), "July"));
-        barEntries.add(new BarEntry(7.F, chart_data.get(7).floatValue(), "Aug"));
-        barEntries.add(new BarEntry(8.F, chart_data.get(8).floatValue(), "Sep"));
-        barEntries.add(new BarEntry(9.F, chart_data.get(9).floatValue(), "Oct"));
-        barEntries.add(new BarEntry(10.F, chart_data.get(10).floatValue(), "Nov"));
-        barEntries.add(new BarEntry(11.F, chart_data.get(11).floatValue(), "Dec"));
-        BarDataSet barDataSet = new BarDataSet(barEntries, "Monthly Report");
+        ArrayList<Entry> barEntries = new ArrayList<>();
+        barEntries.add(new Entry(0.F, chart_data.get(0).floatValue(), "Jan"));
+        barEntries.add(new Entry(1.F, chart_data.get(1).floatValue(), "Feb"));
+        barEntries.add(new Entry(2.F, chart_data.get(2).floatValue(), "Mar"));
+        barEntries.add(new Entry(3.F, chart_data.get(3).floatValue(), "Apr"));
+        barEntries.add(new Entry(4.F, chart_data.get(4).floatValue(), "May"));
+        barEntries.add(new Entry(5.F, chart_data.get(5).floatValue(), "Jun"));
+        barEntries.add(new Entry(6.F, chart_data.get(6).floatValue(), "July"));
+        barEntries.add(new Entry(7.F, chart_data.get(7).floatValue(), "Aug"));
+        barEntries.add(new Entry(8.F, chart_data.get(8).floatValue(), "Sep"));
+        barEntries.add(new Entry(9.F, chart_data.get(9).floatValue(), "Oct"));
+        barEntries.add(new Entry(10.F, chart_data.get(10).floatValue(), "Nov"));
+        barEntries.add(new Entry(11.F, chart_data.get(11).floatValue(), "Dec"));
+        LineDataSet barDataSet = new LineDataSet(barEntries, "Monthly Report");
         barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         barDataSet.setValueTextSize(12);
-        binding.barChart.setData(new BarData(barDataSet));
+        binding.barChart.setData(new LineData(barDataSet));
         binding.barChart.animateY(5000);
         binding.barChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter());
 

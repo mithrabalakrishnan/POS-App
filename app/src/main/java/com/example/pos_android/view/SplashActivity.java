@@ -17,6 +17,7 @@ import androidx.core.content.ContextCompat;
 
 import com.example.pos_android.R;
 import com.example.pos_android.data.preference.SessionManager;
+import com.example.pos_android.view.admin.AdminHomeActivity;
 import com.example.pos_android.view.kitchen.KitchenActivity;
 import com.example.pos_android.view.user.UserHomeActivity;
 
@@ -131,7 +132,7 @@ public class SplashActivity extends AppCompatActivity {
                     BiometricPrompt.AuthenticationResult result) {
                 // showToast(SplashActivity.this, "Authentication Succeeded");
                 Intent i = new Intent(SplashActivity.this,
-                        KitchenActivity.class);
+                        AdminHomeActivity.class);
                 startActivity(i);
                 finishAffinity();
                 super.onAuthenticationSucceeded(result);

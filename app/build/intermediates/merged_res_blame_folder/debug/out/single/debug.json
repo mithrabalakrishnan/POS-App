@@ -12,10 +12,6 @@
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\img_arrowleft.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-5:/layout_fragment_home.xml.flat",
-        "source": "com.example.pos_android.app-main-7:/layout/fragment_home.xml"
-    },
-    {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_img_car.xml.flat",
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\img_car.xml"
     },
@@ -238,6 +234,10 @@
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-debug-6:\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.pos_android.app-merged_res-5:/layout_activity_best_selling_report.xml.flat",
+        "source": "com.example.pos_android.app-main-7:/layout/activity_best_selling_report.xml"
     },
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_ic_arrow_back.xml.flat",

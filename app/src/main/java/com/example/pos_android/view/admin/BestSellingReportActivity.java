@@ -18,9 +18,13 @@ import com.example.pos_android.data.model.sales_report.FoodDetail;
 import com.example.pos_android.databinding.ActivityBestSellingReportBinding;
 import com.example.pos_android.presenter.BestSellingReportPresenter;
 import com.example.pos_android.view.BaseActivity;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.material.datepicker.MaterialDatePicker;
 
@@ -63,7 +67,7 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
         }
     }
 
-    private void weeklyData(List<Double> chart_data) {
+/*    private void weeklyData(List<Double> chart_data) {
         ArrayList<PieEntry> pieEntries = new ArrayList<>();
         for (int i = 0; i < chart_data.size(); i++) {
             //  pieEntries.add(new PieEntry(convertedList.get(i).floatValue(), foodDetailList.get(i).getFood()));
@@ -71,8 +75,8 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
         PieDataSet pieDataSet = new PieDataSet(pieEntries, "Weekly Report");
         pieDataSet.setValueTextSize(12);
         pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-        binding.pieChart.setData(new PieData(pieDataSet));
-        binding.pieChart.setEntryLabelTextSize(8f);
+        *//*binding.pieChart.setData(new BarData(pieDataSet));
+        binding.pieChart.setEntryLabelTextSize(8f);*//*
         binding.pieChart.animateY(5000);
         // binding.pieChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter());
         binding.pieChart.getDescription().setText("");
@@ -84,18 +88,17 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
 //        binding.pieChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
 //        binding.pieChart.getXAxis().setGranularity(1f);
 //        binding.pieChart.getXAxis().setGranularityEnabled(true);
-    }
+    }*/
 
-    private void weeklyDataChart(List<String> foodList,List<Integer> integerList) {
-        ArrayList<PieEntry> pieEntries = new ArrayList<>();
+    private void weeklyDataChart(List<String> foodList, List<Integer> integerList) {
+        ArrayList<BarEntry> pieEntries = new ArrayList<>();
         for (int i = 0; i < foodList.size(); i++) {
-            pieEntries.add(new PieEntry(integerList.get(i).floatValue(), foodList.get(i)));
+            pieEntries.add(new BarEntry(i,integerList.get(i).floatValue(), foodList.get(i)));
         }
-        PieDataSet pieDataSet = new PieDataSet(pieEntries, "Weekly Report");
+        BarDataSet pieDataSet = new BarDataSet(pieEntries, "Weekly Report");
         pieDataSet.setValueTextSize(12);
         pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-        binding.pieChart.setData(new PieData(pieDataSet));
-        binding.pieChart.setEntryLabelTextSize(8f);
+        binding.pieChart.setData(new BarData(pieDataSet));
         binding.pieChart.animateY(5000);
         // binding.pieChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter());
         binding.pieChart.getDescription().setText("");
@@ -104,25 +107,24 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
 
         final String[] labels = new String[]{"start", "Mon", "Tue", "Wed", "Thu", "Fri",
                 "Sat", "Sun"};
-//        binding.pieChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
-//        binding.pieChart.getXAxis().setGranularity(1f);
-//        binding.pieChart.getXAxis().setGranularityEnabled(true);
+        binding.pieChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
+        binding.pieChart.getXAxis().setGranularity(1f);
+        binding.pieChart.getXAxis().setGranularityEnabled(true);
     }
 
     private void monthlyData(BestSellingReportData chart_data) {
-        ArrayList<PieEntry> pieEntries = new ArrayList<>();
+        ArrayList<BarEntry> pieEntries = new ArrayList<>();
 
         for (int i = 0; i < chart_data.getChart_data().size(); i++) {
             if (chart_data.getChart_data().get(i).floatValue() > 0.0) {
-                pieEntries.add(new PieEntry(chart_data.getChart_data().get(i).floatValue(), chart_data.getFood_details().get(i).getFood()));
+                pieEntries.add(new BarEntry(i, chart_data.getChart_data().get(i).floatValue(), chart_data.getFood_details().get(i).getFood()));
             }
         }
-        PieDataSet pieDataSet = new PieDataSet(pieEntries, "Monthly Report");
-        binding.pieChart.setEntryLabelTextSize(8f);
+        BarDataSet pieDataSet = new BarDataSet(pieEntries, "Monthly Report");
 
         pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         pieDataSet.setValueTextSize(10);
-        binding.pieChart.setData(new PieData(pieDataSet));
+        binding.pieChart.setData(new BarData(pieDataSet));
         binding.pieChart.animateY(3000);
         //  binding.pieChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter());
         binding.pieChart.getDescription().setText("");
@@ -131,9 +133,9 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
 
         final String[] labels = new String[]{"Jan", "Feb", "Mar", "Apr", "May",
                 "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
-    /*    binding.pieChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
+        binding.pieChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
         binding.pieChart.getXAxis().setGranularity(1f);
-        binding.pieChart.getXAxis().setGranularityEnabled(true);*/
+        binding.pieChart.getXAxis().setGranularityEnabled(true);
     }
 
     @Override
@@ -238,7 +240,7 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
         Collections.sort(foodDetailList);
 
         if (response.data.type.equals("Weekly")) {
-            weeklyData(response.data.chart_data);
+           // weeklyData(response.data.chart_data);
         } else {
             monthlyData(response.data);
         }
@@ -263,10 +265,10 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
             if (!foodList.contains(foodResponseList.get(i))) {
                 String item = foodResponseList.get(i);
                 int total = valueResponseList.get(i);
-                for (int j = i+1; j < foodResponseList.size(); j++) {
-                   if (foodResponseList.get(j).equals(item)) {
-                       total+= valueResponseList.get(j);
-                   }
+                for (int j = i + 1; j < foodResponseList.size(); j++) {
+                    if (foodResponseList.get(j).equals(item)) {
+                        total += valueResponseList.get(j);
+                    }
                 }
 
                 foodList.add(item);
@@ -277,7 +279,7 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
                 foodDetailList.add(foodDetail);
             }
         }
-        weeklyDataChart(foodList,valueList);
+        weeklyDataChart(foodList, valueList);
         adapter.notifyDataSetChanged();
         Log.d("handleWeeklyResponse", "foodList: " + foodList);
         Log.d("handleWeeklyResponse", "valueList: " + valueList);

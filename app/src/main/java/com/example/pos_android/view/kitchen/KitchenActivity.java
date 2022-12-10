@@ -63,9 +63,15 @@ public class KitchenActivity extends BaseActivity implements KitchenListingContr
     @Override
     public void onItemClick(Integer position, String from) {
         KitchenResponse.KitchenData data = kitchenDataList.get(position);
-        Intent i = new Intent(this, KitchenOrderDetailActivity.class);
-        i.putExtra("data", data);
-        startActivity(i);
+        Calendar cal = Calendar.getInstance();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        if (dateFormat.format(cal.getTime()).equals(data.getDate())) {
+            Intent i = new Intent(this, KitchenOrderDetailActivity.class);
+            i.putExtra("data", data);
+            startActivity(i);
+        } else
+            showSnackBar(binding.getRoot(), "Can't update order on before or after today");
     }
 
     private void showLogoutDialog() {
@@ -120,9 +126,6 @@ public class KitchenActivity extends BaseActivity implements KitchenListingContr
                 for (KitchenResponse.KitchenData data : saveResponse) {
                     if (dateFormat.parse(data.getDate()).after(new Date(System.currentTimeMillis() - 24 * 60 * 60 * 1000))) {
                         kitchenDataList.add(data);
-//                } else if (!data.getStatus().equals("Completed")) {
-//                    kitchenDataList.add(data);
-//                }
                     }
                     adapter.notifyDataSetChanged();
                 }
