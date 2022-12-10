@@ -29,9 +29,6 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final CardView ivBooking;
 
   @NonNull
-  public final ImageView ivMic;
-
-  @NonNull
   public final RecyclerView popularRecyclerview;
 
   @NonNull
@@ -41,13 +38,11 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final ImageView searchIcon;
 
   private FragmentHomeBinding(@NonNull NestedScrollView rootView, @NonNull ImageSlider imageSlider,
-      @NonNull CardView ivBooking, @NonNull ImageView ivMic,
-      @NonNull RecyclerView popularRecyclerview, @NonNull RecyclerView recentRecyclerview,
-      @NonNull ImageView searchIcon) {
+      @NonNull CardView ivBooking, @NonNull RecyclerView popularRecyclerview,
+      @NonNull RecyclerView recentRecyclerview, @NonNull ImageView searchIcon) {
     this.rootView = rootView;
     this.imageSlider = imageSlider;
     this.ivBooking = ivBooking;
-    this.ivMic = ivMic;
     this.popularRecyclerview = popularRecyclerview;
     this.recentRecyclerview = recentRecyclerview;
     this.searchIcon = searchIcon;
@@ -92,12 +87,6 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.iv_mic;
-      ImageView ivMic = ViewBindings.findChildViewById(rootView, id);
-      if (ivMic == null) {
-        break missingId;
-      }
-
       id = R.id.popular_recyclerview;
       RecyclerView popularRecyclerview = ViewBindings.findChildViewById(rootView, id);
       if (popularRecyclerview == null) {
@@ -116,7 +105,7 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((NestedScrollView) rootView, imageSlider, ivBooking, ivMic,
+      return new FragmentHomeBinding((NestedScrollView) rootView, imageSlider, ivBooking,
           popularRecyclerview, recentRecyclerview, searchIcon);
     }
     String missingId = rootView.getResources().getResourceName(id);

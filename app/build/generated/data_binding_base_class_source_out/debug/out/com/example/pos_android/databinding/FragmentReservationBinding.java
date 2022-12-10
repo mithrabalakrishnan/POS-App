@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,10 +40,13 @@ public final class FragmentReservationBinding implements ViewBinding {
   @NonNull
   public final RecyclerView rvTime;
 
+  @NonNull
+  public final Spinner spinner;
+
   private FragmentReservationBinding(@NonNull LinearLayout rootView,
       @NonNull MaterialButton btnContinue, @NonNull AddGuestLayoutBinding countLayout,
       @NonNull ImageView ivBack, @NonNull RecyclerView rvDate, @NonNull RecyclerView rvTable,
-      @NonNull RecyclerView rvTime) {
+      @NonNull RecyclerView rvTime, @NonNull Spinner spinner) {
     this.rootView = rootView;
     this.btnContinue = btnContinue;
     this.countLayout = countLayout;
@@ -50,6 +54,7 @@ public final class FragmentReservationBinding implements ViewBinding {
     this.rvDate = rvDate;
     this.rvTable = rvTable;
     this.rvTime = rvTime;
+    this.spinner = spinner;
   }
 
   @Override
@@ -116,8 +121,14 @@ public final class FragmentReservationBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.spinner;
+      Spinner spinner = ViewBindings.findChildViewById(rootView, id);
+      if (spinner == null) {
+        break missingId;
+      }
+
       return new FragmentReservationBinding((LinearLayout) rootView, btnContinue,
-          binding_countLayout, ivBack, rvDate, rvTable, rvTime);
+          binding_countLayout, ivBack, rvDate, rvTable, rvTime, spinner);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
