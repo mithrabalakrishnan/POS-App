@@ -60,6 +60,9 @@ public class KitchenOrderDetailActivity extends BaseActivity implements KitchenO
         } else if (kitchenData.getStatus().equals("Completed")) {
 
             binding.rbCompleted.setChecked(true);
+            binding.rbInProgress.setEnabled(false);
+            binding.rgStatus.setEnabled(false);
+            binding.buttonStatus.setVisibility(View.GONE);
         } else {
             binding.rbCompleted.setChecked(false);
             binding.rbInProgress.setChecked(false);
