@@ -5,9 +5,9 @@ import android.content.Context;
 import com.example.pos_android.R;
 import com.example.pos_android.contracts.KitchenListingContract;
 import com.example.pos_android.contracts.KitchenOrderDetailContract;
-import com.example.pos_android.data.model.CommonResponse;
 import com.example.pos_android.data.model.KitchenResponse;
 import com.example.pos_android.data.model.KitchenUpdateStatusResponse;
+import com.example.pos_android.data.model.UserProfileResponse;
 import com.example.pos_android.data.model.request.KitchenRequestData;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.network.api_manager.ApiDataManager;
@@ -49,6 +49,23 @@ public class KitchenPresenter implements KitchenListingContract.Presenter, Kitch
 
         } else
             mView.showWarningMessage(mContext.getString(R.string.no_network));
+    }
+
+    @Override
+    public void getUserProfile() {
+        if (NetworkManager.isNetworkAvailable(mContext)) {
+            mApiDataManager.getKitchenUserDetails(sessionManager.getUserToken(), this);
+
+        } else
+            mView.showWarningMessage(mContext.getString(R.string.no_network));
+    }
+
+    @Override
+    public void onUserProfileResponseCallback(UserProfileResponse response) {
+        if (response.isStatus()) {
+            mView.showUserProfileResponse(response);
+        } else
+            mView.showWarningMessage(response.getMessage());
     }
 
     @Override

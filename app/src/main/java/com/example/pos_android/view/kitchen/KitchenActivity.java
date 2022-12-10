@@ -2,6 +2,7 @@ package com.example.pos_android.view.kitchen;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -9,6 +10,7 @@ import com.example.pos_android.R;
 import com.example.pos_android.adapter.KitchenOrderListingAdapter;
 import com.example.pos_android.contracts.KitchenListingContract;
 import com.example.pos_android.data.model.KitchenResponse;
+import com.example.pos_android.data.model.UserProfileResponse;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.databinding.ActivityKitchenBinding;
 import com.example.pos_android.presenter.KitchenPresenter;
@@ -17,7 +19,12 @@ import com.example.pos_android.view.BaseActivity;
 import com.example.pos_android.view.login.LoginActivity;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class KitchenActivity extends BaseActivity implements KitchenListingContract.View, OnItemClickListener {
@@ -50,6 +57,7 @@ public class KitchenActivity extends BaseActivity implements KitchenListingContr
     protected void onResume() {
         super.onResume();
         presenter.callKitchenOrderList();
+        presenter.getUserProfile();
     }
 
     @Override
@@ -97,17 +105,30 @@ public class KitchenActivity extends BaseActivity implements KitchenListingContr
     }
 
     @Override
+    public void showUserProfileResponse(UserProfileResponse response) {
+        binding.tvUser.setText("Hi, " + response.getData().username);
+    }
+
+    @Override
     public void showKitchenOrderListApiSuccess(List<KitchenResponse.KitchenData> saveResponse) {
         if (saveResponse.size() > 0) {
             kitchenDataList.clear();
-            for (KitchenResponse.KitchenData data : saveResponse) {
-//                if (data.getStatus() == null) {
-                    kitchenDataList.add(data);
+            try {
+                Calendar cal = Calendar.getInstance();
+                DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                System.out.println("Today's date is " + dateFormat.format(cal.getTime()));
+                for (KitchenResponse.KitchenData data : saveResponse) {
+                    if (dateFormat.parse(data.getDate()).after(new Date(System.currentTimeMillis() - 24 * 60 * 60 * 1000))) {
+                        kitchenDataList.add(data);
 //                } else if (!data.getStatus().equals("Completed")) {
 //                    kitchenDataList.add(data);
 //                }
+                    }
+                    adapter.notifyDataSetChanged();
+                }
+            } catch (ParseException e) {
+                Log.d("Date exception", "showAllVouchers: " + e);
             }
-            adapter.notifyDataSetChanged();
         }
     }
 
