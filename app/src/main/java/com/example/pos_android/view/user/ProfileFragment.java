@@ -168,6 +168,11 @@ public class ProfileFragment extends BaseFragment implements UserProfileContract
         binding.tvUserName.setText(String.format("%s%s%s", mData.firstName, " ", mData.lastName));
     }
 
+    @Override
+    public void showSuccess(String message) {
+
+    }
+
     private Boolean checkBiometricSupport() {
 
         KeyguardManager keyguardManager =

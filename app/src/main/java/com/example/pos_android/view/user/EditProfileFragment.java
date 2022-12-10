@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 
+import androidx.navigation.Navigation;
+
 import com.example.pos_android.contracts.UserProfileContract;
 import com.example.pos_android.data.model.UserProfileResponse;
 import com.example.pos_android.databinding.FragmentEditProfileBinding;
@@ -47,7 +49,19 @@ public class EditProfileFragment extends BaseFragment implements UserProfileCont
         binding.buttonUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                presenter.updateUserProfile(
+                        binding.editFirstName.getText().toString(),
+                        binding.editLastName.getText().toString(),
+                        binding.editEmail.getText().toString(),
+                        binding.editMobile.getText().toString()
+                );
+            }
+        });
 
+        binding.ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(requireView()).popBackStack();
             }
         });
     }
@@ -61,7 +75,6 @@ public class EditProfileFragment extends BaseFragment implements UserProfileCont
     }
 
     private void setupEditFields() {
-        makeEditable(binding.editUserName);
         makeEditable(binding.editEmail);
         makeEditable(binding.editFirstName);
         makeEditable(binding.editLastName);
@@ -70,7 +83,6 @@ public class EditProfileFragment extends BaseFragment implements UserProfileCont
     }
 
     private void makeNotEditable() {
-        makeNonEditable(binding.editUserName);
         makeNonEditable(binding.editEmail);
         makeNonEditable(binding.editFirstName);
         makeNonEditable(binding.editLastName);
@@ -114,5 +126,11 @@ public class EditProfileFragment extends BaseFragment implements UserProfileCont
         binding.editUserName.setText(response.getData().getUsername());
         binding.editEmail.setText(response.getData().getEmail());
         binding.editMobile.setText(response.getData().getPhone_no());
+    }
+
+    @Override
+    public void showSuccess(String message) {
+        showToast(requireContext(), message);
+        Navigation.findNavController(requireView()).popBackStack();
     }
 }

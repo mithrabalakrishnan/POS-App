@@ -1,11 +1,14 @@
 package com.example.pos_android.data.model.food;
 
+import com.example.pos_android.data.model.UserHomeResponse;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class CategoryDetailResponse {
     public boolean status;
     public String message;
-    public ArrayList<CategoryDetailData> data;
+    public List<UserHomeResponse.PopularFood> data;
 
     public boolean isStatus() {
         return status;
@@ -23,11 +26,11 @@ public class CategoryDetailResponse {
         this.message = message;
     }
 
-    public ArrayList<CategoryDetailData> getData() {
+    public List<UserHomeResponse.PopularFood> getData() {
         return data;
     }
 
-    public void setData(ArrayList<CategoryDetailData> data) {
+    public void setData(List<UserHomeResponse.PopularFood> data) {
         this.data = data;
     }
 }

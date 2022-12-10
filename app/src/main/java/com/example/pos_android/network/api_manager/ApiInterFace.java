@@ -3,6 +3,8 @@ package com.example.pos_android.network.api_manager;
 import com.example.pos_android.data.model.AddKitchenResponse;
 import com.example.pos_android.data.model.AddVoucherResponse;
 import com.example.pos_android.data.model.CommonResponse;
+import com.example.pos_android.data.model.CustomerReportResponse;
+import com.example.pos_android.data.model.EditProfileResponse;
 import com.example.pos_android.data.model.GetVoucherResponse;
 import com.example.pos_android.data.model.HistoryResponse;
 import com.example.pos_android.data.model.ImagePickerResponse;
@@ -18,6 +20,7 @@ import com.example.pos_android.data.model.food.CategoryModel;
 import com.example.pos_android.data.model.food.FoodOrderResponseModel;
 import com.example.pos_android.data.model.food.foodCategoryResponse;
 import com.example.pos_android.data.model.request.AddFoodRequestData;
+import com.example.pos_android.data.model.request.EditProfileRequestData;
 import com.example.pos_android.data.model.request.FoodOrderRequestData;
 import com.example.pos_android.data.model.request.KitchenRequestData;
 import com.example.pos_android.data.model.request.LoginRequestData;
@@ -139,7 +142,7 @@ public interface ApiInterFace {
             @Header("Authorization") String string,
             @Body RegisterRequestData requestData);
 
-    @GET("food-categorye")
+    @GET("food-category")
     Observable<foodCategoryResponse> getFoodCategory(
             @Header("Authorization") String string
     );
@@ -147,7 +150,7 @@ public interface ApiInterFace {
     @GET("category-detail")
     Observable<CategoryDetailResponse> getCategoryDetail(
             @Header("Authorization") String string,
-            @Body CategoryModel categoryModel);
+            @Query("category") String category);
 
     @POST("add-voucher")
     Observable<AddVoucherResponse> addVoucherToUser(
@@ -162,4 +165,15 @@ public interface ApiInterFace {
     @GET("all-voucher")
     Observable<GetVoucherResponse> getAllVoucher(
             @Header("Authorization") String string);
+
+    @GET("customer-month-report")
+    Observable<CustomerReportResponse> getCustomerReport(
+            @Header("Authorization") String string,
+            @Query("month") String month
+    );
+
+    @PUT("update-profile")
+    Observable<EditProfileResponse> updateUserProfile(
+            @Header("Authorization") String string,
+            @Body EditProfileRequestData voucherData);
 }

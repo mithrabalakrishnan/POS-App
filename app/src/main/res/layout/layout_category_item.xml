@@ -8,6 +8,7 @@
         android:layout_height="wrap_content"
         android:textSize="11sp"
         android:textStyle="bold"
+        android:layout_margin="10dp"
         app:cornerRadius="20dp"
         android:id="@+id/btn_category"
         app:layout_constraintStart_toStartOf="parent"

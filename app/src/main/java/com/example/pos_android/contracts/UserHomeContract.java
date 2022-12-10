@@ -21,7 +21,7 @@ public interface UserHomeContract {
         void onHomeResponseCallback(UserHomeResponse userHomeResponse);
         void getCategory();
         void onCategoryResponse(foodCategoryResponse foodCategoryResponse);
-        void getCategoryItems(CategoryModel categoryModel);
+        void getCategoryItems(String category);
         void onCategoryItemsResponse(CategoryDetailResponse categoryDetailResponse);
 
     }

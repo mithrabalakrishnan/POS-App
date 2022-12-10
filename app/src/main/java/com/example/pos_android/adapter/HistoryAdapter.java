@@ -1,12 +1,16 @@
 package com.example.pos_android.adapter;
 
 import android.content.Context;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.pos_android.R;
 import com.example.pos_android.data.model.HistoryResponse;
 import com.example.pos_android.databinding.LayoutHistoryBinding;
 import com.example.pos_android.utils.OnItemClickListener;
@@ -64,6 +68,34 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
             historyBinding.tvTime.setText(model.getTime());
             historyBinding.tvTotal.setText(String.valueOf(model.getTotalPrice()));
             historyBinding.tvDate.setText(String.valueOf(model.getDate()));
+
+            ///create linear layout programmatically
+            LinearLayout layout = new LinearLayout(context);
+            layout.setOrientation(LinearLayout.HORIZONTAL);
+            layout.setPadding(0, 8, 0, 0);
+
+            ///Adds the itemName
+            TextView itemName = new TextView(context);
+            itemName.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1.0f));
+            itemName.setText(model.getFoodName());
+            itemName.setTextSize(15);
+            itemName.setPadding(15, 0, 0, 0);
+            itemName.setTextColor(context.getResources().getColor(R.color.black));
+
+            ///Adds the itemCount
+            TextView itemCount = new TextView(context);
+            itemCount.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1.0f));
+            itemCount.setText(String.valueOf(model.getQuanty()));
+            itemCount.setTextSize(15);
+            itemCount.setGravity(Gravity.END);
+            itemCount.setPadding(0, 0, 15, 0);
+            itemCount.setTextColor(context.getResources().getColor(R.color.red_500));
+
+            layout.addView(itemName);
+            layout.addView(itemCount);
+
+            historyBinding.layoutFoodDetails.addView(layout);
+
             historyBinding.tvTableId.setText(String.valueOf(model.getTableId()));
             historyBinding.tvStatus.setText(String.valueOf(model.getStatus()));
         }

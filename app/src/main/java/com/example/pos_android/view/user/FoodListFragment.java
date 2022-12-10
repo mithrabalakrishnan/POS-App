@@ -14,14 +14,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pos_android.adapter.AddFoodAdapter;
-import com.example.pos_android.adapter.CategoryFoodAdapter;
 import com.example.pos_android.adapter.CategoryListingAdapter;
 import com.example.pos_android.contracts.UserHomeContract;
 import com.example.pos_android.data.model.FoodModel;
 import com.example.pos_android.data.model.TableInfoModel;
 import com.example.pos_android.data.model.UserHomeResponse;
 import com.example.pos_android.data.model.food.CategoryDetailResponse;
-import com.example.pos_android.data.model.food.CategoryModel;
 import com.example.pos_android.data.model.food.foodCategoryResponse;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.data.room.CartDatabase;
@@ -38,11 +36,13 @@ import java.util.ArrayList;
 public class FoodListFragment extends BaseFragment implements UserHomeContract.View, OnItemClickListener, onCategoryItemClick {
     AddFoodAdapter popularAdapter;
     AddFoodAdapter recentAdapter;
-    CategoryFoodAdapter categoryFoodAdapter;
+    AddFoodAdapter categoryFoodAdapter;
     CategoryListingAdapter categoryListingAdapter;
     UserHomePresenter presenter;
     ArrayList<FoodModel> popularArrayList = new ArrayList<>();
     ArrayList<FoodModel> recommendedList = new ArrayList<>();
+    ArrayList<FoodModel> categoryList = new ArrayList<>();
+    ArrayList<String> categories = new ArrayList<>();
     private FragmentFoodListBinding binding;
     private SessionManager sessionManager;
     private CartDatabase db;
@@ -75,6 +75,7 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
         db = CartDatabase.getAppDatabase(requireContext());
         presenter = new UserHomePresenter(FoodListFragment.this, requireContext());
         presenter.getHomeDetails();
+        presenter.getCategory();
 
         binding.btnContinue.setOnClickListener(v -> {
 //            if (sessionManager.getIsFoodAdded()) {
@@ -105,6 +106,7 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
 
     @Override
     public void showApiErrorWarning(String string) {
+        hideLoadingDialog();
         if (string.equalsIgnoreCase("HTTP 401 ")) {
             SessionManager sessionManager = new SessionManager(requireContext());
             sessionManager.clear();
@@ -118,6 +120,7 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
 
     @Override
     public void showWarningMessage(String message) {
+        hideLoadingDialog();
         showToast(requireContext(), message);
     }
 
@@ -145,18 +148,25 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
 
     @Override
     public void showCategoryResponse(foodCategoryResponse foodCategoryResponse) {
+        categories.clear();
+        categories.addAll(foodCategoryResponse.data.foodCategory);
         binding.titleCategory.setVisibility(View.VISIBLE);
         binding.rvCategories.setVisibility(View.VISIBLE);
-        categoryListingAdapter =new CategoryListingAdapter(foodCategoryResponse.data.foodCategory,requireContext(),this);
+        categoryListingAdapter = new CategoryListingAdapter(foodCategoryResponse.data.foodCategory, requireContext(), this);
         binding.rvCategories.setLayoutManager(new LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false));
         binding.rvCategories.setAdapter(categoryListingAdapter);
     }
 
     @Override
     public void showCategoryItemsResponse(CategoryDetailResponse categoryDetailResponse) {
-        categoryFoodAdapter = new CategoryFoodAdapter(categoryDetailResponse.data,requireContext(),this);
-        binding.rvCategoriesItems.setLayoutManager(new GridLayoutManager(requireContext(),2));
-//        binding.rvCategoriesItems
+        categoryList.clear();
+        for (UserHomeResponse.PopularFood food : categoryDetailResponse.getData()) {
+            categoryList.add(new FoodModel(String.valueOf(food.getFoodId()),
+                    food.getName(), food.getImage(), food.getPrice()));
+        }
+        categoryFoodAdapter = new AddFoodAdapter(categoryList, requireContext(), this);
+        binding.rvCategoriesItems.setLayoutManager(new GridLayoutManager(requireContext(), 2));
+        binding.rvCategoriesItems.setAdapter(categoryFoodAdapter);
     }
 
     @Override
@@ -185,6 +195,6 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
 
     @Override
     public void onCategoryClick(Integer position, String from) {
-        presenter.getCategoryItems(new CategoryModel(from));
+        presenter.getCategoryItems(categories.get(position));
     }
 }

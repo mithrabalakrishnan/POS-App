@@ -2,8 +2,14 @@ package com.example.pos_android.view.admin;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 
+import com.example.pos_android.contracts.CustomerReportContract;
+import com.example.pos_android.data.model.CustomerReportResponse;
 import com.example.pos_android.databinding.ActivityCustomerReportBinding;
+import com.example.pos_android.presenter.CustomerReportPresenter;
 import com.example.pos_android.view.BaseActivity;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
@@ -12,9 +18,15 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
-public class CustomerReportActivity extends BaseActivity {
+public class CustomerReportActivity extends BaseActivity implements CustomerReportContract.View, AdapterView.OnItemSelectedListener {
+    ArrayList<BarEntry> barEntries = new ArrayList<>();
+    String[] filterData = {"Select", "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER",
+            "NOVEMBER", "DECEMBER"};
     private ActivityCustomerReportBinding binding;
+    private CustomerReportPresenter reportPresenter;
+    private String[] labels;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,26 +37,23 @@ public class CustomerReportActivity extends BaseActivity {
     }
 
     private void initView() {
+        reportPresenter = new CustomerReportPresenter(this, this);
         binding.iconBack.setOnClickListener(view -> {
             onBackPressed();
         });
-        ArrayList<Double> dataList = new ArrayList<Double>();
-        dataList.add(8.0);
-        dataList.add(6.0);
-        dataList.add(2.0);
-        dataList.add(1.0);
-        dataList.add(1.0);
-        monthlyData(dataList);
-
+        filterSpinnerSet();
     }
 
-    public void monthlyData(ArrayList<Double> chart_data) {
-        ArrayList<BarEntry> barEntries = new ArrayList<>();
-        barEntries.add(new BarEntry(0.F, chart_data.get(0).floatValue()));
-        barEntries.add(new BarEntry(1.F, chart_data.get(1).floatValue()));
-        barEntries.add(new BarEntry(2.F, chart_data.get(2).floatValue()));
-        barEntries.add(new BarEntry(3.F, chart_data.get(3).floatValue()));
-        barEntries.add(new BarEntry(4.F, chart_data.get(4).floatValue()));
+    private void filterSpinnerSet() {
+        binding.spinner.setOnItemSelectedListener(this);
+        ArrayAdapter spinnerAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, filterData);
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Setting the ArrayAdapter data on the Spinner
+        binding.spinner.setAdapter(spinnerAdapter);
+    }
+
+
+    public void monthlyData() {
         BarDataSet barDataSet = new BarDataSet(barEntries, "Customer Report");
         barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
         barDataSet.setValueTextSize(12);
@@ -55,11 +64,55 @@ public class CustomerReportActivity extends BaseActivity {
         binding.chart.getDescription().setText("");
         binding.chart.getDescription().setTextColor(Color.BLUE);
         binding.chart.setDrawGridBackground(false);
-
-
-        final String[] labels = new String[]{"Alen", "George", "May", "John", "Amith"};
         binding.chart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
         binding.chart.getXAxis().setGranularity(1f);
         binding.chart.getXAxis().setGranularityEnabled(true);
+    }
+
+    @Override
+    public void showProgressBar() {
+        showLoadingDialog(this);
+    }
+
+    @Override
+    public void hideProgressBar() {
+        hideLoadingDialog();
+    }
+
+    @Override
+    public void showApiErrorWarning(String string) {
+        hideLoadingDialog();
+        showToast(this, string);
+    }
+
+    @Override
+    public void showWarningMessage(String message) {
+        showToast(this, message);
+    }
+
+
+    @Override
+    public void showReportResponse(CustomerReportResponse response) {
+        barEntries.clear();
+        labels = new String[response.getData().size()];
+        for (int i = 0; i < response.getData().size(); i++) {
+            barEntries.add(new BarEntry(i, (float) response.getData().get(i).getVisitList().get(0)));
+            labels[i] = response.getData().get(i).getUsername();
+        }
+        monthlyData();
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String selectedItem = filterData[position];
+        if (!selectedItem.equals("Select")) {
+            binding.tvDateRange.setText(filterData[position]);
+            reportPresenter.getReport(filterData[position]);
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }

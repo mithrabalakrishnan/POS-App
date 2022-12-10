@@ -55,7 +55,6 @@ public class UserHomePresenter implements UserHomeContract.Presenter {
     @Override
     public void getCategory() {
         if (NetworkManager.isNetworkAvailable(mContext)) {
-            mView.showProgressBar();
 
             mApiDataManager.getCategories(sessionManager.getUserToken(), this);
 
@@ -66,7 +65,6 @@ public class UserHomePresenter implements UserHomeContract.Presenter {
 
     @Override
     public void onCategoryResponse(foodCategoryResponse foodCategoryResponse) {
-        mView.hideProgressBar();
         if (foodCategoryResponse.isStatus()) {
             mView.showCategoryResponse(foodCategoryResponse);
         } else
@@ -74,11 +72,11 @@ public class UserHomePresenter implements UserHomeContract.Presenter {
     }
 
     @Override
-    public void getCategoryItems(CategoryModel categoryModel) {
+    public void getCategoryItems(String category) {
         if (NetworkManager.isNetworkAvailable(mContext)) {
             mView.showProgressBar();
 
-            mApiDataManager.getCategoriesItems(sessionManager.getUserToken(), this, categoryModel);
+            mApiDataManager.getCategoriesItems(sessionManager.getUserToken(), category, this);
 
         } else
             mView.showWarningMessage(mContext.getString(R.string.no_network));

@@ -2900,6 +2900,7 @@ drawable add
 drawable add_guest_circle
 drawable app_main
 drawable bg_rounded_stroke
+drawable black_cursor
 drawable black_friday
 drawable book_table
 drawable border

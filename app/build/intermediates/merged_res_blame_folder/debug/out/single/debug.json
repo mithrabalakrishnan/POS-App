@@ -1,15 +1,19 @@
 [
     {
-        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_ic_shopping_bag.xml.flat",
-        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\ic_shopping_bag.xml"
-    },
-    {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\font_montserrat.xml.flat",
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\font\\montserrat.xml"
     },
     {
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_ic_shopping_bag.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\ic_shopping_bag.xml"
+    },
+    {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_img_arrowleft.xml.flat",
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\img_arrowleft.xml"
+    },
+    {
+        "merged": "com.example.pos_android.app-merged_res-5:/layout_fragment_home.xml.flat",
+        "source": "com.example.pos_android.app-main-7:/layout/fragment_home.xml"
     },
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_img_car.xml.flat",
@@ -44,12 +48,12 @@
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-pngs-0:\\drawable-xxxhdpi\\black_friday.png"
     },
     {
-        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable-v24_fast_food.png.flat",
-        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable-v24\\fast_food.png"
-    },
-    {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_button_selector.xml.flat",
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\button_selector.xml"
+    },
+    {
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable-v24_fast_food.png.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable-v24\\fast_food.png"
     },
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_mastercard.xml.flat",
@@ -320,6 +324,10 @@
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\ic_edit.xml"
     },
     {
+        "merged": "com.example.pos_android.app-merged_res-5:/layout_fragment_edit_profile.xml.flat",
+        "source": "com.example.pos_android.app-main-7:/layout/fragment_edit_profile.xml"
+    },
+    {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable-v24_ic_no_cart.png.flat",
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable-v24\\ic_no_cart.png"
     },
@@ -418,6 +426,10 @@
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_layout_category_item.xml.flat",
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\layout_category_item.xml"
+    },
+    {
+        "merged": "com.example.pos_android.app-merged_res-5:/drawable_black_cursor.xml.flat",
+        "source": "com.example.pos_android.app-main-7:/drawable/black_cursor.xml"
     },
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_ic_email.xml.flat",
@@ -584,20 +596,16 @@
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\layout_all_food_item.xml"
     },
     {
-        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_book_table.jpg.flat",
-        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\book_table.jpg"
-    },
-    {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_activity_customer_report.xml.flat",
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\activity_customer_report.xml"
     },
     {
-        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_fragment_edit_profile.xml.flat",
-        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\fragment_edit_profile.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\drawable_book_table.jpg.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\drawable\\book_table.jpg"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-5:/layout_fragment_payment.xml.flat",
-        "source": "com.example.pos_android.app-main-7:/layout/fragment_payment.xml"
+        "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\layout_fragment_edit_profile.xml.flat",
+        "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\fragment_edit_profile.xml"
     },
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-5:\\font_inter.xml.flat",

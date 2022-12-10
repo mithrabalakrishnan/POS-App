@@ -5482,6 +5482,7 @@ drawable app_main
 drawable avd_hide_password
 drawable avd_show_password
 drawable bg_rounded_stroke
+drawable black_cursor
 drawable black_friday
 drawable book_table
 drawable border

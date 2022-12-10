@@ -5,6 +5,8 @@ import android.util.Log;
 import com.example.pos_android.data.model.AddKitchenResponse;
 import com.example.pos_android.data.model.AddVoucherResponse;
 import com.example.pos_android.data.model.CommonResponse;
+import com.example.pos_android.data.model.CustomerReportResponse;
+import com.example.pos_android.data.model.EditProfileResponse;
 import com.example.pos_android.data.model.GetVoucherResponse;
 import com.example.pos_android.data.model.HistoryResponse;
 import com.example.pos_android.data.model.ImagePickerResponse;
@@ -15,6 +17,7 @@ import com.example.pos_android.data.model.RegisterResponse;
 import com.example.pos_android.data.model.TableReservationResponse;
 import com.example.pos_android.data.model.UserHomeResponse;
 import com.example.pos_android.data.model.UserProfileResponse;
+import com.example.pos_android.data.model.request.EditProfileRequestData;
 import com.example.pos_android.data.model.request.VoucherRequestData;
 import com.example.pos_android.data.model.food.CategoryDetailResponse;
 import com.example.pos_android.data.model.food.CategoryModel;
@@ -34,6 +37,7 @@ import com.example.pos_android.presenter.AddFoodPresenter;
 import com.example.pos_android.presenter.AddKitchenPresenter;
 import com.example.pos_android.presenter.BestSellingReportPresenter;
 import com.example.pos_android.presenter.ConfirmOrderPresenter;
+import com.example.pos_android.presenter.CustomerReportPresenter;
 import com.example.pos_android.presenter.HistoryPresenter;
 import com.example.pos_android.presenter.IncomePerItemMonthlyPresenter;
 import com.example.pos_android.presenter.KitchenPresenter;
@@ -761,13 +765,13 @@ public class ApiDataManager {
         }
     }
 
-    public void getCategoriesItems(String token, UserHomePresenter mPresenter, CategoryModel categoryModel) {
+    public void getCategoriesItems(String token, String category, UserHomePresenter mPresenter) {
         try {
             if (apiInterFace == null)
                 apiInterFace = ApiClient.getClientServerApi().create(ApiInterFace.class);
 
             apiInterFace
-                    .getCategoryDetail("Bearer " + token, categoryModel)
+                    .getCategoryDetail("Bearer " + token, category)
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeOn(Schedulers.io())
                     .subscribe(new Observer<CategoryDetailResponse>() {
@@ -871,5 +875,81 @@ public class ApiDataManager {
             Log.e(TAG, "Exception caught in " + e.getMessage().toString());
         }
     }
+
+    public void getCustomerReportDetails(String token, String month, CustomerReportPresenter mPresenter) {
+        try {
+            if (apiInterFace == null)
+                apiInterFace = ApiClient.getClientServerApi().create(ApiInterFace.class);
+
+            apiInterFace
+                    .getCustomerReport("Bearer " + token,month)
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeOn(Schedulers.io())
+                    .subscribe(new Observer<CustomerReportResponse>() {
+                        @Override
+                        public void onSubscribe(Disposable d) {
+                        }
+
+                        @Override
+                        public void onNext(CustomerReportResponse response) {
+                            mPresenter.onReportResponse(response);
+                        }
+
+                        @Override
+                        public void onError(Throwable e) {
+                            Log.e(TAG, "onError: " + e.getMessage());
+                            mPresenter.onApiError(e.getLocalizedMessage());
+                        }
+
+                        @Override
+                        public void onComplete() {
+                        }
+                    });
+
+
+        } catch (Exception e) {
+            mPresenter.onApiError(e.getMessage());
+            Log.e(TAG, "Exception caught in " + e.getMessage().toString());
+        }
+    }
+
+    public void updateUserProfile(EditProfileRequestData requestData, String token, UserProfilePresenter mPresenter) {
+        try {
+            if (apiInterFace == null)
+                apiInterFace = ApiClient.getClientServerApi().create(ApiInterFace.class);
+
+            apiInterFace
+                    .updateUserProfile("Bearer " + token, requestData)
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeOn(Schedulers.io())
+                    .subscribe(new Observer<EditProfileResponse>() {
+                        @Override
+                        public void onSubscribe(Disposable d) {
+                        }
+
+                        @Override
+                        public void onNext(EditProfileResponse response) {
+                            mPresenter.onUserUpdateProfileResponse(response);
+                        }
+
+                        @Override
+                        public void onError(Throwable e) {
+                            Log.e(TAG, "onError: " + e.getMessage());
+                            mPresenter.onApiError(e.getMessage());
+                        }
+
+                        @Override
+                        public void onComplete() {
+                        }
+                    });
+
+
+        } catch (Exception e) {
+            mPresenter.onApiError(e.getMessage());
+            Log.e(TAG, "Exception caught in " + e.getMessage().toString());
+        }
+    }
+
+
 
 }
