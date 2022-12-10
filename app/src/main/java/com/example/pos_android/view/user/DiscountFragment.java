@@ -1,6 +1,7 @@
 package com.example.pos_android.view.user;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,8 +22,13 @@ import com.example.pos_android.presenter.VoucherPresenter;
 import com.example.pos_android.utils.OnItemClickListener;
 import com.example.pos_android.view.BaseFragment;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+import java.util.Objects;
 import java.util.Random;
 
 
@@ -101,19 +107,35 @@ public class DiscountFragment extends BaseFragment implements OnItemClickListene
 
     @Override
     public void showAllVouchers(GetVoucherResponse response) {
-        couponsData.clear();
-        for (int i = 0; i < response.getData().size(); i++) {
-            Random rand = new Random();
-            CouponsData data = new CouponsData(
-                    response.getData().get(i).getVoucherTitle(),
-                    response.getData().get(i).getDate(),
-                    response.getData().get(i).getVoucherCode(),
-                    presenter.voucherImages.get(rand.nextInt(presenter.voucherImages.size())),
-                    Integer.parseInt(response.getData().get(i).getVoucherDiscount()
-                    )
-            );
-            couponsData.add(data);
-            adapter.notifyDataSetChanged();
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+            String currentDateToString = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+            Date currentDate = sdf.parse(currentDateToString);
+            couponsData.clear();
+            for (int i = 0; i < response.getData().size(); i++) {
+
+                Date offerDate = sdf.parse(response.getData().get(i).getDate());
+                if (Objects.requireNonNull(currentDate).compareTo(offerDate)<0){
+                    Log.e("hit","hit at");
+                }
+                else{
+                Random rand = new Random();
+                CouponsData data = new CouponsData(
+                        response.getData().get(i).getVoucherTitle(),
+                        response.getData().get(i).getDate(),
+                        response.getData().get(i).getVoucherCode(),
+                        presenter.voucherImages.get(rand.nextInt(presenter.voucherImages.size())),
+                        Integer.parseInt(response.getData().get(i).getVoucherDiscount()
+                        )
+                );
+                couponsData.add(data);
+                adapter.notifyDataSetChanged();
+            }
+            }
+
+
+        } catch (ParseException e1) {
+            e1.printStackTrace();
         }
     }
 }

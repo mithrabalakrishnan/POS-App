@@ -1,17 +1,34 @@
 package com.example.pos_android.data.model.food;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class CategoryDetailData {
-    public int foodid;
-    public String food_name;
+    @SerializedName("foodid")
+    @Expose
+    public int foodId;
+    @SerializedName("food_name")
+    @Expose
+    public String foodName;
+    @SerializedName("category")
+    @Expose
     public String category;
+    @SerializedName("rating")
+    @Expose
     public String rating;
+    @SerializedName("price")
+    @Expose
     public String price;
+    @SerializedName("image")
+    @Expose
     public String image;
+    @SerializedName("status")
+    @Expose
     public String status;
 
-    public CategoryDetailData(int foodid, String food_name, String category, String rating, String price, String image, String status) {
-        this.foodid = foodid;
-        this.food_name = food_name;
+    public CategoryDetailData(int foodId, String foodName, String category, String rating, String price, String image, String status) {
+        this.foodId = foodId;
+        this.foodName = foodName;
         this.category = category;
         this.rating = rating;
         this.price = price;
@@ -19,20 +36,20 @@ public class CategoryDetailData {
         this.status = status;
     }
 
-    public int getFoodid() {
-        return foodid;
+    public int getFoodId() {
+        return foodId;
     }
 
-    public void setFoodid(int foodid) {
-        this.foodid = foodid;
+    public void setFoodId(int foodId) {
+        this.foodId = foodId;
     }
 
-    public String getFood_name() {
-        return food_name;
+    public String getFoodName() {
+        return foodName;
     }
 
-    public void setFood_name(String food_name) {
-        this.food_name = food_name;
+    public void setFoodName(String foodName) {
+        this.foodName = foodName;
     }
 
     public String getCategory() {
