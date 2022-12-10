@@ -1,51 +1,46 @@
 package com.example.pos_android.network.api_manager;
 
 import com.example.pos_android.data.model.AddKitchenResponse;
+import com.example.pos_android.data.model.AddVoucherResponse;
 import com.example.pos_android.data.model.CommonResponse;
+import com.example.pos_android.data.model.GetVoucherResponse;
 import com.example.pos_android.data.model.HistoryResponse;
 import com.example.pos_android.data.model.ImagePickerResponse;
 import com.example.pos_android.data.model.KitchenResponse;
 import com.example.pos_android.data.model.KitchenUpdateStatusResponse;
 import com.example.pos_android.data.model.LoginResponse;
-import com.example.pos_android.data.model.RecaptchaVerifyResponse;
 import com.example.pos_android.data.model.RegisterResponse;
 import com.example.pos_android.data.model.TableReservationResponse;
 import com.example.pos_android.data.model.UserHomeResponse;
 import com.example.pos_android.data.model.UserProfileResponse;
-import com.example.pos_android.data.model.VoucherRequestData;
 import com.example.pos_android.data.model.food.CategoryDetailResponse;
 import com.example.pos_android.data.model.food.CategoryModel;
 import com.example.pos_android.data.model.food.FoodOrderResponseModel;
 import com.example.pos_android.data.model.food.foodCategoryResponse;
-import com.example.pos_android.data.model.kitchen.KitchenOrderResponse;
-import com.example.pos_android.data.model.kitchen.KitchenUpdateOrderPayload;
 import com.example.pos_android.data.model.request.AddFoodRequestData;
 import com.example.pos_android.data.model.request.FoodOrderRequestData;
 import com.example.pos_android.data.model.request.KitchenRequestData;
 import com.example.pos_android.data.model.request.LoginRequestData;
 import com.example.pos_android.data.model.request.RegisterRequestData;
 import com.example.pos_android.data.model.request.TableRequestData;
+import com.example.pos_android.data.model.request.VoucherRequestData;
 import com.example.pos_android.data.model.sales_report.BestSellingReportResponse;
 import com.example.pos_android.data.model.sales_report.BestSellingReportWeeklyResponse;
 import com.example.pos_android.data.model.sales_report.IncomePerItemMonthlyResponse;
 import com.example.pos_android.data.model.sales_report.SalesReportResponse;
 
 import java.util.List;
-import java.util.Map;
 
 import io.reactivex.Observable;
 import okhttp3.MultipartBody;
-import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
-import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Part;
 import retrofit2.http.Query;
-import retrofit2.http.QueryMap;
 
 public interface ApiInterFace {
 
@@ -154,10 +149,17 @@ public interface ApiInterFace {
             @Header("Authorization") String string,
             @Body CategoryModel categoryModel);
 
-
-
-     @POST("voucher-add")
-    Observable<CommonResponse> addVoucherToUser(
+    @POST("add-voucher")
+    Observable<AddVoucherResponse> addVoucherToUser(
             @Header("Authorization") String string,
             @Body VoucherRequestData voucherData);
+
+    @PUT("update-profile")
+    Observable<KitchenUpdateStatusResponse> updateProfile(
+            @Header("Authorization") String string,
+            @Body KitchenRequestData requestData);
+
+    @GET("all-voucher")
+    Observable<GetVoucherResponse> getAllVoucher(
+            @Header("Authorization") String string);
 }

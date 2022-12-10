@@ -46,7 +46,7 @@ public class LoginPresenter implements LoginContract.Presenter {
         mView.hideProgressBar();
         if (saveResponse.getStatus()) {
             sessionManager.setUserToken(saveResponse.getData().getToken());
-            mView.showSuccess(saveResponse.getMessage());
+            mView.showSuccess(saveResponse);
         } else
             mView.showApiErrorWarning(saveResponse.getMessage());
     }

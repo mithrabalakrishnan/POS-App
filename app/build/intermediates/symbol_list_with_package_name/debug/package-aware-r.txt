@@ -75,6 +75,11 @@ animator nav_default_enter_anim
 animator nav_default_exit_anim
 animator nav_default_pop_enter_anim
 animator nav_default_pop_exit_anim
+array assume_strong_biometrics_models
+array crypto_fingerprint_fallback_prefixes
+array crypto_fingerprint_fallback_vendors
+array delay_showing_prompt_models
+array hide_fingerprint_instantly_prefixes
 attr SharedValue
 attr SharedValueId
 attr SpinKitViewStyle
@@ -1328,6 +1333,7 @@ color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
 color background_material_light
+color biometric_error_color
 color black
 color black_900
 color black_900_4c
@@ -4944,6 +4950,7 @@ dimen disabled_alpha_material_light
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
 dimen fastscroll_minimum_range
+dimen fingerprint_icon_size
 dimen highlight_alpha_material_colored
 dimen highlight_alpha_material_dark
 dimen highlight_alpha_material_light
@@ -5535,11 +5542,14 @@ drawable dm4
 drawable edit_text_border
 drawable error
 drawable fast_food
+drawable fingerprint_dialog_error
+drawable fingerprint_dialog_fp_icon
 drawable gift_voucher
 drawable gradient
 drawable ic_add
 drawable ic_add_circle
 drawable ic_arrow_back
+drawable ic_arrow_forward
 drawable ic_baseline_brightness_1_24
 drawable ic_baseline_close_24
 drawable ic_baseline_deck_24
@@ -5558,6 +5568,7 @@ drawable ic_code_scanner_flash_on
 drawable ic_currency_pound
 drawable ic_delete
 drawable ic_discount
+drawable ic_edit
 drawable ic_email
 drawable ic_home
 drawable ic_info
@@ -5747,6 +5758,7 @@ id action_mode_bar_stub
 id action_mode_close_button
 id action_orderSuccessFragment_to_homeFragment
 id action_paymentFragment_to_orderSuccessFragment
+id action_profileFragment_to_editProfileFragment
 id action_summaryFragment_to_couponFragment
 id action_summaryFragment_to_paymentFragment
 id action_tableReservationFragment_to_foodListFragment
@@ -5800,6 +5812,7 @@ id btn_continue
 id btn_delete
 id btn_from
 id btn_logout
+id btn_pick
 id btn_report
 id btn_sales_report
 id btn_sign_up
@@ -5900,7 +5913,13 @@ id easeIn
 id easeInOut
 id easeOut
 id east
+id editProfileFragment
+id edit_email
+id edit_first_name
+id edit_last_name
+id edit_mobile
 id edit_query
+id edit_user_name
 id edittext_dropdown_editable
 id edittext_dropdown_noneditable
 id elastic
@@ -5928,6 +5947,10 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id fingerprint_description
+id fingerprint_error
+id fingerprint_icon
+id fingerprint_subtitle
 id first_name_layout
 id fitCenter
 id fitEnd
@@ -6012,6 +6035,7 @@ id last_name_layout
 id layout
 id layoutQuantityControl
 id layout_best
+id layout_change_number
 id layout_content
 id layout_coupon
 id layout_coupon_item
@@ -6184,6 +6208,7 @@ id rounded
 id row_index_key
 id rtl
 id rv_categories
+id rv_categories_items
 id rv_date
 id rv_order
 id rv_popular
@@ -6215,6 +6240,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id settings_item
 id shadow
 id sharedValueSet
 id sharedValueUnset
@@ -6222,6 +6248,7 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id simpleSwitch
 id sin
 id skipCollapsed
 id skipped
@@ -6263,6 +6290,7 @@ id submenuarrow
 id submit_area
 id summaryFragment
 id supportScrollUp
+id switch_edit
 id tabMode
 id tableReservationFragment
 id tag_accessibility_actions
@@ -6340,7 +6368,7 @@ id tv_food
 id tv_food_details
 id tv_guest
 id tv_guest_count
-id tv_mobile
+id tv_item_name
 id tv_month
 id tv_name
 id tv_order_id
@@ -6538,8 +6566,10 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialogue_loading_layout
+layout fingerprint_dialog_layout
 layout fragment_contact_details
 layout fragment_discount
+layout fragment_edit_profile
 layout fragment_food_list
 layout fragment_home
 layout fragment_order
@@ -6700,11 +6730,23 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
+string confirm_device_credential_password
 string customer_report
+string default_error_msg
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string fingerprint_dialog_touch_sensor
+string fingerprint_error_hw_not_available
+string fingerprint_error_hw_not_present
+string fingerprint_error_lockout
+string fingerprint_error_no_fingerprints
+string fingerprint_error_user_canceled
+string fingerprint_not_recognized
+string generic_error_no_device_credential
+string generic_error_no_keyguard
+string generic_error_user_canceled
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description

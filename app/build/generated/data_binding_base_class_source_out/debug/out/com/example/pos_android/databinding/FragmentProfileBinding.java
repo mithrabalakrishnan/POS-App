@@ -9,6 +9,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SwitchCompat;
+import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.pos_android.R;
@@ -28,26 +30,27 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final ImageView ivUser;
 
   @NonNull
-  public final TextView tvEmail;
+  public final CardView settingsItem;
 
   @NonNull
-  public final TextView tvMobile;
+  public final SwitchCompat simpleSwitch;
 
   @NonNull
-  public final TextView tvName;
+  public final TextView tvItemName;
 
   @NonNull
   public final TextView tvUserName;
 
   private FragmentProfileBinding(@NonNull RelativeLayout rootView,
-      @NonNull MaterialButton btnLogout, @NonNull ImageView ivUser, @NonNull TextView tvEmail,
-      @NonNull TextView tvMobile, @NonNull TextView tvName, @NonNull TextView tvUserName) {
+      @NonNull MaterialButton btnLogout, @NonNull ImageView ivUser, @NonNull CardView settingsItem,
+      @NonNull SwitchCompat simpleSwitch, @NonNull TextView tvItemName,
+      @NonNull TextView tvUserName) {
     this.rootView = rootView;
     this.btnLogout = btnLogout;
     this.ivUser = ivUser;
-    this.tvEmail = tvEmail;
-    this.tvMobile = tvMobile;
-    this.tvName = tvName;
+    this.settingsItem = settingsItem;
+    this.simpleSwitch = simpleSwitch;
+    this.tvItemName = tvItemName;
     this.tvUserName = tvUserName;
   }
 
@@ -90,21 +93,21 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tv_email;
-      TextView tvEmail = ViewBindings.findChildViewById(rootView, id);
-      if (tvEmail == null) {
+      id = R.id.settings_item;
+      CardView settingsItem = ViewBindings.findChildViewById(rootView, id);
+      if (settingsItem == null) {
         break missingId;
       }
 
-      id = R.id.tv_mobile;
-      TextView tvMobile = ViewBindings.findChildViewById(rootView, id);
-      if (tvMobile == null) {
+      id = R.id.simpleSwitch;
+      SwitchCompat simpleSwitch = ViewBindings.findChildViewById(rootView, id);
+      if (simpleSwitch == null) {
         break missingId;
       }
 
-      id = R.id.tv_name;
-      TextView tvName = ViewBindings.findChildViewById(rootView, id);
-      if (tvName == null) {
+      id = R.id.tv_item_name;
+      TextView tvItemName = ViewBindings.findChildViewById(rootView, id);
+      if (tvItemName == null) {
         break missingId;
       }
 
@@ -114,8 +117,8 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentProfileBinding((RelativeLayout) rootView, btnLogout, ivUser, tvEmail,
-          tvMobile, tvName, tvUserName);
+      return new FragmentProfileBinding((RelativeLayout) rootView, btnLogout, ivUser, settingsItem,
+          simpleSwitch, tvItemName, tvUserName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

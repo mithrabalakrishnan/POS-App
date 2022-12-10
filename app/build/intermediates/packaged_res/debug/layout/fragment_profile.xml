@@ -49,8 +49,8 @@
                 android:layout_height="120dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
-                app:cardElevation="5dp"
-                app:cardCornerRadius="250dp">
+                app:cardCornerRadius="250dp"
+                app:cardElevation="5dp">
 
                 <ImageView
                     android:id="@+id/iv_user"
@@ -73,92 +73,59 @@
                 android:textSize="19sp"
                 android:textStyle="bold" />
 
-            <TextView
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:drawablePadding="10dp"
-                android:ellipsize="end"
-                android:gravity="start"
-                android:paddingLeft="15dp"
-                android:singleLine="true"
-                android:text="Username"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                app:drawableLeftCompat="@drawable/ic_person"
-                app:drawableTint="@color/orange_500" />
+                android:layout_height="0dp"
+                android:layout_weight="1" />
 
-            <TextView
-                android:id="@+id/tv_name"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/settings_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:drawablePadding="10dp"
-                android:ellipsize="end"
-                android:gravity="start"
-                android:paddingLeft="15dp"
-                android:singleLine="true"
-                android:text="Alex Ferguson"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="12dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_item_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Edit Profile"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_arrow_forward" />
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/simpleSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:text="Enable Biometric Login"
                 android:textColor="@color/black"
-                android:textSize="15sp" />
+                android:textOff="Off"
+                android:textOn="On"
+                android:textSize="15sp"
+                app:thumbTint="@color/orange_500"
+                app:trackTint="@android:color/darker_gray"
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:drawablePadding="10dp"
-                android:ellipsize="end"
-                android:gravity="start"
-                android:paddingLeft="15dp"
-                android:singleLine="true"
-                android:text="Email"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                app:drawableLeftCompat="@drawable/ic_email"
-                app:drawableTint="@color/orange_500" />
-
-            <TextView
-                android:id="@+id/tv_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:drawablePadding="10dp"
-                android:ellipsize="end"
-                android:gravity="start"
-                android:paddingLeft="15dp"
-                android:singleLine="true"
-                android:text="alex00@gmail.com"
-                android:textColor="@color/black"
-                android:textSize="15sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:drawablePadding="10dp"
-                android:ellipsize="end"
-                android:gravity="start"
-                android:paddingLeft="15dp"
-                android:singleLine="true"
-                android:text="Mobile"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                app:drawableLeftCompat="@drawable/ic_smartphone"
-                app:drawableTint="@color/orange_500" />
-
-            <TextView
-                android:id="@+id/tv_mobile"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:drawablePadding="10dp"
-                android:ellipsize="end"
-                android:gravity="start"
-                android:paddingLeft="15dp"
-                android:singleLine="true"
-                android:text="1234567890"
-                android:textColor="@color/black"
-                android:textSize="15sp" />
+                />
 
 
             <com.google.android.material.button.MaterialButton
@@ -179,7 +146,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="4" />
+                android:layout_weight="2" />
 
 
         </LinearLayout>
@@ -189,7 +156,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="150dp"
         android:layout_alignParentBottom="true"
         android:scaleType="centerCrop"
         android:src="@drawable/wavy_bg" />

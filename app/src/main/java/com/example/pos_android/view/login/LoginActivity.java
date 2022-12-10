@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.pos_android.contracts.LoginContract;
+import com.example.pos_android.data.model.LoginResponse;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.databinding.ActivityLoginBinding;
 import com.example.pos_android.presenter.LoginPresenter;
@@ -11,8 +12,8 @@ import com.example.pos_android.utils.Validation;
 import com.example.pos_android.view.BaseActivity;
 import com.example.pos_android.view.admin.AdminHomeActivity;
 import com.example.pos_android.view.kitchen.KitchenActivity;
-import com.example.pos_android.view.user.register.RegisterActivity;
 import com.example.pos_android.view.user.UserHomeActivity;
+import com.example.pos_android.view.user.register.RegisterActivity;
 
 import java.util.Objects;
 
@@ -45,8 +46,8 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     }
 
     private void validateFields() {
-        if (!Validation.isNotNullOrEmpty(Objects.requireNonNull(binding.txtEmail.getText()).toString())) {
-            binding.emailLayout.setError("Please enter valid username");
+        if (!Validation.isValidEmail(Objects.requireNonNull(binding.txtEmail.getText()).toString())) {
+            binding.emailLayout.setError("Please enter valid email");
         } else if (!Validation.isNotNullOrEmpty(binding.txtPass.getText().toString())) {
             binding.passwordLayout.setError("Please enter valid password");
             binding.emailLayout.setError(null);
@@ -59,17 +60,6 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
             presenter.callLogin(binding.txtEmail.getText().toString().trim(),
                     binding.txtPass.getText().toString().trim());
         }
-//        if (!Validation.isValidEmail(Objects.requireNonNull(binding.txtEmail.getText()).toString())) {
-//            binding.emailLayout.setError("Please enter valid email");
-//        } else if (!Validation.isNotNullOrEmpty(binding.txtPass.getText().toString())) {
-//            binding.passwordLayout.setError("Please enter valid password");
-//            binding.emailLayout.setError(null);
-//        } else {
-//            binding.passwordLayout.setError(null);
-//
-//            presenter.callLogin(binding.txtEmail.getText().toString().trim(),
-//                    binding.txtPass.getText().toString().trim());
-//        }
     }
 
     @Override
@@ -93,22 +83,21 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     }
 
     @Override
-    public void showSuccess(String message) {
-        showToast(LoginActivity.this, message);
+    public void showSuccess(LoginResponse response) {
+        showToast(LoginActivity.this, response.getMessage());
         sessionManager.setLogin(true);
-        if (isAdmin) {
-            sessionManager.setUsertype(SessionManager.UserRoles.ADMIN);
-            startActivity(new Intent(LoginActivity.this, AdminHomeActivity.class));
-        } else if(isKitchen) {
-            sessionManager.setUsertype(SessionManager.UserRoles.KITCHEN);
-            startActivity(new Intent(LoginActivity.this, KitchenActivity.class));
-        }
-        else {
+
+        if (response.getData().getRole().equals("User")) {
             sessionManager.setUsertype(SessionManager.UserRoles.USER);
             sessionManager.setUserName(binding.txtEmail.getText().toString());
             startActivity(new Intent(LoginActivity.this, UserHomeActivity.class));
+        } else if (response.getData().getRole().equals("Kitchen")) {
+            sessionManager.setUsertype(SessionManager.UserRoles.KITCHEN);
+            startActivity(new Intent(LoginActivity.this, KitchenActivity.class));
+        } else {
+            sessionManager.setUsertype(SessionManager.UserRoles.ADMIN);
+            startActivity(new Intent(LoginActivity.this, AdminHomeActivity.class));
         }
-
         finishAffinity();
     }
 

@@ -3,9 +3,9 @@ package com.example.pos_android.view.user;
 import static android.content.Context.KEYGUARD_SERVICE;
 
 import android.Manifest;
-import android.content.pm.PackageManager;
 import android.app.KeyguardManager;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.CompoundButton;
 
 import androidx.core.app.ActivityCompat;
+import androidx.navigation.Navigation;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
@@ -56,15 +57,10 @@ public class ProfileFragment extends BaseFragment implements UserProfileContract
         sessionManager = new SessionManager(requireContext());
         presenter = new UserProfilePresenter(this, requireContext());
         presenter.getUserProfile();
-        String randomText = generateRandomString();
+        loadUserImage();
 
         binding.tvUserName.setText(sessionManager.getUserName());
 
-        Glide.with(this)
-                .load("https://avatars.dicebear.com/api/male/" + randomText + ".png")
-                .transition(DrawableTransitionOptions.withCrossFade())
-                .fitCenter()
-                .into(binding.ivUser);
         if (sessionManager.getIsAuthentication()) {
             binding.simpleSwitch.setChecked(true);
         } else {
@@ -87,6 +83,33 @@ public class ProfileFragment extends BaseFragment implements UserProfileContract
                 sessionManager.setIsAuthentication(false);
             }
         });
+
+        binding.settingsItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(requireView()).navigate(R.id.action_profileFragment_to_editProfileFragment);
+            }
+        });
+    }
+
+    private void loadUserImage() {
+        if (sessionManager.getProfileImageUrl().equals("")) {
+            String randomText = generateRandomString();
+            String url = "https://avatars.dicebear.com/api/male/" + randomText + ".png";
+            sessionManager.setProfileUrl(url);
+
+            Glide.with(this)
+                    .load(sessionManager.getProfileImageUrl())
+                    .transition(DrawableTransitionOptions.withCrossFade())
+                    .fitCenter()
+                    .into(binding.ivUser);
+        } else {
+            Glide.with(this)
+                    .load(sessionManager.getProfileImageUrl())
+                    .transition(DrawableTransitionOptions.withCrossFade())
+                    .fitCenter()
+                    .into(binding.ivUser);
+        }
     }
 
     private void showLogoutDialog() {
@@ -142,9 +165,6 @@ public class ProfileFragment extends BaseFragment implements UserProfileContract
     @Override
     public void showUserProfileResponse(UserProfileResponse response) {
         UserProfileData mData = response.getData();
-        binding.tvName.setText(mData.username);
-        binding.tvEmail.setText(mData.email);
-        binding.tvMobile.setText(mData.phone_no);
         binding.tvUserName.setText(String.format("%s%s%s", mData.firstName, " ", mData.lastName));
     }
 
