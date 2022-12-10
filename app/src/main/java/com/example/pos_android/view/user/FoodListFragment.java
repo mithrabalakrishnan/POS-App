@@ -156,7 +156,7 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
     public void showCategoryItemsResponse(CategoryDetailResponse categoryDetailResponse) {
         categoryFoodAdapter = new CategoryFoodAdapter(categoryDetailResponse.data,requireContext(),this);
         binding.rvCategoriesItems.setLayoutManager(new GridLayoutManager(requireContext(),2));
-//        binding.rvCategoriesItems
+        binding.rvCategoriesItems.setAdapter(categoryFoodAdapter);
     }
 
     @Override

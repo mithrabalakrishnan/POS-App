@@ -59,7 +59,7 @@ public class CategoryFoodAdapter extends RecyclerView.Adapter<CategoryFoodAdapte
                 .into(imageView);
 
         TextView subjectTextView = holder.subjectTextView;
-        subjectTextView.setText(currentItem.getFood_name());
+        subjectTextView.setText(currentItem.getFoodName());
 
         TextView likesTextView = holder.numOfLikesTextView;
         likesTextView.setText("£ "+currentItem.getPrice());

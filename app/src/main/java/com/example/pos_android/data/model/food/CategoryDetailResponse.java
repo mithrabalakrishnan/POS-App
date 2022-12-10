@@ -1,10 +1,19 @@
 package com.example.pos_android.data.model.food;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 
 public class CategoryDetailResponse {
+    @SerializedName("status")
+    @Expose
     public boolean status;
+    @SerializedName("message")
+    @Expose
     public String message;
+    @SerializedName("data")
+    @Expose
     public ArrayList<CategoryDetailData> data;
 
     public boolean isStatus() {
