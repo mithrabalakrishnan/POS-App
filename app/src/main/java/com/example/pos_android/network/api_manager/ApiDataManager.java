@@ -3,18 +3,19 @@ package com.example.pos_android.network.api_manager;
 import android.util.Log;
 
 import com.example.pos_android.data.model.AddKitchenResponse;
+import com.example.pos_android.data.model.AddVoucherResponse;
 import com.example.pos_android.data.model.CommonResponse;
+import com.example.pos_android.data.model.GetVoucherResponse;
 import com.example.pos_android.data.model.HistoryResponse;
 import com.example.pos_android.data.model.ImagePickerResponse;
 import com.example.pos_android.data.model.KitchenResponse;
 import com.example.pos_android.data.model.KitchenUpdateStatusResponse;
 import com.example.pos_android.data.model.LoginResponse;
-import com.example.pos_android.data.model.RecaptchaVerifyResponse;
 import com.example.pos_android.data.model.RegisterResponse;
 import com.example.pos_android.data.model.TableReservationResponse;
 import com.example.pos_android.data.model.UserHomeResponse;
 import com.example.pos_android.data.model.UserProfileResponse;
-import com.example.pos_android.data.model.VoucherRequestData;
+import com.example.pos_android.data.model.request.VoucherRequestData;
 import com.example.pos_android.data.model.food.CategoryDetailResponse;
 import com.example.pos_android.data.model.food.CategoryModel;
 import com.example.pos_android.data.model.food.FoodOrderResponseModel;
@@ -45,7 +46,6 @@ import com.example.pos_android.presenter.UserProfilePresenter;
 import com.example.pos_android.presenter.VoucherPresenter;
 
 import java.util.List;
-import java.util.Map;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -807,13 +807,13 @@ public class ApiDataManager {
                     .addVoucherToUser("Bearer " + token, voucherData)
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeOn(Schedulers.io())
-                    .subscribe(new Observer<CommonResponse>() {
+                    .subscribe(new Observer<AddVoucherResponse>() {
                         @Override
                         public void onSubscribe(Disposable d) {
                         }
 
                         @Override
-                        public void onNext(CommonResponse response) {
+                        public void onNext(AddVoucherResponse response) {
                             mPresenter.onAddVoucherApiResponse(response);
                         }
 
@@ -821,6 +821,43 @@ public class ApiDataManager {
                         public void onError(Throwable e) {
                             Log.e(TAG, "onError: " + e.getMessage());
                             mPresenter.onApiError(e.getMessage());
+                        }
+
+                        @Override
+                        public void onComplete() {
+                        }
+                    });
+
+
+        } catch (Exception e) {
+            mPresenter.onApiError(e.getMessage());
+            Log.e(TAG, "Exception caught in " + e.getMessage().toString());
+        }
+    }
+
+    public void getAllVouchers(String token, VoucherPresenter mPresenter) {
+        try {
+            if (apiInterFace == null)
+                apiInterFace = ApiClient.getClientServerApi().create(ApiInterFace.class);
+
+            apiInterFace
+                    .getAllVoucher("Bearer " + token)
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeOn(Schedulers.io())
+                    .subscribe(new Observer<GetVoucherResponse>() {
+                        @Override
+                        public void onSubscribe(Disposable d) {
+                        }
+
+                        @Override
+                        public void onNext(GetVoucherResponse response) {
+                            mPresenter.onGetVoucherCallBack(response);
+                        }
+
+                        @Override
+                        public void onError(Throwable e) {
+                            Log.e(TAG, "onError: " + e.getMessage());
+                            mPresenter.onApiError(e.getLocalizedMessage());
                         }
 
                         @Override

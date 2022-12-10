@@ -1,5 +1,6 @@
 package com.example.pos_android.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,13 +17,15 @@ import com.example.pos_android.data.model.CouponsData;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.utils.OnItemClickListener;
 
-public class CouponsAdapter extends RecyclerView.Adapter<CouponsAdapter.ViewHolder>{
-    private final CouponsData[] couponsData;
-    private Context context;
+import java.util.List;
+
+public class CouponsAdapter extends RecyclerView.Adapter<CouponsAdapter.ViewHolder> {
+    private final List<CouponsData> couponsData;
     private final SessionManager sessionManager;
     OnItemClickListener onItemClickListener;
+    private Context context;
 
-    public CouponsAdapter(CouponsData[] couponsData, Context context, OnItemClickListener onItemClickListener) {
+    public CouponsAdapter(List<CouponsData> couponsData, Context context, OnItemClickListener onItemClickListener) {
         this.couponsData = couponsData;
         this.context = context;
         sessionManager = new SessionManager(context);
@@ -33,17 +36,17 @@ public class CouponsAdapter extends RecyclerView.Adapter<CouponsAdapter.ViewHold
     @Override
     public CouponsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View listItem= layoutInflater.inflate(R.layout.coupen_layout, parent, false);
+        View listItem = layoutInflater.inflate(R.layout.coupen_layout, parent, false);
         ViewHolder viewHolder = new ViewHolder(listItem);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CouponsAdapter.ViewHolder holder, int position) {
-        final CouponsData myListData = couponsData[position];
+    public void onBindViewHolder(@NonNull CouponsAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        final CouponsData myListData = couponsData.get(position);
         holder.txtName.setText(myListData.getTxtCouponName());
         holder.txtPrice.setText(myListData.getAmount());
-        holder.txtExpDate.setText(myListData.getTxtExpDate());
+        holder.txtExpDate.setText("Valid until "+myListData.getTxtExpDate());
         holder.imgLogo.setImageResource(myListData.getImage());
 
         holder.layout.setOnClickListener(new View.OnClickListener() {
@@ -51,19 +54,19 @@ public class CouponsAdapter extends RecyclerView.Adapter<CouponsAdapter.ViewHold
             public void onClick(View view) {
                 sessionManager.setIsCouponSelected(true);
                 sessionManager.setCouponPercent(myListData.getPercentage());
-                onItemClickListener.onItemClick(position,"coupon");
+                onItemClickListener.onItemClick(position, "coupon");
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return couponsData.length;
+        return couponsData.size();
     }
 
-      public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView imgLogo;
-        public TextView txtName,txtExpDate,txtPrice;
+        public TextView txtName, txtExpDate, txtPrice;
         public FrameLayout layout;
 
         public ViewHolder(View itemView) {

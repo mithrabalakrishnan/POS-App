@@ -33,6 +33,9 @@ public final class FragmentFoodListBinding implements ViewBinding {
   public final RecyclerView rvCategories;
 
   @NonNull
+  public final RecyclerView rvCategoriesItems;
+
+  @NonNull
   public final RecyclerView rvPopular;
 
   @NonNull
@@ -46,13 +49,14 @@ public final class FragmentFoodListBinding implements ViewBinding {
 
   private FragmentFoodListBinding(@NonNull RelativeLayout rootView,
       @NonNull MotionButton btnContinue, @NonNull ImageView ivBack,
-      @NonNull RecyclerView rvCategories, @NonNull RecyclerView rvPopular,
-      @NonNull RecyclerView rvRecommended, @NonNull TextView titleCategory,
-      @NonNull LinearLayout toolbar) {
+      @NonNull RecyclerView rvCategories, @NonNull RecyclerView rvCategoriesItems,
+      @NonNull RecyclerView rvPopular, @NonNull RecyclerView rvRecommended,
+      @NonNull TextView titleCategory, @NonNull LinearLayout toolbar) {
     this.rootView = rootView;
     this.btnContinue = btnContinue;
     this.ivBack = ivBack;
     this.rvCategories = rvCategories;
+    this.rvCategoriesItems = rvCategoriesItems;
     this.rvPopular = rvPopular;
     this.rvRecommended = rvRecommended;
     this.titleCategory = titleCategory;
@@ -104,6 +108,12 @@ public final class FragmentFoodListBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.rv_categories_items;
+      RecyclerView rvCategoriesItems = ViewBindings.findChildViewById(rootView, id);
+      if (rvCategoriesItems == null) {
+        break missingId;
+      }
+
       id = R.id.rv_popular;
       RecyclerView rvPopular = ViewBindings.findChildViewById(rootView, id);
       if (rvPopular == null) {
@@ -129,7 +139,7 @@ public final class FragmentFoodListBinding implements ViewBinding {
       }
 
       return new FragmentFoodListBinding((RelativeLayout) rootView, btnContinue, ivBack,
-          rvCategories, rvPopular, rvRecommended, titleCategory, toolbar);
+          rvCategories, rvCategoriesItems, rvPopular, rvRecommended, titleCategory, toolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

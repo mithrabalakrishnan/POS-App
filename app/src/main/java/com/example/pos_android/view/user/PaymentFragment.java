@@ -26,13 +26,7 @@ import com.example.pos_android.data.room.CartDatabase;
 import com.example.pos_android.databinding.FragmentPaymentBinding;
 import com.example.pos_android.presenter.ConfirmOrderPresenter;
 import com.example.pos_android.view.BaseFragment;
-import com.example.pos_android.view.kitchen.KitchenOrderDetailActivity;
 import com.example.pos_android.view.login.LoginActivity;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.safetynet.SafetyNet;
-import com.google.android.gms.safetynet.SafetyNetApi;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -131,11 +125,6 @@ public class PaymentFragment extends BaseFragment implements FoodReservationCont
 
         showWarningMessage(tableReservationResponse.message);
         Navigation.findNavController(requireView()).navigate(R.id.action_paymentFragment_to_orderSuccessFragment);
-    }
-
-    @Override
-    public void showCaptchaVerifyCallback(RecaptchaVerifyResponse recaptchaVerifyResponse) {
-
     }
 
     private void checkPermissions() {

@@ -12,17 +12,12 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.example.pos_android.R;
 import com.example.pos_android.data.preference.SessionManager;
-import com.example.pos_android.view.admin.AdminHomeActivity;
-import com.example.pos_android.view.admin.ReportActivity;
-import com.example.pos_android.view.kitchen.KitchenActivity;
-import com.example.pos_android.view.login.LoginActivity;
 import com.example.pos_android.view.user.UserHomeActivity;
 
 import java.util.concurrent.Executor;
@@ -30,9 +25,9 @@ import java.util.concurrent.Executor;
 @SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {
     private static final int SPLASH_SCREEN_TIME_OUT = 2000;
-    private SessionManager sessionManager;
     Executor executor;
     BiometricPrompt biometricPrompt;
+    private SessionManager sessionManager;
     private CancellationSignal cancellationSignal;
 
     @RequiresApi(api = Build.VERSION_CODES.P)
@@ -88,7 +83,7 @@ public class SplashActivity extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                showToast(SplashActivity.this,"Authentication cancelled");
+                                showToast(SplashActivity.this, "Authentication cancelled");
                             }
                         })
                 .build();
@@ -103,7 +98,7 @@ public class SplashActivity extends AppCompatActivity {
         cancellationSignal.setOnCancelListener(new CancellationSignal.OnCancelListener() {
             @Override
             public void onCancel() {
-                showToast(SplashActivity.this,"Cancelled via signal");
+                showToast(SplashActivity.this, "Cancelled via signal");
             }
         });
         return cancellationSignal;
@@ -116,7 +111,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void onAuthenticationError(int errorCode,
                                               CharSequence errString) {
-                showToast(SplashActivity.this,"Authentication error: " + errString);
+                showToast(SplashActivity.this, "Authentication error: " + errString);
                 super.onAuthenticationError(errorCode, errString);
             }
 
@@ -134,11 +129,11 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void onAuthenticationSucceeded(
                     BiometricPrompt.AuthenticationResult result) {
-                showToast(SplashActivity.this,"Authentication Succeeded");
+                showToast(SplashActivity.this, "Authentication Succeeded");
                 Intent i = new Intent(SplashActivity.this,
                         UserHomeActivity.class);
                 startActivity(i);
-            finishAffinity();
+                finishAffinity();
                 super.onAuthenticationSucceeded(result);
             }
         };

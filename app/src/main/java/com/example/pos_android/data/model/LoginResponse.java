@@ -40,11 +40,24 @@ public class LoginResponse {
 
      public class Data {
 
+         @SerializedName("role")
+         @Expose
+         private String role;
+
         @SerializedName("token")
         @Expose
         private String token;
 
-        public String getToken() {
+         public String getRole() {
+             return role;
+         }
+
+         public void setRole(String role) {
+             this.role = role;
+         }
+
+
+         public String getToken() {
             return token;
         }
 

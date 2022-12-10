@@ -5,7 +5,7 @@ import com.example.pos_android.data.model.LoginResponse;
 public interface LoginContract {
     interface View extends BaseView {
 
-        void showSuccess(String message);
+        void showSuccess(LoginResponse response);
         void showInputWarning();
 
 

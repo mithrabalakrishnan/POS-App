@@ -27,6 +27,7 @@ import com.example.pos_android.adapter.FoodAdapter;
 import com.example.pos_android.contracts.UserHomeContract;
 import com.example.pos_android.data.model.FoodModel;
 import com.example.pos_android.data.model.UserHomeResponse;
+import com.example.pos_android.data.model.food.CategoryDetailResponse;
 import com.example.pos_android.data.model.food.foodCategoryResponse;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.databinding.FragmentHomeBinding;
@@ -181,6 +182,11 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View 
 
     @Override
     public void showCategoryResponse(foodCategoryResponse foodCategoryResponse) {
+
+    }
+
+    @Override
+    public void showCategoryItemsResponse(CategoryDetailResponse categoryDetailResponse) {
 
     }
 

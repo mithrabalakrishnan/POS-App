@@ -78,15 +78,6 @@ public class OrderFragment extends BaseFragment implements HistoryContract.View 
     public void showResponse(HistoryResponse response) {
         // showToast(requireContext(), response.getMessage());
         historyList.clear();
-
-
-
-//        for (HistoryResponse.FoodOrderList order : response.getData().getFoodOrderList()) {
-//            historyList.add(new HistoryResponse.FoodOrderList(
-//                    order.getId(), order.getUserId(), order.getFoodId(), order.getQuanty(), order.getTableId(),
-//                    order.getTotalPrice(), order.getDate()
-//            ));
-//        }
         adapter = new HistoryAdapter(response.getData().getFoodOrderList(), requireContext());
         binding.popularRecyclerview.setAdapter(adapter);
         binding.popularRecyclerview.setLayoutManager(new LinearLayoutManager(requireActivity()));
