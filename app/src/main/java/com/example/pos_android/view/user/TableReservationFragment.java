@@ -13,6 +13,9 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.alan.alansdk.AlanCallback;
+import com.alan.alansdk.button.AlanButton;
+import com.alan.alansdk.events.EventCommand;
 import com.example.pos_android.R;
 import com.example.pos_android.adapter.DateSelectionAdapter;
 import com.example.pos_android.adapter.TableAdapter;
@@ -29,6 +32,9 @@ import com.example.pos_android.presenter.TableReservationPresenter;
 import com.example.pos_android.utils.OnItemClickListener;
 import com.example.pos_android.view.BaseFragment;
 import com.example.pos_android.view.login.LoginActivity;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -54,6 +60,8 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
     private String selectedTable = null;
     private String selectedTableNum = null;
     private TableInfoModel model;
+    private AlanButton alanButton;
+    private AlanCallback alanCallback;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -172,6 +180,26 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
                 Navigation.findNavController(requireView()).popBackStack();
             }
         });
+
+        alanButton = getActivity().findViewById(R.id.alan_button);
+
+        alanCallback = new AlanCallback() {
+            /// Handle commands from Alan Studio
+            @Override
+            public void onCommand(final EventCommand eventCommand) {
+                try {
+                    JSONObject command = eventCommand.getData();
+                    JSONObject data = command.getJSONObject("data");
+                    String commandName = data.getString("commandName");
+                    //based on commandName we can perform different tasks
+                    executeCommand(commandName, data);
+                } catch (JSONException e) {
+                    Log.e("AlanButton", e.getMessage());
+                    showToast(requireContext(), e.getMessage());
+                }
+            }
+        };
+        alanButton.registerCallback(alanCallback);
     }
 
     @Override
@@ -341,5 +369,44 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
                 return null;
             }
         }
+    }
+
+    private void executeCommand(String commandName, JSONObject data) {
+        switch (commandName) {
+//            case "go_to_orders": {
+//                bottomNavigationView.setSelectedItemId(R.id.orderFragment);
+//                break;
+//            }
+
+            case "add_guest": {
+                try {
+                    String title = data.getString("title");
+                    showToast(requireContext(), title);
+                    int count = Integer.parseInt(title);
+                    if(count <= 7 && count>=1){
+                        totalCount = count;
+                        binding.countLayout.tvGuest.setText(String.valueOf(totalCount));
+                        clearTableSelection();
+                    }else{
+                        alanButton.playText("I'm sorry I cant add guest more than seven");
+                    }
+
+                } catch (JSONException e) {
+                    Log.e("AlanButton", e.getMessage());
+                    alanButton.playText("I'm sorry I'm unable to do this at the moment");
+                }
+                break;
+            }
+            default: {
+                break;
+            }
+        }
+
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        alanButton.removeCallback(alanCallback);
     }
 }

@@ -45,30 +45,7 @@ public class SplashActivity extends AppCompatActivity {
             new Handler().postDelayed(() -> {
                 Intent i = new Intent(SplashActivity.this,
                         UserHomeActivity.class);
-                startActivity(i );
-
-          /*  if (sessionManager.isLoggedIn()) {
-                if (sessionManager.getUserType().equals(SessionManager.UserRoles.ADMIN.toString())) {
-                    Intent i = new Intent(SplashActivity.this,
-                            AdminHomeActivity.class);
-                    startActivity(i);
-                } else {
-                if (sessionManager.getIsAuthentication()){
-                authenticateUser()
-
-}else{
-                    Intent i = new Intent(SplashActivity.this,
-                            UserHomeActivity.class);
-                    startActivity(i);
-                }
-                finishAffinity();
-                }
-            } else {
-                Intent i = new Intent(SplashActivity.this,
-                        LoginActivity.class);
                 startActivity(i);
-                finishAffinity();
-            }*/
 
             }, SPLASH_SCREEN_TIME_OUT);
         }
