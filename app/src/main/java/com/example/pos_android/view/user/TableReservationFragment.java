@@ -158,20 +158,7 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
         // binding.rvTable.setHasFixedSize(true);
         binding.rvTable.setAdapter(tableAdapter);
         binding.btnContinue.setOnClickListener(v -> {
-            if (!(totalCount > 0)) {
-                showSnackBar(requireView(), "Please add guest");
-            } else if (selectedDatePosition == null) {
-                showSnackBar(requireView(), "Please select date");
-            } else if (selectedTime == null) {
-                showSnackBar(requireView(), "Please select time");
-            } else if (selectedTableNum == null) {
-                showSnackBar(requireView(), "Please choose table preference");
-            } else {
-                String myDate = apiDateList.get(selectedDatePosition).getDate();
-                presenter.doTableReservation(
-                        myDate, selectedTime, String.valueOf(totalCount), selectedTableNum
-                );
-            }
+         submitBtn();
         });
 
         binding.ivBack.setOnClickListener(new View.OnClickListener() {
@@ -373,27 +360,141 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
 
     private void executeCommand(String commandName, JSONObject data) {
         switch (commandName) {
-//            case "go_to_orders": {
-//                bottomNavigationView.setSelectedItemId(R.id.orderFragment);
-//                break;
-//            }
+            case "add_date": {
+                try {
+                    String title = data.getString("title");
+                    showToast(requireContext(), title);
+                    int count = Integer.parseInt(title);
+
+                    for (int i = 0; i < dateList.size(); i++) {
+
+                        String[] str = model.getDate().split("-", 0);
+                        int dateDay = Integer.parseInt(str[1]);
+                        if (dateDay == count) {
+                            for (int j = 0; j < dateList.size(); j++) {
+                                if (j == i) {
+                                    dateList.get(j).setSelected(true);
+                                    selectedDatePosition = i;
+                                } else
+                                    dateList.get(j).setSelected(false);
+                            }
+                            dateSelectionAdapter.notifyDataSetChanged();
+                            break;
+                        }
+                    }
+
+                } catch (JSONException e) {
+                    Log.e("AlanButton", e.getMessage());
+                    alanButton.playText("I'm sorry, I'm unable to pic the date");
+                }
+                break;
+
+            }
 
             case "add_guest": {
                 try {
                     String title = data.getString("title");
                     showToast(requireContext(), title);
                     int count = Integer.parseInt(title);
-                    if(count <= 7 && count>=1){
+                    if (count <= 7 && count >= 1) {
                         totalCount = count;
                         binding.countLayout.tvGuest.setText(String.valueOf(totalCount));
                         clearTableSelection();
-                    }else{
+                    } else {
                         alanButton.playText("I'm sorry I cant add guest more than seven");
                     }
 
                 } catch (JSONException e) {
                     Log.e("AlanButton", e.getMessage());
                     alanButton.playText("I'm sorry I'm unable to do this at the moment");
+                }
+                break;
+            }
+            case "add_time": {
+                try {
+                    String title = data.getString("title");
+                    showToast(requireContext(), title);
+                    if (title.equals("10am") || title.equals("10AM")) {
+                        setTime(0);
+                    } else if (title.equals("11am") || title.equals("11AM")) {
+                        setTime(1);
+                    } else if (title.equals("12pm") || title.equals("12PM")) {
+                        setTime(2);
+                    } else if (title.equals("1pm") || title.equals("1PM")) {
+                        setTime(3);
+                    } else if (title.equals("2pm") || title.equals("2PM")) {
+                        setTime(4);
+                    } else if (title.equals("3pm") || title.equals("3PM")) {
+                        setTime(5);
+                    } else if (title.equals("4pm") || title.equals("4PM")) {
+                        setTime(6);
+                    } else if (title.equals("5pm") || title.equals("5PM")) {
+                        setTime(7);
+                    } else if (title.equals("6pm") || title.equals("6PM")) {
+                        setTime(8);
+                    } else if (title.equals("7pm") || title.equals("7PM")) {
+                        setTime(9);
+                    } else if (title.equals("8pm") || title.equals("8PM")) {
+                        setTime(10);
+                    } else if (title.equals("9pm") || title.equals("9PM")) {
+                        setTime(11);
+                    } else {
+                        alanButton.playText("I'm sorry I'm unable to book for given time");
+                    }
+
+                } catch (JSONException e) {
+                    Log.e("AlanButton", e.getMessage());
+                    alanButton.playText("I'm sorry I'm unable to do this at the moment");
+                }
+                break;
+            }
+            case "add_table": {
+                try {
+                    String title = data.getString("title");
+                    showToast(requireContext(), title);
+                    if (title.equals("Classic booth") || title.equals("Classic") || title.equals("booth")) {
+                        setTable(0);
+                    } else if (title.equals("Window side") || title.equals("Window") || title.equals("side")) {
+                        setTable(1);
+                    } else if (title.equals("High top table") || title.equals("High top") || title.equals("top table")) {
+                        setTable(2);
+                    } else {
+                        alanButton.playText("I'm sorry I'm unable to do this at the moment");
+                    }
+                } catch (JSONException e) {
+                    Log.e("AlanButton", e.getMessage());
+                    alanButton.playText("I'm sorry I'm unable to do this at the moment");
+                }
+                break;
+
+            }
+            case "move_to_next": {
+                try {
+                    String title = data.getString("title");
+                    showToast(requireContext(), title);
+                    if (title.equals("submit") || title.equals("next") || title.equals("go")){
+                        submitBtn();
+                    }
+
+                } catch (JSONException e) {
+                    Log.e("AlanButton", e.getMessage());
+                    alanButton.playText("I'm sorry, I'm unable to move");
+                }
+                break;
+
+            }
+            case "back" : {
+
+                try {
+                    String title = data.getString("title");
+                    showToast(requireContext(), title);
+                    if (title.equals("go back") || title.equals("Back") || title.equals("cancel")){
+                        Navigation.findNavController(binding.getRoot()).popBackStack();
+                    }
+
+                } catch (JSONException e) {
+                    Log.e("AlanButton", e.getMessage());
+                    alanButton.playText("I'm sorry, I'm unable to move");
                 }
                 break;
             }
@@ -408,5 +509,50 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
     public void onStop() {
         super.onStop();
         alanButton.removeCallback(alanCallback);
+    }
+
+    public void setTime(int position) {
+        for (int i = 0; i < timeList.size(); i++) {
+            if (i == position) {
+                timeList.get(i).setSelected(true);
+                selectedTime = timeList.get(i).getTime();
+            } else
+                timeList.get(i).setSelected(false);
+        }
+        timeSelectionAdapter.notifyDataSetChanged();
+    }
+
+    public void setTable(int position) {
+        binding.spinner.setSelection(position);
+        for (int i = 0; i < tableList.size(); i++) {
+            if (i == position) {
+                if (checkSeatAvailability(position)) {
+                    tableList.get(i).setSelected(true);
+                    selectedTable = tableList.get(i).getTable();
+                    setupSpinnerData(getTableList(selectedTable));
+                } else {
+                    showSnackBar(requireView(), showSeatValidation(position));
+                    tableList.get(i).setSelected(false);
+                }
+            } else
+                tableList.get(i).setSelected(false);
+        }
+        tableAdapter.notifyDataSetChanged();
+    }
+    public void submitBtn(){
+        if (!(totalCount > 0)) {
+            showSnackBar(requireView(), "Please add guest");
+        } else if (selectedDatePosition == null) {
+            showSnackBar(requireView(), "Please select date");
+        } else if (selectedTime == null) {
+            showSnackBar(requireView(), "Please select time");
+        } else if (selectedTableNum == null) {
+            showSnackBar(requireView(), "Please choose table preference");
+        } else {
+            String myDate = apiDateList.get(selectedDatePosition).getDate();
+            presenter.doTableReservation(
+                    myDate, selectedTime, String.valueOf(totalCount), selectedTableNum
+            );
+        }
     }
 }

@@ -75,6 +75,9 @@
                 android:id="@+id/rv_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                tools:listitem="@layout/layout_select_date"
+                tools:orientation="horizontal"
+                tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 android:layout_marginTop="16dp" />
 
             <TextView
@@ -92,6 +95,10 @@
                 android:id="@+id/rv_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                tools:listitem="@layout/layout_select_time"
+                tools:orientation="horizontal"
+                tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+
                 android:layout_marginTop="16dp" />
 
             <TextView
@@ -109,6 +116,10 @@
                 android:id="@+id/rv_table"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                tools:listitem="@layout/table_layout"
+                tools:orientation="horizontal"
+                tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+
                 android:layout_marginTop="16dp" />
 
             <TextView

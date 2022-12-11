@@ -255,7 +255,12 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
             int totalPrice = model.getQuantity() * Integer.parseInt(model.getPrice());
             foodId.add(Integer.parseInt(model.getFoodId()));
             quantity.add(model.getQuantity());
-            total.add(totalPrice);
+            if(sessionManager.getIsCouponSelected()){
+                total.add(Integer.valueOf(binding.offerPrice.getText().toString()));
+            }
+            else {
+                total.add(totalPrice);
+            }
         }
 
 
