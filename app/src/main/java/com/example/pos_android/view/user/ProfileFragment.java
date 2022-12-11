@@ -78,8 +78,9 @@ public class ProfileFragment extends BaseFragment implements UserProfileContract
                         sessionManager.setIsAuthentication(false);
                         binding.simpleSwitch.setChecked(false);
                     }
-                } else
-                sessionManager.setIsAuthentication(false);
+                } else {
+                    sessionManager.setIsAuthentication(false);
+                }
             }
         });
 

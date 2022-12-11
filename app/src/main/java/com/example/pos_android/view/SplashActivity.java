@@ -1,9 +1,12 @@
 package com.example.pos_android.view;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.KeyguardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.hardware.biometrics.BiometricPrompt;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,12 +16,14 @@ import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.example.pos_android.R;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.view.admin.AdminHomeActivity;
 import com.example.pos_android.view.kitchen.KitchenActivity;
+import com.example.pos_android.view.login.LoginActivity;
 import com.example.pos_android.view.user.UserHomeActivity;
 
 import java.util.concurrent.Executor;
@@ -39,17 +44,25 @@ public class SplashActivity extends AppCompatActivity {
         sessionManager = new SessionManager(this);
         executor = ContextCompat.getMainExecutor(this);
 
-        if (sessionManager.getIsAuthentication()) {
-            authenticateUser();
-        } else {
             new Handler().postDelayed(() -> {
-                Intent i = new Intent(SplashActivity.this,
-                        AdminHomeActivity.class);
-                startActivity(i);
-                finishAffinity();
+                if(sessionManager.isLoggedIn()){
+                    Boolean isBiometric = checkBiometricSupport();
+                    if (isBiometric){
+                        authenticateUser();
+                    }
+                    else {
+                        pageFlow();
+                    }
+                }
+                else{
+                    Intent i = new Intent(SplashActivity.this,
+                            LoginActivity.class);
+                    startActivity(i);
+                    finishAffinity();
+                }
 
             }, SPLASH_SCREEN_TIME_OUT);
-        }
+//        }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.P)
@@ -109,10 +122,7 @@ public class SplashActivity extends AppCompatActivity {
             public void onAuthenticationSucceeded(
                     BiometricPrompt.AuthenticationResult result) {
                 // showToast(SplashActivity.this, "Authentication Succeeded");
-                Intent i = new Intent(SplashActivity.this,
-                        UserHomeActivity.class);
-                startActivity(i);
-                finishAffinity();
+                pageFlow();
                 super.onAuthenticationSucceeded(result);
             }
         };
@@ -120,5 +130,51 @@ public class SplashActivity extends AppCompatActivity {
 
     public void showToast(Context context, String message) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+    }
+    private Boolean checkBiometricSupport() {
+
+        KeyguardManager keyguardManager =
+                (KeyguardManager) this.getSystemService(KEYGUARD_SERVICE);
+
+        PackageManager packageManager = this.getPackageManager();
+
+        if (!keyguardManager.isKeyguardSecure()) {
+            showToast(this, "Lock screen security not enabled in Settings");
+
+            return false;
+        }
+
+        if (ActivityCompat.checkSelfPermission(this,
+                Manifest.permission.USE_BIOMETRIC) !=
+                PackageManager.PERMISSION_GRANTED) {
+            showToast(this, "Fingerprint authentication permission not enabled");
+
+            return false;
+        }
+
+        packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT);
+
+        return true;
+    }
+
+    private void  pageFlow(){
+        if (sessionManager.getUserType() =="User"){
+            Intent i = new Intent(SplashActivity.this,
+                    UserHomeActivity.class);
+            startActivity(i);
+            finishAffinity();
+        }
+        else if (sessionManager.getUserType() =="Kitchen"){
+            Intent i = new Intent(SplashActivity.this,
+                    KitchenActivity.class);
+            startActivity(i);
+            finishAffinity();
+        }
+        else{
+            Intent i = new Intent(SplashActivity.this,
+                    AdminHomeActivity.class);
+            startActivity(i);
+            finishAffinity();
+        }
     }
 }
