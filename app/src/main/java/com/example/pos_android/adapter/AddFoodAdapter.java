@@ -23,11 +23,19 @@ public class AddFoodAdapter extends RecyclerView.Adapter<AddFoodAdapter.ViewHold
     // ... ViewHolder class and its constructor as per above
     ArrayList<FoodModel> list;
     private Context context;
+    private String type = "null";
     private OnItemClickListener clickListener;
 
     public AddFoodAdapter(ArrayList<FoodModel> list, Context context, OnItemClickListener clickListener) {
         this.list = list;
         this.context = context;
+        this.clickListener = clickListener;
+    }
+
+    public AddFoodAdapter(ArrayList<FoodModel> list, Context context, String type, OnItemClickListener clickListener) {
+        this.list = list;
+        this.context = context;
+        this.type = type;
         this.clickListener = clickListener;
     }
 
@@ -55,6 +63,7 @@ public class AddFoodAdapter extends RecyclerView.Adapter<AddFoodAdapter.ViewHold
         ImageView imageView = holder.subjectImageView;
         Glide.with(context)
                 .load(currentItem.getImageUrl())
+                .fitCenter()
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(imageView);
 
@@ -65,7 +74,7 @@ public class AddFoodAdapter extends RecyclerView.Adapter<AddFoodAdapter.ViewHold
         likesTextView.setText("£ "+currentItem.getPrice());
 
         holder.button.setOnClickListener(v -> {
-            clickListener.onItemClick(position, "category");
+            clickListener.onItemClick(position, type);
         });
     }
 

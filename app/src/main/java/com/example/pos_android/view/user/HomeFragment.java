@@ -220,14 +220,8 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View 
                 bottomNavigationView.setSelectedItemId(R.id.profileFragment);
                 break;
             }
-            case "add_todo": {
-                try {
-                    String title = data.getString("title");
-                    showToast(requireContext(), title);
-                } catch (JSONException e) {
-                    Log.e("AlanButton", e.getMessage());
-                    alanButton.playText("I'm sorry I'm unable to do this at the moment");
-                }
+            case "go_to_table": {
+                Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_tableReservationFragment);
             }
             default: {
                 break;

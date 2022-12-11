@@ -14,6 +14,9 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.alan.alansdk.AlanCallback;
+import com.alan.alansdk.button.AlanButton;
+import com.alan.alansdk.events.EventCommand;
 import com.example.pos_android.R;
 import com.example.pos_android.adapter.SummaryAdapter;
 import com.example.pos_android.data.model.FoodModel;
@@ -25,6 +28,9 @@ import com.example.pos_android.data.room.entity.Cart;
 import com.example.pos_android.databinding.FragmentSummaryBinding;
 import com.example.pos_android.utils.ConfirmDialog;
 import com.example.pos_android.view.BaseFragment;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +48,8 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
     private String formattedString;
     private TableInfoModel tableInfoModel;
     private ConfirmDialog dialog;
+    private AlanButton alanButton;
+    private AlanCallback alanCallback;
 
 
     @Override
@@ -76,13 +84,13 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
                 return false;
             }
         });
-        if(sessionManager.getIsCouponSelected()){
+        if (sessionManager.getIsCouponSelected()) {
             binding.layoutCoupon.setVisibility(View.GONE);
-            binding.txtCoupon.setText("Applied "+sessionManager.getCouponPercent()+"% Off");
+            binding.txtCoupon.setText("Applied " + sessionManager.getCouponPercent() + "% Off");
             binding.layoutCouponItem.setVisibility(View.VISIBLE);
-        }else{
-           binding.layoutCoupon.setVisibility(View.VISIBLE);
-           binding.layoutCouponItem.setVisibility(View.GONE);
+        } else {
+            binding.layoutCoupon.setVisibility(View.VISIBLE);
+            binding.layoutCouponItem.setVisibility(View.GONE);
         }
     }
 
@@ -109,12 +117,12 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
         binding.tvTableType.setText("Table : " + tableInfoModel.getTableCategory());
         binding.tvTableTime.setText("Date : " + tableInfoModel.getDate() + " | " + "Time : " + tableInfoModel.getTime());
 
-        if(sessionManager.getIsCouponSelected()){
+        if (sessionManager.getIsCouponSelected()) {
             binding.layoutCoupon.setVisibility(View.GONE);
-            binding.txtCoupon.setText("Applied "+sessionManager.getCouponPercent()+"% Off");
+            binding.txtCoupon.setText("Applied " + sessionManager.getCouponPercent() + "% Off");
             binding.layoutCouponItem.setVisibility(View.VISIBLE);
 
-        }else{
+        } else {
             binding.layoutCoupon.setVisibility(View.VISIBLE);
             binding.layoutCouponItem.setVisibility(View.GONE);
         }
@@ -137,6 +145,27 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
             binding.offerPrice.setVisibility(View.GONE);
             binding.textTotal.setPaintFlags(0);
         });
+
+
+        alanButton = getActivity().findViewById(R.id.alan_button);
+
+        alanCallback = new AlanCallback() {
+            /// Handle commands from Alan Studio
+            @Override
+            public void onCommand(final EventCommand eventCommand) {
+                try {
+                    JSONObject command = eventCommand.getData();
+                    JSONObject data = command.getJSONObject("data");
+                    String commandName = data.getString("commandName");
+                    //based on commandName we can perform different tasks
+                    executeCommand(commandName, data);
+                } catch (JSONException e) {
+                    Log.e("AlanButton", e.getMessage());
+                    showToast(requireContext(), e.getMessage());
+                }
+            }
+        };
+        alanButton.registerCallback(alanCallback);
     }
 
     private void setupObserver() {
@@ -155,7 +184,6 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
                     )
             );
         }
-        oldFoodList.addAll(foodList);
         updateRecyclerView();
     }
 
@@ -214,7 +242,7 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
 
         binding.textTotal.setText("£" + String.valueOf(formattedString));
         Log.d("foodList", foodList.toString());
-        if(sessionManager.getIsCouponSelected()){
+        if (sessionManager.getIsCouponSelected()) {
             binding.offerPrice.setVisibility(View.VISIBLE);
             double total_pri = Double.valueOf(formattedString);
             double amount = total;
@@ -222,8 +250,7 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
             binding.offerPrice.setText("£" + String.valueOf(amount - result));
             offerPriceValue = (float) (amount - result);
             binding.textTotal.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
-        }
-        else{
+        } else {
             binding.offerPrice.setVisibility(View.GONE);
         }
     }
@@ -253,14 +280,13 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
         List<Integer> total = new ArrayList<>();
 
         for (FoodModel model : foodList) {
-            Log.e("model",model.toString());
+            Log.e("model", model.toString());
             int totalPrice = model.getQuantity() * Integer.parseInt(model.getPrice());
             foodId.add(Integer.parseInt(model.getFoodId()));
             quantity.add(model.getQuantity());
-            if(sessionManager.getIsCouponSelected()){
+            if (sessionManager.getIsCouponSelected()) {
                 total.add((int) offerPriceValue);
-            }
-            else {
+            } else {
                 total.add(totalPrice);
             }
         }
@@ -283,5 +309,53 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
         navController.popBackStack(id, true);
         navController.navigate(id);
     }
+
+    private void executeCommand(String commandName, JSONObject data) {
+        switch (commandName) {
+            case "delete_food": {
+                try {
+                    String title = data.getString("title");
+                    for (int i = 0; i < foodList.size(); i++) {
+                        if (foodList.get(i).getName().equalsIgnoreCase(title)) {
+                            Cart model = cartList.get(i);
+                            db.orderDao().deleteCartById(model.orderId);
+                            showToast(requireContext(), "Deleted Successfully");
+                            refreshCurrentFragment();
+                        }
+                    }
+                } catch (JSONException e) {
+                    Log.e("AlanButton", e.getMessage());
+                    alanButton.playText("I'm sorry, I'm unable to do action");
+                }
+                alanButton.deactivate();
+                break;
+            }
+            case "continue": {
+                dialog.show();
+                alanButton.deactivate();
+                break;
+            }
+            case "back": {
+                try {
+                    String title = data.getString("title");
+                    showToast(requireContext(), title);
+                    if (title.equals("go back") || title.equals("Back") || title.equals("cancel")) {
+                        Navigation.findNavController(binding.getRoot()).popBackStack();
+                    }
+
+                } catch (JSONException e) {
+                    Log.e("AlanButton", e.getMessage());
+                    alanButton.playText("I'm sorry, I'm unable to do action");
+                }
+                alanButton.deactivate();
+                break;
+            }
+            default: {
+                break;
+            }
+        }
+
+    }
+
 
 }

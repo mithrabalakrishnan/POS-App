@@ -363,12 +363,11 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
             case "add_date": {
                 try {
                     String title = data.getString("title");
-                    showToast(requireContext(), title);
                     int count = Integer.parseInt(title);
 
                     for (int i = 0; i < dateList.size(); i++) {
 
-                        String[] str = model.getDate().split("-", 0);
+                        String[] str = dateList.get(i).getDate().split("-", 0);
                         int dateDay = Integer.parseInt(str[1]);
                         if (dateDay == count) {
                             for (int j = 0; j < dateList.size(); j++) {
@@ -385,16 +384,16 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
 
                 } catch (JSONException e) {
                     Log.e("AlanButton", e.getMessage());
+                    alanButton.deactivate();
                     alanButton.playText("I'm sorry, I'm unable to pic the date");
                 }
+                alanButton.deactivate();
                 break;
 
             }
-
             case "add_guest": {
                 try {
                     String title = data.getString("title");
-                    showToast(requireContext(), title);
                     int count = Integer.parseInt(title);
                     if (count <= 7 && count >= 1) {
                         totalCount = count;
@@ -403,47 +402,47 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
                     } else {
                         alanButton.playText("I'm sorry I cant add guest more than seven");
                     }
-
-                } catch (JSONException e) {
+                } catch (Exception e) {
                     Log.e("AlanButton", e.getMessage());
                     alanButton.playText("I'm sorry I'm unable to do this at the moment");
                 }
+                alanButton.deactivate();
                 break;
             }
             case "add_time": {
                 try {
                     String title = data.getString("title");
-                    showToast(requireContext(), title);
-                    if (title.equals("10am") || title.equals("10AM")) {
+                    if (title.equals("10 a.m.") || title.equals("10 A.M.")) {
                         setTime(0);
-                    } else if (title.equals("11am") || title.equals("11AM")) {
+                    } else if (title.equals("11 a.m.") || title.equals("11 A.M.")) {
                         setTime(1);
-                    } else if (title.equals("12pm") || title.equals("12PM")) {
+                    } else if (title.equals("12 p.m.") || title.equals("12 P.M.")) {
                         setTime(2);
-                    } else if (title.equals("1pm") || title.equals("1PM")) {
+                    } else if (title.equals("1 p.m.") || title.equals("1 P.M.")) {
                         setTime(3);
-                    } else if (title.equals("2pm") || title.equals("2PM")) {
+                    } else if (title.equals("2 p.m.") || title.equals("2 P.M.")) {
                         setTime(4);
-                    } else if (title.equals("3pm") || title.equals("3PM")) {
+                    } else if (title.equals("3 p.m.") || title.equals("3 P.M.")) {
                         setTime(5);
-                    } else if (title.equals("4pm") || title.equals("4PM")) {
+                    } else if (title.equals("4 p.m.") || title.equals("4 P.M.")) {
                         setTime(6);
-                    } else if (title.equals("5pm") || title.equals("5PM")) {
+                    } else if (title.equals("5 p.m.") || title.equals("5 P.M.")) {
                         setTime(7);
-                    } else if (title.equals("6pm") || title.equals("6PM")) {
+                    } else if (title.equals("6 p.m.") || title.equals("6 P.M.")) {
                         setTime(8);
-                    } else if (title.equals("7pm") || title.equals("7PM")) {
+                    } else if (title.equals("7 p.m.") || title.equals("7 P.M.")) {
                         setTime(9);
-                    } else if (title.equals("8pm") || title.equals("8PM")) {
+                    } else if (title.equals("8 p.m.") || title.equals("8 P.M.")) {
                         setTime(10);
-                    } else if (title.equals("9pm") || title.equals("9PM")) {
+                    } else if (title.equals("9 p.m.") || title.equals("9 P.M.")) {
                         setTime(11);
                     } else {
                         alanButton.playText("I'm sorry I'm unable to book for given time");
                     }
-
+                    alanButton.deactivate();
                 } catch (JSONException e) {
                     Log.e("AlanButton", e.getMessage());
+                    alanButton.deactivate();
                     alanButton.playText("I'm sorry I'm unable to do this at the moment");
                 }
                 break;
@@ -451,35 +450,28 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
             case "add_table": {
                 try {
                     String title = data.getString("title");
-                    showToast(requireContext(), title);
-                    if (title.equals("Classic booth") || title.equals("Classic") || title.equals("booth")) {
+                    if (title.equals("classic booth") || title.equals("classic") || title.equals("booth")) {
                         setTable(0);
-                    } else if (title.equals("Window side") || title.equals("Window") || title.equals("side")) {
+                    } else if (title.equals("window side") || title.equals("window") || title.equals("side")) {
                         setTable(1);
-                    } else if (title.equals("High top table") || title.equals("High top") || title.equals("top table")) {
+                    } else if (title.equals("high top table") || title.equals("high top") || title.equals("top table")) {
                         setTable(2);
                     } else {
-                        alanButton.playText("I'm sorry I'm unable to do this at the moment");
+                        alanButton.playText("I'm sorry I'm unable to do pick this table");
                     }
+                    alanButton.deactivate();
                 } catch (JSONException e) {
+                    alanButton.deactivate();
                     Log.e("AlanButton", e.getMessage());
                     alanButton.playText("I'm sorry I'm unable to do this at the moment");
                 }
+                alanButton.deactivate();
                 break;
 
             }
             case "move_to_next": {
-                try {
-                    String title = data.getString("title");
-                    showToast(requireContext(), title);
-                    if (title.equals("submit") || title.equals("next") || title.equals("go")){
-                        submitBtn();
-                    }
-
-                } catch (JSONException e) {
-                    Log.e("AlanButton", e.getMessage());
-                    alanButton.playText("I'm sorry, I'm unable to move");
-                }
+               submitBtn();
+                alanButton.deactivate();
                 break;
 
             }
@@ -496,6 +488,7 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
                     Log.e("AlanButton", e.getMessage());
                     alanButton.playText("I'm sorry, I'm unable to move");
                 }
+                alanButton.deactivate();
                 break;
             }
             default: {

@@ -40,6 +40,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class FoodListFragment extends BaseFragment implements UserHomeContract.View, OnItemClickListener, onCategoryItemClick {
     AddFoodAdapter popularAdapter;
@@ -194,7 +195,7 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
             categoryList.add(new FoodModel(String.valueOf(food.getFoodId()),
                     food.getName(), food.getImage(), food.getPrice()));
         }
-        categoryFoodAdapter = new AddFoodAdapter(categoryList, requireContext(), this);
+        categoryFoodAdapter = new AddFoodAdapter(categoryList, requireContext(), "category", this);
         binding.rvCategoriesItems.setLayoutManager(new GridLayoutManager(requireContext(), 2));
         binding.rvCategoriesItems.setAdapter(categoryFoodAdapter);
     }
@@ -206,7 +207,7 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
         try {
             FoodModel model;
 
-            if (from == "category")
+            if (Objects.equals(from, "category"))
                 model = categoryList.get(position);
             else
                 model = popularArrayList.get(position);
@@ -225,7 +226,7 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
                 showSnackBar(binding.getRoot(), "Food already in the cart");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.d("Food Exception", "onItemClick: " + e.toString());
         }
     }
 
@@ -244,34 +245,55 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
 
     private void executeCommand(String commandName, JSONObject data) {
         switch (commandName) {
-            case "choose_category":{
+            case "choose_category": {
                 try {
                     String title = data.getString("title");
-
+                    for (int i = 0; i < categories.size(); i++) {
+                        if (categories.get(i).equals(title)) {
+                            categoryListingAdapter.updatePosition(i);
+                            categoryListingAdapter.notifyDataSetChanged();
+                            presenter.getCategoryItems(categories.get(i));
+                        }
+                    }
+                } catch (JSONException e) {
+                    Log.e("AlanButton", e.getMessage());
+                    alanButton.playText("I'm sorry, I'm unable to do action");
+                    alanButton.deactivate();
+                }
+                alanButton.deactivate();
+                break;
+            }
+            case "choose_food": {
+                try {
+                    String title = data.getString("title");
+                    for (int i = 0; i < popularArrayList.size(); i++) {
+                        if (popularArrayList.get(i).getName().equalsIgnoreCase(title)) {
+                            addFoodThroughVoice(i);
+                        }
+                    }
+                    alanButton.deactivate();
 
                 } catch (JSONException e) {
                     Log.e("AlanButton", e.getMessage());
                     alanButton.playText("I'm sorry, I'm unable to do action");
                 }
+                alanButton.deactivate();
                 break;
             }
-            case "choose_food":{
-                try {
-                    String title = data.getString("title");
-                    showToast(requireContext(), title);
 
-                } catch (JSONException e) {
-                    Log.e("AlanButton", e.getMessage());
-                    alanButton.playText("I'm sorry, I'm unable to do action");
-                }
+            case "continue": {
+                FoodListFragmentDirections.ActionFoodListFragmentToSummaryFragment directions =
+                        FoodListFragmentDirections.actionFoodListFragmentToSummaryFragment(tableInfoModel);
+                Navigation.findNavController(requireView()).navigate(directions);
+                alanButton.deactivate();
                 break;
             }
-            case "back" : {
+            case "back": {
 
                 try {
                     String title = data.getString("title");
                     showToast(requireContext(), title);
-                    if (title.equals("go back") || title.equals("Back") || title.equals("cancel")){
+                    if (title.equals("go back") || title.equals("Back") || title.equals("cancel")) {
                         Navigation.findNavController(binding.getRoot()).popBackStack();
                     }
 
@@ -279,6 +301,7 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
                     Log.e("AlanButton", e.getMessage());
                     alanButton.playText("I'm sorry, I'm unable to do action");
                 }
+                alanButton.deactivate();
                 break;
             }
             default: {
@@ -286,5 +309,28 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
             }
         }
 
+    }
+
+    private void addFoodThroughVoice(int position) {
+        sessionManager.setIsCouponSelected(false);
+        try {
+            FoodModel model;
+            model = popularArrayList.get(position);
+            Cart cart = new Cart();
+            cart.food = model;
+            cart.food.setFoodId(model.getFoodId());
+            cart.userId = sessionManager.getUserName();
+            cart.status = 0;
+            cart.quantity = 1;
+            if (!db.orderDao().isFoodIsExist(sessionManager.getUserName(), model)) {
+                db.orderDao().insert(cart);
+                showSnackBar(binding.getRoot(), "Added to cart successfully");
+                // sessionManager.setIsFoodAdded(true);
+            } else {
+                showSnackBar(binding.getRoot(), "Food already in the cart");
+            }
+        } catch (Exception e) {
+            Log.d("Food Exception", "onItemClick: " + e.toString());
+        }
     }
 }
