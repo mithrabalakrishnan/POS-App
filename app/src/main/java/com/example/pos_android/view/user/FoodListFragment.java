@@ -2,6 +2,7 @@ package com.example.pos_android.view.user;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,10 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.alan.alansdk.AlanCallback;
+import com.alan.alansdk.button.AlanButton;
+import com.alan.alansdk.events.EventCommand;
+import com.example.pos_android.R;
 import com.example.pos_android.adapter.AddFoodAdapter;
 import com.example.pos_android.adapter.CategoryListingAdapter;
 import com.example.pos_android.contracts.UserHomeContract;
@@ -31,6 +36,9 @@ import com.example.pos_android.utils.onCategoryItemClick;
 import com.example.pos_android.view.BaseFragment;
 import com.example.pos_android.view.login.LoginActivity;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class FoodListFragment extends BaseFragment implements UserHomeContract.View, OnItemClickListener, onCategoryItemClick {
@@ -47,6 +55,8 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
     private SessionManager sessionManager;
     private CartDatabase db;
     private TableInfoModel tableInfoModel;
+    private AlanButton alanButton;
+    private AlanCallback alanCallback;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -92,6 +102,26 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
                 Navigation.findNavController(requireView()).popBackStack();
             }
         });
+
+        alanButton = getActivity().findViewById(R.id.alan_button);
+
+        alanCallback = new AlanCallback() {
+            /// Handle commands from Alan Studio
+            @Override
+            public void onCommand(final EventCommand eventCommand) {
+                try {
+                    JSONObject command = eventCommand.getData();
+                    JSONObject data = command.getJSONObject("data");
+                    String commandName = data.getString("commandName");
+                    //based on commandName we can perform different tasks
+                    executeCommand(commandName, data);
+                } catch (JSONException e) {
+                    Log.e("AlanButton", e.getMessage());
+                    showToast(requireContext(), e.getMessage());
+                }
+            }
+        };
+        alanButton.registerCallback(alanCallback);
     }
 
     @Override
@@ -204,5 +234,57 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
         categoryListingAdapter.updatePosition(position);
         categoryListingAdapter.notifyDataSetChanged();
         presenter.getCategoryItems(categories.get(position));
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        alanButton.removeCallback(alanCallback);
+    }
+
+    private void executeCommand(String commandName, JSONObject data) {
+        switch (commandName) {
+            case "choose_category":{
+                try {
+                    String title = data.getString("title");
+
+
+                } catch (JSONException e) {
+                    Log.e("AlanButton", e.getMessage());
+                    alanButton.playText("I'm sorry, I'm unable to do action");
+                }
+                break;
+            }
+            case "choose_food":{
+                try {
+                    String title = data.getString("title");
+                    showToast(requireContext(), title);
+
+                } catch (JSONException e) {
+                    Log.e("AlanButton", e.getMessage());
+                    alanButton.playText("I'm sorry, I'm unable to do action");
+                }
+                break;
+            }
+            case "back" : {
+
+                try {
+                    String title = data.getString("title");
+                    showToast(requireContext(), title);
+                    if (title.equals("go back") || title.equals("Back") || title.equals("cancel")){
+                        Navigation.findNavController(binding.getRoot()).popBackStack();
+                    }
+
+                } catch (JSONException e) {
+                    Log.e("AlanButton", e.getMessage());
+                    alanButton.playText("I'm sorry, I'm unable to do action");
+                }
+                break;
+            }
+            default: {
+                break;
+            }
+        }
+
     }
 }
