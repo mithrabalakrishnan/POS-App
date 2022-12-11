@@ -18,7 +18,6 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class CustomerReportActivity extends BaseActivity implements CustomerReportContract.View, AdapterView.OnItemSelectedListener {
     ArrayList<BarEntry> barEntries = new ArrayList<>();
@@ -94,11 +93,12 @@ public class CustomerReportActivity extends BaseActivity implements CustomerRepo
     @Override
     public void showReportResponse(CustomerReportResponse response) {
         barEntries.clear();
-        labels = new String[response.getData().size()];
-        for (int i = 0; i < response.getData().size(); i++) {
-            barEntries.add(new BarEntry(i, (float) response.getData().get(i).getVisitList().get(0)));
-            labels[i] = response.getData().get(i).getUsername();
+        labels = new String[response.getData().getUserReport().size()];
+        for (int i = 0; i < response.getData().getUserReport().size(); i++) {
+            barEntries.add(new BarEntry(i, (float) response.getData().getUserReport().get(i).getVisitList()));
+            labels[i] = response.getData().getUserReport().get(i).getUsername();
         }
+        binding.txtPeople.setText(String.valueOf(response.getData().getTotalUser()));
         monthlyData();
     }
 

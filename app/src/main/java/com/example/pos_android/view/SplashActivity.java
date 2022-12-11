@@ -46,6 +46,7 @@ public class SplashActivity extends AppCompatActivity {
                 Intent i = new Intent(SplashActivity.this,
                         UserHomeActivity.class);
                 startActivity(i);
+                finishAffinity();
 
             }, SPLASH_SCREEN_TIME_OUT);
         }

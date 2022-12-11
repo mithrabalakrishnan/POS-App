@@ -381,13 +381,14 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
                             break;
                         }
                     }
-
-                } catch (JSONException e) {
-                    Log.e("AlanButton", e.getMessage());
                     alanButton.deactivate();
+
+                } catch (Exception e) {
+                    Log.e("AlanButton", e.getMessage());
                     alanButton.playText("I'm sorry, I'm unable to pic the date");
+                    alanButton.deactivate();
+
                 }
-                alanButton.deactivate();
                 break;
 
             }
@@ -414,33 +415,33 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
                     String title = data.getString("title");
                     if (title.equals("10 a.m.") || title.equals("10 A.M.")) {
                         setTime(0);
-                    } else if (title.equals("11 a.m.") || title.equals("11 A.M.")) {
+                    } else if (title.equalsIgnoreCase("11 a.m.") || title.equalsIgnoreCase("11 A.M.")) {
                         setTime(1);
-                    } else if (title.equals("12 p.m.") || title.equals("12 P.M.")) {
+                    } else if (title.equalsIgnoreCase("12 p.m.") || title.equalsIgnoreCase("12 P.M.")) {
                         setTime(2);
-                    } else if (title.equals("1 p.m.") || title.equals("1 P.M.")) {
+                    } else if (title.equalsIgnoreCase("1 p.m.") || title.equalsIgnoreCase("1 P.M.")) {
                         setTime(3);
-                    } else if (title.equals("2 p.m.") || title.equals("2 P.M.")) {
+                    } else if (title.equalsIgnoreCase("2 p.m.") || title.equalsIgnoreCase("2 P.M.")) {
                         setTime(4);
-                    } else if (title.equals("3 p.m.") || title.equals("3 P.M.")) {
+                    } else if (title.equalsIgnoreCase("3 p.m.") || title.equalsIgnoreCase("3 P.M.")) {
                         setTime(5);
-                    } else if (title.equals("4 p.m.") || title.equals("4 P.M.")) {
+                    } else if (title.equalsIgnoreCase("4 p.m.") || title.equalsIgnoreCase("4 P.M.")) {
                         setTime(6);
-                    } else if (title.equals("5 p.m.") || title.equals("5 P.M.")) {
+                    } else if (title.equalsIgnoreCase("5 p.m.") || title.equalsIgnoreCase("5 P.M.")) {
                         setTime(7);
-                    } else if (title.equals("6 p.m.") || title.equals("6 P.M.")) {
+                    } else if (title.equalsIgnoreCase("6 p.m.") || title.equalsIgnoreCase("6 P.M.")) {
                         setTime(8);
-                    } else if (title.equals("7 p.m.") || title.equals("7 P.M.")) {
+                    } else if (title.equalsIgnoreCase("7 p.m.") || title.equalsIgnoreCase("7 P.M.")) {
                         setTime(9);
-                    } else if (title.equals("8 p.m.") || title.equals("8 P.M.")) {
+                    } else if (title.equalsIgnoreCase("8 p.m.") || title.equalsIgnoreCase("8 P.M.")) {
                         setTime(10);
-                    } else if (title.equals("9 p.m.") || title.equals("9 P.M.")) {
+                    } else if (title.equalsIgnoreCase("9 p.m.") || title.equalsIgnoreCase("9 P.M.")) {
                         setTime(11);
                     } else {
                         alanButton.playText("I'm sorry I'm unable to book for given time");
                     }
                     alanButton.deactivate();
-                } catch (JSONException e) {
+                } catch (Exception e) {
                     Log.e("AlanButton", e.getMessage());
                     alanButton.deactivate();
                     alanButton.playText("I'm sorry I'm unable to do this at the moment");
@@ -450,17 +451,17 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
             case "add_table": {
                 try {
                     String title = data.getString("title");
-                    if (title.equals("classic booth") || title.equals("classic") || title.equals("booth")) {
+                    if (title.equalsIgnoreCase("classic booth") || title.equalsIgnoreCase("classic") || title.equalsIgnoreCase("booth")) {
                         setTable(0);
-                    } else if (title.equals("window side") || title.equals("window") || title.equals("side")) {
+                    } else if (title.equalsIgnoreCase("window side") || title.equalsIgnoreCase("window") || title.equalsIgnoreCase("side")) {
                         setTable(1);
-                    } else if (title.equals("high top table") || title.equals("high top") || title.equals("top table")) {
+                    } else if (title.equalsIgnoreCase("high top table") || title.equalsIgnoreCase("high top") || title.equalsIgnoreCase("top table")) {
                         setTable(2);
                     } else {
                         alanButton.playText("I'm sorry I'm unable to do pick this table");
                     }
                     alanButton.deactivate();
-                } catch (JSONException e) {
+                } catch (Exception e) {
                     alanButton.deactivate();
                     Log.e("AlanButton", e.getMessage());
                     alanButton.playText("I'm sorry I'm unable to do this at the moment");
@@ -480,7 +481,7 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
                 try {
                     String title = data.getString("title");
                     showToast(requireContext(), title);
-                    if (title.equals("go back") || title.equals("Back") || title.equals("cancel")){
+                    if (title.equalsIgnoreCase("go back") || title.equalsIgnoreCase("Back") || title.equalsIgnoreCase("cancel")){
                         Navigation.findNavController(binding.getRoot()).popBackStack();
                     }
 
@@ -492,6 +493,7 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
                 break;
             }
             default: {
+                alanButton.deactivate();
                 break;
             }
         }

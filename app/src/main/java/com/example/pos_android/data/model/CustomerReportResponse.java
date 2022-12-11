@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class CustomerReportResponse {
+
     @SerializedName("status")
     @Expose
     private Boolean status;
@@ -14,7 +15,7 @@ public class CustomerReportResponse {
     private String message;
     @SerializedName("data")
     @Expose
-    private List<ReportData> data = null;
+    private Data data;
 
     public Boolean getStatus() {
         return status;
@@ -32,22 +33,52 @@ public class CustomerReportResponse {
         this.message = message;
     }
 
-    public List<ReportData> getData() {
+    public Data getData() {
         return data;
     }
 
-    public void setData(List<ReportData> data) {
+    public void setData(Data data) {
         this.data = data;
     }
 
-    public class ReportData {
+    public class Data {
+
+        @SerializedName("userReport")
+        @Expose
+        private List<UserReport> userReport = null;
+        @SerializedName("totalUser")
+        @Expose
+        private Integer totalUser;
+
+        public List<UserReport> getUserReport() {
+            return userReport;
+        }
+
+        public void setUserReport(List<UserReport> userReport) {
+            this.userReport = userReport;
+        }
+
+        public Integer getTotalUser() {
+            return totalUser;
+        }
+
+        public void setTotalUser(Integer totalUser) {
+            this.totalUser = totalUser;
+        }
+
+    }
+
+    public class UserReport {
 
         @SerializedName("username")
         @Expose
         private String username;
         @SerializedName("visitList")
         @Expose
-        private List<Integer> visitList = null;
+        private Integer visitList;
+        @SerializedName("totalUser")
+        @Expose
+        private Object totalUser;
 
         public String getUsername() {
             return username;
@@ -57,14 +88,21 @@ public class CustomerReportResponse {
             this.username = username;
         }
 
-        public List<Integer> getVisitList() {
+        public Integer getVisitList() {
             return visitList;
         }
 
-        public void setVisitList(List<Integer> visitList) {
+        public void setVisitList(Integer visitList) {
             this.visitList = visitList;
         }
 
-    }
+        public Object getTotalUser() {
+            return totalUser;
+        }
 
+        public void setTotalUser(Object totalUser) {
+            this.totalUser = totalUser;
+        }
+
+    }
 }

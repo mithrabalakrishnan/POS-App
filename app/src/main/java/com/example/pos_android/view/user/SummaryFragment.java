@@ -357,5 +357,11 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
 
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+        alanButton.removeCallback(alanCallback);
+    }
+
 
 }
