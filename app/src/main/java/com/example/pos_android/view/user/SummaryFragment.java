@@ -38,6 +38,7 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
     private SummaryAdapter summaryAdapter;
     private CartDatabase db;
     private float total = 0;
+    private float offerPriceValue = 0;
     private String formattedString;
     private TableInfoModel tableInfoModel;
     private ConfirmDialog dialog;
@@ -219,6 +220,7 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
             double amount = total;
             double result = (amount / 100.0f) * sessionManager.getCouponPercent();
             binding.offerPrice.setText("£" + String.valueOf(amount - result));
+            offerPriceValue = (float) (amount - result);
             binding.textTotal.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
         }
         else{
@@ -256,7 +258,7 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
             foodId.add(Integer.parseInt(model.getFoodId()));
             quantity.add(model.getQuantity());
             if(sessionManager.getIsCouponSelected()){
-                total.add(Integer.valueOf(binding.offerPrice.getText().toString()));
+                total.add((int) offerPriceValue);
             }
             else {
                 total.add(totalPrice);

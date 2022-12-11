@@ -109,7 +109,7 @@ public class SplashActivity extends AppCompatActivity {
                     BiometricPrompt.AuthenticationResult result) {
                 // showToast(SplashActivity.this, "Authentication Succeeded");
                 Intent i = new Intent(SplashActivity.this,
-                        AdminHomeActivity.class);
+                        UserHomeActivity.class);
                 startActivity(i);
                 finishAffinity();
                 super.onAuthenticationSucceeded(result);
