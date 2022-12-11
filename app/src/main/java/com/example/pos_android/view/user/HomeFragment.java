@@ -72,7 +72,7 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        checkPermissions();
+//        checkPermissions();
 
         initData();
 

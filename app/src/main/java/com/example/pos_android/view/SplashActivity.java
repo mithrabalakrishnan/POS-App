@@ -12,6 +12,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.CancellationSignal;
 import android.os.Handler;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
@@ -26,6 +27,7 @@ import com.example.pos_android.view.kitchen.KitchenActivity;
 import com.example.pos_android.view.login.LoginActivity;
 import com.example.pos_android.view.user.UserHomeActivity;
 
+import java.util.Objects;
 import java.util.concurrent.Executor;
 
 @SuppressLint("CustomSplashScreen")
@@ -158,21 +160,28 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void  pageFlow(){
-        if (sessionManager.getUserType() =="User"){
+        Log.e("user",sessionManager.getUserType());
+        if (Objects.equals(sessionManager.getUserType(), "USER")){
             Intent i = new Intent(SplashActivity.this,
                     UserHomeActivity.class);
             startActivity(i);
             finishAffinity();
         }
-        else if (sessionManager.getUserType() =="Kitchen"){
+        else if (Objects.equals(sessionManager.getUserType(), "KITCHEN")){
             Intent i = new Intent(SplashActivity.this,
                     KitchenActivity.class);
             startActivity(i);
             finishAffinity();
         }
-        else{
+        else if (Objects.equals(sessionManager.getUserType(), "ADMIN")){
             Intent i = new Intent(SplashActivity.this,
                     AdminHomeActivity.class);
+            startActivity(i);
+            finishAffinity();
+        }
+        else{
+            Intent i = new Intent(SplashActivity.this,
+                    LoginActivity.class);
             startActivity(i);
             finishAffinity();
         }
