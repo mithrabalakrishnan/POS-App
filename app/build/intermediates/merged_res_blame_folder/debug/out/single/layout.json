@@ -116,10 +116,6 @@
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\loading_layout.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-4:/layout/activity_best_selling_report.xml",
-        "source": "com.example.pos_android.app-main-7:/layout/activity_best_selling_report.xml"
-    },
-    {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-mergeDebugResources-4:\\layout\\layout_popular_item.xml",
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\layout_popular_item.xml"
     },
@@ -150,6 +146,10 @@
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-mergeDebugResources-4:\\layout\\layout_history.xml",
         "source": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-7:\\layout\\layout_history.xml"
+    },
+    {
+        "merged": "com.example.pos_android.app-mergeDebugResources-4:/layout/fragment_reservation.xml",
+        "source": "com.example.pos_android.app-main-7:/layout/fragment_reservation.xml"
     },
     {
         "merged": "C:\\Users\\aswin\\.gradle\\daemon\\7.4\\com.example.pos_android.app-mergeDebugResources-4:\\layout\\fragment_profile.xml",
