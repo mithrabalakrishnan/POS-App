@@ -44,7 +44,7 @@ public class SplashActivity extends AppCompatActivity {
         } else {
             new Handler().postDelayed(() -> {
                 Intent i = new Intent(SplashActivity.this,
-                        UserHomeActivity.class);
+                        AdminHomeActivity.class);
                 startActivity(i);
                 finishAffinity();
 

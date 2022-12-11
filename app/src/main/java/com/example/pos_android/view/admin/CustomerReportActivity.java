@@ -1,6 +1,7 @@
 package com.example.pos_android.view.admin;
 
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,6 +19,8 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class CustomerReportActivity extends BaseActivity implements CustomerReportContract.View, AdapterView.OnItemSelectedListener {
     ArrayList<BarEntry> barEntries = new ArrayList<>();
@@ -93,10 +96,16 @@ public class CustomerReportActivity extends BaseActivity implements CustomerRepo
     @Override
     public void showReportResponse(CustomerReportResponse response) {
         barEntries.clear();
+        ArrayList<CustomerReportResponse.UserReport> reportArrayList = new ArrayList<>(response.getData().getUserReport());
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            Collections.sort(reportArrayList, Comparator.comparingInt(CustomerReportResponse.UserReport::getVisitList).reversed());
+        }
+
         labels = new String[response.getData().getUserReport().size()];
         for (int i = 0; i < response.getData().getUserReport().size(); i++) {
-            barEntries.add(new BarEntry(i, (float) response.getData().getUserReport().get(i).getVisitList()));
-            labels[i] = response.getData().getUserReport().get(i).getUsername();
+            barEntries.add(new BarEntry(i, (float) reportArrayList.get(i).getVisitList()));
+            labels[i] = reportArrayList.get(i).getUsername();
         }
         binding.txtPeople.setText(String.valueOf(response.getData().getTotalUser()));
         monthlyData();
