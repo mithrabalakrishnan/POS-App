@@ -135,6 +135,23 @@
             android:textSize="20dp"
             android:textStyle="bold" />
 
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/layout_popular_shimmer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <include layout="@layout/layout_popular_shimmer" />
+                <include layout="@layout/layout_popular_shimmer" />
+                <include layout="@layout/layout_popular_shimmer" />
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/popular_recyclerview"
             android:layout_width="match_parent"
@@ -152,7 +169,22 @@
             android:textColor="@color/orange_700"
             android:textSize="20dp"
             android:textStyle="bold" />
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/layout_recent_shimmer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <include layout="@layout/layout_popular_shimmer" />
+                <include layout="@layout/layout_popular_shimmer" />
+                <include layout="@layout/layout_popular_shimmer" />
+            </LinearLayout>
 
+        </com.facebook.shimmer.ShimmerFrameLayout>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recent_recyclerview"
             android:layout_width="match_parent"

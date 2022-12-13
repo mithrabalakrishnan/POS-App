@@ -19,5 +19,6 @@
     <color name="black_900_4c">#4c000000</color>
     <color name="black_900">#000000</color>
     <color name="gray_50">#fcfcfc</color>
+    <color name="shimmerColor">#BCBCBC</color>
 
 </resources>

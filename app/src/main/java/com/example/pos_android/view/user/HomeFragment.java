@@ -75,7 +75,7 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View 
 //        checkPermissions();
 
         initData();
-
+        showShimmer();
         bottomNavigationView = getActivity().findViewById(R.id.bottomNavigationView);
         binding.imageSlider.setImageList(slideModels);
 
@@ -171,6 +171,9 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View 
                     food.getName(), food.getImage(), food.getPrice()
             ));
         }
+        binding.popularRecyclerview.setVisibility(View.VISIBLE);
+        binding.layoutPopularShimmer.setVisibility(View.GONE);
+        binding.layoutPopularShimmer.stopShimmer();
         popularAdapter = new FoodAdapter(popularArrayList, requireContext());
         binding.popularRecyclerview.setAdapter(popularAdapter);
         binding.popularRecyclerview.setLayoutManager(new LinearLayoutManager(requireActivity(), RecyclerView.HORIZONTAL, false));
@@ -230,5 +233,12 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View 
 
     }
 
+    private void showShimmer() {
+        binding.popularRecyclerview.setVisibility(View.GONE);
+        binding.layoutPopularShimmer.setVisibility(View.VISIBLE);
+        binding.layoutPopularShimmer.startShimmer();
+
+
+    }
 
 }

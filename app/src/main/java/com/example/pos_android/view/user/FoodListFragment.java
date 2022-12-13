@@ -79,6 +79,8 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
     }
 
     private void initView() {
+     categoryShimmer();
+
         tableInfoModel = FoodListFragmentArgs.fromBundle(getArguments()).getTableInfo();
         sessionManager = new SessionManager(requireContext());
         String json = TableInfoModel.convertToJson(tableInfoModel);
@@ -123,6 +125,13 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
             }
         };
         alanButton.registerCallback(alanCallback);
+    }
+
+    private void categoryShimmer() {
+        binding.titleCategory.setVisibility(View.VISIBLE);
+        binding.layoutCategoryShimmer.startShimmer();
+        binding.layoutCategoryShimmer.setVisibility(View.VISIBLE);
+        binding.rvCategories.setVisibility(View.GONE);
     }
 
     @Override
@@ -179,6 +188,9 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
 
     @Override
     public void showCategoryResponse(foodCategoryResponse foodCategoryResponse) {
+        binding.layoutCategoryShimmer.stopShimmer();
+        binding.layoutCategoryShimmer.setVisibility(View.GONE);
+
         categories.clear();
         categories.addAll(foodCategoryResponse.data.foodCategory);
         binding.titleCategory.setVisibility(View.VISIBLE);
