@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.example.pos_android.R;
 import com.example.pos_android.adapter.AllFoodAdapter;
 import com.example.pos_android.contracts.UserHomeContract;
 import com.example.pos_android.data.model.FoodModel;
@@ -54,9 +55,8 @@ public class ListAllFoodActivity extends BaseActivity implements UserHomeContrac
 
     @Override
     public void showApiErrorWarning(String string) {
-        hideLoadingDialog();
-        if (string.equals("HTTP 401 ")) {
-            SessionManager sessionManager = new SessionManager(this);
+        if (string.equalsIgnoreCase(getResources().getString(R.string.unauthorized))) {
+            SessionManager sessionManager = new SessionManager(getApplicationContext());
             sessionManager.clear();
             showToast(this, "Session expired");
             Intent intent = new Intent(this, LoginActivity.class);

@@ -102,7 +102,15 @@ public class KitchenActivity extends BaseActivity implements KitchenListingContr
 
     @Override
     public void showApiErrorWarning(String string) {
-        showSnackBar(binding.getRoot(), string);
+        if (string.equalsIgnoreCase(getResources().getString(R.string.unauthorized))) {
+            SessionManager sessionManager = new SessionManager(getApplicationContext());
+            sessionManager.clear();
+            showToast(this, "Session expired");
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finishAffinity();
+        } else
+            showToast(this, string);
     }
 
     @Override

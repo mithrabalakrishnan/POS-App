@@ -1,5 +1,6 @@
 package com.example.pos_android.view.admin;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,15 +10,18 @@ import android.widget.ArrayAdapter;
 
 import androidx.core.util.Pair;
 
+import com.example.pos_android.R;
 import com.example.pos_android.adapter.BestSellingAdapter;
 import com.example.pos_android.contracts.BestSellingReportContract;
 import com.example.pos_android.data.model.sales_report.BestSellingReportData;
 import com.example.pos_android.data.model.sales_report.BestSellingReportResponse;
 import com.example.pos_android.data.model.sales_report.BestSellingReportWeeklyResponse;
 import com.example.pos_android.data.model.sales_report.FoodDetail;
+import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.databinding.ActivityBestSellingReportBinding;
 import com.example.pos_android.presenter.BestSellingReportPresenter;
 import com.example.pos_android.view.BaseActivity;
+import com.example.pos_android.view.login.LoginActivity;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
@@ -214,7 +218,15 @@ public class BestSellingReportActivity extends BaseActivity implements AdapterVi
 
     @Override
     public void showApiErrorWarning(String string) {
-        showSnackBar(binding.getRoot(), string);
+        if (string.equalsIgnoreCase(getResources().getString(R.string.unauthorized))) {
+            SessionManager sessionManager = new SessionManager(getApplicationContext());
+            sessionManager.clear();
+            showToast(this, "Session expired");
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finishAffinity();
+        } else
+            showToast(this, string);
     }
 
     @Override

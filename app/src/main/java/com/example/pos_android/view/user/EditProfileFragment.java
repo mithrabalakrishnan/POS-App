@@ -1,5 +1,6 @@
 package com.example.pos_android.view.user;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,9 +11,11 @@ import androidx.navigation.Navigation;
 
 import com.example.pos_android.contracts.UserProfileContract;
 import com.example.pos_android.data.model.UserProfileResponse;
+import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.databinding.FragmentEditProfileBinding;
 import com.example.pos_android.presenter.UserProfilePresenter;
 import com.example.pos_android.view.BaseFragment;
+import com.example.pos_android.view.login.LoginActivity;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class EditProfileFragment extends BaseFragment implements UserProfileContract.View {
@@ -111,7 +114,15 @@ public class EditProfileFragment extends BaseFragment implements UserProfileCont
     @Override
     public void showApiErrorWarning(String string) {
         hideLoadingDialog();
-        showToast(requireContext(), string);
+        if (string.equals("HTTP 401 ")) {
+            SessionManager sessionManager = new SessionManager(requireContext());
+            sessionManager.clear();
+            showToast(requireContext(), "Session expired");
+            Intent intent = new Intent(requireContext(), LoginActivity.class);
+            startActivity(intent);
+            requireActivity().finishAffinity();
+        } else
+            showToast(requireContext(), string);
     }
 
     @Override

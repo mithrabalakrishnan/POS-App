@@ -6,14 +6,12 @@ import android.os.Bundle;
 import com.example.pos_android.contracts.LoginContract;
 import com.example.pos_android.data.model.LoginResponse;
 import com.example.pos_android.data.preference.SessionManager;
-import com.example.pos_android.databinding.ActivityLoginBinding;
 import com.example.pos_android.presenter.LoginPresenter;
 import com.example.pos_android.utils.Validation;
 import com.example.pos_android.view.BaseActivity;
 import com.example.pos_android.view.admin.AdminHomeActivity;
 import com.example.pos_android.view.kitchen.KitchenActivity;
 import com.example.pos_android.view.user.UserHomeActivity;
-import com.example.pos_android.view.user.register.RegisterActivity;
 
 import java.util.Objects;
 

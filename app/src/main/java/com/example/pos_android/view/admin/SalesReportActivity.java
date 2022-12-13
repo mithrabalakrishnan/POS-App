@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 
 import androidx.core.util.Pair;
 
+import com.example.pos_android.R;
 import com.example.pos_android.contracts.SalesReportContract;
 import com.example.pos_android.data.model.sales_report.SalesReportResponse;
 import com.example.pos_android.data.preference.SessionManager;
@@ -205,16 +206,15 @@ public class SalesReportActivity extends BaseActivity implements
 
     @Override
     public void showApiErrorWarning(String string) {
-        hideLoadingDialog();
-        if (string.equals("HTTP 401 ")) {
-            SessionManager sessionManager = new SessionManager(this);
+        if (string.equalsIgnoreCase(getResources().getString(R.string.unauthorized))) {
+            SessionManager sessionManager = new SessionManager(getApplicationContext());
             sessionManager.clear();
             showToast(this, "Session expired");
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
             finishAffinity();
         } else
-            showSnackBar(binding.getRoot(), string);
+            showToast(this, string);
     }
 
     @Override

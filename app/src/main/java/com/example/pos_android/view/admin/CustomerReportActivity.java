@@ -1,5 +1,6 @@
 package com.example.pos_android.view.admin;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -7,11 +8,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
+import com.example.pos_android.R;
 import com.example.pos_android.contracts.CustomerReportContract;
 import com.example.pos_android.data.model.CustomerReportResponse;
+import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.databinding.ActivityCustomerReportBinding;
 import com.example.pos_android.presenter.CustomerReportPresenter;
 import com.example.pos_android.view.BaseActivity;
+import com.example.pos_android.view.login.LoginActivity;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
@@ -83,8 +87,15 @@ public class CustomerReportActivity extends BaseActivity implements CustomerRepo
 
     @Override
     public void showApiErrorWarning(String string) {
-        hideLoadingDialog();
-        showToast(this, string);
+        if (string.equalsIgnoreCase(getResources().getString(R.string.unauthorized))) {
+            SessionManager sessionManager = new SessionManager(getApplicationContext());
+            sessionManager.clear();
+            showToast(this, "Session expired");
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finishAffinity();
+        } else
+            showToast(this, string);
     }
 
     @Override

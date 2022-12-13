@@ -1,6 +1,7 @@
 package com.example.pos_android.view.admin;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,11 +10,14 @@ import android.widget.ArrayAdapter;
 
 import androidx.core.util.Pair;
 
+import com.example.pos_android.R;
 import com.example.pos_android.contracts.IncomePerItemMonthlyContract;
 import com.example.pos_android.data.model.sales_report.IncomePerItemMonthlyResponse;
+import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.databinding.ActivityIncomeReportBinding;
 import com.example.pos_android.presenter.IncomePerItemMonthlyPresenter;
 import com.example.pos_android.view.BaseActivity;
+import com.example.pos_android.view.login.LoginActivity;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
@@ -141,7 +145,15 @@ public class IncomeReportActivity extends BaseActivity implements AdapterView.On
 
     @Override
     public void showApiErrorWarning(String string) {
-        showSnackBar(binding.getRoot(), string);
+        if (string.equalsIgnoreCase(getResources().getString(R.string.unauthorized))) {
+            SessionManager sessionManager = new SessionManager(getApplicationContext());
+            sessionManager.clear();
+            showToast(this, "Session expired");
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finishAffinity();
+        } else
+            showToast(this, string);
     }
 
     @Override

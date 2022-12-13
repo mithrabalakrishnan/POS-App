@@ -1,4 +1,4 @@
-package com.example.pos_android.view.user.register;
+package com.example.pos_android.view.login;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,6 @@ import com.example.pos_android.databinding.ActivityRegisterBinding;
 import com.example.pos_android.presenter.RegisterPresenter;
 import com.example.pos_android.utils.Validation;
 import com.example.pos_android.view.BaseActivity;
-import com.example.pos_android.view.login.LoginActivity;
 
 import java.util.Objects;
 

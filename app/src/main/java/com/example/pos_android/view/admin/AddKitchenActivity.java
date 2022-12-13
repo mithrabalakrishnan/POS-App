@@ -3,6 +3,7 @@ package com.example.pos_android.view.admin;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.pos_android.R;
 import com.example.pos_android.contracts.AddKitchenContract;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.databinding.ActivityAddKitchenBinding;
@@ -72,9 +73,8 @@ public class AddKitchenActivity extends BaseActivity implements AddKitchenContra
 
     @Override
     public void showApiErrorWarning(String string) {
-        hideLoadingDialog();
-        if (string.equals("HTTP 401 ")) {
-            SessionManager sessionManager = new SessionManager(this);
+        if (string.equalsIgnoreCase(getResources().getString(R.string.unauthorized))) {
+            SessionManager sessionManager = new SessionManager(getApplicationContext());
             sessionManager.clear();
             showToast(this, "Session expired");
             Intent intent = new Intent(this, LoginActivity.class);

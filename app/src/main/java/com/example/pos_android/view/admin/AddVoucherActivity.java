@@ -1,13 +1,17 @@
 package com.example.pos_android.view.admin;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.pos_android.R;
 import com.example.pos_android.contracts.VoucherContract;
 import com.example.pos_android.data.model.GetVoucherResponse;
+import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.databinding.ActivityAddVoucherBinding;
 import com.example.pos_android.presenter.VoucherPresenter;
 import com.example.pos_android.utils.Validation;
 import com.example.pos_android.view.BaseActivity;
+import com.example.pos_android.view.login.LoginActivity;
 import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.datepicker.DateValidatorPointForward;
 import com.google.android.material.datepicker.MaterialDatePicker;
@@ -94,8 +98,15 @@ public class AddVoucherActivity extends BaseActivity implements VoucherContract.
 
     @Override
     public void showApiErrorWarning(String string) {
-        hideLoadingDialog();
-        showToast(this, string);
+        if (string.equalsIgnoreCase(getResources().getString(R.string.unauthorized))) {
+            SessionManager sessionManager = new SessionManager(getApplicationContext());
+            sessionManager.clear();
+            showToast(this, "Session expired");
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finishAffinity();
+        } else
+            showToast(this, string);
     }
 
     @Override

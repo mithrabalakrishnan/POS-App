@@ -1,6 +1,7 @@
 package com.example.pos_android.view.kitchen;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.telephony.SmsManager;
@@ -17,9 +18,11 @@ import com.example.pos_android.R;
 import com.example.pos_android.contracts.KitchenOrderDetailContract;
 import com.example.pos_android.data.model.KitchenResponse;
 import com.example.pos_android.data.model.KitchenUpdateStatusResponse;
+import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.databinding.ActivityKitchenOrderDetailBinding;
 import com.example.pos_android.presenter.KitchenPresenter;
 import com.example.pos_android.view.BaseActivity;
+import com.example.pos_android.view.login.LoginActivity;
 
 public class KitchenOrderDetailActivity extends BaseActivity implements KitchenOrderDetailContract.View {
     ActivityKitchenOrderDetailBinding binding;
@@ -128,7 +131,15 @@ public class KitchenOrderDetailActivity extends BaseActivity implements KitchenO
 
     @Override
     public void showApiErrorWarning(String string) {
-        showSnackBar(binding.getRoot(), string);
+        if (string.equalsIgnoreCase(getResources().getString(R.string.unauthorized))) {
+            SessionManager sessionManager = new SessionManager(getApplicationContext());
+            sessionManager.clear();
+            showToast(this, "Session expired");
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finishAffinity();
+        } else
+            showSnackBar(binding.getRoot(), string);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.example.pos_android.view.user;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -21,6 +22,7 @@ import com.example.pos_android.databinding.FragmentDiscountBinding;
 import com.example.pos_android.presenter.VoucherPresenter;
 import com.example.pos_android.utils.OnItemClickListener;
 import com.example.pos_android.view.BaseFragment;
+import com.example.pos_android.view.login.LoginActivity;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -88,7 +90,16 @@ public class DiscountFragment extends BaseFragment implements OnItemClickListene
 
     @Override
     public void showApiErrorWarning(String string) {
-        showToast(requireContext(), string);
+        hideLoadingDialog();
+        if (string.equals("HTTP 401 ")) {
+            SessionManager sessionManager = new SessionManager(requireContext());
+            sessionManager.clear();
+            showToast(requireContext(), "Session expired");
+            Intent intent = new Intent(requireContext(), LoginActivity.class);
+            startActivity(intent);
+            requireActivity().finishAffinity();
+        } else
+            showToast(requireContext(), string);
     }
 
     @Override

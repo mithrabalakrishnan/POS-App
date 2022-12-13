@@ -171,7 +171,7 @@ public class AddFoodActivity extends BaseActivity implements AddFoodContract.Vie
     @Override
     public void showApiErrorWarning(String string) {
         hideLoadingDialog();
-        if (string.equals(getResources().getString(R.string.unauthorized))) {
+        if (string.equalsIgnoreCase(getResources().getString(R.string.unauthorized))) {
             SessionManager sessionManager = new SessionManager(getApplicationContext());
             sessionManager.clear();
             showToast(this, "Session expired");

@@ -153,7 +153,16 @@ public class ProfileFragment extends BaseFragment implements UserProfileContract
 
     @Override
     public void showApiErrorWarning(String string) {
-        showToast(requireContext(), string);
+        hideLoadingDialog();
+        if (string.equals("HTTP 401 ")) {
+            SessionManager sessionManager = new SessionManager(requireContext());
+            sessionManager.clear();
+            showToast(requireContext(), "Session expired");
+            Intent intent = new Intent(requireContext(), LoginActivity.class);
+            startActivity(intent);
+            requireActivity().finishAffinity();
+        } else
+            showToast(requireContext(), string);
     }
 
     @Override

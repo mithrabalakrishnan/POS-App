@@ -125,7 +125,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".view.user.register.RegisterActivity"
+            android:name=".view.login.RegisterActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
