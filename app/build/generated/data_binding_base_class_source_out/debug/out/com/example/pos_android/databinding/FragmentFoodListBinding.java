@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.pos_android.R;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -28,6 +29,9 @@ public final class FragmentFoodListBinding implements ViewBinding {
 
   @NonNull
   public final ImageView ivBack;
+
+  @NonNull
+  public final ShimmerFrameLayout layoutCategoryShimmer;
 
   @NonNull
   public final RecyclerView rvCategories;
@@ -49,12 +53,14 @@ public final class FragmentFoodListBinding implements ViewBinding {
 
   private FragmentFoodListBinding(@NonNull RelativeLayout rootView,
       @NonNull MotionButton btnContinue, @NonNull ImageView ivBack,
-      @NonNull RecyclerView rvCategories, @NonNull RecyclerView rvCategoriesItems,
-      @NonNull RecyclerView rvPopular, @NonNull RecyclerView rvRecommended,
-      @NonNull TextView titleCategory, @NonNull LinearLayout toolbar) {
+      @NonNull ShimmerFrameLayout layoutCategoryShimmer, @NonNull RecyclerView rvCategories,
+      @NonNull RecyclerView rvCategoriesItems, @NonNull RecyclerView rvPopular,
+      @NonNull RecyclerView rvRecommended, @NonNull TextView titleCategory,
+      @NonNull LinearLayout toolbar) {
     this.rootView = rootView;
     this.btnContinue = btnContinue;
     this.ivBack = ivBack;
+    this.layoutCategoryShimmer = layoutCategoryShimmer;
     this.rvCategories = rvCategories;
     this.rvCategoriesItems = rvCategoriesItems;
     this.rvPopular = rvPopular;
@@ -102,6 +108,12 @@ public final class FragmentFoodListBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.layout_category_shimmer;
+      ShimmerFrameLayout layoutCategoryShimmer = ViewBindings.findChildViewById(rootView, id);
+      if (layoutCategoryShimmer == null) {
+        break missingId;
+      }
+
       id = R.id.rv_categories;
       RecyclerView rvCategories = ViewBindings.findChildViewById(rootView, id);
       if (rvCategories == null) {
@@ -139,7 +151,8 @@ public final class FragmentFoodListBinding implements ViewBinding {
       }
 
       return new FragmentFoodListBinding((RelativeLayout) rootView, btnContinue, ivBack,
-          rvCategories, rvCategoriesItems, rvPopular, rvRecommended, titleCategory, toolbar);
+          layoutCategoryShimmer, rvCategories, rvCategoriesItems, rvPopular, rvRecommended,
+          titleCategory, toolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

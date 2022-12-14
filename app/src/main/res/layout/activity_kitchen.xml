@@ -96,8 +96,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:itemCount="10"
+
                 tools:listitem="@layout/kitchen_order_item"
 
+                />
+            <ImageView
+                android:id="@+id/no_data"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:visibility="gone"
+                android:src="@drawable/no_data"
                 />
 
         </LinearLayout>

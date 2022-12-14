@@ -79,7 +79,8 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
     }
 
     private void initView() {
-     categoryShimmer();
+        categoryShimmer();
+        categoryItemShimmer();
 
         tableInfoModel = FoodListFragmentArgs.fromBundle(getArguments()).getTableInfo();
         sessionManager = new SessionManager(requireContext());
@@ -132,6 +133,19 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
         binding.layoutCategoryShimmer.startShimmer();
         binding.layoutCategoryShimmer.setVisibility(View.VISIBLE);
         binding.rvCategories.setVisibility(View.GONE);
+    }
+
+
+    private void categoryItemShimmer() {
+        binding.layoutCategoryItemShimmer.startShimmer();
+        binding.layoutCategoryItemShimmer.setVisibility(View.VISIBLE);
+        binding.rvCategoriesItems.setVisibility(View.GONE);
+    }
+
+    private void categoryItemHideShimmer() {
+        binding.layoutCategoryItemShimmer.stopShimmer();
+        binding.layoutCategoryItemShimmer.setVisibility(View.GONE);
+        binding.rvCategoriesItems.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -202,6 +216,7 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
 
     @Override
     public void showCategoryItemsResponse(CategoryDetailResponse categoryDetailResponse) {
+        categoryItemHideShimmer();
         categoryList.clear();
         for (UserHomeResponse.PopularFood food : categoryDetailResponse.getData()) {
             categoryList.add(new FoodModel(String.valueOf(food.getFoodId()),
@@ -210,6 +225,11 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
         categoryFoodAdapter = new AddFoodAdapter(categoryList, requireContext(), "category", this);
         binding.rvCategoriesItems.setLayoutManager(new GridLayoutManager(requireContext(), 2));
         binding.rvCategoriesItems.setAdapter(categoryFoodAdapter);
+    }
+
+    @Override
+    public void onApiError() {
+        categoryItemHideShimmer();
     }
 
     @Override
@@ -247,6 +267,7 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
         categoryListingAdapter.updatePosition(position);
         categoryListingAdapter.notifyDataSetChanged();
         presenter.getCategoryItems(categories.get(position));
+        categoryItemShimmer();
     }
 
     @Override
@@ -265,6 +286,7 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
                             categoryListingAdapter.updatePosition(i);
                             categoryListingAdapter.notifyDataSetChanged();
                             presenter.getCategoryItems(categories.get(i));
+                            categoryItemShimmer();
                         }
                     }
                 } catch (JSONException e) {

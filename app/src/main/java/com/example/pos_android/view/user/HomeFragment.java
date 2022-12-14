@@ -240,5 +240,14 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View 
 
 
     }
+    private  void hidePopularShimmer(){
+        binding.popularRecyclerview.setVisibility(View.VISIBLE);
+        binding.layoutPopularShimmer.setVisibility(View.GONE);
+        binding.layoutPopularShimmer.stopShimmer();
+    }
 
+    @Override
+    public void onApiError() {
+        hidePopularShimmer();
+    }
 }

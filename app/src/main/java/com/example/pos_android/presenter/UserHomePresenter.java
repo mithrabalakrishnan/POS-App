@@ -30,6 +30,7 @@ public class UserHomePresenter implements UserHomeContract.Presenter {
     public void onApiError(String data) {
         mView.hideProgressBar();
         mView.showApiErrorWarning(data);
+        mView.onApiError();
     }
 
     @Override

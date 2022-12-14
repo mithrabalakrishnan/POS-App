@@ -50,7 +50,7 @@ public class KitchenOrderListingAdapter extends RecyclerView.Adapter<KitchenOrde
         String currentDateToString = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
         Date currentDate = sdf.parse(currentDateToString);
             Date offerDate = sdf.parse(data.getDate());
-            if (Objects.requireNonNull(currentDate).compareTo(offerDate)<0 || data.getStatus() =="") {
+            if (Objects.requireNonNull(currentDate).compareTo(offerDate)<0 || data.getStatus() =="Completed" ) {
                 holder.mainLayout.setVisibility(View.GONE);
             }else {
                 holder.mainLayout.setVisibility(View.VISIBLE);

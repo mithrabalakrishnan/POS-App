@@ -26,6 +26,7 @@ import com.example.pos_android.view.admin.AdminHomeActivity;
 import com.example.pos_android.view.kitchen.KitchenActivity;
 import com.example.pos_android.view.login.LoginActivity;
 import com.example.pos_android.view.user.UserHomeActivity;
+import com.example.pos_android.view.waiter.WaiterActivity;
 
 import java.util.Objects;
 import java.util.concurrent.Executor;
@@ -124,7 +125,9 @@ public class SplashActivity extends AppCompatActivity {
             public void onAuthenticationSucceeded(
                     BiometricPrompt.AuthenticationResult result) {
                 // showToast(SplashActivity.this, "Authentication Succeeded");
-                pageFlow();
+                startActivity(new Intent(SplashActivity.this,
+                        UserHomeActivity.class));
+//                pageFlow();
                 super.onAuthenticationSucceeded(result);
             }
         };
@@ -176,6 +179,13 @@ public class SplashActivity extends AppCompatActivity {
         else if (Objects.equals(sessionManager.getUserType(), "ADMIN")){
             Intent i = new Intent(SplashActivity.this,
                     AdminHomeActivity.class);
+            startActivity(i);
+            finishAffinity();
+        }
+
+        else if (Objects.equals(sessionManager.getUserType(), "Waiter")){
+            Intent i = new Intent(SplashActivity.this,
+                    WaiterActivity.class);
             startActivity(i);
             finishAffinity();
         }

@@ -98,6 +98,11 @@ public class ListAllFoodActivity extends BaseActivity implements UserHomeContrac
     }
 
     @Override
+    public void onApiError() {
+
+    }
+
+    @Override
     public void onItemClick(Integer position, String from) {
         FoodModel model = foodModelArrayList.get(position);
         int id = Integer.parseInt(model.getFoodId());

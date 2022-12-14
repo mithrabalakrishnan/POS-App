@@ -13,6 +13,7 @@ public interface UserHomeContract {
         void showUserResponse(UserHomeResponse response);
         void showCategoryResponse(foodCategoryResponse foodCategoryResponse);
         void showCategoryItemsResponse(CategoryDetailResponse categoryDetailResponse);
+        void onApiError();
     }
 
     interface Presenter extends BasePresenter {

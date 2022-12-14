@@ -3,6 +3,7 @@ package com.example.pos_android.view.kitchen;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -126,6 +127,8 @@ public class KitchenActivity extends BaseActivity implements KitchenListingContr
     @Override
     public void showKitchenOrderListApiSuccess(List<KitchenResponse.KitchenData> saveResponse) {
         if (saveResponse.size() > 0) {
+            binding.rvOrder.setVisibility(View.VISIBLE);
+            binding.noData.setVisibility(View.GONE);
             kitchenDataList.clear();
             try {
                 Calendar cal = Calendar.getInstance();
@@ -140,6 +143,9 @@ public class KitchenActivity extends BaseActivity implements KitchenListingContr
             } catch (ParseException e) {
                 Log.d("Date exception", "showAllVouchers: " + e);
             }
+        } else {
+            binding.rvOrder.setVisibility(View.GONE);
+            binding.noData.setVisibility(View.VISIBLE);
         }
     }
 

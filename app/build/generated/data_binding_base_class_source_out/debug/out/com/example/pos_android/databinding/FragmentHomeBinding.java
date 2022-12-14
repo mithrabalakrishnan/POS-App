@@ -5,15 +5,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.example.pos_android.R;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -26,7 +28,13 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final ImageSlider imageSlider;
 
   @NonNull
-  public final CardView ivBooking;
+  public final ConstraintLayout ivBooking;
+
+  @NonNull
+  public final ShimmerFrameLayout layoutPopularShimmer;
+
+  @NonNull
+  public final ShimmerFrameLayout layoutRecentShimmer;
 
   @NonNull
   public final RecyclerView popularRecyclerview;
@@ -37,15 +45,23 @@ public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   public final ImageView searchIcon;
 
+  @NonNull
+  public final TextView textView19;
+
   private FragmentHomeBinding(@NonNull NestedScrollView rootView, @NonNull ImageSlider imageSlider,
-      @NonNull CardView ivBooking, @NonNull RecyclerView popularRecyclerview,
-      @NonNull RecyclerView recentRecyclerview, @NonNull ImageView searchIcon) {
+      @NonNull ConstraintLayout ivBooking, @NonNull ShimmerFrameLayout layoutPopularShimmer,
+      @NonNull ShimmerFrameLayout layoutRecentShimmer, @NonNull RecyclerView popularRecyclerview,
+      @NonNull RecyclerView recentRecyclerview, @NonNull ImageView searchIcon,
+      @NonNull TextView textView19) {
     this.rootView = rootView;
     this.imageSlider = imageSlider;
     this.ivBooking = ivBooking;
+    this.layoutPopularShimmer = layoutPopularShimmer;
+    this.layoutRecentShimmer = layoutRecentShimmer;
     this.popularRecyclerview = popularRecyclerview;
     this.recentRecyclerview = recentRecyclerview;
     this.searchIcon = searchIcon;
+    this.textView19 = textView19;
   }
 
   @Override
@@ -82,8 +98,20 @@ public final class FragmentHomeBinding implements ViewBinding {
       }
 
       id = R.id.iv_booking;
-      CardView ivBooking = ViewBindings.findChildViewById(rootView, id);
+      ConstraintLayout ivBooking = ViewBindings.findChildViewById(rootView, id);
       if (ivBooking == null) {
+        break missingId;
+      }
+
+      id = R.id.layout_popular_shimmer;
+      ShimmerFrameLayout layoutPopularShimmer = ViewBindings.findChildViewById(rootView, id);
+      if (layoutPopularShimmer == null) {
+        break missingId;
+      }
+
+      id = R.id.layout_recent_shimmer;
+      ShimmerFrameLayout layoutRecentShimmer = ViewBindings.findChildViewById(rootView, id);
+      if (layoutRecentShimmer == null) {
         break missingId;
       }
 
@@ -105,8 +133,15 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.textView19;
+      TextView textView19 = ViewBindings.findChildViewById(rootView, id);
+      if (textView19 == null) {
+        break missingId;
+      }
+
       return new FragmentHomeBinding((NestedScrollView) rootView, imageSlider, ivBooking,
-          popularRecyclerview, recentRecyclerview, searchIcon);
+          layoutPopularShimmer, layoutRecentShimmer, popularRecyclerview, recentRecyclerview,
+          searchIcon, textView19);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
