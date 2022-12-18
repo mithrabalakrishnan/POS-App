@@ -10,6 +10,8 @@
     <string name="income_report">TOTAL INCOME REPORT</string>
     <string name="lbl_add_coupon">Add Coupon</string>
     <string name="customer_report">Customer Report</string>
+    <string name="sorry">Sorry</string>
+    <string name="your_coupon_list_is_empty">No Coupons Available For You</string>
 
     <id name="viewBinding" />
 </resources>

@@ -9,7 +9,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.SwitchCompat;
+import androidx.appcompat.widget.AppCompatToggleButton;
 import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -33,7 +33,10 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final CardView settingsItem;
 
   @NonNull
-  public final SwitchCompat simpleSwitch;
+  public final AppCompatToggleButton simpleSwitch;
+
+  @NonNull
+  public final TextView tvBiometric;
 
   @NonNull
   public final TextView tvItemName;
@@ -43,13 +46,14 @@ public final class FragmentProfileBinding implements ViewBinding {
 
   private FragmentProfileBinding(@NonNull RelativeLayout rootView,
       @NonNull MaterialButton btnLogout, @NonNull ImageView ivUser, @NonNull CardView settingsItem,
-      @NonNull SwitchCompat simpleSwitch, @NonNull TextView tvItemName,
-      @NonNull TextView tvUserName) {
+      @NonNull AppCompatToggleButton simpleSwitch, @NonNull TextView tvBiometric,
+      @NonNull TextView tvItemName, @NonNull TextView tvUserName) {
     this.rootView = rootView;
     this.btnLogout = btnLogout;
     this.ivUser = ivUser;
     this.settingsItem = settingsItem;
     this.simpleSwitch = simpleSwitch;
+    this.tvBiometric = tvBiometric;
     this.tvItemName = tvItemName;
     this.tvUserName = tvUserName;
   }
@@ -100,8 +104,14 @@ public final class FragmentProfileBinding implements ViewBinding {
       }
 
       id = R.id.simpleSwitch;
-      SwitchCompat simpleSwitch = ViewBindings.findChildViewById(rootView, id);
+      AppCompatToggleButton simpleSwitch = ViewBindings.findChildViewById(rootView, id);
       if (simpleSwitch == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_biometric;
+      TextView tvBiometric = ViewBindings.findChildViewById(rootView, id);
+      if (tvBiometric == null) {
         break missingId;
       }
 
@@ -118,7 +128,7 @@ public final class FragmentProfileBinding implements ViewBinding {
       }
 
       return new FragmentProfileBinding((RelativeLayout) rootView, btnLogout, ivUser, settingsItem,
-          simpleSwitch, tvItemName, tvUserName);
+          simpleSwitch, tvBiometric, tvItemName, tvUserName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

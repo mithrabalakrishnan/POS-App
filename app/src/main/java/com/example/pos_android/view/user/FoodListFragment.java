@@ -134,6 +134,11 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
         binding.layoutCategoryShimmer.setVisibility(View.VISIBLE);
         binding.rvCategories.setVisibility(View.GONE);
     }
+    private void categoryHideShimmer(){
+        binding.layoutCategoryShimmer.stopShimmer();
+        binding.layoutCategoryShimmer.setVisibility(View.GONE);
+        binding.rvCategories.setVisibility(View.VISIBLE);
+    }
 
 
     private void categoryItemShimmer() {
@@ -202,8 +207,7 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
 
     @Override
     public void showCategoryResponse(foodCategoryResponse foodCategoryResponse) {
-        binding.layoutCategoryShimmer.stopShimmer();
-        binding.layoutCategoryShimmer.setVisibility(View.GONE);
+        categoryHideShimmer();
 
         categories.clear();
         categories.addAll(foodCategoryResponse.data.foodCategory);

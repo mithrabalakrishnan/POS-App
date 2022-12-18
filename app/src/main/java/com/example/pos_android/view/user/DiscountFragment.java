@@ -141,6 +141,14 @@ public class DiscountFragment extends BaseFragment implements OnItemClickListene
                     adapter.notifyDataSetChanged();
                 }
             }
+            if(couponsData.isEmpty()){
+                binding.noCouponTxt.setVisibility(View.VISIBLE);
+                binding.recyclerViewCoupon.setVisibility(View.GONE);
+            }
+            else{
+                binding.noCouponTxt.setVisibility(View.GONE);
+               binding.recyclerViewCoupon.setVisibility(View.VISIBLE);
+            }
 
 
         } catch (ParseException e1) {

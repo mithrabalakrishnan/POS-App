@@ -47,24 +47,26 @@ public class SplashActivity extends AppCompatActivity {
         sessionManager = new SessionManager(this);
         executor = ContextCompat.getMainExecutor(this);
 
-            new Handler().postDelayed(() -> {
-                if(sessionManager.isLoggedIn()){
+        new Handler().postDelayed(() -> {
+            if (sessionManager.isLoggedIn()) {
+                if(sessionManager.getIsAuthentication()) {
                     Boolean isBiometric = checkBiometricSupport();
-                    if (isBiometric){
+                    if (isBiometric) {
                         authenticateUser();
-                    }
-                    else {
+                    } else {
                         pageFlow();
                     }
+                }else {
+                    pageFlow();
                 }
-                else{
-                    Intent i = new Intent(SplashActivity.this,
-                            LoginActivity.class);
-                    startActivity(i);
-                    finishAffinity();
-                }
+            } else {
+                Intent i = new Intent(SplashActivity.this,
+                        LoginActivity.class);
+                startActivity(i);
+                finishAffinity();
+            }
 
-            }, SPLASH_SCREEN_TIME_OUT);
+        }, SPLASH_SCREEN_TIME_OUT);
 //        }
     }
 
@@ -127,6 +129,7 @@ public class SplashActivity extends AppCompatActivity {
                 // showToast(SplashActivity.this, "Authentication Succeeded");
                 startActivity(new Intent(SplashActivity.this,
                         UserHomeActivity.class));
+                finishAffinity();
 //                pageFlow();
                 super.onAuthenticationSucceeded(result);
             }
@@ -136,6 +139,7 @@ public class SplashActivity extends AppCompatActivity {
     public void showToast(Context context, String message) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
+
     private Boolean checkBiometricSupport() {
 
         KeyguardManager keyguardManager =
@@ -162,34 +166,29 @@ public class SplashActivity extends AppCompatActivity {
         return true;
     }
 
-    private void  pageFlow(){
-        Log.e("user",sessionManager.getUserType());
-        if (Objects.equals(sessionManager.getUserType(), "USER")){
+    private void pageFlow() {
+        Log.e("user", sessionManager.getUserType());
+        if (Objects.equals(sessionManager.getUserType(), "USER")) {
             Intent i = new Intent(SplashActivity.this,
                     UserHomeActivity.class);
             startActivity(i);
             finishAffinity();
-        }
-        else if (Objects.equals(sessionManager.getUserType(), "KITCHEN")){
+        } else if (Objects.equals(sessionManager.getUserType(), "KITCHEN")) {
             Intent i = new Intent(SplashActivity.this,
                     KitchenActivity.class);
             startActivity(i);
             finishAffinity();
-        }
-        else if (Objects.equals(sessionManager.getUserType(), "ADMIN")){
+        } else if (Objects.equals(sessionManager.getUserType(), "ADMIN")) {
             Intent i = new Intent(SplashActivity.this,
                     AdminHomeActivity.class);
             startActivity(i);
             finishAffinity();
-        }
-
-        else if (Objects.equals(sessionManager.getUserType(), "Waiter")){
+        } else if (Objects.equals(sessionManager.getUserType(), "Waiter")) {
             Intent i = new Intent(SplashActivity.this,
                     WaiterActivity.class);
             startActivity(i);
             finishAffinity();
-        }
-        else{
+        } else {
             Intent i = new Intent(SplashActivity.this,
                     LoginActivity.class);
             startActivity(i);

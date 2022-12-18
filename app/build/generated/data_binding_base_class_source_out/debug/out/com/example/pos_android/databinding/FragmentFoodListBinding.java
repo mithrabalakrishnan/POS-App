@@ -31,6 +31,9 @@ public final class FragmentFoodListBinding implements ViewBinding {
   public final ImageView ivBack;
 
   @NonNull
+  public final ShimmerFrameLayout layoutCategoryItemShimmer;
+
+  @NonNull
   public final ShimmerFrameLayout layoutCategoryShimmer;
 
   @NonNull
@@ -53,6 +56,7 @@ public final class FragmentFoodListBinding implements ViewBinding {
 
   private FragmentFoodListBinding(@NonNull RelativeLayout rootView,
       @NonNull MotionButton btnContinue, @NonNull ImageView ivBack,
+      @NonNull ShimmerFrameLayout layoutCategoryItemShimmer,
       @NonNull ShimmerFrameLayout layoutCategoryShimmer, @NonNull RecyclerView rvCategories,
       @NonNull RecyclerView rvCategoriesItems, @NonNull RecyclerView rvPopular,
       @NonNull RecyclerView rvRecommended, @NonNull TextView titleCategory,
@@ -60,6 +64,7 @@ public final class FragmentFoodListBinding implements ViewBinding {
     this.rootView = rootView;
     this.btnContinue = btnContinue;
     this.ivBack = ivBack;
+    this.layoutCategoryItemShimmer = layoutCategoryItemShimmer;
     this.layoutCategoryShimmer = layoutCategoryShimmer;
     this.rvCategories = rvCategories;
     this.rvCategoriesItems = rvCategoriesItems;
@@ -108,6 +113,12 @@ public final class FragmentFoodListBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.layout_category_item_shimmer;
+      ShimmerFrameLayout layoutCategoryItemShimmer = ViewBindings.findChildViewById(rootView, id);
+      if (layoutCategoryItemShimmer == null) {
+        break missingId;
+      }
+
       id = R.id.layout_category_shimmer;
       ShimmerFrameLayout layoutCategoryShimmer = ViewBindings.findChildViewById(rootView, id);
       if (layoutCategoryShimmer == null) {
@@ -151,8 +162,8 @@ public final class FragmentFoodListBinding implements ViewBinding {
       }
 
       return new FragmentFoodListBinding((RelativeLayout) rootView, btnContinue, ivBack,
-          layoutCategoryShimmer, rvCategories, rvCategoriesItems, rvPopular, rvRecommended,
-          titleCategory, toolbar);
+          layoutCategoryItemShimmer, layoutCategoryShimmer, rvCategories, rvCategoriesItems,
+          rvPopular, rvRecommended, titleCategory, toolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

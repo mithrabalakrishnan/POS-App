@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,10 +20,16 @@ import java.lang.String;
 
 public final class FragmentDiscountBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final RelativeLayout rootView;
 
   @NonNull
   public final ImageView ivBack;
+
+  @NonNull
+  public final LinearLayout layoutTopToolbar;
+
+  @NonNull
+  public final LinearLayout noCouponTxt;
 
   @NonNull
   public final RecyclerView recyclerViewCoupon;
@@ -30,17 +37,20 @@ public final class FragmentDiscountBinding implements ViewBinding {
   @NonNull
   public final TextView tvOrderId;
 
-  private FragmentDiscountBinding(@NonNull LinearLayout rootView, @NonNull ImageView ivBack,
+  private FragmentDiscountBinding(@NonNull RelativeLayout rootView, @NonNull ImageView ivBack,
+      @NonNull LinearLayout layoutTopToolbar, @NonNull LinearLayout noCouponTxt,
       @NonNull RecyclerView recyclerViewCoupon, @NonNull TextView tvOrderId) {
     this.rootView = rootView;
     this.ivBack = ivBack;
+    this.layoutTopToolbar = layoutTopToolbar;
+    this.noCouponTxt = noCouponTxt;
     this.recyclerViewCoupon = recyclerViewCoupon;
     this.tvOrderId = tvOrderId;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -71,6 +81,18 @@ public final class FragmentDiscountBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.layout_top_toolbar;
+      LinearLayout layoutTopToolbar = ViewBindings.findChildViewById(rootView, id);
+      if (layoutTopToolbar == null) {
+        break missingId;
+      }
+
+      id = R.id.no_coupon_txt;
+      LinearLayout noCouponTxt = ViewBindings.findChildViewById(rootView, id);
+      if (noCouponTxt == null) {
+        break missingId;
+      }
+
       id = R.id.recyclerView_coupon;
       RecyclerView recyclerViewCoupon = ViewBindings.findChildViewById(rootView, id);
       if (recyclerViewCoupon == null) {
@@ -83,8 +105,8 @@ public final class FragmentDiscountBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentDiscountBinding((LinearLayout) rootView, ivBack, recyclerViewCoupon,
-          tvOrderId);
+      return new FragmentDiscountBinding((RelativeLayout) rootView, ivBack, layoutTopToolbar,
+          noCouponTxt, recyclerViewCoupon, tvOrderId);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

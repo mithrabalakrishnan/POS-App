@@ -48,11 +48,14 @@ public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   public final TextView textView19;
 
+  @NonNull
+  public final TextView txtPopular;
+
   private FragmentHomeBinding(@NonNull NestedScrollView rootView, @NonNull ImageSlider imageSlider,
       @NonNull ConstraintLayout ivBooking, @NonNull ShimmerFrameLayout layoutPopularShimmer,
       @NonNull ShimmerFrameLayout layoutRecentShimmer, @NonNull RecyclerView popularRecyclerview,
       @NonNull RecyclerView recentRecyclerview, @NonNull ImageView searchIcon,
-      @NonNull TextView textView19) {
+      @NonNull TextView textView19, @NonNull TextView txtPopular) {
     this.rootView = rootView;
     this.imageSlider = imageSlider;
     this.ivBooking = ivBooking;
@@ -62,6 +65,7 @@ public final class FragmentHomeBinding implements ViewBinding {
     this.recentRecyclerview = recentRecyclerview;
     this.searchIcon = searchIcon;
     this.textView19 = textView19;
+    this.txtPopular = txtPopular;
   }
 
   @Override
@@ -139,9 +143,15 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.txt_popular;
+      TextView txtPopular = ViewBindings.findChildViewById(rootView, id);
+      if (txtPopular == null) {
+        break missingId;
+      }
+
       return new FragmentHomeBinding((NestedScrollView) rootView, imageSlider, ivBooking,
           layoutPopularShimmer, layoutRecentShimmer, popularRecyclerview, recentRecyclerview,
-          searchIcon, textView19);
+          searchIcon, textView19, txtPopular);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -41,6 +41,7 @@ public class OrderFragment extends BaseFragment implements HistoryContract.View 
     }
 
     private void initView() {
+        showShimmer();
         presenter = new HistoryPresenter(this, requireContext());
         presenter.getHistory();
     }
@@ -57,6 +58,7 @@ public class OrderFragment extends BaseFragment implements HistoryContract.View 
 
     @Override
     public void showApiErrorWarning(String string) {
+        hideShimmer();
         hideLoadingDialog();
         if (string.equals("HTTP 401 ")) {
             SessionManager sessionManager = new SessionManager(requireContext());
@@ -76,10 +78,34 @@ public class OrderFragment extends BaseFragment implements HistoryContract.View 
 
     @Override
     public void showResponse(HistoryResponse response) {
+        hideShimmer();
+        if(response.getData().getFoodOrderList().size()== 0){
+            binding.popularRecyclerview.setVisibility(View.GONE);
+            binding.noData.setVisibility(View.VISIBLE);
+        }
+        else{
+            binding.popularRecyclerview.setVisibility(View.VISIBLE);
+            binding.noData.setVisibility(View.GONE);
+        }
         // showToast(requireContext(), response.getMessage());
         historyList.clear();
         adapter = new HistoryAdapter(response.getData().getFoodOrderList(), requireContext());
         binding.popularRecyclerview.setAdapter(adapter);
         binding.popularRecyclerview.setLayoutManager(new LinearLayoutManager(requireActivity()));
+    }
+
+    private void showShimmer() {
+        binding.popularRecyclerview.setVisibility(View.GONE);
+        binding.layoutOrderItemShimmer.setVisibility(View.VISIBLE);
+        binding.layoutOrderItemShimmer.startShimmer();
+
+
+    }
+        private void hideShimmer() {
+        binding.popularRecyclerview.setVisibility(View.VISIBLE);
+        binding.layoutOrderItemShimmer.setVisibility(View.GONE);
+        binding.layoutOrderItemShimmer.stopShimmer();
+
+
     }
 }

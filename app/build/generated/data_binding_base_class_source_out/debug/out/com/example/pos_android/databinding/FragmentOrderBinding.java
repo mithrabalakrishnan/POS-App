@@ -4,33 +4,44 @@ package com.example.pos_android.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.pos_android.R;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class FragmentOrderBinding implements ViewBinding {
   @NonNull
-  private final NestedScrollView rootView;
+  private final LinearLayout rootView;
+
+  @NonNull
+  public final ShimmerFrameLayout layoutOrderItemShimmer;
+
+  @NonNull
+  public final ImageView noData;
 
   @NonNull
   public final RecyclerView popularRecyclerview;
 
-  private FragmentOrderBinding(@NonNull NestedScrollView rootView,
+  private FragmentOrderBinding(@NonNull LinearLayout rootView,
+      @NonNull ShimmerFrameLayout layoutOrderItemShimmer, @NonNull ImageView noData,
       @NonNull RecyclerView popularRecyclerview) {
     this.rootView = rootView;
+    this.layoutOrderItemShimmer = layoutOrderItemShimmer;
+    this.noData = noData;
     this.popularRecyclerview = popularRecyclerview;
   }
 
   @Override
   @NonNull
-  public NestedScrollView getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -55,13 +66,26 @@ public final class FragmentOrderBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.layout_order_item_shimmer;
+      ShimmerFrameLayout layoutOrderItemShimmer = ViewBindings.findChildViewById(rootView, id);
+      if (layoutOrderItemShimmer == null) {
+        break missingId;
+      }
+
+      id = R.id.no_data;
+      ImageView noData = ViewBindings.findChildViewById(rootView, id);
+      if (noData == null) {
+        break missingId;
+      }
+
       id = R.id.popular_recyclerview;
       RecyclerView popularRecyclerview = ViewBindings.findChildViewById(rootView, id);
       if (popularRecyclerview == null) {
         break missingId;
       }
 
-      return new FragmentOrderBinding((NestedScrollView) rootView, popularRecyclerview);
+      return new FragmentOrderBinding((LinearLayout) rootView, layoutOrderItemShimmer, noData,
+          popularRecyclerview);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

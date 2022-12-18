@@ -171,6 +171,10 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View 
                     food.getName(), food.getImage(), food.getPrice()
             ));
         }
+        binding.txtPopular.setVisibility(View.VISIBLE);
+        if(response.getData().getPopularFoods().size() == 0){
+            binding.txtPopular.setVisibility(View.GONE);
+        }
         binding.popularRecyclerview.setVisibility(View.VISIBLE);
         binding.layoutPopularShimmer.setVisibility(View.GONE);
         binding.layoutPopularShimmer.stopShimmer();

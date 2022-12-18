@@ -16,12 +16,12 @@
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\font\\intermedium.ttf"
     },
     {
-        "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\drawable-v24_dinner.png.flat",
-        "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\drawable-v24\\dinner.png"
-    },
-    {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\drawable-xxxhdpi_black_friday.png.flat",
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-pngs-49:\\drawable-xxxhdpi\\black_friday.png"
+    },
+    {
+        "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\drawable-v24_dinner.png.flat",
+        "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\drawable-v24\\dinner.png"
     },
     {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\drawable-v24_bg_rounded_stroke.xml.flat",
@@ -92,6 +92,10 @@
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-debug-55:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
+        "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\layout_order_item_shimmer.xml.flat",
+        "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\layout\\order_item_shimmer.xml"
+    },
+    {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\drawable-v24_man.png.flat",
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\drawable-v24\\man.png"
     },
@@ -110,6 +114,10 @@
     {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\drawable_add_guest_circle.xml.flat",
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\drawable\\add_guest_circle.xml"
+    },
+    {
+        "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\drawable_bgm_new.png.flat",
+        "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\drawable\\bgm_new.png"
     },
     {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\font_source_sans_pro.ttf.flat",
@@ -228,6 +236,10 @@
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\layout\\layout_select_time.xml"
     },
     {
+        "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\drawable_bgm.png.flat",
+        "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\drawable\\bgm.png"
+    },
+    {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\layout_activity_admin_home.xml.flat",
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\layout\\activity_admin_home.xml"
     },
@@ -250,10 +262,6 @@
     {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\drawable_ic_baseline_email_24.xml.flat",
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\drawable\\ic_baseline_email_24.xml"
-    },
-    {
-        "merged": "com.example.pos_android.app-merged_res-54:/layout_fragment_home.xml.flat",
-        "source": "com.example.pos_android.app-main-56:/layout/fragment_home.xml"
     },
     {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\drawable_dm3.jpg.flat",
@@ -296,10 +304,6 @@
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\layout\\activity_add_food.xml"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-54:/drawable-v24_table.png.flat",
-        "source": "com.example.pos_android.app-main-56:/drawable-v24/table.png"
-    },
-    {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\drawable_app_main.png.flat",
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\drawable\\app_main.png"
     },
@@ -310,6 +314,10 @@
     {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\drawable-hdpi_black_friday.png.flat",
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-pngs-49:\\drawable-hdpi\\black_friday.png"
+    },
+    {
+        "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\drawable_no_item.jpg.flat",
+        "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\drawable\\no_item.jpg"
     },
     {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\layout_fragment_reservation.xml.flat",
@@ -350,6 +358,10 @@
     {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\layout_fragment_home.xml.flat",
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\drawable-v24_table.png.flat",
+        "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\drawable-v24\\table.png"
     },
     {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\drawable_ic_launcher_background.xml.flat",
@@ -478,6 +490,10 @@
     {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-debug-55:\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.pos_android.app-merged_res-54:/layout_fragment_order.xml.flat",
+        "source": "com.example.pos_android.app-main-56:/layout/fragment_order.xml"
     },
     {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\layout_add_cart_view.xml.flat",

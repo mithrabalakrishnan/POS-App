@@ -5482,6 +5482,8 @@ int drawable app_main 0x7f08005c
 int drawable avd_hide_password 0x7f08005d
 int drawable avd_show_password 0x7f08005e
 int drawable bg_rounded_stroke 0x7f08005f
+int drawable bgm 0x7f080116
+int drawable bgm_new 0x7f080117
 int drawable black_cursor 0x7f080060
 int drawable black_friday 0x7f080061
 int drawable book_table 0x7f080062
@@ -5635,6 +5637,7 @@ int drawable mtrl_popupmenu_background_overlay 0x7f0800f5
 int drawable mtrl_tabs_default_indicator 0x7f0800f6
 int drawable navigation_empty_icon 0x7f0800f7
 int drawable no_data 0x7f080114
+int drawable no_item 0x7f080118
 int drawable notification_action_background 0x7f0800f8
 int drawable notification_bg 0x7f0800f9
 int drawable notification_bg_low 0x7f0800fa
@@ -6039,6 +6042,7 @@ int id last_name_layout 0x7f0a0169
 int id layout 0x7f0a016a
 int id layoutQuantityControl 0x7f0a016b
 int id layout_best 0x7f0a016c
+int id layout_category_item_shimmer 0x7f0a02ff
 int id layout_category_shimmer 0x7f0a016d
 int id layout_change_number 0x7f0a016e
 int id layout_content 0x7f0a016f
@@ -6047,9 +6051,11 @@ int id layout_coupon_item 0x7f0a0171
 int id layout_debit_card 0x7f0a0172
 int id layout_food_details 0x7f0a0173
 int id layout_kitchen_user 0x7f0a0174
+int id layout_order_item_shimmer 0x7f0a0304
 int id layout_popular_shimmer 0x7f0a0175
 int id layout_recent_shimmer 0x7f0a0176
 int id layout_root 0x7f0a0177
+int id layout_top_toolbar 0x7f0a0302
 int id layout_total 0x7f0a0178
 int id left 0x7f0a0179
 int id leftToRight 0x7f0a017a
@@ -6153,6 +6159,7 @@ int id neverCompleteToEnd 0x7f0a01db
 int id neverCompleteToStart 0x7f0a01dc
 int id noScroll 0x7f0a01dd
 int id noState 0x7f0a01de
+int id no_coupon_txt 0x7f0a0303
 int id no_data 0x7f0a02fe
 int id none 0x7f0a01df
 int id normal 0x7f0a01e0
@@ -6366,6 +6373,7 @@ int id transition_scene_layoutid_cache 0x7f0a02af
 int id transition_transform 0x7f0a02b0
 int id triangle 0x7f0a02b1
 int id tv_amount 0x7f0a02b2
+int id tv_biometric 0x7f0a0300
 int id tv_card 0x7f0a02b3
 int id tv_customer_details 0x7f0a02b4
 int id tv_date 0x7f0a02b5
@@ -6410,6 +6418,7 @@ int id txt_layout_category 0x7f0a02db
 int id txt_layout_price 0x7f0a02dc
 int id txt_name 0x7f0a02dd
 int id txt_pass 0x7f0a02de
+int id txt_popular 0x7f0a0301
 int id txt_price 0x7f0a02df
 int id txt_pro 0x7f0a02e0
 int id unchecked 0x7f0a02e1
@@ -6666,6 +6675,7 @@ int layout notification_template_media 0x7f0d009a
 int layout notification_template_media_custom 0x7f0d009b
 int layout notification_template_part_chronometer 0x7f0d009c
 int layout notification_template_part_time 0x7f0d009d
+int layout order_item_shimmer 0x7f0d00b9
 int layout pager_row 0x7f0d009e
 int layout select_dialog_item_material 0x7f0d009f
 int layout select_dialog_multichoice_material 0x7f0d00a0
@@ -6852,9 +6862,11 @@ int string path_password_eye_mask_visible 0x7f130094
 int string path_password_strike_through 0x7f130095
 int string sales_report 0x7f130096
 int string search_menu_title 0x7f130097
+int string sorry 0x7f13009b
 int string status_bar_notification_info_overflow 0x7f130098
 int string terms_and_conditions 0x7f130099
 int string unauthorized 0x7f13009a
+int string your_coupon_list_is_empty 0x7f13009c
 int style AlertDialog_AppCompat 0x7f140000
 int style AlertDialog_AppCompat_Light 0x7f140001
 int style AndroidThemeColorAccentYellow 0x7f140002

@@ -110,22 +110,38 @@
 
 
             </androidx.cardview.widget.CardView>
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/simpleSwitch"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:text="Enable Biometric Login"
-                android:textColor="@color/black"
-                android:textOff="Off"
-                android:textOn="On"
-                android:textSize="15sp"
-                app:thumbTint="@color/orange_500"
-                app:trackTint="@android:color/darker_gray"
+                android:layout_margin="12dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_biometric"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Biometric Login Status"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+                <androidx.appcompat.widget.AppCompatToggleButton
+                    android:id="@+id/simpleSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@color/orange_500"
+                    android:textColor="@color/white"
+                    android:textOff="Off"
+                    android:textOn="On"
+                    app:showText="true"
+                    android:textSize="15sp"
+                    app:thumbTint="@color/orange_500"
+                    app:trackTint="@android:color/black"
 
-                />
+                    />
+            </LinearLayout>
+
+
 
 
             <com.google.android.material.button.MaterialButton

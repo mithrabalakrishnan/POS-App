@@ -87,6 +87,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
         sessionManager.setLogin(true);
 
         if (response.getData().getRole().equals("User")) {
+            sessionManager.setIsAuthentication(true);
             sessionManager.setUsertype(SessionManager.UserRoles.USER);
             sessionManager.setUserName(binding.txtEmail.getText().toString());
             startActivity(new Intent(LoginActivity.this, UserHomeActivity.class));
