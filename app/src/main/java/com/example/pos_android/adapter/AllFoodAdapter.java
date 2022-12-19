@@ -68,7 +68,7 @@ public class AllFoodAdapter extends RecyclerView.Adapter<AllFoodAdapter.ViewHold
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                        clickListener.onItemClick(position,"");
+                        clickListener.onItemClick(position,"",true);
             }
         });
     }

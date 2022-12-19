@@ -12,6 +12,10 @@
         "source": "com.example.pos_android.app-main-56:/layout/shimmering_item.xml"
     },
     {
+        "merged": "com.example.pos_android.app-mergeDebugResources-53:/layout/bottom_sheet_layout_food.xml",
+        "source": "com.example.pos_android.app-main-56:/layout/bottom_sheet_layout_food.xml"
+    },
+    {
         "merged": "com.example.pos_android.app-mergeDebugResources-53:/layout/fragment_contact_details.xml",
         "source": "com.example.pos_android.app-main-56:/layout/fragment_contact_details.xml"
     },

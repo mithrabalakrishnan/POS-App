@@ -23,21 +23,24 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
     ArrayList<FoodModel> list;
     private boolean isFromNetwork;
     private Context context;
+    private String from = null;
     private OnItemClickListener clickListener;
 
     // Constructor
-    public FoodAdapter(ArrayList<FoodModel> list, Context cOntext, OnItemClickListener clickListener) {
+    public FoodAdapter(ArrayList<FoodModel> list, Context cOntext, OnItemClickListener clickListener,String from ) {
         this.list = list;
         this.isFromNetwork = true;
         this.context = cOntext;
         this.clickListener = clickListener;
+        this.from = from;
     }
 
-    public FoodAdapter(ArrayList<FoodModel> list, boolean isFromNetwork, Context cOntext, OnItemClickListener clickListener) {
+    public FoodAdapter(ArrayList<FoodModel> list, boolean isFromNetwork, Context cOntext, OnItemClickListener clickListener,String from ) {
         this.list = list;
         this.isFromNetwork = isFromNetwork;
         this.context = cOntext;
         this.clickListener = clickListener;
+        this.from = from;
     }
 
     // Creating a viewHolder

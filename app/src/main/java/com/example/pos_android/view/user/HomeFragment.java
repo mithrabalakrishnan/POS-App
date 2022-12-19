@@ -42,6 +42,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 public class HomeFragment extends BaseFragment implements UserHomeContract.View, OnItemClickListener {
@@ -81,7 +82,7 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View,
         binding.imageSlider.setImageList(slideModels);
 
         binding.recentRecyclerview.setLayoutManager(new LinearLayoutManager(requireActivity(), RecyclerView.HORIZONTAL, false));
-        recentAdapter = new FoodAdapter(recentArray, false, requireContext(),this);
+        recentAdapter = new FoodAdapter(recentArray, false, requireContext(), this, "recent");
         binding.recentRecyclerview.setAdapter(recentAdapter);
     }
 
@@ -173,13 +174,13 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View,
             ));
         }
         binding.txtPopular.setVisibility(View.VISIBLE);
-        if(response.getData().getPopularFoods().size() == 0){
+        if (response.getData().getPopularFoods().size() == 0) {
             binding.txtPopular.setVisibility(View.GONE);
         }
         binding.popularRecyclerview.setVisibility(View.VISIBLE);
         binding.layoutPopularShimmer.setVisibility(View.GONE);
         binding.layoutPopularShimmer.stopShimmer();
-        popularAdapter = new FoodAdapter(popularArrayList, requireContext(),this);
+        popularAdapter = new FoodAdapter(popularArrayList, requireContext(), this, "popular");
         binding.popularRecyclerview.setAdapter(popularAdapter);
         binding.popularRecyclerview.setLayoutManager(new LinearLayoutManager(requireActivity(), RecyclerView.HORIZONTAL, false));
 
@@ -245,7 +246,8 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View,
 
 
     }
-    private  void hidePopularShimmer(){
+
+    private void hidePopularShimmer() {
         binding.popularRecyclerview.setVisibility(View.VISIBLE);
         binding.layoutPopularShimmer.setVisibility(View.GONE);
         binding.layoutPopularShimmer.stopShimmer();
@@ -259,5 +261,18 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View,
     @Override
     public void onItemClick(Integer position, String from, Boolean isView) {
 
+        FoodModel model;
+        if (Objects.equals(from, "recent"))
+            model = recentArray.get(position);
+        else
+            model = popularArrayList.get(position);
+        if (isView) {
+            BottomSheetDialog bottomSheet = new BottomSheetDialog();
+            Bundle args = new Bundle();
+            args.putSerializable("data", model);
+            bottomSheet.setArguments(args);
+            bottomSheet.show(requireActivity().getSupportFragmentManager(),
+                    "ModalBottomSheet");
+        }
     }
 }

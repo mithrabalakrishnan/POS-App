@@ -3238,6 +3238,7 @@ layout activity_waiter_order_detail
 layout add_cart_view
 layout add_guest_layout
 layout best_selling_layout
+layout bottom_sheet_layout_food
 layout checkout_layout
 layout coupen_layout
 layout dialogue_loading_layout

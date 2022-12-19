@@ -6578,6 +6578,7 @@ layout add_guest_layout
 layout alan_button
 layout alan_hint
 layout best_selling_layout
+layout bottom_sheet_layout_food
 layout checkout_layout
 layout coupen_layout
 layout custom_dialog

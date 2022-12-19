@@ -684,6 +684,10 @@
         "source": "com.example.pos_android.app-main-56:/layout/add_cart_view.xml"
     },
     {
+        "merged": "com.example.pos_android.app-merged_res-54:/layout_bottom_sheet_layout_food.xml.flat",
+        "source": "com.example.pos_android.app-main-56:/layout/bottom_sheet_layout_food.xml"
+    },
+    {
         "merged": "com.example.pos_android.app-merged_res-54:/layout_fragment_payment.xml.flat",
         "source": "com.example.pos_android.app-main-56:/layout/fragment_payment.xml"
     },
