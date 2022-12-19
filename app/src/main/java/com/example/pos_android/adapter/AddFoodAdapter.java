@@ -74,7 +74,10 @@ public class AddFoodAdapter extends RecyclerView.Adapter<AddFoodAdapter.ViewHold
         likesTextView.setText("£ "+currentItem.getPrice());
 
         holder.button.setOnClickListener(v -> {
-            clickListener.onItemClick(position, type);
+            clickListener.onItemClick(position, type,false);
+        });
+        holder.itemView.setOnClickListener(view -> {
+            clickListener.onItemClick(position, type,true);
         });
     }
 

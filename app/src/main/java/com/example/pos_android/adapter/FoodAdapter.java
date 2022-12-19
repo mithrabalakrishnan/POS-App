@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.example.pos_android.R;
 import com.example.pos_android.data.model.FoodModel;
+import com.example.pos_android.utils.OnItemClickListener;
 
 import java.util.ArrayList;
 
@@ -22,18 +23,21 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
     ArrayList<FoodModel> list;
     private boolean isFromNetwork;
     private Context context;
+    private OnItemClickListener clickListener;
 
     // Constructor
-    public FoodAdapter(ArrayList<FoodModel> list, Context cOntext) {
+    public FoodAdapter(ArrayList<FoodModel> list, Context cOntext, OnItemClickListener clickListener) {
         this.list = list;
         this.isFromNetwork = true;
         this.context = cOntext;
+        this.clickListener = clickListener;
     }
 
-    public FoodAdapter(ArrayList<FoodModel> list, boolean isFromNetwork, Context cOntext) {
+    public FoodAdapter(ArrayList<FoodModel> list, boolean isFromNetwork, Context cOntext, OnItemClickListener clickListener) {
         this.list = list;
         this.isFromNetwork = isFromNetwork;
         this.context = cOntext;
+        this.clickListener = clickListener;
     }
 
     // Creating a viewHolder
@@ -71,6 +75,9 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
 
         TextView likesTextView = holder.numOfLikesTextView;
         likesTextView.setText("£ "+currentItem.getPrice());
+        holder.itemView.setOnClickListener(view -> {
+            clickListener.onItemClick(position, "",true);
+        });
     }
 
     // Indicating how long your data is

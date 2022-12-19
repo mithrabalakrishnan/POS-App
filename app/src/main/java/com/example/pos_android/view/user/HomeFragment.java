@@ -32,6 +32,7 @@ import com.example.pos_android.data.model.food.foodCategoryResponse;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.databinding.FragmentHomeBinding;
 import com.example.pos_android.presenter.UserHomePresenter;
+import com.example.pos_android.utils.OnItemClickListener;
 import com.example.pos_android.view.BaseFragment;
 import com.example.pos_android.view.login.LoginActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -43,7 +44,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class HomeFragment extends BaseFragment implements UserHomeContract.View {
+public class HomeFragment extends BaseFragment implements UserHomeContract.View, OnItemClickListener {
     private static final int RECORD_REQUEST_CODE = 100;
     FoodAdapter popularAdapter;
     FoodAdapter recentAdapter;
@@ -80,7 +81,7 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View 
         binding.imageSlider.setImageList(slideModels);
 
         binding.recentRecyclerview.setLayoutManager(new LinearLayoutManager(requireActivity(), RecyclerView.HORIZONTAL, false));
-        recentAdapter = new FoodAdapter(recentArray, false, requireContext());
+        recentAdapter = new FoodAdapter(recentArray, false, requireContext(),this);
         binding.recentRecyclerview.setAdapter(recentAdapter);
     }
 
@@ -178,7 +179,7 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View 
         binding.popularRecyclerview.setVisibility(View.VISIBLE);
         binding.layoutPopularShimmer.setVisibility(View.GONE);
         binding.layoutPopularShimmer.stopShimmer();
-        popularAdapter = new FoodAdapter(popularArrayList, requireContext());
+        popularAdapter = new FoodAdapter(popularArrayList, requireContext(),this);
         binding.popularRecyclerview.setAdapter(popularAdapter);
         binding.popularRecyclerview.setLayoutManager(new LinearLayoutManager(requireActivity(), RecyclerView.HORIZONTAL, false));
 
@@ -253,5 +254,10 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View 
     @Override
     public void onApiError() {
         hidePopularShimmer();
+    }
+
+    @Override
+    public void onItemClick(Integer position, String from, Boolean isView) {
+
     }
 }

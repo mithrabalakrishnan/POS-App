@@ -2,6 +2,7 @@ package com.example.pos_android.view.user;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -134,7 +135,8 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
         binding.layoutCategoryShimmer.setVisibility(View.VISIBLE);
         binding.rvCategories.setVisibility(View.GONE);
     }
-    private void categoryHideShimmer(){
+
+    private void categoryHideShimmer() {
         binding.layoutCategoryShimmer.stopShimmer();
         binding.layoutCategoryShimmer.setVisibility(View.GONE);
         binding.rvCategories.setVisibility(View.VISIBLE);
@@ -237,29 +239,42 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
     }
 
     @Override
-    public void onItemClick(Integer position, String from) {
+    public void onItemClick(Integer position, String from, Boolean isView) {
 
         sessionManager.setIsCouponSelected(false);
         try {
             FoodModel model;
+            if (isView) {
+                if (Objects.equals(from, "category"))
+                    model = categoryList.get(position);
+                else
+                    model = popularArrayList.get(position);
 
-            if (Objects.equals(from, "category"))
-                model = categoryList.get(position);
-            else
-                model = popularArrayList.get(position);
-
-            Cart cart = new Cart();
-            cart.food = model;
-            cart.food.setFoodId(model.getFoodId());
-            cart.userId = sessionManager.getUserName();
-            cart.status = 0;
-            cart.quantity = 1;
-            if (!db.orderDao().isFoodIsExist(sessionManager.getUserName(), model)) {
-                db.orderDao().insert(cart);
-                showSnackBar(binding.getRoot(), "Added to cart successfully");
-                // sessionManager.setIsFoodAdded(true);
+                BottomSheetDialog bottomSheet = new BottomSheetDialog();
+                Bundle args = new Bundle();
+                args.putSerializable("data",  model);
+                bottomSheet.setArguments(args);
+                bottomSheet.show(requireActivity().getSupportFragmentManager(),
+                        "ModalBottomSheet");
             } else {
-                showSnackBar(binding.getRoot(), "Food already in the cart");
+                if (Objects.equals(from, "category"))
+                    model = categoryList.get(position);
+                else
+                    model = popularArrayList.get(position);
+
+                Cart cart = new Cart();
+                cart.food = model;
+                cart.food.setFoodId(model.getFoodId());
+                cart.userId = sessionManager.getUserName();
+                cart.status = 0;
+                cart.quantity = 1;
+                if (!db.orderDao().isFoodIsExist(sessionManager.getUserName(), model)) {
+                    db.orderDao().insert(cart);
+                    showSnackBar(binding.getRoot(), "Added to cart successfully");
+                    // sessionManager.setIsFoodAdded(true);
+                } else {
+                    showSnackBar(binding.getRoot(), "Food already in the cart");
+                }
             }
         } catch (Exception e) {
             Log.d("Food Exception", "onItemClick: " + e.toString());
