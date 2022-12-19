@@ -38,7 +38,13 @@ public final class ActivityAddFoodBinding implements ViewBinding {
   public final TextInputEditText txtCategory;
 
   @NonNull
+  public final TextInputEditText txtIngredients;
+
+  @NonNull
   public final TextInputLayout txtLayoutCategory;
+
+  @NonNull
+  public final TextInputLayout txtLayoutIngredients;
 
   @NonNull
   public final TextInputLayout txtLayoutPrice;
@@ -52,7 +58,8 @@ public final class ActivityAddFoodBinding implements ViewBinding {
   private ActivityAddFoodBinding(@NonNull LinearLayout rootView, @NonNull MaterialButton btnAdd,
       @NonNull ImageView coverImage, @NonNull ImageView iconBack,
       @NonNull TextInputLayout textLayoutName, @NonNull TextInputEditText txtCategory,
-      @NonNull TextInputLayout txtLayoutCategory, @NonNull TextInputLayout txtLayoutPrice,
+      @NonNull TextInputEditText txtIngredients, @NonNull TextInputLayout txtLayoutCategory,
+      @NonNull TextInputLayout txtLayoutIngredients, @NonNull TextInputLayout txtLayoutPrice,
       @NonNull TextInputEditText txtName, @NonNull TextInputEditText txtPrice) {
     this.rootView = rootView;
     this.btnAdd = btnAdd;
@@ -60,7 +67,9 @@ public final class ActivityAddFoodBinding implements ViewBinding {
     this.iconBack = iconBack;
     this.textLayoutName = textLayoutName;
     this.txtCategory = txtCategory;
+    this.txtIngredients = txtIngredients;
     this.txtLayoutCategory = txtLayoutCategory;
+    this.txtLayoutIngredients = txtLayoutIngredients;
     this.txtLayoutPrice = txtLayoutPrice;
     this.txtName = txtName;
     this.txtPrice = txtPrice;
@@ -123,9 +132,21 @@ public final class ActivityAddFoodBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.txt_ingredients;
+      TextInputEditText txtIngredients = ViewBindings.findChildViewById(rootView, id);
+      if (txtIngredients == null) {
+        break missingId;
+      }
+
       id = R.id.txt_layout_category;
       TextInputLayout txtLayoutCategory = ViewBindings.findChildViewById(rootView, id);
       if (txtLayoutCategory == null) {
+        break missingId;
+      }
+
+      id = R.id.txt_layout_ingredients;
+      TextInputLayout txtLayoutIngredients = ViewBindings.findChildViewById(rootView, id);
+      if (txtLayoutIngredients == null) {
         break missingId;
       }
 
@@ -148,7 +169,8 @@ public final class ActivityAddFoodBinding implements ViewBinding {
       }
 
       return new ActivityAddFoodBinding((LinearLayout) rootView, btnAdd, coverImage, iconBack,
-          textLayoutName, txtCategory, txtLayoutCategory, txtLayoutPrice, txtName, txtPrice);
+          textLayoutName, txtCategory, txtIngredients, txtLayoutCategory, txtLayoutIngredients,
+          txtLayoutPrice, txtName, txtPrice);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

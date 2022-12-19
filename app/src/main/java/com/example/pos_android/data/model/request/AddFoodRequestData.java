@@ -7,7 +7,7 @@ public class AddFoodRequestData {
     final String price;
     final String image;
     final String status;
-    final String ingredients;
+    final String incrediance;
 
     public AddFoodRequestData(String name, String categoty, String price, String imageUrl, String ingredients) {
         this.name = name;
@@ -16,7 +16,7 @@ public class AddFoodRequestData {
         this.rating = "0.0";
         this.status = "popular";
         this.image = imageUrl;
-        this.ingredients = ingredients;
+        this.incrediance = ingredients;
     }
 
     public AddFoodRequestData(String name, String category, String rating, String price, String image, String status, String ingredients) {
@@ -26,6 +26,6 @@ public class AddFoodRequestData {
         this.price = price;
         this.image = image;
         this.status = status;
-        this.ingredients = ingredients;
+        this.incrediance = ingredients;
     }
 }

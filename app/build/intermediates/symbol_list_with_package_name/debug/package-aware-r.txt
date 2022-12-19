@@ -6421,8 +6421,10 @@ id txt_category
 id txt_email
 id txt_food_items
 id txt_food_qty
+id txt_ingredients
 id txt_itemname
 id txt_layout_category
+id txt_layout_ingredients
 id txt_layout_price
 id txt_name
 id txt_pass

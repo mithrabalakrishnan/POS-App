@@ -130,6 +130,31 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_layout_ingredients"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:hint="Ingredients"
+                android:textColorHint="@color/img_shade_color"
+                app:boxStrokeColor="@color/orange_500"
+                app:hintTextColor="@color/img_shade_color">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_ingredients"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:maxLength="4000"
+                    android:minLines="1"
+                    android:maxLines="10"
+                    android:textColor="@color/black" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAdd"
                 android:layout_width="match_parent"
