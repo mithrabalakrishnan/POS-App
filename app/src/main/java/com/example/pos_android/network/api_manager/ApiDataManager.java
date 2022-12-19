@@ -34,6 +34,7 @@ import com.example.pos_android.data.model.sales_report.IncomePerItemMonthlyRespo
 import com.example.pos_android.data.model.sales_report.SalesReportResponse;
 import com.example.pos_android.presenter.AddFoodPresenter;
 import com.example.pos_android.presenter.AddKitchenPresenter;
+import com.example.pos_android.presenter.AddWaiterPresenter;
 import com.example.pos_android.presenter.BestSellingReportPresenter;
 import com.example.pos_android.presenter.ConfirmOrderPresenter;
 import com.example.pos_android.presenter.CustomerReportPresenter;
@@ -986,6 +987,41 @@ public class ApiDataManager {
         }
     }
 
+    public void addWaiterUser(RegisterRequestData requestData, String token, AddWaiterPresenter mPresenter) {
+        try {
+            if (apiInterFace == null)
+                apiInterFace = ApiClient.getClientServerApi().create(ApiInterFace.class);
 
+            apiInterFace
+                    .addWaiterUser("Bearer " + token, requestData)
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeOn(Schedulers.io())
+                    .subscribe(new Observer<AddKitchenResponse>() {
+                        @Override
+                        public void onSubscribe(Disposable d) {
+                        }
+
+                        @Override
+                        public void onNext(AddKitchenResponse response) {
+                            mPresenter.onWaiterResponse(response);
+                        }
+
+                        @Override
+                        public void onError(Throwable e) {
+                            Log.e(TAG, "onError: " + e.getMessage());
+                            mPresenter.onApiError(e.getMessage());
+                        }
+
+                        @Override
+                        public void onComplete() {
+                        }
+                    });
+
+
+        } catch (Exception e) {
+            mPresenter.onApiError(e.getMessage());
+            Log.e(TAG, "Exception caught in " + e.getMessage().toString());
+        }
+    }
 
 }

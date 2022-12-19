@@ -96,16 +96,41 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:itemCount="10"
-
                 tools:listitem="@layout/kitchen_order_item"
-
                 />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/layout_k_w_item_shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:paddingStart="10dp"
+                android:visibility="gone"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <include layout="@layout/k_w_order_item_shimmer" />
+                        <include layout="@layout/k_w_order_item_shimmer" />
+                        <include layout="@layout/k_w_order_item_shimmer" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
             <ImageView
                 android:id="@+id/no_data"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:visibility="gone"
-                android:src="@drawable/no_data"
+                android:src="@drawable/no_item"
+                android:layout_marginTop="100dp"
                 />
 
         </LinearLayout>

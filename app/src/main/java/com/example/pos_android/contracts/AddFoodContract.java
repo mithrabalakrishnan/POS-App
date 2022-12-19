@@ -15,7 +15,7 @@ public interface AddFoodContract {
     interface Presenter extends BasePresenter {
 
         void addImageUrl(File imageUrl);
-        void addFood(String imageUrl, String name, String category,String price);
+        void addFood(String imageUrl, String name, String category,String price, String ingredients);
 
         void onImageUrlResponse(ImagePickerResponse saveResponse);
         void onAddFoodResponse(CommonResponse saveResponse);

@@ -46,6 +46,7 @@ public class WaiterActivity extends BaseActivity implements KitchenListingContra
     }
 
     private void initView() {
+        showShimmer();
         presenter = new KitchenPresenter(this, this);
         sessionManager = new SessionManager(this);
         waiterOrderListingAdapter = new WaiterOrderListingAdapter(kitchenDataList, this);
@@ -68,6 +69,7 @@ public class WaiterActivity extends BaseActivity implements KitchenListingContra
 
     @Override
     public void showApiErrorWarning(String string) {
+        hideShimmer();
         if (string.equalsIgnoreCase(getResources().getString(R.string.unauthorized))) {
             SessionManager sessionManager = new SessionManager(getApplicationContext());
             sessionManager.clear();
@@ -93,6 +95,7 @@ public class WaiterActivity extends BaseActivity implements KitchenListingContra
 
     @Override
     public void showKitchenOrderListApiSuccess(List<KitchenResponse.KitchenData> saveResponse) {
+        hideShimmer();
         if (saveResponse.size() > 0) {
             binding.rvOrder.setVisibility(View.VISIBLE);
             binding.noData.setVisibility(View.GONE);
@@ -143,6 +146,7 @@ public class WaiterActivity extends BaseActivity implements KitchenListingContra
     @Override
     protected void onResume() {
         super.onResume();
+        showShimmer();
         presenter.callKitchenOrderList();
         presenter.getUserProfile();
     }
@@ -160,6 +164,18 @@ public class WaiterActivity extends BaseActivity implements KitchenListingContra
             dialogInterface.dismiss();
         }).setNegativeButton("No", (dialogInterface, i) -> dialogInterface.dismiss()).show();
 
+    }
+
+    private void showShimmer() {
+        binding.layoutKWItemShimmer.setVisibility(View.VISIBLE);
+        binding.layoutKWItemShimmer.startShimmer();
+        binding.rvOrder.setVisibility(View.GONE);
+    }
+
+    private void hideShimmer() {
+        binding.layoutKWItemShimmer.setVisibility(View.GONE);
+        binding.layoutKWItemShimmer.stopShimmer();
+        binding.rvOrder.setVisibility(View.VISIBLE);
     }
 
 }

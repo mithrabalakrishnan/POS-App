@@ -67,10 +67,14 @@ public class AddFoodActivity extends BaseActivity implements AddFoodContract.Vie
         } else if (!Validation.isNotNullOrEmpty(binding.txtPrice.getText().toString())) {
             binding.txtPrice.setError("Please enter price");
             binding.txtLayoutCategory.setError(null);
+        }else if (!Validation.isNotNullOrEmpty(binding.txtIngredients.getText().toString())) {
+            binding.txtIngredients.setError("Please enter ingredients");
+            binding.txtLayoutIngredients.setError(null);
         } else {
             presenter.addFood(imagePath, binding.txtName.getText().toString(),
                     binding.txtCategory.getText().toString(),
-                    binding.txtPrice.getText().toString()
+                    binding.txtPrice.getText().toString(),
+                    binding.txtIngredients.getText().toString()
             );
         }
     }

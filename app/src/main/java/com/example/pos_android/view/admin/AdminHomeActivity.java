@@ -54,6 +54,9 @@ public class AdminHomeActivity extends BaseActivity {
         binding.btnAddVoucher.setOnClickListener(view -> {
             startActivity(new Intent(getApplicationContext(), AddVoucherActivity.class));
         });
+        binding.btnAddWaiter.setOnClickListener(view -> {
+            startActivity(new Intent(getApplicationContext(), AddWaiterActivity.class));
+        });
     }
 
     private void showLogoutDialog() {

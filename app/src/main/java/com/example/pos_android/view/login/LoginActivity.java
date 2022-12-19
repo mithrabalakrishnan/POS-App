@@ -13,6 +13,7 @@ import com.example.pos_android.view.BaseActivity;
 import com.example.pos_android.view.admin.AdminHomeActivity;
 import com.example.pos_android.view.kitchen.KitchenActivity;
 import com.example.pos_android.view.user.UserHomeActivity;
+import com.example.pos_android.view.waiter.WaiterActivity;
 
 import java.util.Objects;
 
@@ -94,6 +95,9 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
         } else if (response.getData().getRole().equals("Kitchen")) {
             sessionManager.setUsertype(SessionManager.UserRoles.KITCHEN);
             startActivity(new Intent(LoginActivity.this, KitchenActivity.class));
+        }  else if (response.getData().getRole().equals("Waiter")) {
+            sessionManager.setUsertype(SessionManager.UserRoles.KITCHEN);
+            startActivity(new Intent(LoginActivity.this, WaiterActivity.class));
         } else {
             sessionManager.setUsertype(SessionManager.UserRoles.ADMIN);
             startActivity(new Intent(LoginActivity.this, AdminHomeActivity.class));

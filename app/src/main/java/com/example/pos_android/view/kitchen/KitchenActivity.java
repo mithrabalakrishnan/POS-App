@@ -44,6 +44,7 @@ public class KitchenActivity extends BaseActivity implements KitchenListingContr
     }
 
     private void initView() {
+        showShimmer();
         presenter = new KitchenPresenter(this, this);
         sessionManager = new SessionManager(this);
         adapter = new KitchenOrderListingAdapter(kitchenDataList, this);
@@ -103,6 +104,7 @@ public class KitchenActivity extends BaseActivity implements KitchenListingContr
 
     @Override
     public void showApiErrorWarning(String string) {
+        hideShimmer();
         if (string.equalsIgnoreCase(getResources().getString(R.string.unauthorized))) {
             SessionManager sessionManager = new SessionManager(getApplicationContext());
             sessionManager.clear();
@@ -126,6 +128,7 @@ public class KitchenActivity extends BaseActivity implements KitchenListingContr
 
     @Override
     public void showKitchenOrderListApiSuccess(List<KitchenResponse.KitchenData> saveResponse) {
+        hideShimmer();
         if (saveResponse.size() > 0) {
             binding.rvOrder.setVisibility(View.VISIBLE);
             binding.noData.setVisibility(View.GONE);
@@ -158,5 +161,16 @@ public class KitchenActivity extends BaseActivity implements KitchenListingContr
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
+    }
+
+    private void showShimmer(){
+        binding.layoutKWItemShimmer.setVisibility(View.VISIBLE);
+        binding.layoutKWItemShimmer.startShimmer();
+        binding.rvOrder.setVisibility(View.GONE);
+    }
+    private void hideShimmer(){
+        binding.layoutKWItemShimmer.setVisibility(View.GONE);
+        binding.layoutKWItemShimmer.stopShimmer();
+        binding.rvOrder.setVisibility(View.VISIBLE);
     }
 }

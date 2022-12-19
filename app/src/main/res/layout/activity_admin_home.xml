@@ -172,8 +172,7 @@
                         android:layout_width="0dp"
                         android:layout_height="130dp"
                         android:layout_marginStart="30dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/dinner"
+                        android:src="@drawable/kitchen_user"
                         app:layout_constraintDimensionRatio="w,1:1"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -181,13 +180,13 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/btn_report"
+                    android:id="@+id/btn_add_waiter"
                     android:layout_width="match_parent"
                     android:layout_height="180dp">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_waiter"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="8dp"
@@ -203,29 +202,29 @@
                         app:layout_constraintVertical_bias="0.0">
 
                         <TextView
-
+                            android:id="@+id/txt_waiter_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
                             android:layout_marginEnd="10dp"
                             android:gravity="center"
-                            android:text="Report"
+                            android:text="Add Waiter"
                             android:textAllCaps="true"
                             android:textColor="@color/black"
                             android:textSize="17sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toTopOf="@+id/textView29"
+                            app:layout_constraintBottom_toTopOf="@+id/textView14"
                             app:layout_constraintStart_toStartOf="parent" />
 
                         <TextView
-                            android:id="@+id/textView29"
+                            android:id="@+id/textView14"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="32dp"
                             android:gravity="center"
-                            android:text="To view reports"
+                            android:text="To Add Waiter Click here"
                             android:textAllCaps="true"
                             android:textColor="@color/black"
                             android:textSize="12sp"
@@ -235,11 +234,12 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <ImageView
+                        android:id="@+id/iv_waiter"
                         android:layout_width="0dp"
                         android:layout_height="130dp"
                         android:layout_marginEnd="30dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/report"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/waiter"
                         app:layout_constraintDimensionRatio="w,1:1"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -310,6 +310,72 @@
                         tools:ignore="contentDescription" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/btn_report"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="48dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/item_bg"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="10dp"
+                            android:gravity="center"
+                            android:text="Report"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/textView29"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textView29"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="32dp"
+                            android:gravity="center"
+                            android:text="To view reports"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="130dp"
+                        android:layout_marginEnd="30dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/report"
+                        app:layout_constraintDimensionRatio="w,1:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="contentDescription" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_logout"

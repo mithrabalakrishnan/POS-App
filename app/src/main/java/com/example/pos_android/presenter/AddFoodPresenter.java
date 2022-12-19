@@ -52,11 +52,11 @@ public class AddFoodPresenter implements AddFoodContract.Presenter {
     }
 
     @Override
-    public void addFood(String imageUrl, String name, String category, String price) {
+    public void addFood(String imageUrl, String name, String category, String price, String ingredients) {
         if (NetworkManager.isNetworkAvailable(mContext)) {
             mView.showProgressBar();
             AddFoodRequestData requestData = new AddFoodRequestData(
-                    name, category, price, imageUrl
+                    name, category, price, imageUrl,ingredients
             );
 
             mApiDataManager.addFood(requestData, sessionManager.getUserToken(), this);

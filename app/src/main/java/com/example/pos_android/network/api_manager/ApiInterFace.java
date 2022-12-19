@@ -142,6 +142,12 @@ public interface ApiInterFace {
             @Header("Authorization") String string,
             @Body RegisterRequestData requestData);
 
+
+    @POST("waiter-register post")
+    Observable<AddKitchenResponse> addWaiterUser(
+            @Header("Authorization") String string,
+            @Body RegisterRequestData requestData);
+
     @GET("food-category")
     Observable<foodCategoryResponse> getFoodCategory(
             @Header("Authorization") String string

@@ -24,7 +24,7 @@ public class AddWaiterActivity extends BaseActivity implements AddWaiterContract
     }
 
     private void initUi() {
-        presenter = new AddWaiterPresenter();
+        presenter = new AddWaiterPresenter(this,this);
         binding.ivBack.setOnClickListener(view -> {
             onBackPressed();
 
