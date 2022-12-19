@@ -5529,6 +5529,7 @@ drawable button_speakback_shadow
 drawable button_understood_blur
 drawable button_understood_normal_bg
 drawable button_understood_shadow
+drawable cook
 drawable dashed_border
 drawable debit
 drawable default_selected_dot
@@ -5603,6 +5604,7 @@ drawable img_settings
 drawable img_subtract
 drawable item_bg
 drawable iv_payment
+drawable kitchen_user
 drawable loading
 drawable m3_appbar_background
 drawable m3_popupmenu_background_overlay
@@ -5667,6 +5669,7 @@ drawable tob_curve_bg_white
 drawable toggle_style
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable waiter
 drawable wavy_bg
 font inter
 font intermedium
@@ -6036,6 +6039,7 @@ id iv_books
 id iv_no_cart
 id iv_remove
 id iv_user
+id iv_waiter
 id jumpToEnd
 id jumpToStart
 id labeled
@@ -6051,6 +6055,7 @@ id layout_coupon
 id layout_coupon_item
 id layout_debit_card
 id layout_food_details
+id layout_k_w_item_shimmer
 id layout_kitchen_user
 id layout_order_item_shimmer
 id layout_popular_shimmer
@@ -6058,6 +6063,7 @@ id layout_recent_shimmer
 id layout_root
 id layout_top_toolbar
 id layout_total
+id layout_waiter
 id left
 id leftToRight
 id left_to_right
@@ -6333,6 +6339,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView14
 id textView19
 id textView2
 id textView29
@@ -6422,6 +6429,7 @@ id txt_pass
 id txt_popular
 id txt_price
 id txt_pro
+id txt_waiter_name
 id unchecked
 id uniform
 id unlabeled
@@ -6602,6 +6610,7 @@ layout fragment_summary
 layout image_slider
 layout inc_dec_view
 layout item_cart_product
+layout k_w_order_item_shimmer
 layout kitchen_order_item
 layout layout_add_cart_item
 layout layout_all_food_item
