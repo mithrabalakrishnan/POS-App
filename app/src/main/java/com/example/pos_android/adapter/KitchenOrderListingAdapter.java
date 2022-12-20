@@ -66,7 +66,7 @@ public class KitchenOrderListingAdapter extends RecyclerView.Adapter<KitchenOrde
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onItemClickListener.onItemClick(position, "");
+                onItemClickListener.onItemClick(position, "",false);
             }
         });
     }

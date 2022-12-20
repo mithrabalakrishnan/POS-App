@@ -32,6 +32,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.Random;
 
 
@@ -41,6 +42,7 @@ public class DiscountFragment extends BaseFragment implements OnItemClickListene
     private VoucherPresenter presenter;
     private List<CouponsData> couponsData = new ArrayList<>();
     private CouponsAdapter adapter;
+    private String fromPage;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,6 +64,10 @@ public class DiscountFragment extends BaseFragment implements OnItemClickListene
     }
 
     private void initView() {
+        if(getArguments() != null) {
+            // The getPrivacyPolicyLink() method will be created automatically.
+             fromPage = DiscountFragmentArgs.fromBundle(getArguments()).getFromPage();
+        }
         presenter = new VoucherPresenter(this, requireContext());
         sessionManager = new SessionManager(requireContext());
         adapter = new CouponsAdapter(couponsData, requireContext(), this);
@@ -72,14 +78,16 @@ public class DiscountFragment extends BaseFragment implements OnItemClickListene
         presenter.getAllVoucher();
 
         binding.ivBack.setOnClickListener(view -> {
-            Navigation.findNavController(binding.getRoot()).navigate(R.id.action_couponFragment_to_summaryFragment);
+            requireActivity().onBackPressed();
         });
     }
 
 
     @Override
     public void onItemClick(Integer position, String from,Boolean isView ) {
-        Navigation.findNavController(binding.getRoot()).navigate(R.id.action_couponFragment_to_summaryFragment);
+        if (Objects.equals(fromPage, "summery")) {
+            Navigation.findNavController(binding.getRoot()).navigate(R.id.action_couponFragment_to_summaryFragment);
+        }
     }
 
     @Override

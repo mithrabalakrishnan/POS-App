@@ -41,7 +41,7 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.ViewHolder> 
         TableModel currentItem = list.get(position);
         holder.setData(currentItem);
         holder.itemView.setOnClickListener(nv -> {
-            clickListener.onItemClick(position,"Table");
+            clickListener.onItemClick(position,"Table",false);
         });
     }
 

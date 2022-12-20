@@ -190,7 +190,7 @@ public class TableReservationFragment extends BaseFragment implements OnItemClic
     }
 
     @Override
-    public void onItemClick(Integer position, String from) {
+    public void onItemClick(Integer position, String from,Boolean isView ) {
         if (from == "Date") {
             for (int i = 0; i < dateList.size(); i++) {
                 if (i == position) {

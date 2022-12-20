@@ -63,7 +63,7 @@ public class KitchenActivity extends BaseActivity implements KitchenListingContr
     }
 
     @Override
-    public void onItemClick(Integer position, String from) {
+    public void onItemClick(Integer position, String from,Boolean isView ) {
         KitchenResponse.KitchenData data = kitchenDataList.get(position);
         Calendar cal = Calendar.getInstance();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");

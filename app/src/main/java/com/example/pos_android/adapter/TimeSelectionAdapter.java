@@ -36,7 +36,7 @@ public class TimeSelectionAdapter extends RecyclerView.Adapter<TimeSelectionAdap
     public void onBindViewHolder(@NonNull TimeViewHolder holder, int position) {
         holder.setData(stringList.get(position));
         holder.itemView.setOnClickListener(v -> {
-            onItemClickListener.onItemClick(position,"Time");
+            onItemClickListener.onItemClick(position,"Time",false);
         });
     }
 

@@ -103,11 +103,11 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View,
         slideModels.add(new SlideModel("https://thumbs.dreamstime.com/z/fast-food-best-offer-banner-template-restaurant-cafe-design-element-poster-invitation-voucher-flyer-coupon-brochure-vector-153266434.jpg", ScaleTypes.FIT));
 
         recentArray.clear();
-        recentArray.add(new FoodModel("Biriyani", R.drawable.dm1, "biriyaniii"));
-        recentArray.add(new FoodModel("Mandhi", R.drawable.dm2, "delicious food"));
-        recentArray.add(new FoodModel("Curry", R.drawable.dm3, "Fish curry"));
-        recentArray.add(new FoodModel("Breakfast", R.drawable.dm4, "Break fast combo"));
-        recentArray.add(new FoodModel("Meals", R.drawable.dm1, "Good meals"));
+        recentArray.add(new FoodModel("Biriyani", R.drawable.dm1, "biriyaniii", ""));
+        recentArray.add(new FoodModel("Mandhi", R.drawable.dm2, "delicious food", ""));
+        recentArray.add(new FoodModel("Curry", R.drawable.dm3, "Fish curry", ""));
+        recentArray.add(new FoodModel("Breakfast", R.drawable.dm4, "Break fast combo", ""));
+        recentArray.add(new FoodModel("Meals", R.drawable.dm1, "Good meals", ""));
 
         binding.ivBooking.setOnClickListener(v -> {
             Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_tableReservationFragment);
@@ -170,8 +170,8 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View,
         popularArrayList.clear();
         for (UserHomeResponse.PopularFood food : response.getData().getPopularFoods()) {
             popularArrayList.add(new FoodModel(String.valueOf(food.getFoodId()),
-                    food.getName(), food.getImage(), food.getPrice()
-            ));
+                    food.getName(), food.getImage(), food.getPrice(),
+                    food.getIncrediance()));
         }
         binding.txtPopular.setVisibility(View.VISIBLE);
         if (response.getData().getPopularFoods().size() == 0) {

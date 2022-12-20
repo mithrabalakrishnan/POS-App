@@ -54,7 +54,7 @@ public class CouponsAdapter extends RecyclerView.Adapter<CouponsAdapter.ViewHold
             public void onClick(View view) {
                 sessionManager.setIsCouponSelected(true);
                 sessionManager.setCouponPercent(myListData.getPercentage());
-                onItemClickListener.onItemClick(position, "coupon");
+                onItemClickListener.onItemClick(position, "coupon",false);
             }
         });
     }

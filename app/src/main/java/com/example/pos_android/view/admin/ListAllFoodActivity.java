@@ -78,8 +78,8 @@ public class ListAllFoodActivity extends BaseActivity implements UserHomeContrac
         foodModelArrayList.clear();
         for (UserHomeResponse.PopularFood food : response.getData().getPopularFoods()) {
             foodModelArrayList.add(new FoodModel(String.valueOf(food.getFoodId()),
-                    food.getName(), food.getImage(), food.getPrice()
-            ));
+                    food.getName(), food.getImage(), food.getPrice(),food.getIncrediance()
+                    ));
         }
         adapter = new AllFoodAdapter(foodModelArrayList, this, this);
         binding.rvRecommended.setAdapter(adapter);
@@ -103,7 +103,7 @@ public class ListAllFoodActivity extends BaseActivity implements UserHomeContrac
     }
 
     @Override
-    public void onItemClick(Integer position, String from) {
+    public void onItemClick(Integer position, String from,Boolean isView ) {
         FoodModel model = foodModelArrayList.get(position);
         int id = Integer.parseInt(model.getFoodId());
         Intent intent = new Intent(ListAllFoodActivity.this, IncomeReportActivity.class);

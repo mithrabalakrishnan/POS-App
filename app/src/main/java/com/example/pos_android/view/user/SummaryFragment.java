@@ -133,7 +133,9 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
             }
         });
         binding.layoutCoupon.setOnClickListener(view -> {
-            Navigation.findNavController(binding.getRoot()).navigate(R.id.action_summaryFragment_to_couponFragment);
+                    SummaryFragmentDirections.ActionSummaryFragmentToCouponFragment directions =
+                SummaryFragmentDirections.actionSummaryFragmentToCouponFragment("summery");
+        Navigation.findNavController(requireView()).navigate(directions);
         });
         binding.ivBack.setOnClickListener(view -> {
             Navigation.findNavController(binding.getRoot()).popBackStack();
@@ -180,8 +182,8 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
                             item.food.getName(),
                             item.food.getImageUrl(),
                             item.food.getPrice(),
-                            item.quantity
-                    )
+                            item.quantity,
+                            item.food.getIncrediance())
             );
         }
         updateRecyclerView();

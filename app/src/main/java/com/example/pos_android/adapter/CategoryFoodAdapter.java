@@ -65,7 +65,7 @@ public class CategoryFoodAdapter extends RecyclerView.Adapter<CategoryFoodAdapte
         likesTextView.setText("£ "+currentItem.getPrice());
 
         holder.button.setOnClickListener(v -> {
-            clickListener.onItemClick(position, "");
+            clickListener.onItemClick(position, "",false);
         });
     }
 

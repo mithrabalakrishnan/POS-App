@@ -36,7 +36,7 @@ public class DateSelectionAdapter extends RecyclerView.Adapter<DateSelectionAdap
     public void onBindViewHolder(@NonNull DateViewHolder holder, int position) {
         holder.setData(dateModelList.get(position));
         holder.itemView.setOnClickListener(v -> {
-            onItemClickListener.onItemClick(position,"Date");
+            onItemClickListener.onItemClick(position,"Date",false);
         });
     }
 

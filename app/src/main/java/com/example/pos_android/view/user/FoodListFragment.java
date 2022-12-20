@@ -2,7 +2,6 @@ package com.example.pos_android.view.user;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -193,9 +192,9 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
         recommendedList.clear();
         for (UserHomeResponse.PopularFood food : response.getData().getPopularFoods()) {
             popularArrayList.add(new FoodModel(String.valueOf(food.getFoodId()),
-                    food.getName(), food.getImage(), food.getPrice()));
+                    food.getName(), food.getImage(), food.getPrice(), food.getIncrediance()));
             recommendedList.add(new FoodModel(String.valueOf(food.getFoodId()),
-                    food.getName(), food.getImage(), food.getPrice()));
+                    food.getName(), food.getImage(), food.getPrice(), food.getIncrediance()));
         }
         recentAdapter = new AddFoodAdapter(recommendedList, requireContext(), this);
         binding.rvRecommended.setAdapter(recentAdapter);
@@ -226,7 +225,7 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
         categoryList.clear();
         for (UserHomeResponse.PopularFood food : categoryDetailResponse.getData()) {
             categoryList.add(new FoodModel(String.valueOf(food.getFoodId()),
-                    food.getName(), food.getImage(), food.getPrice()));
+                    food.getName(), food.getImage(), food.getPrice(), food.getIncrediance()));
         }
         categoryFoodAdapter = new AddFoodAdapter(categoryList, requireContext(), "category", this);
         binding.rvCategoriesItems.setLayoutManager(new GridLayoutManager(requireContext(), 2));

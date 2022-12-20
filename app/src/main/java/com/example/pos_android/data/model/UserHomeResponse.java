@@ -63,6 +63,9 @@ public class UserHomeResponse {
         @SerializedName("status")
         @Expose
         private String status;
+        @SerializedName("incrediance")
+        @Expose
+        private String incrediance;
 
         public Integer getFoodId() {
             return foodId;
@@ -74,6 +77,14 @@ public class UserHomeResponse {
 
         public String getName() {
             return name;
+        }
+
+        public String getIncrediance() {
+            return incrediance;
+        }
+
+        public void setIncrediance(String incrediance) {
+            this.incrediance = incrediance;
         }
 
         public void setName(String name) {
