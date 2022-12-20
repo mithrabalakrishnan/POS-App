@@ -70,11 +70,15 @@ public class DiscountFragment extends BaseFragment implements OnItemClickListene
         binding.recyclerViewCoupon.setAdapter(adapter);
 
         presenter.getAllVoucher();
+
+        binding.ivBack.setOnClickListener(view -> {
+            Navigation.findNavController(binding.getRoot()).navigate(R.id.action_couponFragment_to_summaryFragment);
+        });
     }
 
 
     @Override
-    public void onItemClick(Integer position, String from) {
+    public void onItemClick(Integer position, String from,Boolean isView ) {
         Navigation.findNavController(binding.getRoot()).navigate(R.id.action_couponFragment_to_summaryFragment);
     }
 
