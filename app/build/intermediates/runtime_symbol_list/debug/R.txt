@@ -5548,6 +5548,7 @@ int drawable error 0x7f08009e
 int drawable fast_food 0x7f08009f
 int drawable fingerprint_dialog_error 0x7f0800a0
 int drawable fingerprint_dialog_fp_icon 0x7f0800a1
+int drawable foood 0x7f08011c
 int drawable gift_voucher 0x7f0800a2
 int drawable gradient 0x7f0800a3
 int drawable ic_add 0x7f0800a4
@@ -5659,6 +5660,7 @@ int drawable rectangle_bg_gray_50 0x7f08010d
 int drawable rectangle_gradient_s_gray_900_e_bluegray_800_radius_15 0x7f08010e
 int drawable rectangle_gradient_s_light_blue_900_e_teal_700_radius_15 0x7f08010f
 int drawable report 0x7f080110
+int drawable reportt 0x7f08011d
 int drawable shopping_bag 0x7f080111
 int drawable t4 0x7f080112
 int drawable table 0x7f080113
@@ -5668,6 +5670,7 @@ int drawable tob_curve_bg_white 0x7f080116
 int drawable toggle_style 0x7f080117
 int drawable tooltip_frame_dark 0x7f080118
 int drawable tooltip_frame_light 0x7f080119
+int drawable voucherr 0x7f08011e
 int drawable waiter 0x7f08011a
 int drawable wavy_bg 0x7f08011b
 int font inter 0x7f090000

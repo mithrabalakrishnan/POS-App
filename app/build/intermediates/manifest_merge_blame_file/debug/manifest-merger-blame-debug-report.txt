@@ -95,8 +95,8 @@
 48-->C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:35:9-44
 49        <activity
 49-->C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:37:9-43:20
-50            android:name="com.example.pos_android.WaiterOrderDetailActivity"
-50-->C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:38:13-54
+50            android:name="com.example.pos_android.view.waiter.WaiterOrderDetailActivity"
+50-->C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:38:13-66
 51            android:exported="false" >
 51-->C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:39:13-37
 52            <meta-data
@@ -108,8 +108,8 @@
 55        </activity>
 56        <activity
 56-->C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:44:9-50:20
-57            android:name="com.example.pos_android.WaiterActivity"
-57-->C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:45:13-43
+57            android:name="com.example.pos_android.view.waiter.WaiterActivity"
+57-->C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:45:13-55
 58            android:exported="false" >
 58-->C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:46:13-37
 59            <meta-data
@@ -121,8 +121,8 @@
 62        </activity>
 63        <activity
 63-->C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:51:9-57:20
-64            android:name="com.example.pos_android.AddWaiterActivity"
-64-->C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:52:13-46
+64            android:name="com.example.pos_android.view.admin.AddWaiterActivity"
+64-->C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:52:13-57
 65            android:exported="false" >
 65-->C:\Users\Naju\Downloads\POS git\POS git\app\src\main\AndroidManifest.xml:53:13-37
 66            <meta-data

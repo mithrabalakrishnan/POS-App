@@ -143,7 +143,7 @@ public interface ApiInterFace {
             @Body RegisterRequestData requestData);
 
 
-    @POST("waiter-register post")
+    @POST("waiter-register")
     Observable<AddKitchenResponse> addWaiterUser(
             @Header("Authorization") String string,
             @Body RegisterRequestData requestData);

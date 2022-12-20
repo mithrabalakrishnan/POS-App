@@ -2922,6 +2922,7 @@ drawable dm3
 drawable dm4
 drawable edit_text_border
 drawable fast_food
+drawable foood
 drawable gift_voucher
 drawable ic_add
 drawable ic_add_circle
@@ -2970,10 +2971,12 @@ drawable rectangle_bg_gray_50
 drawable rectangle_gradient_s_gray_900_e_bluegray_800_radius_15
 drawable rectangle_gradient_s_light_blue_900_e_teal_700_radius_15
 drawable report
+drawable reportt
 drawable shopping_bag
 drawable t4
 drawable table
 drawable tob_curve_bg_white
+drawable voucherr
 drawable waiter
 drawable wavy_bg
 font inter

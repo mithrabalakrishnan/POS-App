@@ -5549,6 +5549,7 @@ drawable error
 drawable fast_food
 drawable fingerprint_dialog_error
 drawable fingerprint_dialog_fp_icon
+drawable foood
 drawable gift_voucher
 drawable gradient
 drawable ic_add
@@ -5660,6 +5661,7 @@ drawable rectangle_bg_gray_50
 drawable rectangle_gradient_s_gray_900_e_bluegray_800_radius_15
 drawable rectangle_gradient_s_light_blue_900_e_teal_700_radius_15
 drawable report
+drawable reportt
 drawable shopping_bag
 drawable t4
 drawable table
@@ -5669,6 +5671,7 @@ drawable tob_curve_bg_white
 drawable toggle_style
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable voucherr
 drawable waiter
 drawable wavy_bg
 font inter

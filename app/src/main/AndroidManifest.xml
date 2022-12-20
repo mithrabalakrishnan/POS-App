@@ -35,21 +35,21 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".WaiterOrderDetailActivity"
+            android:name=".view.waiter.WaiterOrderDetailActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".WaiterActivity"
+            android:name=".view.waiter.WaiterActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".AddWaiterActivity"
+            android:name=".view.admin.AddWaiterActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

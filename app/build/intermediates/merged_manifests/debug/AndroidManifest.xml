@@ -47,21 +47,21 @@
         android:theme="@style/Theme.POSAndroid"
         android:usesCleartextTraffic="true" >
         <activity
-            android:name="com.example.pos_android.WaiterOrderDetailActivity"
+            android:name="com.example.pos_android.view.waiter.WaiterOrderDetailActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.example.pos_android.WaiterActivity"
+            android:name="com.example.pos_android.view.waiter.WaiterActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.example.pos_android.AddWaiterActivity"
+            android:name="com.example.pos_android.view.admin.AddWaiterActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
