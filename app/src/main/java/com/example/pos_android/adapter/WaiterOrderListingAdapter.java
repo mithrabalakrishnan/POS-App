@@ -1,5 +1,6 @@
 package com.example.pos_android.adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,9 +51,9 @@ public class WaiterOrderListingAdapter extends RecyclerView.Adapter<WaiterOrderL
             String currentDateToString = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
             Date currentDate = sdf.parse(currentDateToString);
             Date offerDate = sdf.parse(data.getDate());
-            if (Objects.requireNonNull(currentDate).compareTo(offerDate)<0 || data.getStatus() =="To Do" || data.getStatus() =="In-Progress") {
+            if (Objects.requireNonNull(currentDate).compareTo(offerDate)<0) {
                 holder.mainLayout.setVisibility(View.GONE);
-            }else {
+            }else{
                 holder.mainLayout.setVisibility(View.VISIBLE);
             }
         } catch (ParseException e1) {
@@ -62,6 +63,7 @@ public class WaiterOrderListingAdapter extends RecyclerView.Adapter<WaiterOrderL
 
         holder.orderId.setText("Order Id : #" + String.valueOf(data.getId()));
         holder.foodDetails.setText(String.format("%s  X %d", data.getFoodName(), data.getQuanty()));
+        holder.orderStatus.setText(String.format("Order Status : %s", data.getStatus()));
         holder.date.setText(String.valueOf(data.getDate()));
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,12 +80,13 @@ public class WaiterOrderListingAdapter extends RecyclerView.Adapter<WaiterOrderL
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // Constructor - accepts entire row item
-        private TextView orderId, foodDetails, date;
+        private TextView orderId, foodDetails, date,orderStatus;
         private LinearLayout button,mainLayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             orderId = itemView.findViewById(R.id.tv_order_id);
+            orderStatus = itemView.findViewById(R.id.tv_order_status);
             foodDetails = itemView.findViewById(R.id.tv_food_details);
             date = itemView.findViewById(R.id.tv_date);
             button = itemView.findViewById(R.id.btn_view_order);

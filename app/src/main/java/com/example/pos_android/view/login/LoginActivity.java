@@ -96,7 +96,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
             sessionManager.setUsertype(SessionManager.UserRoles.KITCHEN);
             startActivity(new Intent(LoginActivity.this, KitchenActivity.class));
         }  else if (response.getData().getRole().equals("Waiter")) {
-            sessionManager.setUsertype(SessionManager.UserRoles.KITCHEN);
+            sessionManager.setUsertype(SessionManager.UserRoles.WAITER);
             startActivity(new Intent(LoginActivity.this, WaiterActivity.class));
         } else {
             sessionManager.setUsertype(SessionManager.UserRoles.ADMIN);

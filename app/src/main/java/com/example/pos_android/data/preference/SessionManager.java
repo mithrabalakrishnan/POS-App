@@ -107,7 +107,7 @@ public class SessionManager {
     }
 
     public enum UserRoles {
-        ADMIN, USER, KITCHEN
+        ADMIN, USER, KITCHEN,WAITER
     }
 }
 

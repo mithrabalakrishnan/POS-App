@@ -36,10 +36,12 @@ public class WaiterActivity extends BaseActivity implements KitchenListingContra
     private SessionManager sessionManager;
     private WaiterOrderListingAdapter waiterOrderListingAdapter;
     private List<KitchenResponse.KitchenData> kitchenDataList = new ArrayList<>();
+    private List<KitchenResponse.KitchenData> waiterDataList = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding =  ActivityWaiterBinding.inflate(getLayoutInflater());
+        binding = ActivityWaiterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         initView();
@@ -49,7 +51,8 @@ public class WaiterActivity extends BaseActivity implements KitchenListingContra
         showShimmer();
         presenter = new KitchenPresenter(this, this);
         sessionManager = new SessionManager(this);
-        waiterOrderListingAdapter = new WaiterOrderListingAdapter(kitchenDataList, this);
+
+        waiterOrderListingAdapter = new WaiterOrderListingAdapter(waiterDataList, this);
         binding.rvOrder.setLayoutManager(new LinearLayoutManager(this));
         binding.rvOrder.setAdapter(waiterOrderListingAdapter);
         binding.btnLogout.setOnClickListener(v -> {
@@ -87,7 +90,6 @@ public class WaiterActivity extends BaseActivity implements KitchenListingContra
     }
 
 
-
     @Override
     public void showUserProfileResponse(UserProfileResponse response) {
         binding.tvUser.setText("Hi, " + response.getData().username);
@@ -106,14 +108,23 @@ public class WaiterActivity extends BaseActivity implements KitchenListingContra
                 System.out.println("Today's date is " + dateFormat.format(cal.getTime()));
                 for (KitchenResponse.KitchenData data : saveResponse) {
                     if (dateFormat.parse(data.getDate()).after(new Date(System.currentTimeMillis() - 24 * 60 * 60 * 1000))) {
+
                         kitchenDataList.add(data);
                     }
-                    waiterOrderListingAdapter.notifyDataSetChanged();
+
                 }
+                waiterDataList.clear();
+                for (int i = 0; i < kitchenDataList.size(); i++) {
+                    if (kitchenDataList.get(i).getStatus().equals("Completed")) {
+                        waiterDataList.add(kitchenDataList.get(i));
+                    }
+                }
+                Log.e("waiter",waiterDataList.toString());
+                waiterOrderListingAdapter.notifyDataSetChanged();
             } catch (ParseException e) {
                 Log.d("Date exception", "showAllVouchers: " + e);
             }
-        }else{
+        } else {
             binding.rvOrder.setVisibility(View.GONE);
             binding.noData.setVisibility(View.VISIBLE);
         }
@@ -125,17 +136,17 @@ public class WaiterActivity extends BaseActivity implements KitchenListingContra
     }
 
     @Override
-    public void onItemClick(Integer position, String from,Boolean isView ) {
-     KitchenResponse.KitchenData data = kitchenDataList.get(position);
-        Calendar cal = Calendar.getInstance();
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-
-        if (dateFormat.format(cal.getTime()).equals(data.getDate())) {
+    public void onItemClick(Integer position, String from, Boolean isView) {
+        KitchenResponse.KitchenData data = kitchenDataList.get(position);
+//        Calendar cal = Calendar.getInstance();
+//        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//
+//        if (dateFormat.format(cal.getTime()).equals(data.getDate())) {
             Intent i = new Intent(this, WaiterOrderDetailActivity.class);
             i.putExtra("data", data);
             startActivity(i);
-        } else
-            showSnackBar(binding.getRoot(), "Can't update order on before or after today");
+//        } else
+//            showSnackBar(binding.getRoot(), "Can't update order on before or after today");
 
     }
 
@@ -143,6 +154,7 @@ public class WaiterActivity extends BaseActivity implements KitchenListingContra
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
     }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -150,6 +162,7 @@ public class WaiterActivity extends BaseActivity implements KitchenListingContra
         presenter.callKitchenOrderList();
         presenter.getUserProfile();
     }
+
     private void showLogoutDialog() {
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
         builder.setTitle("Logout");

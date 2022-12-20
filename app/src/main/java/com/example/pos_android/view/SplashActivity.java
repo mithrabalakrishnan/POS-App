@@ -183,7 +183,7 @@ public class SplashActivity extends AppCompatActivity {
                     AdminHomeActivity.class);
             startActivity(i);
             finishAffinity();
-        } else if (Objects.equals(sessionManager.getUserType(), "Waiter")) {
+        } else if (Objects.equals(sessionManager.getUserType(), "WAITER")) {
             Intent i = new Intent(SplashActivity.this,
                     WaiterActivity.class);
             startActivity(i);
