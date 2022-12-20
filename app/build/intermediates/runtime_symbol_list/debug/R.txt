@@ -6398,6 +6398,7 @@ int id tv_item_name 0x7f0a02c8
 int id tv_month 0x7f0a02c9
 int id tv_name 0x7f0a02ca
 int id tv_order_id 0x7f0a02cb
+int id tv_order_status 0x7f0a030c
 int id tv_phone 0x7f0a02cc
 int id tv_signup 0x7f0a02cd
 int id tv_status 0x7f0a02ce

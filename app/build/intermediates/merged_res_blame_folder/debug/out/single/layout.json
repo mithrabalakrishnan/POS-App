@@ -52,10 +52,6 @@
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\layout\\layout_select_date.xml"
     },
     {
-        "merged": "com.example.pos_android.app-mergeDebugResources-53:/layout/activity_admin_home.xml",
-        "source": "com.example.pos_android.app-main-56:/layout/activity_admin_home.xml"
-    },
-    {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-mergeDebugResources-53:\\layout\\coupen_layout.xml",
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\layout\\coupen_layout.xml"
     },
@@ -210,6 +206,10 @@
     {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-mergeDebugResources-53:\\layout\\activity_waiter_order_detail.xml",
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\layout\\activity_waiter_order_detail.xml"
+    },
+    {
+        "merged": "com.example.pos_android.app-mergeDebugResources-53:/layout/coupen_layout.xml",
+        "source": "com.example.pos_android.app-main-56:/layout/coupen_layout.xml"
     },
     {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-mergeDebugResources-53:\\layout\\activity_admin_home.xml",

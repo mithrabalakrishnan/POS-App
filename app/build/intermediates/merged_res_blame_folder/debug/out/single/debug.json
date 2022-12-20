@@ -156,6 +156,10 @@
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\layout\\voice_dialog.xml"
     },
     {
+        "merged": "com.example.pos_android.app-merged_res-54:/layout_coupen_layout.xml.flat",
+        "source": "com.example.pos_android.app-main-56:/layout/coupen_layout.xml"
+    },
+    {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\drawable_cook.png.flat",
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\drawable\\cook.png"
     },
@@ -206,10 +210,6 @@
     {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-debug-55:\\mipmap-xxhdpi\\ic_launcher_foreground.png"
-    },
-    {
-        "merged": "com.example.pos_android.app-merged_res-54:/drawable_voucherr.png.flat",
-        "source": "com.example.pos_android.app-main-56:/drawable/voucherr.png"
     },
     {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\layout_layout_category_shimmer.xml.flat",
@@ -576,6 +576,10 @@
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\drawable-v24\\ic_minus.xml"
     },
     {
+        "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\drawable_voucherr.png.flat",
+        "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\drawable\\voucherr.png"
+    },
+    {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\xml_backup_rules.xml.flat",
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\xml\\backup_rules.xml"
     },
@@ -618,10 +622,6 @@
     {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-debug-55:\\mipmap-mdpi\\ic_launcher_round.png"
-    },
-    {
-        "merged": "com.example.pos_android.app-merged_res-54:/layout_activity_admin_home.xml.flat",
-        "source": "com.example.pos_android.app-main-56:/layout/activity_admin_home.xml"
     },
     {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",

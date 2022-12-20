@@ -59,6 +59,7 @@
                     android:layout_marginTop="@dimen/_4pxv"
                     android:layout_width="match_parent"
                     android:singleLine="true"
+                    android:textAllCaps="true"
                     android:text="McDonalds"
                     style="@style/txtMontserratmedium16_1"
                   />

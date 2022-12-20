@@ -60,8 +60,9 @@ public class KitchenOrderListingAdapter extends RecyclerView.Adapter<KitchenOrde
         }
 
 
-        holder.orderId.setText("Order Id : #" + String.valueOf(data.getId()));
+        holder.orderId.setText(String.format("Order Id : #%s", String.valueOf(data.getId())));
         holder.foodDetails.setText(String.format("%s  X %d", data.getFoodName(), data.getQuanty()));
+        holder.status.setText(String.format("Order Status : %s", data.getStatus()));
         holder.date.setText(String.valueOf(data.getDate()));
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +79,7 @@ public class KitchenOrderListingAdapter extends RecyclerView.Adapter<KitchenOrde
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // Constructor - accepts entire row item
-        private TextView orderId, foodDetails, date;
+        private TextView orderId, foodDetails, date,status;
         private LinearLayout button,mainLayout;
 
         public ViewHolder(@NonNull View itemView) {
@@ -88,6 +89,7 @@ public class KitchenOrderListingAdapter extends RecyclerView.Adapter<KitchenOrde
             date = itemView.findViewById(R.id.tv_date);
             button = itemView.findViewById(R.id.btn_view_order);
             mainLayout = itemView.findViewById(R.id.item_layout);
+            status =  itemView.findViewById(R.id.tv_order_status);
         }
     }
 }

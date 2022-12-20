@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
+import androidx.core.content.ContextCompat;
+
 import com.example.pos_android.R;
 import com.example.pos_android.contracts.CustomerReportContract;
 import com.example.pos_android.data.model.CustomerReportResponse;
@@ -114,12 +116,22 @@ public class CustomerReportActivity extends BaseActivity implements CustomerRepo
         }
 
         labels = new String[response.getData().getUserReport().size()];
+        int totalUsers = 0;
+
         for (int i = 0; i < response.getData().getUserReport().size(); i++) {
-            barEntries.add(new BarEntry(i, (float) reportArrayList.get(i).getVisitList()));
-            labels[i] = reportArrayList.get(i).getUsername();
+            if(reportArrayList.get(i).getVisitList() != 0) {
+                barEntries.add(new BarEntry(i, (float) reportArrayList.get(i).getVisitList()));
+                labels[i] = reportArrayList.get(i).getUsername();
+                totalUsers = totalUsers + 1;
+            }
         }
-        binding.txtPeople.setText(String.valueOf(response.getData().getTotalUser()));
+        binding.txtPeople.setText(String.valueOf(totalUsers));
         monthlyData();
+        if(totalUsers == 0){
+           binding.chart.clear();
+           binding.chart.setNoDataText("No data available in selected date");
+           binding.chart.setNoDataTextColor(ContextCompat.getColor(this, R.color.red_500));
+        }
     }
 
     @Override
@@ -128,6 +140,8 @@ public class CustomerReportActivity extends BaseActivity implements CustomerRepo
         if (!selectedItem.equals("Select")) {
             binding.tvDateRange.setText(filterData[position]);
             reportPresenter.getReport(filterData[position]);
+        }else{
+            binding.chart.clear();
         }
     }
 
