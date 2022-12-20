@@ -199,7 +199,6 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
         recentAdapter = new AddFoodAdapter(recommendedList, requireContext(), this);
         binding.rvRecommended.setAdapter(recentAdapter);
         binding.rvRecommended.setLayoutManager(new LinearLayoutManager(requireActivity(), RecyclerView.HORIZONTAL, false));
-
         popularAdapter = new AddFoodAdapter(popularArrayList, requireContext(), this);
         binding.rvPopular.setAdapter(popularAdapter);
         binding.rvPopular.setLayoutManager(new LinearLayoutManager(requireActivity(), RecyclerView.HORIZONTAL, false));
@@ -209,6 +208,7 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
     @Override
     public void showCategoryResponse(foodCategoryResponse foodCategoryResponse) {
         categoryHideShimmer();
+        categoryItemHideShimmer();
 
         categories.clear();
         categories.addAll(foodCategoryResponse.data.foodCategory);
@@ -216,6 +216,7 @@ public class FoodListFragment extends BaseFragment implements UserHomeContract.V
         binding.rvCategories.setVisibility(View.VISIBLE);
         categoryListingAdapter = new CategoryListingAdapter(foodCategoryResponse.data.foodCategory, requireContext(), this, -1);
         binding.rvCategories.setLayoutManager(new LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false));
+
         binding.rvCategories.setAdapter(categoryListingAdapter);
     }
 

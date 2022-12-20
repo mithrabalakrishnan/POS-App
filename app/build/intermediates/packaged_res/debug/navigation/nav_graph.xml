@@ -23,6 +23,11 @@
         android:name="com.example.pos_android.view.user.DiscountFragment"
         android:label="fragment_discount"
         tools:layout="@layout/fragment_discount" >
+        <argument
+            android:name="from_page"
+            app:argType="string"
+            android:defaultValue="other"
+            />
         <action
             android:id="@+id/action_couponFragment_to_summaryFragment"
             app:destination="@id/summaryFragment"
@@ -109,6 +114,7 @@
         <argument
             android:name="table_summary"
             app:argType="com.example.pos_android.data.model.TableInfoModel" />
+
         <action
             android:id="@+id/action_summaryFragment_to_paymentFragment"
             app:destination="@id/paymentFragment"
@@ -122,7 +128,12 @@
             app:enterAnim="@anim/from_right"
             app:exitAnim="@anim/to_left"
             app:popEnterAnim="@anim/from_left"
-            app:popExitAnim="@anim/to_right" />
+            app:popExitAnim="@anim/to_right" >
+            <argument
+                android:name="from_page"
+                app:argType="string"
+                />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/editProfileFragment"

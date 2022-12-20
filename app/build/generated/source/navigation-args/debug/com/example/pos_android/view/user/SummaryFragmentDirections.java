@@ -3,7 +3,6 @@ package com.example.pos_android.view.user;
 import android.os.Bundle;
 import android.os.Parcelable;
 import androidx.annotation.NonNull;
-import androidx.navigation.ActionOnlyNavDirections;
 import androidx.navigation.NavDirections;
 import com.example.pos_android.R;
 import com.example.pos_android.data.model.OrderInfoModel;
@@ -26,8 +25,9 @@ public class SummaryFragmentDirections {
   }
 
   @NonNull
-  public static NavDirections actionSummaryFragmentToCouponFragment() {
-    return new ActionOnlyNavDirections(R.id.action_summaryFragment_to_couponFragment);
+  public static ActionSummaryFragmentToCouponFragment actionSummaryFragmentToCouponFragment(
+      @NonNull String fromPage) {
+    return new ActionSummaryFragmentToCouponFragment(fromPage);
   }
 
   public static class ActionSummaryFragmentToPaymentFragment implements NavDirections {
@@ -113,6 +113,87 @@ public class SummaryFragmentDirections {
     public String toString() {
       return "ActionSummaryFragmentToPaymentFragment(actionId=" + getActionId() + "){"
           + "orderInfo=" + getOrderInfo()
+          + "}";
+    }
+  }
+
+  public static class ActionSummaryFragmentToCouponFragment implements NavDirections {
+    private final HashMap arguments = new HashMap();
+
+    @SuppressWarnings("unchecked")
+    private ActionSummaryFragmentToCouponFragment(@NonNull String fromPage) {
+      if (fromPage == null) {
+        throw new IllegalArgumentException("Argument \"from_page\" is marked as non-null but was passed a null value.");
+      }
+      this.arguments.put("from_page", fromPage);
+    }
+
+    @NonNull
+    @SuppressWarnings("unchecked")
+    public ActionSummaryFragmentToCouponFragment setFromPage(@NonNull String fromPage) {
+      if (fromPage == null) {
+        throw new IllegalArgumentException("Argument \"from_page\" is marked as non-null but was passed a null value.");
+      }
+      this.arguments.put("from_page", fromPage);
+      return this;
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    @NonNull
+    public Bundle getArguments() {
+      Bundle __result = new Bundle();
+      if (arguments.containsKey("from_page")) {
+        String fromPage = (String) arguments.get("from_page");
+        __result.putString("from_page", fromPage);
+      }
+      return __result;
+    }
+
+    @Override
+    public int getActionId() {
+      return R.id.action_summaryFragment_to_couponFragment;
+    }
+
+    @SuppressWarnings("unchecked")
+    @NonNull
+    public String getFromPage() {
+      return (String) arguments.get("from_page");
+    }
+
+    @Override
+    public boolean equals(Object object) {
+      if (this == object) {
+          return true;
+      }
+      if (object == null || getClass() != object.getClass()) {
+          return false;
+      }
+      ActionSummaryFragmentToCouponFragment that = (ActionSummaryFragmentToCouponFragment) object;
+      if (arguments.containsKey("from_page") != that.arguments.containsKey("from_page")) {
+        return false;
+      }
+      if (getFromPage() != null ? !getFromPage().equals(that.getFromPage()) : that.getFromPage() != null) {
+        return false;
+      }
+      if (getActionId() != that.getActionId()) {
+        return false;
+      }
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int result = 1;
+      result = 31 * result + (getFromPage() != null ? getFromPage().hashCode() : 0);
+      result = 31 * result + getActionId();
+      return result;
+    }
+
+    @Override
+    public String toString() {
+      return "ActionSummaryFragmentToCouponFragment(actionId=" + getActionId() + "){"
+          + "fromPage=" + getFromPage()
           + "}";
     }
   }

@@ -48,10 +48,14 @@ public class CategoryListingAdapter extends RecyclerView.Adapter<CategoryListing
     public void onBindViewHolder(@NonNull CategoryListingAdapter.ViewHolder holder, int position) {
         // Get the Subject based on the current position
 //        foodCategoryData currentItem = list.get(position);
-        if (position == selectedPosition)
+        if (position == selectedPosition) {
             holder.button.setBackgroundColor(ContextCompat.getColor(context, R.color.orange_500));
-        else
+            holder.button.setTextColor(ContextCompat.getColor(context, R.color.white));
+        }
+        else {
             holder.button.setBackgroundColor(ContextCompat.getColor(context, R.color.white));
+            holder.button.setTextColor(ContextCompat.getColor(context, R.color.black));
+        }
         holder.button.setText(list.get(position));
         holder.button.setOnClickListener(v -> {
             clickListener.onCategoryClick(position, list.get(position));
