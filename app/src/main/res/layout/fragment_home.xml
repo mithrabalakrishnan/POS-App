@@ -83,6 +83,7 @@
                 android:layout_height="200dp"
                 app:iss_auto_cycle="true"
                 app:iss_delay="0"
+                android:elevation="4dp"
                 app:iss_period="1000"
                 app:iss_selected_dot="@drawable/default_selected_dot"
                 app:iss_unselected_dot="@drawable/default_unselected_dot" />

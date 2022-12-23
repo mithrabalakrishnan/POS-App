@@ -143,12 +143,12 @@ public class ProfileFragment extends BaseFragment implements UserProfileContract
 
     @Override
     public void showProgressBar() {
-        showLoadingDialog(requireContext());
+       // showLoadingDialog(requireContext());
     }
 
     @Override
     public void hideProgressBar() {
-        hideLoadingDialog();
+       // hideLoadingDialog();
     }
 
     @Override

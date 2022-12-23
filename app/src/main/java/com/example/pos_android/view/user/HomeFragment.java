@@ -79,8 +79,6 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View,
         initData();
         showShimmer();
         bottomNavigationView = getActivity().findViewById(R.id.bottomNavigationView);
-        binding.imageSlider.setImageList(slideModels);
-
         binding.recentRecyclerview.setLayoutManager(new LinearLayoutManager(requireActivity(), RecyclerView.HORIZONTAL, false));
         recentAdapter = new FoodAdapter(recentArray, false, requireContext(), this, "recent");
         binding.recentRecyclerview.setAdapter(recentAdapter);
@@ -97,10 +95,10 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View,
         presenter = new UserHomePresenter(HomeFragment.this, requireContext());
         presenter.getHomeDetails();
 
-        slideModels.clear();
+/*        slideModels.clear();
         slideModels.add(new SlideModel(R.drawable.poster, ScaleTypes.FIT));
         slideModels.add(new SlideModel("https://c8.alamy.com/comp/2AAMYCB/set-of-poster-offer-delicious-fast-food-2AAMYCB.jpg", ScaleTypes.FIT));
-        slideModels.add(new SlideModel("https://thumbs.dreamstime.com/z/fast-food-best-offer-banner-template-restaurant-cafe-design-element-poster-invitation-voucher-flyer-coupon-brochure-vector-153266434.jpg", ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://thumbs.dreamstime.com/z/fast-food-best-offer-banner-template-restaurant-cafe-design-element-poster-invitation-voucher-flyer-coupon-brochure-vector-153266434.jpg", ScaleTypes.FIT));*/
 
         recentArray.clear();
         recentArray.add(new FoodModel("Biriyani", R.drawable.dm1, "biriyaniii", ""));
@@ -136,12 +134,12 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View,
 
     @Override
     public void showProgressBar() {
-        showLoadingDialog(requireContext());
+       // showLoadingDialog(requireContext());
     }
 
     @Override
     public void hideProgressBar() {
-        hideLoadingDialog();
+      //  hideLoadingDialog();
     }
 
     @Override
@@ -168,10 +166,12 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View,
     public void showUserResponse(UserHomeResponse response) {
         // showToast(requireContext(), response.getMessage());
         popularArrayList.clear();
+        slideModels.clear();
         for (UserHomeResponse.PopularFood food : response.getData().getPopularFoods()) {
             popularArrayList.add(new FoodModel(String.valueOf(food.getFoodId()),
                     food.getName(), food.getImage(), food.getPrice(),
                     food.getIncrediance()));
+            slideModels.add(new SlideModel(food.getImage(), ScaleTypes.CENTER_INSIDE));
         }
         binding.txtPopular.setVisibility(View.VISIBLE);
         if (response.getData().getPopularFoods().size() == 0) {
@@ -182,6 +182,7 @@ public class HomeFragment extends BaseFragment implements UserHomeContract.View,
         binding.layoutPopularShimmer.stopShimmer();
         popularAdapter = new FoodAdapter(popularArrayList, requireContext(), this, "popular");
         binding.popularRecyclerview.setAdapter(popularAdapter);
+        binding.imageSlider.setImageList(slideModels);
         binding.popularRecyclerview.setLayoutManager(new LinearLayoutManager(requireActivity(), RecyclerView.HORIZONTAL, false));
 
     }

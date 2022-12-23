@@ -48,12 +48,12 @@ public class OrderFragment extends BaseFragment implements HistoryContract.View 
 
     @Override
     public void showProgressBar() {
-        showLoadingDialog(requireContext());
+       // showLoadingDialog(requireContext());
     }
 
     @Override
     public void hideProgressBar() {
-        hideLoadingDialog();
+      //  hideLoadingDialog();
     }
 
     @Override

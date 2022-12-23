@@ -92,12 +92,12 @@ public class DiscountFragment extends BaseFragment implements OnItemClickListene
 
     @Override
     public void showProgressBar() {
-        showLoadingDialog(requireContext());
+       // showLoadingDialog(requireContext());
     }
 
     @Override
     public void hideProgressBar() {
-        hideLoadingDialog();
+      //  hideLoadingDialog();
     }
 
     @Override
