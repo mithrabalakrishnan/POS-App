@@ -46,8 +46,12 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         sessionManager = new SessionManager(this);
         executor = ContextCompat.getMainExecutor(this);
-
-        new Handler().postDelayed(() -> {
+        Intent i = new Intent(SplashActivity.this,
+                AdminHomeActivity.class);
+        startActivity(i);
+        finishAffinity();
+        
+       /* new Handler().postDelayed(() -> {
             if (sessionManager.isLoggedIn()) {
                 if(sessionManager.getIsAuthentication()) {
                     Boolean isBiometric = checkBiometricSupport();
@@ -66,8 +70,7 @@ public class SplashActivity extends AppCompatActivity {
                 finishAffinity();
             }
 
-        }, SPLASH_SCREEN_TIME_OUT);
-//        }
+        }, SPLASH_SCREEN_TIME_OUT);*/
     }
 
     @RequiresApi(api = Build.VERSION_CODES.P)
