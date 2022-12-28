@@ -128,6 +128,10 @@
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\drawable\\add_guest_circle.xml"
     },
     {
+        "merged": "com.example.pos_android.app-merged_res-54:/layout_kitchen_order_item.xml.flat",
+        "source": "com.example.pos_android.app-main-56:/layout/kitchen_order_item.xml"
+    },
+    {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\font_source_sans_pro.ttf.flat",
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\font\\source_sans_pro.ttf"
     },
@@ -154,10 +158,6 @@
     {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\layout_voice_dialog.xml.flat",
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\layout\\voice_dialog.xml"
-    },
-    {
-        "merged": "com.example.pos_android.app-merged_res-54:/layout_coupen_layout.xml.flat",
-        "source": "com.example.pos_android.app-main-56:/layout/coupen_layout.xml"
     },
     {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\drawable_cook.png.flat",
@@ -412,12 +412,12 @@
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\drawable\\gift_voucher.webp"
     },
     {
-        "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\drawable_img_settings.xml.flat",
-        "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\drawable\\img_settings.xml"
-    },
-    {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\layout_coupen_layout.xml.flat",
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\layout\\coupen_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\drawable_img_settings.xml.flat",
+        "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\drawable\\img_settings.xml"
     },
     {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\font_montserratbold.ttf.flat",
