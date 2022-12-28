@@ -182,4 +182,9 @@ public interface ApiInterFace {
     Observable<EditProfileResponse> updateUserProfile(
             @Header("Authorization") String string,
             @Body EditProfileRequestData voucherData);
+
+    @GET("forecasting")
+    Observable<SalesReportResponse> forecastingReport(
+            @Header("Authorization") String string
+    );
 }

@@ -24,6 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
+            android:paddingRight="15dp"
             android:text="Reports"
             android:textColor="@color/black"
             android:textSize="25sp"
@@ -33,7 +34,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="15dp">
 
@@ -41,28 +42,55 @@
             android:id="@+id/btn_sales_report"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sales Report" />
+            android:padding="15dp"
+            android:text="Sales Report"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_best_selling"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Menu Performance Report" />
+            android:padding="15dp"
+            android:text="Menu Performance Report"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/total_income_report"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Total Income per Item Report" />
+            android:padding="15dp"
+            android:text="Total Income per Item Report"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/customer_report"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Customer Report" />
+            android:padding="15dp"
+            android:text="Customer Report"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center|end"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/report_bg"
+            tools:ignore="contentDescription" />
+
 
     </LinearLayout>
 
