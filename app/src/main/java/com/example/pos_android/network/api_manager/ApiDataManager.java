@@ -38,6 +38,7 @@ import com.example.pos_android.presenter.AddWaiterPresenter;
 import com.example.pos_android.presenter.BestSellingReportPresenter;
 import com.example.pos_android.presenter.ConfirmOrderPresenter;
 import com.example.pos_android.presenter.CustomerReportPresenter;
+import com.example.pos_android.presenter.ForecastingPresenter;
 import com.example.pos_android.presenter.HistoryPresenter;
 import com.example.pos_android.presenter.IncomePerItemMonthlyPresenter;
 import com.example.pos_android.presenter.KitchenPresenter;
@@ -1010,6 +1011,43 @@ public class ApiDataManager {
                         public void onError(Throwable e) {
                             Log.e(TAG, "onError: " + e.getMessage());
                             mPresenter.onApiError(e.getMessage());
+                        }
+
+                        @Override
+                        public void onComplete() {
+                        }
+                    });
+
+
+        } catch (Exception e) {
+            mPresenter.onApiError(e.getMessage());
+            Log.e(TAG, "Exception caught in " + e.getMessage().toString());
+        }
+    }
+
+    public void getForecasting(String token, ForecastingPresenter mPresenter) {
+        try {
+            if (apiInterFace == null)
+                apiInterFace = ApiClient.getClientServerApi().create(ApiInterFace.class);
+
+            apiInterFace
+                    .forecastingReport("Bearer " + token)
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeOn(Schedulers.io())
+                    .subscribe(new Observer<SalesReportResponse>() {
+                        @Override
+                        public void onSubscribe(Disposable d) {
+                        }
+
+                        @Override
+                        public void onNext(SalesReportResponse response) {
+                            mPresenter.onForecastingApiResponse(response);
+                        }
+
+                        @Override
+                        public void onError(Throwable e) {
+                            Log.e(TAG, "onError: " + e.getMessage());
+                            mPresenter.onApiError(e.getLocalizedMessage());
                         }
 
                         @Override
