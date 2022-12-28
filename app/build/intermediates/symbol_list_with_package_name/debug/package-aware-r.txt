@@ -5825,6 +5825,7 @@ id btn_category
 id btn_clear
 id btn_continue
 id btn_delete
+id btn_fore_casting
 id btn_from
 id btn_logout
 id btn_pick
@@ -5977,6 +5978,7 @@ id flip
 id floating
 id foodListFragment
 id food_item
+id fore_casting_report
 id forever
 id fragmentContainerView
 id fragment_container_view_tag
@@ -6565,6 +6567,7 @@ layout activity_add_waiter
 layout activity_admin_home
 layout activity_best_selling_report
 layout activity_customer_report
+layout activity_forecasting
 layout activity_home
 layout activity_income_report
 layout activity_kitchen
@@ -6786,6 +6789,7 @@ string fingerprint_error_lockout
 string fingerprint_error_no_fingerprints
 string fingerprint_error_user_canceled
 string fingerprint_not_recognized
+string fore_casting
 string generic_error_no_device_credential
 string generic_error_no_keyguard
 string generic_error_user_canceled

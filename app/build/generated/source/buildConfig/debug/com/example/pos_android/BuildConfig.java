@@ -10,7 +10,7 @@ public final class BuildConfig {
   public static final int VERSION_CODE = 1;
   public static final String VERSION_NAME = "1.0";
   // Field from build type: debug
-  public static final String API_URL = "http://ec2-3-135-224-242.us-east-2.compute.amazonaws.com:8013/";
+  public static final String API_URL = "http://34.168.75.35:8080/";
   // Field from build type: debug
   public static final String BASE_URL_LOCAL = "http://192.168.1.9:8013/";
 }

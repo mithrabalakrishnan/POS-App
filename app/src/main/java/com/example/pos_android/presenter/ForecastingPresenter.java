@@ -43,7 +43,7 @@ public class ForecastingPresenter implements ForecastingContract.Presenter {
     public void onForecastingApiResponse(SalesReportResponse saveResponse) {
         mView.hideProgressBar();
         if (saveResponse.isStatus()) {
-            mView.showSuccess(saveResponse);
+            mView.onForecastingResponse(saveResponse);
         } else
             mView.showWarningMessage(saveResponse.getMessage());
     }

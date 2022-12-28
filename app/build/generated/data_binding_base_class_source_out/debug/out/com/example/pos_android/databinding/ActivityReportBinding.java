@@ -24,6 +24,9 @@ public final class ActivityReportBinding implements ViewBinding {
   public final Button btnBestSelling;
 
   @NonNull
+  public final Button btnForeCasting;
+
+  @NonNull
   public final Button btnSalesReport;
 
   @NonNull
@@ -36,10 +39,12 @@ public final class ActivityReportBinding implements ViewBinding {
   public final Button totalIncomeReport;
 
   private ActivityReportBinding(@NonNull LinearLayout rootView, @NonNull Button btnBestSelling,
-      @NonNull Button btnSalesReport, @NonNull Button customerReport, @NonNull ImageView ivBack,
+      @NonNull Button btnForeCasting, @NonNull Button btnSalesReport,
+      @NonNull Button customerReport, @NonNull ImageView ivBack,
       @NonNull Button totalIncomeReport) {
     this.rootView = rootView;
     this.btnBestSelling = btnBestSelling;
+    this.btnForeCasting = btnForeCasting;
     this.btnSalesReport = btnSalesReport;
     this.customerReport = customerReport;
     this.ivBack = ivBack;
@@ -79,6 +84,12 @@ public final class ActivityReportBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btn_fore_casting;
+      Button btnForeCasting = ViewBindings.findChildViewById(rootView, id);
+      if (btnForeCasting == null) {
+        break missingId;
+      }
+
       id = R.id.btn_sales_report;
       Button btnSalesReport = ViewBindings.findChildViewById(rootView, id);
       if (btnSalesReport == null) {
@@ -103,8 +114,8 @@ public final class ActivityReportBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityReportBinding((LinearLayout) rootView, btnBestSelling, btnSalesReport,
-          customerReport, ivBack, totalIncomeReport);
+      return new ActivityReportBinding((LinearLayout) rootView, btnBestSelling, btnForeCasting,
+          btnSalesReport, customerReport, ivBack, totalIncomeReport);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

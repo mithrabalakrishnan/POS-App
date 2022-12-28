@@ -183,7 +183,7 @@ public interface ApiInterFace {
             @Header("Authorization") String string,
             @Body EditProfileRequestData voucherData);
 
-    @GET("forecasting")
+    @GET("generated-forcating")
     Observable<SalesReportResponse> forecastingReport(
             @Header("Authorization") String string
     );
