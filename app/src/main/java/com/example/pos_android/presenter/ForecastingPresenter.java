@@ -5,6 +5,7 @@ import android.content.Context;
 import com.example.pos_android.R;
 import com.example.pos_android.contracts.ForecastingContract;
 import com.example.pos_android.data.model.sales_report.SalesReportResponse;
+import com.example.pos_android.data.model.sales_report.forecasting.forcasting_response;
 import com.example.pos_android.data.preference.SessionManager;
 import com.example.pos_android.network.api_manager.ApiDataManager;
 import com.example.pos_android.utils.NetworkManager;
@@ -40,7 +41,7 @@ public class ForecastingPresenter implements ForecastingContract.Presenter {
     }
 
     @Override
-    public void onForecastingApiResponse(SalesReportResponse saveResponse) {
+    public void onForecastingApiResponse(forcasting_response saveResponse) {
         mView.hideProgressBar();
         if (saveResponse.isStatus()) {
             mView.onForecastingResponse(saveResponse);

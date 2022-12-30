@@ -31,6 +31,7 @@ import com.example.pos_android.data.model.sales_report.BestSellingReportResponse
 import com.example.pos_android.data.model.sales_report.BestSellingReportWeeklyResponse;
 import com.example.pos_android.data.model.sales_report.IncomePerItemMonthlyResponse;
 import com.example.pos_android.data.model.sales_report.SalesReportResponse;
+import com.example.pos_android.data.model.sales_report.forecasting.forcasting_response;
 
 import java.util.List;
 
@@ -184,7 +185,7 @@ public interface ApiInterFace {
             @Body EditProfileRequestData voucherData);
 
     @GET("generated-forcating")
-    Observable<SalesReportResponse> forecastingReport(
+    Observable<forcasting_response> forecastingReport(
             @Header("Authorization") String string
     );
 }

@@ -6222,6 +6222,7 @@ int id rectangles 0x7f0a0217
 int id recyclerView_coupon 0x7f0a0218
 int id recycler_food_items 0x7f0a0219
 int id restart 0x7f0a021a
+int id revenue_report 0x7f0a030f
 int id reverse 0x7f0a021b
 int id reverseSawtooth 0x7f0a021c
 int id rg_status 0x7f0a021d
