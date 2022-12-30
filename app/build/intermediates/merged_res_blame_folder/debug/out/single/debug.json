@@ -524,10 +524,6 @@
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-debug-55:\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.example.pos_android.app-merged_res-54:/layout_activity_forecasting.xml.flat",
-        "source": "com.example.pos_android.app-main-56:/layout/activity_forecasting.xml"
-    },
-    {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\layout_add_cart_view.xml.flat",
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\layout\\add_cart_view.xml"
     },
@@ -586,6 +582,10 @@
     {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\drawable_voucherr.png.flat",
         "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\drawable\\voucherr.png"
+    },
+    {
+        "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\layout-land_horizontal_graph.xml.flat",
+        "source": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-main-56:\\layout-land\\horizontal_graph.xml"
     },
     {
         "merged": "C:\\Users\\Naju\\.gradle\\daemon\\7.4\\com.example.pos_android.app-merged_res-54:\\xml_backup_rules.xml.flat",

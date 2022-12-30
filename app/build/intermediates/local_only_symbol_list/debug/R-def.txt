@@ -3055,7 +3055,6 @@ id et_username
 id first_name_layout
 id foodListFragment
 id food_item
-id fore_casting_report
 id fragmentContainerView
 id frameCoupon
 id from_layout
