@@ -108,13 +108,14 @@ public class ForecastingActivity extends BaseActivity implements ForecastingCont
         YAxis leftAxis = binding.revenueReport.getAxisLeft();
         leftAxis.setDrawGridLines(false);
         rightAxis.setGranularity(1f);
-        leftAxis.setTextSize(6f);
+        rightAxis.setTextSize(8f);
+        leftAxis.setTextSize(8f);
         leftAxis.setAxisMinimum(0f);
 
         XAxis xAxis = binding.revenueReport.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTH_SIDED);
         xAxis.setAxisMinimum(0f);
-        xAxis.setTextSize(6f);
+        xAxis.setTextSize(8f);
         xAxis.setGranularity(1f);
         final String[] labels = new String[]{"0", "1", "2", "3", "4",
                 "5", "6", "7", "8", "9", "10", "11"};
