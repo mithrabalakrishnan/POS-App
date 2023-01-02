@@ -55,5 +55,12 @@ public class ReportActivity extends AppCompatActivity {
             }
         });
 
+        binding.btnForeCasting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ReportActivity.this,ForecastingActivity.class));
+            }
+        });
+
     }
 }

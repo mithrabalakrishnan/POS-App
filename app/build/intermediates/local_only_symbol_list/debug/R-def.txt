@@ -3013,6 +3013,7 @@ id btn_category
 id btn_clear
 id btn_continue
 id btn_delete
+id btn_fore_casting
 id btn_from
 id btn_logout
 id btn_pick
@@ -3132,6 +3133,7 @@ id rb_in_progress
 id recent_recyclerview
 id recyclerView_coupon
 id recycler_food_items
+id revenue_report
 id rg_status
 id root
 id rv_categories
@@ -3228,6 +3230,7 @@ layout activity_add_waiter
 layout activity_admin_home
 layout activity_best_selling_report
 layout activity_customer_report
+layout activity_forecasting
 layout activity_home
 layout activity_income_report
 layout activity_kitchen
@@ -3283,6 +3286,7 @@ mipmap ic_launcher_round
 navigation nav_graph
 string app_name
 string customer_report
+string fore_casting
 string hello_blank_fragment
 string income_report
 string label_to_pay

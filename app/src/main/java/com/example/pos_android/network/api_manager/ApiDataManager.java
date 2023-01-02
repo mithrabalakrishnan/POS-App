@@ -32,6 +32,7 @@ import com.example.pos_android.data.model.sales_report.BestSellingReportResponse
 import com.example.pos_android.data.model.sales_report.BestSellingReportWeeklyResponse;
 import com.example.pos_android.data.model.sales_report.IncomePerItemMonthlyResponse;
 import com.example.pos_android.data.model.sales_report.SalesReportResponse;
+import com.example.pos_android.data.model.sales_report.forecasting.forcasting_response;
 import com.example.pos_android.presenter.AddFoodPresenter;
 import com.example.pos_android.presenter.AddKitchenPresenter;
 import com.example.pos_android.presenter.AddWaiterPresenter;
@@ -1034,13 +1035,13 @@ public class ApiDataManager {
                     .forecastingReport("Bearer " + token)
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeOn(Schedulers.io())
-                    .subscribe(new Observer<SalesReportResponse>() {
+                    .subscribe(new Observer<forcasting_response>() {
                         @Override
                         public void onSubscribe(Disposable d) {
                         }
 
                         @Override
-                        public void onNext(SalesReportResponse response) {
+                        public void onNext(forcasting_response response) {
                             mPresenter.onForecastingApiResponse(response);
                         }
 
