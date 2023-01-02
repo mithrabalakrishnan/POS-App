@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.pos_android.app-mergeDebugResources-52:/values-lv/values-lv.xml",
+            "outputFile": "com.example.pos_android.app-mergeDebugResources-3:/values-lv/values-lv.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Naju\\.gradle\\caches\\transforms-3\\577ee95d2de04b4758c03245d25b9bbc\\transformed\\core-1.8.0\\res\\values-lv\\values-lv.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "103",
-                        "startColumns": "4",
-                        "startOffsets": "9491",
-                        "endColumns": "100",
-                        "endOffsets": "9587"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Naju\\.gradle\\caches\\transforms-3\\23adf2337af4c046638cc7ee157983a3\\transformed\\appcompat-1.5.1\\res\\values-lv\\values-lv.xml",
+                    "source": "C:\\Users\\aswin\\.gradle\\caches\\transforms-3\\23adf2337af4c046638cc7ee157983a3\\transformed\\appcompat-1.5.1\\res\\values-lv\\values-lv.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Naju\\.gradle\\caches\\transforms-3\\db832745b7e731979aacf64b55504a7b\\transformed\\biometric-1.1.0\\res\\values-lv\\values-lv.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,164,255,387,523,657,796,931,1066,1164,1300,1462",
-                        "endColumns": "108,90,131,135,133,138,134,134,97,135,161,119",
-                        "endOffsets": "159,250,382,518,652,791,926,1061,1159,1295,1457,1577"
-                    },
-                    "to": {
-                        "startLines": "38,39,42,43,44,45,46,47,48,49,50,51",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3612,3721,3971,4103,4239,4373,4512,4647,4782,4880,5016,5178",
-                        "endColumns": "108,90,131,135,133,138,134,134,97,135,161,119",
-                        "endOffsets": "3716,3807,4098,4234,4368,4507,4642,4777,4875,5011,5173,5293"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Naju\\.gradle\\caches\\transforms-3\\16864338184caa82c05d1f43da5d9fee\\transformed\\material-1.6.1\\res\\values-lv\\values-lv.xml",
+                    "source": "C:\\Users\\aswin\\.gradle\\caches\\transforms-3\\16864338184caa82c05d1f43da5d9fee\\transformed\\material-1.6.1\\res\\values-lv\\values-lv.xml",
                     "from": {
                         "startLines": "2,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -74,7 +40,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Naju\\.gradle\\caches\\transforms-3\\124689b07c4708038c463a026d509968\\transformed\\navigation-ui-2.5.3\\res\\values-lv\\values-lv.xml",
+                    "source": "C:\\Users\\aswin\\.gradle\\caches\\transforms-3\\124689b07c4708038c463a026d509968\\transformed\\navigation-ui-2.5.3\\res\\values-lv\\values-lv.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -88,6 +54,40 @@
                         "startOffsets": "9094,9208",
                         "endColumns": "113,122",
                         "endOffsets": "9203,9326"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\aswin\\.gradle\\caches\\transforms-3\\db832745b7e731979aacf64b55504a7b\\transformed\\biometric-1.1.0\\res\\values-lv\\values-lv.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,164,255,387,523,657,796,931,1066,1164,1300,1462",
+                        "endColumns": "108,90,131,135,133,138,134,134,97,135,161,119",
+                        "endOffsets": "159,250,382,518,652,791,926,1061,1159,1295,1457,1577"
+                    },
+                    "to": {
+                        "startLines": "38,39,42,43,44,45,46,47,48,49,50,51",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3612,3721,3971,4103,4239,4373,4512,4647,4782,4880,5016,5178",
+                        "endColumns": "108,90,131,135,133,138,134,134,97,135,161,119",
+                        "endOffsets": "3716,3807,4098,4234,4368,4507,4642,4777,4875,5011,5173,5293"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\aswin\\.gradle\\caches\\transforms-3\\577ee95d2de04b4758c03245d25b9bbc\\transformed\\core-1.8.0\\res\\values-lv\\values-lv.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "103",
+                        "startColumns": "4",
+                        "startOffsets": "9491",
+                        "endColumns": "100",
+                        "endOffsets": "9587"
                     }
                 }
             ]

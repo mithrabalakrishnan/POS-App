@@ -74,7 +74,10 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
     @Override
     public void showApiErrorWarning(String string) {
-        showSnackBar(binding.getRoot(), string);
+        if (string == null || string.isEmpty()) {
+            showSnackBar(binding.getRoot(), "Invalid Credentials, Please try again!");
+        } else
+            showSnackBar(binding.getRoot(), string);
     }
 
     @Override
@@ -95,7 +98,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
         } else if (response.getData().getRole().equals("Kitchen")) {
             sessionManager.setUsertype(SessionManager.UserRoles.KITCHEN);
             startActivity(new Intent(LoginActivity.this, KitchenActivity.class));
-        }  else if (response.getData().getRole().equals("Waiter")) {
+        } else if (response.getData().getRole().equals("Waiter")) {
             sessionManager.setUsertype(SessionManager.UserRoles.WAITER);
             startActivity(new Intent(LoginActivity.this, WaiterActivity.class));
         } else {
