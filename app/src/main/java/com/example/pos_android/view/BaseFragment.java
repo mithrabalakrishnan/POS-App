@@ -28,6 +28,7 @@ public class BaseFragment extends Fragment {
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
+
     public void showLoadingDialog(Context context) {
         mLoadingDialog = new Dialog(context);
         mLoadingDialog.setCancelable(false);
