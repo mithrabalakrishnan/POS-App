@@ -133,9 +133,9 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
             }
         });
         binding.layoutCoupon.setOnClickListener(view -> {
-                    SummaryFragmentDirections.ActionSummaryFragmentToCouponFragment directions =
-                SummaryFragmentDirections.actionSummaryFragmentToCouponFragment("summery");
-        Navigation.findNavController(requireView()).navigate(directions);
+            SummaryFragmentDirections.ActionSummaryFragmentToCouponFragment directions =
+                    SummaryFragmentDirections.actionSummaryFragmentToCouponFragment("summery");
+            Navigation.findNavController(requireView()).navigate(directions);
         });
         binding.ivBack.setOnClickListener(view -> {
             Navigation.findNavController(binding.getRoot()).popBackStack();
@@ -173,6 +173,7 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
     private void setupObserver() {
         showLoadingDialog(requireContext());
         cartList.clear();
+        foodList.clear();
         cartList = db.orderDao().getOrderByUserId(sessionManager.getUserName());
         Log.d("cart", cartList.toString());
         for (Cart item : cartList) {
