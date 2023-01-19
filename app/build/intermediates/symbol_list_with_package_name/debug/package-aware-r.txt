@@ -5657,7 +5657,6 @@ drawable notify_panel_notification_icon_bg
 drawable offer
 drawable placeholder
 drawable poster
-drawable progress_style
 drawable rectangle_bg_gray_50
 drawable rectangle_gradient_s_gray_900_e_bluegray_800_radius_15
 drawable rectangle_gradient_s_light_blue_900_e_teal_700_radius_15

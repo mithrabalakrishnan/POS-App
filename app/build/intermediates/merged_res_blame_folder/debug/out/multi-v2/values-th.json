@@ -1,44 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.pos_android.app-mergeDebugResources-3:/values-th/values-th.xml",
+            "outputFile": "com.example.pos_android.app-mergeDebugResources-52:/values-th/values-th.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\aswin\\.gradle\\caches\\transforms-3\\db832745b7e731979aacf64b55504a7b\\transformed\\biometric-1.1.0\\res\\values-th\\values-th.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,160,259,372,499,625,751,871,995,1090,1219,1348",
-                        "endColumns": "104,98,112,126,125,125,119,123,94,128,128,114",
-                        "endOffsets": "155,254,367,494,620,746,866,990,1085,1214,1343,1458"
-                    },
-                    "to": {
-                        "startLines": "37,38,41,42,43,44,45,46,47,48,49,50",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3294,3399,3658,3771,3898,4024,4150,4270,4394,4489,4618,4747",
-                        "endColumns": "104,98,112,126,125,125,119,123,94,128,128,114",
-                        "endOffsets": "3394,3493,3766,3893,4019,4145,4265,4389,4484,4613,4742,4857"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\aswin\\.gradle\\caches\\transforms-3\\124689b07c4708038c463a026d509968\\transformed\\navigation-ui-2.5.3\\res\\values-th\\values-th.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,159",
-                        "endColumns": "103,113",
-                        "endOffsets": "154,268"
-                    },
-                    "to": {
-                        "startLines": "98,99",
-                        "startColumns": "4,4",
-                        "startOffsets": "8490,8594",
-                        "endColumns": "103,113",
-                        "endOffsets": "8589,8703"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\aswin\\.gradle\\caches\\transforms-3\\16864338184caa82c05d1f43da5d9fee\\transformed\\material-1.6.1\\res\\values-th\\values-th.xml",
+                    "source": "C:\\Users\\Mithra\\.gradle\\caches\\transforms-3\\16864338184caa82c05d1f43da5d9fee\\transformed\\material-1.6.1\\res\\values-th\\values-th.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -57,7 +23,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\aswin\\.gradle\\caches\\transforms-3\\23adf2337af4c046638cc7ee157983a3\\transformed\\appcompat-1.5.1\\res\\values-th\\values-th.xml",
+                    "source": "C:\\Users\\Mithra\\.gradle\\caches\\transforms-3\\db832745b7e731979aacf64b55504a7b\\transformed\\biometric-1.1.0\\res\\values-th\\values-th.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,160,259,372,499,625,751,871,995,1090,1219,1348",
+                        "endColumns": "104,98,112,126,125,125,119,123,94,128,128,114",
+                        "endOffsets": "155,254,367,494,620,746,866,990,1085,1214,1343,1458"
+                    },
+                    "to": {
+                        "startLines": "37,38,41,42,43,44,45,46,47,48,49,50",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3294,3399,3658,3771,3898,4024,4150,4270,4394,4489,4618,4747",
+                        "endColumns": "104,98,112,126,125,125,119,123,94,128,128,114",
+                        "endOffsets": "3394,3493,3766,3893,4019,4145,4265,4389,4484,4613,4742,4857"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Mithra\\.gradle\\caches\\transforms-3\\23adf2337af4c046638cc7ee157983a3\\transformed\\appcompat-1.5.1\\res\\values-th\\values-th.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -74,7 +57,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\aswin\\.gradle\\caches\\transforms-3\\577ee95d2de04b4758c03245d25b9bbc\\transformed\\core-1.8.0\\res\\values-th\\values-th.xml",
+                    "source": "C:\\Users\\Mithra\\.gradle\\caches\\transforms-3\\577ee95d2de04b4758c03245d25b9bbc\\transformed\\core-1.8.0\\res\\values-th\\values-th.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -88,6 +71,23 @@
                         "startOffsets": "8867",
                         "endColumns": "100",
                         "endOffsets": "8963"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Mithra\\.gradle\\caches\\transforms-3\\124689b07c4708038c463a026d509968\\transformed\\navigation-ui-2.5.3\\res\\values-th\\values-th.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,159",
+                        "endColumns": "103,113",
+                        "endOffsets": "154,268"
+                    },
+                    "to": {
+                        "startLines": "98,99",
+                        "startColumns": "4,4",
+                        "startOffsets": "8490,8594",
+                        "endColumns": "103,113",
+                        "endOffsets": "8589,8703"
                     }
                 }
             ]

@@ -43,12 +43,12 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/Theme.POSAndroid"
         android:usesCleartextTraffic="true" >
         <activity
             android:name="com.example.pos_android.view.admin.ForecastingActivity"
-            android:exported="false" >
+            android:exported="false"
+            android:screenOrientation="landscape" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

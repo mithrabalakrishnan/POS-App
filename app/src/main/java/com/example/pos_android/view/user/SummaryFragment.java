@@ -240,8 +240,8 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
                 total += Float.parseFloat(foodList.get(i).getPrice());
             }
         }
-        formattedString = String.format("%.02f", total);
 
+        formattedString = String.format("%.2f", total);
         binding.textTotal.setText("£" + String.valueOf(formattedString));
         Log.d("foodList", foodList.toString());
         if (sessionManager.getIsCouponSelected()) {
@@ -249,7 +249,7 @@ public class SummaryFragment extends BaseFragment implements SummaryAdapter.onCa
             double total_pri = Double.valueOf(formattedString);
             double amount = total;
             double result = (amount / 100.0f) * sessionManager.getCouponPercent();
-            binding.offerPrice.setText("£" + String.valueOf(amount - result));
+            binding.offerPrice.setText("£" + String.valueOf(amount - Math.round(result)));
             offerPriceValue = (float) (amount - result);
             binding.textTotal.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
         } else {

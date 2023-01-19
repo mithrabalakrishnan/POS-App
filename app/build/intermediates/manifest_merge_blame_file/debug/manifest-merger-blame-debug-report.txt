@@ -6,433 +6,434 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->C:\POS git\app\src\main\AndroidManifest.xml
+8-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="33" />
-9-->C:\POS git\app\src\main\AndroidManifest.xml
+9-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
-11-->C:\POS git\app\src\main\AndroidManifest.xml:5:5-72
-11-->C:\POS git\app\src\main\AndroidManifest.xml:5:22-69
+11-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:5:5-72
+11-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:5:22-69
 12
 13    <uses-feature
-13-->C:\POS git\app\src\main\AndroidManifest.xml:7:5-9:36
+13-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:7:5-9:36
 14        android:name="android.hardware.camera"
-14-->C:\POS git\app\src\main\AndroidManifest.xml:8:9-47
+14-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:8:9-47
 15        android:required="false" />
-15-->C:\POS git\app\src\main\AndroidManifest.xml:9:9-33
+15-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:9:9-33
 16    <uses-feature
-16-->C:\POS git\app\src\main\AndroidManifest.xml:10:5-12:36
+16-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:10:5-12:36
 17        android:name="android.hardware.camera.autofocus"
-17-->C:\POS git\app\src\main\AndroidManifest.xml:11:9-57
+17-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:11:9-57
 18        android:required="false" />
-18-->C:\POS git\app\src\main\AndroidManifest.xml:12:9-33
+18-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:12:9-33
 19    <uses-feature
-19-->C:\POS git\app\src\main\AndroidManifest.xml:13:5-15:36
+19-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:13:5-15:36
 20        android:name="android.hardware.camera.flash"
-20-->C:\POS git\app\src\main\AndroidManifest.xml:14:9-53
+20-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:14:9-53
 21        android:required="false" />
-21-->C:\POS git\app\src\main\AndroidManifest.xml:15:9-33
+21-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:15:9-33
 22
 23    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-23-->C:\POS git\app\src\main\AndroidManifest.xml:17:5-79
-23-->C:\POS git\app\src\main\AndroidManifest.xml:17:22-76
+23-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:17:5-79
+23-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:17:22-76
 24    <uses-permission android:name="android.permission.INTERNET" />
-24-->C:\POS git\app\src\main\AndroidManifest.xml:18:5-67
-24-->C:\POS git\app\src\main\AndroidManifest.xml:18:22-64
+24-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:18:5-67
+24-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:18:22-64
 25    <uses-permission android:name="android.permission.CAMERA" />
-25-->C:\POS git\app\src\main\AndroidManifest.xml:19:5-65
-25-->C:\POS git\app\src\main\AndroidManifest.xml:19:22-62
+25-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:19:5-65
+25-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:19:22-62
 26    <uses-permission android:name="ANDROID.PERMISSION.READ_EXTERNAL_STORAGE" />
-26-->C:\POS git\app\src\main\AndroidManifest.xml:20:5-80
-26-->C:\POS git\app\src\main\AndroidManifest.xml:20:22-77
+26-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:20:5-80
+26-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:20:22-77
 27    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-27-->C:\POS git\app\src\main\AndroidManifest.xml:21:5-81
-27-->C:\POS git\app\src\main\AndroidManifest.xml:21:22-78
+27-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:21:5-81
+27-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:21:22-78
 28    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-28-->C:\POS git\app\src\main\AndroidManifest.xml:22:5-71
-28-->C:\POS git\app\src\main\AndroidManifest.xml:22:22-68
+28-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:22:5-71
+28-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:22:22-68
 29    <uses-permission android:name="android.permission.SEND_SMS" />
-29-->C:\POS git\app\src\main\AndroidManifest.xml:23:5-67
-29-->C:\POS git\app\src\main\AndroidManifest.xml:23:22-64
+29-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:23:5-67
+29-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:23:22-64
 30    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-30-->[app.alan:sdk:4.12.0] C:\Users\aswin\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:12:5-80
-30-->[app.alan:sdk:4.12.0] C:\Users\aswin\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:12:22-77
+30-->[app.alan:sdk:4.12.0] C:\Users\Mithra\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:12:5-80
+30-->[app.alan:sdk:4.12.0] C:\Users\Mithra\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:12:22-77
 31    <uses-permission android:name="android.permission.WAKE_LOCK" />
-31-->[app.alan:sdk:4.12.0] C:\Users\aswin\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:14:5-68
-31-->[app.alan:sdk:4.12.0] C:\Users\aswin\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:14:22-65
+31-->[app.alan:sdk:4.12.0] C:\Users\Mithra\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:14:5-68
+31-->[app.alan:sdk:4.12.0] C:\Users\Mithra\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:14:22-65
 32    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- suppress DeprecatedClassUsageInspection -->
-32-->[app.alan:sdk:4.12.0] C:\Users\aswin\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:15:5-77
-32-->[app.alan:sdk:4.12.0] C:\Users\aswin\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:15:22-74
+32-->[app.alan:sdk:4.12.0] C:\Users\Mithra\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:15:5-77
+32-->[app.alan:sdk:4.12.0] C:\Users\Mithra\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:15:22-74
 33    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
-33-->[androidx.biometric:biometric:1.1.0] C:\Users\aswin\.gradle\caches\transforms-3\db832745b7e731979aacf64b55504a7b\transformed\biometric-1.1.0\AndroidManifest.xml:27:5-74
-33-->[androidx.biometric:biometric:1.1.0] C:\Users\aswin\.gradle\caches\transforms-3\db832745b7e731979aacf64b55504a7b\transformed\biometric-1.1.0\AndroidManifest.xml:27:22-71
+33-->[androidx.biometric:biometric:1.1.0] C:\Users\Mithra\.gradle\caches\transforms-3\db832745b7e731979aacf64b55504a7b\transformed\biometric-1.1.0\AndroidManifest.xml:27:5-74
+33-->[androidx.biometric:biometric:1.1.0] C:\Users\Mithra\.gradle\caches\transforms-3\db832745b7e731979aacf64b55504a7b\transformed\biometric-1.1.0\AndroidManifest.xml:27:22-71
 34
 35    <application
-35-->C:\POS git\app\src\main\AndroidManifest.xml:25:5-184:19
+35-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:25:5-185:19
 36        android:allowBackup="true"
-36-->C:\POS git\app\src\main\AndroidManifest.xml:26:9-35
+36-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:26:9-35
 37        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-37-->[androidx.core:core:1.8.0] C:\Users\aswin\.gradle\caches\transforms-3\577ee95d2de04b4758c03245d25b9bbc\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
+37-->[androidx.core:core:1.8.0] C:\Users\Mithra\.gradle\caches\transforms-3\577ee95d2de04b4758c03245d25b9bbc\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
 38        android:dataExtractionRules="@xml/data_extraction_rules"
-38-->C:\POS git\app\src\main\AndroidManifest.xml:27:9-65
+38-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:27:9-65
 39        android:debuggable="true"
 40        android:fullBackupContent="@xml/backup_rules"
-40-->C:\POS git\app\src\main\AndroidManifest.xml:28:9-54
+40-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:28:9-54
 41        android:icon="@mipmap/ic_launcher"
-41-->C:\POS git\app\src\main\AndroidManifest.xml:29:9-43
+41-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:29:9-43
 42        android:label="@string/app_name"
-42-->C:\POS git\app\src\main\AndroidManifest.xml:30:9-41
+42-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:30:9-41
 43        android:requestLegacyExternalStorage="true"
-43-->C:\POS git\app\src\main\AndroidManifest.xml:31:9-52
+43-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:31:9-52
 44        android:roundIcon="@mipmap/ic_launcher_round"
-44-->C:\POS git\app\src\main\AndroidManifest.xml:32:9-54
+44-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:32:9-54
 45        android:supportsRtl="true"
-45-->C:\POS git\app\src\main\AndroidManifest.xml:33:9-35
-46        android:testOnly="true"
-47        android:theme="@style/Theme.POSAndroid"
-47-->C:\POS git\app\src\main\AndroidManifest.xml:34:9-48
-48        android:usesCleartextTraffic="true" >
-48-->C:\POS git\app\src\main\AndroidManifest.xml:35:9-44
-49        <activity
-49-->C:\POS git\app\src\main\AndroidManifest.xml:37:9-43:20
-50            android:name="com.example.pos_android.view.admin.ForecastingActivity"
-50-->C:\POS git\app\src\main\AndroidManifest.xml:38:13-59
-51            android:exported="false" >
-51-->C:\POS git\app\src\main\AndroidManifest.xml:39:13-37
+45-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:33:9-35
+46        android:theme="@style/Theme.POSAndroid"
+46-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:34:9-48
+47        android:usesCleartextTraffic="true" >
+47-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:35:9-44
+48        <activity
+48-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:37:9-44:20
+49            android:name="com.example.pos_android.view.admin.ForecastingActivity"
+49-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:38:13-59
+50            android:exported="false"
+50-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:40:13-37
+51            android:screenOrientation="landscape" >
+51-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:39:13-50
 52            <meta-data
-52-->C:\POS git\app\src\main\AndroidManifest.xml:40:13-42:36
+52-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:41:13-43:36
 53                android:name="android.app.lib_name"
-53-->C:\POS git\app\src\main\AndroidManifest.xml:41:17-52
+53-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:42:17-52
 54                android:value="" />
-54-->C:\POS git\app\src\main\AndroidManifest.xml:42:17-33
+54-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:43:17-33
 55        </activity>
 56        <activity
-56-->C:\POS git\app\src\main\AndroidManifest.xml:44:9-50:20
+56-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:45:9-51:20
 57            android:name="com.example.pos_android.view.waiter.WaiterOrderDetailActivity"
-57-->C:\POS git\app\src\main\AndroidManifest.xml:45:13-66
+57-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:46:13-66
 58            android:exported="false" >
-58-->C:\POS git\app\src\main\AndroidManifest.xml:46:13-37
+58-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:47:13-37
 59            <meta-data
-59-->C:\POS git\app\src\main\AndroidManifest.xml:40:13-42:36
+59-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:41:13-43:36
 60                android:name="android.app.lib_name"
-60-->C:\POS git\app\src\main\AndroidManifest.xml:41:17-52
+60-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:42:17-52
 61                android:value="" />
-61-->C:\POS git\app\src\main\AndroidManifest.xml:42:17-33
+61-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:43:17-33
 62        </activity>
 63        <activity
-63-->C:\POS git\app\src\main\AndroidManifest.xml:51:9-57:20
+63-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:52:9-58:20
 64            android:name="com.example.pos_android.view.waiter.WaiterActivity"
-64-->C:\POS git\app\src\main\AndroidManifest.xml:52:13-55
+64-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:53:13-55
 65            android:exported="false" >
-65-->C:\POS git\app\src\main\AndroidManifest.xml:53:13-37
+65-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:54:13-37
 66            <meta-data
-66-->C:\POS git\app\src\main\AndroidManifest.xml:40:13-42:36
+66-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:41:13-43:36
 67                android:name="android.app.lib_name"
-67-->C:\POS git\app\src\main\AndroidManifest.xml:41:17-52
+67-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:42:17-52
 68                android:value="" />
-68-->C:\POS git\app\src\main\AndroidManifest.xml:42:17-33
+68-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:43:17-33
 69        </activity>
 70        <activity
-70-->C:\POS git\app\src\main\AndroidManifest.xml:58:9-64:20
+70-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:59:9-65:20
 71            android:name="com.example.pos_android.view.admin.AddWaiterActivity"
-71-->C:\POS git\app\src\main\AndroidManifest.xml:59:13-57
+71-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:60:13-57
 72            android:exported="false" >
-72-->C:\POS git\app\src\main\AndroidManifest.xml:60:13-37
+72-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:61:13-37
 73            <meta-data
-73-->C:\POS git\app\src\main\AndroidManifest.xml:40:13-42:36
+73-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:41:13-43:36
 74                android:name="android.app.lib_name"
-74-->C:\POS git\app\src\main\AndroidManifest.xml:41:17-52
+74-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:42:17-52
 75                android:value="" />
-75-->C:\POS git\app\src\main\AndroidManifest.xml:42:17-33
+75-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:43:17-33
 76        </activity>
 77        <activity
-77-->C:\POS git\app\src\main\AndroidManifest.xml:65:9-71:20
+77-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:66:9-72:20
 78            android:name="com.example.pos_android.view.admin.AddVoucherActivity"
-78-->C:\POS git\app\src\main\AndroidManifest.xml:66:13-58
+78-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:67:13-58
 79            android:exported="false" >
-79-->C:\POS git\app\src\main\AndroidManifest.xml:67:13-37
+79-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:68:13-37
 80            <meta-data
-80-->C:\POS git\app\src\main\AndroidManifest.xml:40:13-42:36
+80-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:41:13-43:36
 81                android:name="android.app.lib_name"
-81-->C:\POS git\app\src\main\AndroidManifest.xml:41:17-52
+81-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:42:17-52
 82                android:value="" />
-82-->C:\POS git\app\src\main\AndroidManifest.xml:42:17-33
+82-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:43:17-33
 83        </activity>
 84        <activity
-84-->C:\POS git\app\src\main\AndroidManifest.xml:72:9-78:20
+84-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:73:9-79:20
 85            android:name="com.example.pos_android.view.admin.CustomerReportActivity"
-85-->C:\POS git\app\src\main\AndroidManifest.xml:73:13-62
+85-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:74:13-62
 86            android:exported="false" >
-86-->C:\POS git\app\src\main\AndroidManifest.xml:74:13-37
+86-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:75:13-37
 87            <meta-data
-87-->C:\POS git\app\src\main\AndroidManifest.xml:40:13-42:36
+87-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:41:13-43:36
 88                android:name="android.app.lib_name"
-88-->C:\POS git\app\src\main\AndroidManifest.xml:41:17-52
+88-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:42:17-52
 89                android:value="" />
-89-->C:\POS git\app\src\main\AndroidManifest.xml:42:17-33
+89-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:43:17-33
 90        </activity>
 91        <activity
-91-->C:\POS git\app\src\main\AndroidManifest.xml:79:9-85:20
+91-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:80:9-86:20
 92            android:name="com.example.pos_android.view.admin.AddKitchenActivity"
-92-->C:\POS git\app\src\main\AndroidManifest.xml:80:13-58
+92-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:81:13-58
 93            android:exported="false" >
-93-->C:\POS git\app\src\main\AndroidManifest.xml:81:13-37
+93-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:82:13-37
 94            <meta-data
-94-->C:\POS git\app\src\main\AndroidManifest.xml:40:13-42:36
+94-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:41:13-43:36
 95                android:name="android.app.lib_name"
-95-->C:\POS git\app\src\main\AndroidManifest.xml:41:17-52
+95-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:42:17-52
 96                android:value="" />
-96-->C:\POS git\app\src\main\AndroidManifest.xml:42:17-33
+96-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:43:17-33
 97        </activity>
 98        <activity
-98-->C:\POS git\app\src\main\AndroidManifest.xml:86:9-92:20
+98-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:87:9-93:20
 99            android:name="com.example.pos_android.view.admin.ListAllFoodActivity"
-99-->C:\POS git\app\src\main\AndroidManifest.xml:87:13-59
+99-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:88:13-59
 100            android:exported="false" >
-100-->C:\POS git\app\src\main\AndroidManifest.xml:88:13-37
+100-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:89:13-37
 101            <meta-data
-101-->C:\POS git\app\src\main\AndroidManifest.xml:40:13-42:36
+101-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:41:13-43:36
 102                android:name="android.app.lib_name"
-102-->C:\POS git\app\src\main\AndroidManifest.xml:41:17-52
+102-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:42:17-52
 103                android:value="" />
-103-->C:\POS git\app\src\main\AndroidManifest.xml:42:17-33
+103-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:43:17-33
 104        </activity>
 105        <activity
-105-->C:\POS git\app\src\main\AndroidManifest.xml:93:9-99:20
+105-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:94:9-100:20
 106            android:name="com.example.pos_android.view.kitchen.KitchenOrderDetailActivity"
-106-->C:\POS git\app\src\main\AndroidManifest.xml:94:13-68
+106-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:95:13-68
 107            android:exported="false" >
-107-->C:\POS git\app\src\main\AndroidManifest.xml:95:13-37
+107-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:96:13-37
 108            <meta-data
-108-->C:\POS git\app\src\main\AndroidManifest.xml:40:13-42:36
+108-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:41:13-43:36
 109                android:name="android.app.lib_name"
-109-->C:\POS git\app\src\main\AndroidManifest.xml:41:17-52
+109-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:42:17-52
 110                android:value="" />
-110-->C:\POS git\app\src\main\AndroidManifest.xml:42:17-33
+110-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:43:17-33
 111        </activity>
 112        <activity
-112-->C:\POS git\app\src\main\AndroidManifest.xml:100:9-106:20
+112-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:101:9-107:20
 113            android:name="com.example.pos_android.view.kitchen.KitchenActivity"
-113-->C:\POS git\app\src\main\AndroidManifest.xml:101:13-57
+113-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:102:13-57
 114            android:exported="false" >
-114-->C:\POS git\app\src\main\AndroidManifest.xml:102:13-37
+114-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:103:13-37
 115            <meta-data
-115-->C:\POS git\app\src\main\AndroidManifest.xml:40:13-42:36
+115-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:41:13-43:36
 116                android:name="android.app.lib_name"
-116-->C:\POS git\app\src\main\AndroidManifest.xml:41:17-52
+116-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:42:17-52
 117                android:value="" />
-117-->C:\POS git\app\src\main\AndroidManifest.xml:42:17-33
+117-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:43:17-33
 118        </activity>
 119        <activity
-119-->C:\POS git\app\src\main\AndroidManifest.xml:107:9-113:20
+119-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:108:9-114:20
 120            android:name="com.example.pos_android.view.admin.IncomeReportActivity"
-120-->C:\POS git\app\src\main\AndroidManifest.xml:108:13-60
+120-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:109:13-60
 121            android:exported="false" >
-121-->C:\POS git\app\src\main\AndroidManifest.xml:109:13-37
+121-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:110:13-37
 122            <meta-data
-122-->C:\POS git\app\src\main\AndroidManifest.xml:40:13-42:36
+122-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:41:13-43:36
 123                android:name="android.app.lib_name"
-123-->C:\POS git\app\src\main\AndroidManifest.xml:41:17-52
+123-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:42:17-52
 124                android:value="" />
-124-->C:\POS git\app\src\main\AndroidManifest.xml:42:17-33
+124-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:43:17-33
 125        </activity>
 126        <activity
-126-->C:\POS git\app\src\main\AndroidManifest.xml:114:9-120:20
+126-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:115:9-121:20
 127            android:name="com.example.pos_android.view.admin.BestSellingReportActivity"
-127-->C:\POS git\app\src\main\AndroidManifest.xml:115:13-65
+127-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:116:13-65
 128            android:exported="false" >
-128-->C:\POS git\app\src\main\AndroidManifest.xml:116:13-37
+128-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:117:13-37
 129            <meta-data
-129-->C:\POS git\app\src\main\AndroidManifest.xml:40:13-42:36
+129-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:41:13-43:36
 130                android:name="android.app.lib_name"
-130-->C:\POS git\app\src\main\AndroidManifest.xml:41:17-52
+130-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:42:17-52
 131                android:value="" />
-131-->C:\POS git\app\src\main\AndroidManifest.xml:42:17-33
+131-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:43:17-33
 132        </activity>
 133        <activity
-133-->C:\POS git\app\src\main\AndroidManifest.xml:121:9-127:20
+133-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:122:9-128:20
 134            android:name="com.example.pos_android.view.admin.ReportActivity"
-134-->C:\POS git\app\src\main\AndroidManifest.xml:122:13-54
+134-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:123:13-54
 135            android:exported="false" >
-135-->C:\POS git\app\src\main\AndroidManifest.xml:123:13-37
+135-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:124:13-37
 136            <meta-data
-136-->C:\POS git\app\src\main\AndroidManifest.xml:40:13-42:36
+136-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:41:13-43:36
 137                android:name="android.app.lib_name"
-137-->C:\POS git\app\src\main\AndroidManifest.xml:41:17-52
+137-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:42:17-52
 138                android:value="" />
-138-->C:\POS git\app\src\main\AndroidManifest.xml:42:17-33
+138-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:43:17-33
 139        </activity>
 140        <activity
-140-->C:\POS git\app\src\main\AndroidManifest.xml:128:9-134:20
+140-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:129:9-135:20
 141            android:name="com.example.pos_android.view.admin.SalesReportActivity"
-141-->C:\POS git\app\src\main\AndroidManifest.xml:129:13-59
+141-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:130:13-59
 142            android:exported="false" >
-142-->C:\POS git\app\src\main\AndroidManifest.xml:130:13-37
+142-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:131:13-37
 143            <meta-data
-143-->C:\POS git\app\src\main\AndroidManifest.xml:40:13-42:36
+143-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:41:13-43:36
 144                android:name="android.app.lib_name"
-144-->C:\POS git\app\src\main\AndroidManifest.xml:41:17-52
+144-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:42:17-52
 145                android:value="" />
-145-->C:\POS git\app\src\main\AndroidManifest.xml:42:17-33
+145-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:43:17-33
 146        </activity>
 147        <activity
-147-->C:\POS git\app\src\main\AndroidManifest.xml:135:9-141:20
+147-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:136:9-142:20
 148            android:name="com.example.pos_android.view.admin.AddFoodActivity"
-148-->C:\POS git\app\src\main\AndroidManifest.xml:136:13-55
+148-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:137:13-55
 149            android:exported="false" >
-149-->C:\POS git\app\src\main\AndroidManifest.xml:137:13-37
+149-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:138:13-37
 150            <meta-data
-150-->C:\POS git\app\src\main\AndroidManifest.xml:40:13-42:36
+150-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:41:13-43:36
 151                android:name="android.app.lib_name"
-151-->C:\POS git\app\src\main\AndroidManifest.xml:41:17-52
+151-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:42:17-52
 152                android:value="" />
-152-->C:\POS git\app\src\main\AndroidManifest.xml:42:17-33
+152-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:43:17-33
 153        </activity>
 154        <activity
-154-->C:\POS git\app\src\main\AndroidManifest.xml:142:9-148:20
+154-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:143:9-149:20
 155            android:name="com.example.pos_android.view.admin.AdminHomeActivity"
-155-->C:\POS git\app\src\main\AndroidManifest.xml:143:13-57
+155-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:144:13-57
 156            android:exported="false" >
-156-->C:\POS git\app\src\main\AndroidManifest.xml:144:13-37
+156-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:145:13-37
 157            <meta-data
-157-->C:\POS git\app\src\main\AndroidManifest.xml:40:13-42:36
+157-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:41:13-43:36
 158                android:name="android.app.lib_name"
-158-->C:\POS git\app\src\main\AndroidManifest.xml:41:17-52
+158-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:42:17-52
 159                android:value="" />
-159-->C:\POS git\app\src\main\AndroidManifest.xml:42:17-33
+159-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:43:17-33
 160        </activity>
 161        <activity
-161-->C:\POS git\app\src\main\AndroidManifest.xml:149:9-155:20
+161-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:150:9-156:20
 162            android:name="com.example.pos_android.view.user.UserHomeActivity"
-162-->C:\POS git\app\src\main\AndroidManifest.xml:150:13-55
+162-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:151:13-55
 163            android:exported="false" >
-163-->C:\POS git\app\src\main\AndroidManifest.xml:151:13-37
+163-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:152:13-37
 164            <meta-data
-164-->C:\POS git\app\src\main\AndroidManifest.xml:40:13-42:36
+164-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:41:13-43:36
 165                android:name="android.app.lib_name"
-165-->C:\POS git\app\src\main\AndroidManifest.xml:41:17-52
+165-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:42:17-52
 166                android:value="" />
-166-->C:\POS git\app\src\main\AndroidManifest.xml:42:17-33
+166-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:43:17-33
 167        </activity>
 168        <activity
-168-->C:\POS git\app\src\main\AndroidManifest.xml:156:9-162:20
+168-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:157:9-163:20
 169            android:name="com.example.pos_android.view.login.RegisterActivity"
-169-->C:\POS git\app\src\main\AndroidManifest.xml:157:13-56
+169-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:158:13-56
 170            android:exported="false" >
-170-->C:\POS git\app\src\main\AndroidManifest.xml:158:13-37
+170-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:159:13-37
 171            <meta-data
-171-->C:\POS git\app\src\main\AndroidManifest.xml:40:13-42:36
+171-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:41:13-43:36
 172                android:name="android.app.lib_name"
-172-->C:\POS git\app\src\main\AndroidManifest.xml:41:17-52
+172-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:42:17-52
 173                android:value="" />
-173-->C:\POS git\app\src\main\AndroidManifest.xml:42:17-33
+173-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:43:17-33
 174        </activity>
 175        <activity
-175-->C:\POS git\app\src\main\AndroidManifest.xml:163:9-169:20
+175-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:164:9-170:20
 176            android:name="com.example.pos_android.view.login.LoginActivity"
-176-->C:\POS git\app\src\main\AndroidManifest.xml:164:13-53
+176-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:165:13-53
 177            android:exported="false" >
-177-->C:\POS git\app\src\main\AndroidManifest.xml:165:13-37
+177-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:166:13-37
 178            <meta-data
-178-->C:\POS git\app\src\main\AndroidManifest.xml:40:13-42:36
+178-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:41:13-43:36
 179                android:name="android.app.lib_name"
-179-->C:\POS git\app\src\main\AndroidManifest.xml:41:17-52
+179-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:42:17-52
 180                android:value="" />
-180-->C:\POS git\app\src\main\AndroidManifest.xml:42:17-33
+180-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:43:17-33
 181        </activity>
 182        <activity
-182-->C:\POS git\app\src\main\AndroidManifest.xml:170:9-183:20
+182-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:171:9-184:20
 183            android:name="com.example.pos_android.view.SplashActivity"
-183-->C:\POS git\app\src\main\AndroidManifest.xml:171:13-48
+183-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:172:13-48
 184            android:exported="true"
-184-->C:\POS git\app\src\main\AndroidManifest.xml:172:13-36
+184-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:173:13-36
 185            android:theme="@style/SplashTheme" >
-185-->C:\POS git\app\src\main\AndroidManifest.xml:173:13-47
+185-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:174:13-47
 186            <intent-filter>
-186-->C:\POS git\app\src\main\AndroidManifest.xml:174:13-178:29
+186-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:175:13-179:29
 187                <action android:name="android.intent.action.MAIN" />
-187-->C:\POS git\app\src\main\AndroidManifest.xml:175:17-69
-187-->C:\POS git\app\src\main\AndroidManifest.xml:175:25-66
+187-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:176:17-69
+187-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:176:25-66
 188
 189                <category android:name="android.intent.category.LAUNCHER" />
-189-->C:\POS git\app\src\main\AndroidManifest.xml:177:17-77
-189-->C:\POS git\app\src\main\AndroidManifest.xml:177:27-74
+189-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:178:17-77
+189-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:178:27-74
 190            </intent-filter>
 191
 192            <meta-data
-192-->C:\POS git\app\src\main\AndroidManifest.xml:40:13-42:36
+192-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:41:13-43:36
 193                android:name="android.app.lib_name"
-193-->C:\POS git\app\src\main\AndroidManifest.xml:41:17-52
+193-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:42:17-52
 194                android:value="" />
-194-->C:\POS git\app\src\main\AndroidManifest.xml:42:17-33
+194-->D:\Fourth_sem\pos-android\POS-App\app\src\main\AndroidManifest.xml:43:17-33
 195        </activity>
 196        <activity
-196-->[app.alan:sdk:4.12.0] C:\Users\aswin\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:18:9-21:54
+196-->[app.alan:sdk:4.12.0] C:\Users\Mithra\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:18:9-21:54
 197            android:name="com.alan.alansdk.qr.QRScanActivity"
-197-->[app.alan:sdk:4.12.0] C:\Users\aswin\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:19:13-62
+197-->[app.alan:sdk:4.12.0] C:\Users\Mithra\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:19:13-62
 198            android:screenOrientation="portrait"
-198-->[app.alan:sdk:4.12.0] C:\Users\aswin\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:20:13-49
+198-->[app.alan:sdk:4.12.0] C:\Users\Mithra\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:20:13-49
 199            android:theme="@style/QRActivityTheme" />
-199-->[app.alan:sdk:4.12.0] C:\Users\aswin\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:21:13-51
+199-->[app.alan:sdk:4.12.0] C:\Users\Mithra\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:21:13-51
 200
 201        <service
-201-->[app.alan:sdk:4.12.0] C:\Users\aswin\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:23:9-25:38
+201-->[app.alan:sdk:4.12.0] C:\Users\Mithra\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:23:9-25:38
 202            android:name="com.alan.alansdk.AlanService"
-202-->[app.alan:sdk:4.12.0] C:\Users\aswin\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:24:13-56
+202-->[app.alan:sdk:4.12.0] C:\Users\Mithra\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:24:13-56
 203            android:enabled="true" />
-203-->[app.alan:sdk:4.12.0] C:\Users\aswin\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:25:13-35
+203-->[app.alan:sdk:4.12.0] C:\Users\Mithra\.gradle\caches\transforms-3\d15226191f7387614b4973259117f2a5\transformed\sdk-4.12.0\AndroidManifest.xml:25:13-35
 204        <service
-204-->[androidx.room:room-runtime:2.4.3] C:\Users\aswin\.gradle\caches\transforms-3\2e63dbfd64ae5816ec1fb5a592200ffc\transformed\room-runtime-2.4.3\AndroidManifest.xml:25:9-28:40
+204-->[androidx.room:room-runtime:2.4.3] C:\Users\Mithra\.gradle\caches\transforms-3\2e63dbfd64ae5816ec1fb5a592200ffc\transformed\room-runtime-2.4.3\AndroidManifest.xml:25:9-28:40
 205            android:name="androidx.room.MultiInstanceInvalidationService"
-205-->[androidx.room:room-runtime:2.4.3] C:\Users\aswin\.gradle\caches\transforms-3\2e63dbfd64ae5816ec1fb5a592200ffc\transformed\room-runtime-2.4.3\AndroidManifest.xml:26:13-74
+205-->[androidx.room:room-runtime:2.4.3] C:\Users\Mithra\.gradle\caches\transforms-3\2e63dbfd64ae5816ec1fb5a592200ffc\transformed\room-runtime-2.4.3\AndroidManifest.xml:26:13-74
 206            android:directBootAware="true"
-206-->[androidx.room:room-runtime:2.4.3] C:\Users\aswin\.gradle\caches\transforms-3\2e63dbfd64ae5816ec1fb5a592200ffc\transformed\room-runtime-2.4.3\AndroidManifest.xml:27:13-43
+206-->[androidx.room:room-runtime:2.4.3] C:\Users\Mithra\.gradle\caches\transforms-3\2e63dbfd64ae5816ec1fb5a592200ffc\transformed\room-runtime-2.4.3\AndroidManifest.xml:27:13-43
 207            android:exported="false" />
-207-->[androidx.room:room-runtime:2.4.3] C:\Users\aswin\.gradle\caches\transforms-3\2e63dbfd64ae5816ec1fb5a592200ffc\transformed\room-runtime-2.4.3\AndroidManifest.xml:28:13-37
+207-->[androidx.room:room-runtime:2.4.3] C:\Users\Mithra\.gradle\caches\transforms-3\2e63dbfd64ae5816ec1fb5a592200ffc\transformed\room-runtime-2.4.3\AndroidManifest.xml:28:13-37
 208
 209        <provider
-209-->[androidx.emoji2:emoji2:1.2.0] C:\Users\aswin\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+209-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Mithra\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
 210            android:name="androidx.startup.InitializationProvider"
-210-->[androidx.emoji2:emoji2:1.2.0] C:\Users\aswin\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+210-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Mithra\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
 211            android:authorities="com.example.pos_android.androidx-startup"
-211-->[androidx.emoji2:emoji2:1.2.0] C:\Users\aswin\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+211-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Mithra\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
 212            android:exported="false" >
-212-->[androidx.emoji2:emoji2:1.2.0] C:\Users\aswin\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+212-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Mithra\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
 213            <meta-data
-213-->[androidx.emoji2:emoji2:1.2.0] C:\Users\aswin\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+213-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Mithra\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
 214                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-214-->[androidx.emoji2:emoji2:1.2.0] C:\Users\aswin\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+214-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Mithra\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
 215                android:value="androidx.startup" />
-215-->[androidx.emoji2:emoji2:1.2.0] C:\Users\aswin\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+215-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Mithra\.gradle\caches\transforms-3\588b8c7b4ea336c44fac1bf3358693f9\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
 216            <meta-data
-216-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\aswin\.gradle\caches\transforms-3\86e7db7afee59af47e2b640b7bcd4e04\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+216-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Mithra\.gradle\caches\transforms-3\86e7db7afee59af47e2b640b7bcd4e04\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
 217                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-217-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\aswin\.gradle\caches\transforms-3\86e7db7afee59af47e2b640b7bcd4e04\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+217-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Mithra\.gradle\caches\transforms-3\86e7db7afee59af47e2b640b7bcd4e04\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
 218                android:value="androidx.startup" />
-218-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\aswin\.gradle\caches\transforms-3\86e7db7afee59af47e2b640b7bcd4e04\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+218-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Mithra\.gradle\caches\transforms-3\86e7db7afee59af47e2b640b7bcd4e04\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
 219        </provider>
 220
 221        <uses-library
-221-->[androidx.window:window:1.0.0] C:\Users\aswin\.gradle\caches\transforms-3\4c16547a1e97fe938e3e4b0025875bb8\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+221-->[androidx.window:window:1.0.0] C:\Users\Mithra\.gradle\caches\transforms-3\4c16547a1e97fe938e3e4b0025875bb8\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
 222            android:name="androidx.window.extensions"
-222-->[androidx.window:window:1.0.0] C:\Users\aswin\.gradle\caches\transforms-3\4c16547a1e97fe938e3e4b0025875bb8\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+222-->[androidx.window:window:1.0.0] C:\Users\Mithra\.gradle\caches\transforms-3\4c16547a1e97fe938e3e4b0025875bb8\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
 223            android:required="false" />
-223-->[androidx.window:window:1.0.0] C:\Users\aswin\.gradle\caches\transforms-3\4c16547a1e97fe938e3e4b0025875bb8\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+223-->[androidx.window:window:1.0.0] C:\Users\Mithra\.gradle\caches\transforms-3\4c16547a1e97fe938e3e4b0025875bb8\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
 224        <uses-library
-224-->[androidx.window:window:1.0.0] C:\Users\aswin\.gradle\caches\transforms-3\4c16547a1e97fe938e3e4b0025875bb8\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+224-->[androidx.window:window:1.0.0] C:\Users\Mithra\.gradle\caches\transforms-3\4c16547a1e97fe938e3e4b0025875bb8\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
 225            android:name="androidx.window.sidecar"
-225-->[androidx.window:window:1.0.0] C:\Users\aswin\.gradle\caches\transforms-3\4c16547a1e97fe938e3e4b0025875bb8\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+225-->[androidx.window:window:1.0.0] C:\Users\Mithra\.gradle\caches\transforms-3\4c16547a1e97fe938e3e4b0025875bb8\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
 226            android:required="false" />
-226-->[androidx.window:window:1.0.0] C:\Users\aswin\.gradle\caches\transforms-3\4c16547a1e97fe938e3e4b0025875bb8\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+226-->[androidx.window:window:1.0.0] C:\Users\Mithra\.gradle\caches\transforms-3\4c16547a1e97fe938e3e4b0025875bb8\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
 227
 228        <provider
-228-->[com.squareup.picasso:picasso:2.71828] C:\Users\aswin\.gradle\caches\transforms-3\7382e7f444b584172664e3f7e0ea6fda\transformed\picasso-2.71828\AndroidManifest.xml:8:9-11:40
+228-->[com.squareup.picasso:picasso:2.71828] C:\Users\Mithra\.gradle\caches\transforms-3\7382e7f444b584172664e3f7e0ea6fda\transformed\picasso-2.71828\AndroidManifest.xml:8:9-11:40
 229            android:name="com.squareup.picasso.PicassoProvider"
-229-->[com.squareup.picasso:picasso:2.71828] C:\Users\aswin\.gradle\caches\transforms-3\7382e7f444b584172664e3f7e0ea6fda\transformed\picasso-2.71828\AndroidManifest.xml:9:13-64
+229-->[com.squareup.picasso:picasso:2.71828] C:\Users\Mithra\.gradle\caches\transforms-3\7382e7f444b584172664e3f7e0ea6fda\transformed\picasso-2.71828\AndroidManifest.xml:9:13-64
 230            android:authorities="com.example.pos_android.com.squareup.picasso"
-230-->[com.squareup.picasso:picasso:2.71828] C:\Users\aswin\.gradle\caches\transforms-3\7382e7f444b584172664e3f7e0ea6fda\transformed\picasso-2.71828\AndroidManifest.xml:10:13-72
+230-->[com.squareup.picasso:picasso:2.71828] C:\Users\Mithra\.gradle\caches\transforms-3\7382e7f444b584172664e3f7e0ea6fda\transformed\picasso-2.71828\AndroidManifest.xml:10:13-72
 231            android:exported="false" />
-231-->[com.squareup.picasso:picasso:2.71828] C:\Users\aswin\.gradle\caches\transforms-3\7382e7f444b584172664e3f7e0ea6fda\transformed\picasso-2.71828\AndroidManifest.xml:11:13-37
+231-->[com.squareup.picasso:picasso:2.71828] C:\Users\Mithra\.gradle\caches\transforms-3\7382e7f444b584172664e3f7e0ea6fda\transformed\picasso-2.71828\AndroidManifest.xml:11:13-37
 232    </application>
 233
 234</manifest>
